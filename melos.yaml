@@ -1,0 +1,5 @@
+name: widgetbook-demo
+repository: https://github.com/widgetbook/widgetbook-demo
+
+packages:
+  - packages/**
