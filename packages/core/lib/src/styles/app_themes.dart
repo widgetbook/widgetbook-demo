@@ -10,6 +10,7 @@ class AppThemes {
      brightness: isDark ? Brightness.light : Brightness.dark,
      fontFamily: AppTextStyles.fontFamily,
      primaryColor: AppColors.getMaterialColorFromColor(AppColors.primary),
+     scaffoldBackgroundColor: isDark ? AppColors.black : AppColors.white,
      elevatedButtonTheme: ElevatedButtonThemeData(
        style: ElevatedButton.styleFrom(
          shape: RoundedRectangleBorder(
