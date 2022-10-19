@@ -10,6 +10,15 @@ class AppThemes {
      brightness: isDark ? Brightness.light : Brightness.dark,
      fontFamily: AppTextStyles.fontFamily,
      primaryColor: AppColors.getMaterialColorFromColor(AppColors.primary),
+     elevatedButtonTheme: ElevatedButtonThemeData(
+       style: ElevatedButton.styleFrom(
+         shape: RoundedRectangleBorder(
+           borderRadius: BorderRadius.circular(100),
+         ),
+         elevation: 0,
+         textStyle: AppTextStyles.button,
+       ),
+     ),
      textTheme: const TextTheme(
        headline1: AppTextStyles.h1,
        headline2: AppTextStyles.h2,
