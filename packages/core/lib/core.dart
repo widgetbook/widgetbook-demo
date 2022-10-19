@@ -1,0 +1,4 @@
+/// Core components for Widgetbook Demo App
+library core;
+
+export 'src/styles/styles.dart';
