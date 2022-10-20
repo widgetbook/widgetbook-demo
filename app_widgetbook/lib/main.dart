@@ -16,35 +16,49 @@ class WidgetbookApp extends StatelessWidget {
       categories: [
         WidgetbookCategory(
           name: 'Core',
+          isExpanded: true,
           widgets: [
             WidgetbookComponent(
-              name: 'Buttons',
+              name: 'Button',
+              isExpanded: true,
               useCases: [
                 WidgetbookUseCase(
                   name: 'Primary Button',
                   builder: (context) => Button.primary(
-                    label: 'Button',
+                    label: context.knobs.text(
+                      label: 'Label',
+                      initialValue: 'Button',
+                    ),
                     onPressed: () {},
                   ),
                 ),
                 WidgetbookUseCase(
                   name: 'Secondary Button',
                   builder: (context) => Button.secondary(
-                    label: 'Button',
+                    label: context.knobs.text(
+                      label: 'Label',
+                      initialValue: 'Button',
+                    ),
                     onPressed: () {},
                   ),
                 ),
                 WidgetbookUseCase(
                   name: 'Primary Outline Button',
                   builder: (context) => Button.primaryOutline(
-                    label: 'Button',
+                    label: context.knobs.text(
+                      label: 'Label',
+                      initialValue: 'Button',
+                    ),
                     onPressed: () {},
                   ),
                 ),
                 WidgetbookUseCase(
                   name: 'Secondary Outline Button',
                   builder: (context) => Button.secondaryOutline(
-                    label: 'Button',
+                    label: context.knobs.text(
+                      label: 'Label',
+                      initialValue: 'Button',
+                    ),
                     onPressed: () {},
                   ),
                 ),
