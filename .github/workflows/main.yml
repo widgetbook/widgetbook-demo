@@ -13,10 +13,11 @@ jobs:
           channel: stable
 
       - name: Build Website
-        run: flutter build web -t app_widgetbook/lib/main.dart
+        working-directory: ./app_widgetbook
+        run: flutter build web -t lib/main.dart
 
       - name: Upload Widgetbook
         uses: widgetbook/widgetbook-hosting@0.0.24
         with:
-          path: 'build/web'
+          path: 'app_widgetbook/build/web'
           api_key: 'iL9RQkaGdb3VjLonSu0wb4xlFEKHfErO'
