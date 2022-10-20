@@ -1,5 +1,6 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 /// Button widget with variations
 class Button extends StatelessWidget {
@@ -92,4 +93,22 @@ class Button extends StatelessWidget {
       child: Text(label),
     );
   }
+}
+
+/// Use case for a Primary Button style
+@WidgetbookUseCase(name: 'Primary Button', type: Button)
+Widget primaryButtonUseCase(BuildContext context) {
+  return Button.primary(
+    label: 'Button',
+    onPressed: () {},
+  );
+}
+
+/// Use case for a Secondary Button style
+@WidgetbookUseCase(name: 'Secondary Button', type: Button)
+Widget secondaryButtonUseCase(BuildContext context) {
+  return Button.secondary(
+    label: 'Button',
+    onPressed: () {},
+  );
 }
