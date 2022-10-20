@@ -40,7 +40,7 @@ class Avatar extends StatelessWidget {
       height: size,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(size / 2),
-        child: imageUrl != null
+        child: imageUrl != null && imageUrl!.isNotEmpty
             ? Image.network(imageUrl!)
             : Image.asset(
                 'assets/images/avatar-placeholder.png',

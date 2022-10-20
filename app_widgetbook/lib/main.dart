@@ -64,6 +64,49 @@ class WidgetbookApp extends StatelessWidget {
                 ),
               ],
             ),
+            WidgetbookComponent(
+              name: 'Avatar',
+              isExpanded: true,
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Default',
+                  builder: (context) => Avatar(
+                    imageUrl: context.knobs.text(
+                      label: 'Image URL',
+                      initialValue:
+                          'https://pbs.twimg.com/profile_images/1446021572960133120/UZYljO51_400x400.jpg',
+                    ),
+                  ),
+                ),
+                WidgetbookUseCase(
+                  name: 'Small',
+                  builder: (context) => Avatar.small(
+                    imageUrl: context.knobs.text(
+                      label: 'Image URL',
+                      initialValue: '',
+                    ),
+                  ),
+                ),
+                WidgetbookUseCase(
+                  name: 'Smaller',
+                  builder: (context) => Avatar.smaller(
+                    imageUrl: context.knobs.text(
+                      label: 'Image URL',
+                      initialValue: '',
+                    ),
+                  ),
+                ),
+                WidgetbookUseCase(
+                  name: 'Smallest',
+                  builder: (context) => Avatar.smallest(
+                    imageUrl: context.knobs.text(
+                      label: 'Image URL',
+                      initialValue: '',
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ],
