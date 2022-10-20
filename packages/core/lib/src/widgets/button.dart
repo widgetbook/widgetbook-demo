@@ -20,44 +20,40 @@ class Button extends StatelessWidget {
     super.key,
     required this.label,
     this.onPressed,
-    this.backgroundColor = AppColors.primary,
-    this.textColor = AppColors.white,
     this.height = 40,
-    this.borderSide = BorderSide.none,
-  });
+  })  : backgroundColor = AppColors.primary,
+        textColor = AppColors.white,
+        borderSide = BorderSide.none;
 
   /// Creates new instance of [Button] with Primary Outline button style
   const Button.primaryOutline({
     super.key,
     required this.label,
     this.onPressed,
-    this.backgroundColor = AppColors.white,
-    this.textColor = AppColors.primary,
     this.height = 40,
-    this.borderSide = const BorderSide(color: AppColors.primary),
-  });
+  })  : backgroundColor = AppColors.white,
+        textColor = AppColors.primary,
+        borderSide = const BorderSide(color: AppColors.primary);
 
   /// Creates new instance of [Button] with secondary button style
   const Button.secondary({
     super.key,
     required this.label,
     this.onPressed,
-    this.backgroundColor = AppColors.secondary,
-    this.textColor = AppColors.white,
     this.height = 40,
-    this.borderSide = BorderSide.none,
-  });
+  })  : backgroundColor = AppColors.secondary,
+        textColor = AppColors.white,
+        borderSide = BorderSide.none;
 
   /// Creates new instance of [Button] with secondary outline button style
   const Button.secondaryOutline({
     super.key,
     required this.label,
     this.onPressed,
-    this.backgroundColor = AppColors.white,
-    this.textColor = AppColors.secondary,
     this.height = 40,
-    this.borderSide = const BorderSide(color: AppColors.border),
-  });
+  })  : backgroundColor = AppColors.white,
+        textColor = AppColors.secondary,
+        borderSide = const BorderSide(color: AppColors.border);
 
   /// Button text label
   final String label;
