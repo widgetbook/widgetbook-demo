@@ -65,61 +65,79 @@ class _LikeIconState extends State<LikeIcon>
   @override
   Widget build(BuildContext context) {
     final splashRadius = widget.size / 2 + widget.size * 0.7;
-    return Stack(
-      children: [
-        SizedBox(
-          width: splashRadius * 2,
-          height: splashRadius * 2,
-          child: Theme(
-            data: Theme.of(context).copyWith(
-              splashFactory: NoSplash.splashFactory,
-            ),
-            child: MouseRegion(
-              onEnter: (PointerEnterEvent event) {
-                setState(() {
-                  _isHovered = true;
-                });
-              },
-              onExit: (PointerExitEvent event) {
-                setState(() {
-                  _isHovered = false;
-                });
-              },
-              // Todo: extract IconButton to separate widget
-              child: IconButton(
-                onPressed: widget.onPressed,
-                splashRadius: splashRadius,
-                iconSize: widget.size,
-                splashColor: AppColors.pink.withOpacity(0.1),
-                highlightColor: AppColors.pink.withOpacity(0.1),
-                hoverColor: AppColors.pink.withOpacity(0.1),
-                padding: const EdgeInsets.all(10),
-                color: widget.isActive || _isHovered
-                    ? AppColors.pink
-                    : AppColors.textLight,
-                icon: AnimatedCrossFade(
-                  duration: const Duration(milliseconds: 100),
-                  crossFadeState: widget.isActive
-                      ? CrossFadeState.showSecond
-                      : CrossFadeState.showFirst,
-                  firstChild: AnimatedOpacity(
-                    opacity: widget.isActive ? 0 : 1,
+    return SizedBox(
+      width: splashRadius * 2,
+      height: splashRadius * 2,
+      child: Stack(
+        children: [
+          SizedBox(
+            width: splashRadius * 2,
+            height: splashRadius * 2,
+            child: Theme(
+              data: Theme.of(context).copyWith(
+                splashFactory: NoSplash.splashFactory,
+              ),
+              child: MouseRegion(
+                onEnter: (PointerEnterEvent event) {
+                  setState(() {
+                    _isHovered = true;
+                  });
+                },
+                onExit: (PointerExitEvent event) {
+                  setState(() {
+                    _isHovered = false;
+                  });
+                },
+                // Todo: extract IconButton to separate widget
+                child: IconButton(
+                  onPressed: widget.onPressed,
+                  splashRadius: splashRadius,
+                  iconSize: widget.size,
+                  splashColor: AppColors.pink.withOpacity(0.1),
+                  highlightColor: AppColors.pink.withOpacity(0.1),
+                  hoverColor: AppColors.pink.withOpacity(0.1),
+                  padding: const EdgeInsets.all(10),
+                  color: widget.isActive || _isHovered
+                      ? AppColors.pink
+                      : AppColors.textLight,
+                  icon: AnimatedCrossFade(
                     duration: const Duration(milliseconds: 100),
-                    child: const Icon(Icons.favorite_border_outlined),
+                    crossFadeState: widget.isActive
+                        ? CrossFadeState.showSecond
+                        : CrossFadeState.showFirst,
+                    firstChild: AnimatedOpacity(
+                      opacity: widget.isActive ? 0 : 1,
+                      duration: const Duration(milliseconds: 100),
+                      child: const Icon(Icons.favorite_border_outlined),
+                    ),
+                    secondChild: const Icon(Icons.favorite),
                   ),
-                  secondChild: const Icon(Icons.favorite),
                 ),
               ),
             ),
           ),
-        ),
-        CustomPaint(
-          painter: LikePainter(
-            animationController: animationController,
-            splashRadius: splashRadius,
+          Transform.translate(
+            offset: const Offset(-5, -5),
+            child: CustomPaint(
+              painter: BubblesPainter(
+                animationController: animationController,
+                splashRadius: splashRadius + 5,
+                bubblesRadius: 3,
+              ),
+            ),
           ),
-        ),
-      ],
+          CustomPaint(
+            foregroundPainter: LikePainter(
+              animationController: animationController,
+              splashRadius: splashRadius,
+            ),
+            painter: BubblesPainter(
+              animationController: animationController,
+              splashRadius: splashRadius,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -163,24 +181,45 @@ class LikePainter extends CustomPainter {
         curve: Curves.easeInOut,
       ),
     );
+  }
 
-    final radiantStep = 2 * pi / outerBubbleColors.length;
-    outerBubblesAnimations = List.generate(outerBubbleColors.length, (i) {
-      return Tween<Offset>(
-        begin: circleOffset,
-        end: Offset(
-          circleOffset.dx + sin(i * radiantStep) * (splashRadius * 1.2),
-          circleOffset.dy + cos(i * radiantStep) * (splashRadius * 1.2),
-        ),
-      ).animate(
-        CurvedAnimation(
-          parent: animationController,
-          curve: Curves.easeInOut,
-        ),
-      );
-    });
+  final AnimationController animationController;
+  late double circleSize;
+  late Offset circleOffset;
 
-    innerBubblesAnimations = List.generate(outerBubbleColors.length, (i) {
+  late Animation<double> circleSizeAnimation;
+  late Animation<double> circleStrokeAnimation;
+  late Animation<Color?> circleColorAnimation;
+
+  final Paint _circlePaint = Paint();
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    _circlePaint
+      ..strokeWidth = circleStrokeAnimation.value
+      ..style = PaintingStyle.stroke
+      ..color = circleColorAnimation.value ?? AppColors.pink;
+    canvas.drawCircle(circleOffset, circleSizeAnimation.value, _circlePaint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
+  }
+}
+
+///
+class BubblesPainter extends CustomPainter {
+  ///
+  BubblesPainter({
+    required this.animationController,
+    double splashRadius = 20,
+    this.bubblesRadius = 2,
+  }) : super(repaint: animationController) {
+    circleOffset = Offset(splashRadius, splashRadius);
+
+    final radiantStep = 2 * pi / bubbleColors.length;
+    bubblesAnimation = List.generate(bubbleColors.length, (i) {
       return Tween<Offset>(
         begin: circleOffset,
         end: Offset(
@@ -197,11 +236,11 @@ class LikePainter extends CustomPainter {
 
     final bubblesRadiusTweenSequence = TweenSequence<double>([
       TweenSequenceItem(
-        tween: Tween<double>(begin: 0, end: outerBubblesRadius),
+        tween: Tween<double>(begin: 0, end: bubblesRadius),
         weight: 80,
       ),
       TweenSequenceItem(
-        tween: Tween<double>(begin: outerBubblesRadius, end: 0),
+        tween: Tween<double>(begin: bubblesRadius, end: 0),
         weight: 20,
       ),
     ]);
@@ -215,20 +254,18 @@ class LikePainter extends CustomPainter {
   }
 
   final AnimationController animationController;
-  late double circleSize;
+
+  final double bubblesRadius;
+
   late Offset circleOffset;
 
-  late Animation<double> circleSizeAnimation;
-  late Animation<double> circleStrokeAnimation;
-  late Animation<Color?> circleColorAnimation;
-  late List<Animation<Offset>> outerBubblesAnimations;
-  late List<Animation<Offset>> innerBubblesAnimations;
+  late List<Animation<Offset>> bubblesAnimation;
+
   late Animation<double> bubblesRadiusAnimation;
 
-  final Paint _circlePaint = Paint();
   final Paint _bubblesPaint = Paint();
 
-  static const List<Color> outerBubbleColors = [
+  static const List<Color> bubbleColors = [
     Color(0xffE78BC4),
     Color(0xffDF92F9),
     Color(0xffF9B81F),
@@ -238,29 +275,15 @@ class LikePainter extends CustomPainter {
     Color(0xffB2F792),
   ];
 
-  static const double outerBubblesRadius = 3;
-
   @override
   void paint(Canvas canvas, Size size) {
-    for (var i = 0; i < outerBubbleColors.length; i++) {
-      canvas
-        ..drawCircle(
-          outerBubblesAnimations[i].value,
-          bubblesRadiusAnimation.value,
-          _bubblesPaint..color = outerBubbleColors[i],
-        )
-        ..drawCircle(
-          innerBubblesAnimations[i].value,
-          bubblesRadiusAnimation.value * 0.8,
-          _bubblesPaint..color = outerBubbleColors[i],
-        );
+    for (var i = 0; i < bubbleColors.length; i++) {
+      canvas.drawCircle(
+        bubblesAnimation[i].value,
+        bubblesRadiusAnimation.value,
+        _bubblesPaint..color = bubbleColors[i],
+      );
     }
-
-    _circlePaint
-      ..strokeWidth = circleStrokeAnimation.value
-      ..style = PaintingStyle.stroke
-      ..color = circleColorAnimation.value ?? AppColors.pink;
-    canvas.drawCircle(circleOffset, circleSizeAnimation.value, _circlePaint);
   }
 
   @override
