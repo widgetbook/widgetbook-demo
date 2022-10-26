@@ -7,7 +7,7 @@ class AppThemes {
   /// Returns theme data
   static ThemeData getTheme({bool isDark = false}) {
    return ThemeData(
-     brightness: isDark ? Brightness.light : Brightness.dark,
+     brightness: isDark ? Brightness.dark : Brightness.light,
      fontFamily: AppTextStyles.fontFamily,
      primaryColor: AppColors.getMaterialColorFromColor(AppColors.primary),
      scaffoldBackgroundColor: isDark ? AppColors.black : AppColors.white,
