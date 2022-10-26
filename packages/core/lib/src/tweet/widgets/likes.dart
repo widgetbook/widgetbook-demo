@@ -1,14 +1,21 @@
+import 'package:core/core.dart';
 import 'package:core/src/tweet/widgets/like_icon.dart';
+import 'package:core/src/tweet/widgets/metric_text.dart';
 import 'package:flutter/material.dart';
 
+/// Tweet likes icon and metric text widget
 class Likes extends StatefulWidget {
+  /// Creates new instance of [Likes]
   const Likes({
     super.key,
-    this.count = 0,
+    this.metricValue = 0,
     this.iconSize = 15,
   });
 
-  final int count;
+  /// Likes metric value
+  final int metricValue;
+
+  /// Size of likes icon
   final double iconSize;
 
   @override
@@ -50,11 +57,11 @@ class _LikesState extends State<Likes> with SingleTickerProviderStateMixin {
             });
           },
         ),
-        if (widget.count > 0)
-          Text(
-            '${widget.count}',
-            style: Theme.of(context).textTheme.caption,
-          ),
+        MetricText(
+          value: widget.metricValue,
+          isActive: _isActive,
+          activeColor: AppColors.pink,
+        ),
       ],
     );
   }

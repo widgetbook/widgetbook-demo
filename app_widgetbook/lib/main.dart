@@ -23,7 +23,7 @@ class WidgetbookApp extends StatelessWidget {
               isExpanded: true,
               folders: [
                 WidgetbookFolder(
-                  name: 'Like',
+                  name: 'Likes',
                   isExpanded: true,
                   widgets: [
                     WidgetbookComponent(
@@ -61,7 +61,7 @@ class WidgetbookApp extends StatelessWidget {
                           builder: (context) {
                             return Center(
                               child: Likes(
-                                count: context.knobs
+                                metricValue: context.knobs
                                     .slider(
                                       label: 'Likes Count',
                                       description:
@@ -77,6 +77,51 @@ class WidgetbookApp extends StatelessWidget {
                           },
                         ),
                       ],
+                    ),
+                  ],
+                ),
+              ],
+              widgets: [
+                WidgetbookComponent(
+                  name: 'Metric',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) {
+                        return Center(
+                          child: MetricText(
+                            value: context.knobs
+                                .slider(
+                                  label: 'Value',
+                                  min: 0,
+                                  max: 200,
+                                  initialValue: 15,
+                                  divisions: 200 ~/ 5,
+                                )
+                                .toInt(),
+                            isActive: context.knobs.boolean(
+                              label: 'Active',
+                            ),
+                            activeColor: context.knobs.options(
+                              label: 'Active Color',
+                              options: [
+                                const Option(
+                                  label: 'Primary',
+                                  value: AppColors.primary,
+                                ),
+                                const Option(
+                                  label: 'Pink',
+                                  value: AppColors.pink,
+                                ),
+                                const Option(
+                                  label: 'Success',
+                                  value: AppColors.success,
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
                     ),
                   ],
                 ),
