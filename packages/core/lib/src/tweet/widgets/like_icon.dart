@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -144,7 +146,7 @@ class LikePainter extends CustomPainter {
       ),
     );
 
-    final tweenSequence = TweenSequence<double>([
+    final circleStrokeTweenSequence = TweenSequence<double>([
       TweenSequenceItem(
         tween: Tween<double>(begin: 0, end: splashRadius),
         weight: 20,
@@ -155,7 +157,56 @@ class LikePainter extends CustomPainter {
       ),
     ]);
 
-    circleStrokeAnimation = tweenSequence.animate(
+    circleStrokeAnimation = circleStrokeTweenSequence.animate(
+      CurvedAnimation(
+        parent: animationController,
+        curve: Curves.easeInOut,
+      ),
+    );
+
+    final radiantStep = 2 * pi / outerBubbleColors.length;
+    outerBubblesAnimations = List.generate(outerBubbleColors.length, (i) {
+      return Tween<Offset>(
+        begin: circleOffset,
+        end: Offset(
+          circleOffset.dx + sin(i * radiantStep) * (splashRadius * 1.2),
+          circleOffset.dy + cos(i * radiantStep) * (splashRadius * 1.2),
+        ),
+      ).animate(
+        CurvedAnimation(
+          parent: animationController,
+          curve: Curves.easeInOut,
+        ),
+      );
+    });
+
+    innerBubblesAnimations = List.generate(outerBubbleColors.length, (i) {
+      return Tween<Offset>(
+        begin: circleOffset,
+        end: Offset(
+          circleOffset.dx + sin(i * radiantStep) * splashRadius,
+          circleOffset.dy + cos(i * radiantStep) * splashRadius,
+        ),
+      ).animate(
+        CurvedAnimation(
+          parent: animationController,
+          curve: Curves.easeInOut,
+        ),
+      );
+    });
+
+    final bubblesRadiusTweenSequence = TweenSequence<double>([
+      TweenSequenceItem(
+        tween: Tween<double>(begin: 0, end: outerBubblesRadius),
+        weight: 80,
+      ),
+      TweenSequenceItem(
+        tween: Tween<double>(begin: outerBubblesRadius, end: 0),
+        weight: 20,
+      ),
+    ]);
+
+    bubblesRadiusAnimation = bubblesRadiusTweenSequence.animate(
       CurvedAnimation(
         parent: animationController,
         curve: Curves.easeInOut,
@@ -170,12 +221,41 @@ class LikePainter extends CustomPainter {
   late Animation<double> circleSizeAnimation;
   late Animation<double> circleStrokeAnimation;
   late Animation<Color?> circleColorAnimation;
+  late List<Animation<Offset>> outerBubblesAnimations;
+  late List<Animation<Offset>> innerBubblesAnimations;
+  late Animation<double> bubblesRadiusAnimation;
 
   final Paint _circlePaint = Paint();
-  final Path _path = Path();
+  final Paint _bubblesPaint = Paint();
+
+  static const List<Color> outerBubbleColors = [
+    Color(0xffE78BC4),
+    Color(0xffDF92F9),
+    Color(0xffF9B81F),
+    Color(0xffE5B58C),
+    Color(0xff1EA0F2),
+    Color(0xffB2F792),
+    Color(0xffB2F792),
+  ];
+
+  static const double outerBubblesRadius = 3;
 
   @override
   void paint(Canvas canvas, Size size) {
+    for (var i = 0; i < outerBubbleColors.length; i++) {
+      canvas
+        ..drawCircle(
+          outerBubblesAnimations[i].value,
+          bubblesRadiusAnimation.value,
+          _bubblesPaint..color = outerBubbleColors[i],
+        )
+        ..drawCircle(
+          innerBubblesAnimations[i].value,
+          bubblesRadiusAnimation.value * 0.8,
+          _bubblesPaint..color = outerBubbleColors[i],
+        );
+    }
+
     _circlePaint
       ..strokeWidth = circleStrokeAnimation.value
       ..style = PaintingStyle.stroke
