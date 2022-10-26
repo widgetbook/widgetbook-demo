@@ -30,6 +30,12 @@ class AppColors {
   /// App success color
   static const Color success = Color(0xff59BC6C);
 
+  /// App pink color
+  static const Color pink = Color(0xffCE395F);
+
+  /// App pink light color
+  static const Color pinkLight = Color(0xffe699ae);
+
   /// Returns a shade of a [Color] from a double value
   ///
   /// The 'darker' boolean determines whether the shade

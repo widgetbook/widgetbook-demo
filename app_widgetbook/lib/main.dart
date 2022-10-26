@@ -17,6 +17,72 @@ class WidgetbookApp extends StatelessWidget {
         WidgetbookCategory(
           name: 'Core',
           isExpanded: true,
+          folders: [
+            WidgetbookFolder(
+              name: 'Tweet',
+              isExpanded: true,
+              folders: [
+                WidgetbookFolder(
+                  name: 'Like',
+                  isExpanded: true,
+                  widgets: [
+                    WidgetbookComponent(
+                      name: 'Like Icon',
+                      isExpanded: true,
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) {
+                            return Center(
+                              child: LikeIcon(
+                                onPressed: () {},
+                                isActive: context.knobs.boolean(
+                                  label: 'Active',
+                                  initialValue: false,
+                                ),
+                                size: context.knobs.slider(
+                                  label: 'Icon Size',
+                                  initialValue: 30,
+                                  min: 15,
+                                  max: 50,
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'Likes',
+                      isExpanded: true,
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) {
+                            return Center(
+                              child: Likes(
+                                count: context.knobs
+                                    .slider(
+                                      label: 'Likes Count',
+                                      description:
+                                          'Note: likes should be more than 0 to be displayed',
+                                      initialValue: 0,
+                                      min: 0,
+                                      divisions: 2500 ~/ 5,
+                                      max: 2500,
+                                    )
+                                    .toInt(),
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
           widgets: [
             WidgetbookComponent(
               name: 'Button',
