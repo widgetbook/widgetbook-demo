@@ -15,7 +15,6 @@ class TweetMetric extends StatefulWidget {
     required this.icon,
     this.activeIcon,
     this.activeColor = AppColors.primary,
-    this.iconButton,
     required this.onChanged,
   });
 
@@ -36,9 +35,6 @@ class TweetMetric extends StatefulWidget {
   /// Color of icon and metric value text when active
   final Color activeColor;
 
-  /// Optional widget to replace the [AppIconButton]
-  final Widget? iconButton;
-
   /// Callback to notify parent widget of active/inactive change
   final ValueChanged<bool> onChanged;
 
@@ -55,10 +51,9 @@ class _TweetMetricState extends State<TweetMetric>
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        widget.iconButton ??
         AppIconButton(
           isActive: _isActive,
-              size: widget.iconSize,
+          size: widget.iconSize,
           icon: widget.icon,
           activeIcon: widget.activeIcon,
           hoverColor: widget.activeColor,
