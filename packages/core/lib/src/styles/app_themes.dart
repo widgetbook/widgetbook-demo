@@ -21,6 +21,9 @@ class AppThemes {
          textStyle: AppTextStyles.button,
        ),
      ),
+     iconTheme: IconThemeData(
+       color: isDark ? AppColors.whiteLight : AppColors.textLight,
+     ),
      textTheme: const TextTheme(
        headline1: AppTextStyles.h1,
        headline2: AppTextStyles.h2,

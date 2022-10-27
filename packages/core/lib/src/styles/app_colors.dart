@@ -24,6 +24,9 @@ class AppColors {
   /// App white color
   static const Color white = Color(0xffffffff);
 
+  /// App white color with 50% opacity
+  static const Color whiteLight = Color(0x88ffffff);
+
   /// App bg color
   static const Color bg = Color(0xffEFF3F4);
 

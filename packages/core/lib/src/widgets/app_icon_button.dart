@@ -13,7 +13,7 @@ class AppIconButton extends StatefulWidget {
     super.key,
     this.size = 20,
     this.hoverColor = AppColors.primary,
-    this.color = AppColors.textLight,
+    this.color,
     this.activeColor = AppColors.primary,
     required this.icon,
     this.activeIcon,
@@ -39,7 +39,7 @@ class AppIconButton extends StatefulWidget {
   ///
   /// Defaults to [AppColors.textLight]
   /// Todo: change for dark theme
-  final Color color;
+  final Color? color;
 
   /// Color used when [isActive] is true
   ///
@@ -94,10 +94,10 @@ class _AppIconButtonState extends State<AppIconButton> {
             highlightColor: widget.hoverColor.withOpacity(0.1),
             hoverColor: widget.hoverColor.withOpacity(0.1),
             padding: const EdgeInsets.all(10),
-            color: widget.isActive
-                ? widget.activeColor
-                : _isHovered
-                    ? widget.hoverColor
+            color: _isHovered
+                ? widget.hoverColor
+                : widget.isActive
+                    ? widget.activeColor
                     : widget.color,
             icon: widget.isActive && widget.activeIcon != null
                 ? widget.activeIcon!
