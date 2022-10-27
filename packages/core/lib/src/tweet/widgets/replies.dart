@@ -1,4 +1,3 @@
-import 'package:core/src/styles/app_colors.dart';
 import 'package:core/src/tweet/widgets/tweet_metric.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +22,6 @@ class Replies extends StatelessWidget {
       // Todo: change to design icons
       icon: const Icon(Icons.mode_comment_outlined),
       activeIcon: const Icon(Icons.mode_comment),
-      activeColor: AppColors.success,
       onChanged: (value) {
         // Todo: implement reply action
       },
