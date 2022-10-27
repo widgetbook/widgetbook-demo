@@ -23,7 +23,7 @@ class WidgetbookApp extends StatelessWidget {
               isExpanded: true,
               folders: [
                 WidgetbookFolder(
-                  name: 'Likes',
+                  name: 'Metrics',
                   isExpanded: true,
                   widgets: [
                     WidgetbookComponent(
@@ -78,143 +78,145 @@ class WidgetbookApp extends StatelessWidget {
                         ),
                       ],
                     ),
+                    WidgetbookComponent(
+                      name: 'Metric',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) {
+                            return Center(
+                              child: MetricText(
+                                value: context.knobs
+                                    .slider(
+                                      label: 'Value',
+                                      min: 0,
+                                      max: 200,
+                                      initialValue: 15,
+                                      divisions: 200 ~/ 5,
+                                    )
+                                    .toInt(),
+                                isActive: context.knobs.boolean(
+                                  label: 'Active',
+                                ),
+                                activeColor: context.knobs.options(
+                                  label: 'Active Color',
+                                  options: [
+                                    const Option(
+                                      label: 'Primary',
+                                      value: AppColors.primary,
+                                    ),
+                                    const Option(
+                                      label: 'Pink',
+                                      value: AppColors.pink,
+                                    ),
+                                    const Option(
+                                      label: 'Success',
+                                      value: AppColors.success,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ],
+            ),
+            WidgetbookFolder(
+              name: 'UI Elements',
+              isExpanded: true,
               widgets: [
                 WidgetbookComponent(
-                  name: 'Metric',
+                  name: 'Button',
+                  isExpanded: true,
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Primary Button',
+                      builder: (context) => Button.primary(
+                        label: context.knobs.text(
+                          label: 'Label',
+                          initialValue: 'Button',
+                        ),
+                        onPressed: () {},
+                      ),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Secondary Button',
+                      builder: (context) => Button.secondary(
+                        label: context.knobs.text(
+                          label: 'Label',
+                          initialValue: 'Button',
+                        ),
+                        onPressed: () {},
+                      ),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Primary Outline Button',
+                      builder: (context) => Button.primaryOutline(
+                        label: context.knobs.text(
+                          label: 'Label',
+                          initialValue: 'Button',
+                        ),
+                        onPressed: () {},
+                      ),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Secondary Outline Button',
+                      builder: (context) => Button.secondaryOutline(
+                        label: context.knobs.text(
+                          label: 'Label',
+                          initialValue: 'Button',
+                        ),
+                        onPressed: () {},
+                      ),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'Avatar',
+                  isExpanded: true,
                   useCases: [
                     WidgetbookUseCase(
                       name: 'Default',
-                      builder: (context) {
-                        return Center(
-                          child: MetricText(
-                            value: context.knobs
-                                .slider(
-                                  label: 'Value',
-                                  min: 0,
-                                  max: 200,
-                                  initialValue: 15,
-                                  divisions: 200 ~/ 5,
-                                )
-                                .toInt(),
-                            isActive: context.knobs.boolean(
-                              label: 'Active',
-                            ),
-                            activeColor: context.knobs.options(
-                              label: 'Active Color',
-                              options: [
-                                const Option(
-                                  label: 'Primary',
-                                  value: AppColors.primary,
-                                ),
-                                const Option(
-                                  label: 'Pink',
-                                  value: AppColors.pink,
-                                ),
-                                const Option(
-                                  label: 'Success',
-                                  value: AppColors.success,
-                                ),
-                              ],
-                            ),
-                          ),
-                        );
-                      },
+                      builder: (context) => Avatar(
+                        imageUrl: context.knobs.text(
+                          label: 'Image URL',
+                          initialValue:
+                              'https://pbs.twimg.com/profile_images/1446021572960133120/UZYljO51_400x400.jpg',
+                        ),
+                      ),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Small',
+                      builder: (context) => Avatar.small(
+                        imageUrl: context.knobs.text(
+                          label: 'Image URL',
+                          initialValue: '',
+                        ),
+                      ),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Smaller',
+                      builder: (context) => Avatar.smaller(
+                        imageUrl: context.knobs.text(
+                          label: 'Image URL',
+                          initialValue: '',
+                        ),
+                      ),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Smallest',
+                      builder: (context) => Avatar.smallest(
+                        imageUrl: context.knobs.text(
+                          label: 'Image URL',
+                          initialValue: '',
+                        ),
+                      ),
                     ),
                   ],
-                ),
-              ],
-            ),
-          ],
-          widgets: [
-            WidgetbookComponent(
-              name: 'Button',
-              isExpanded: true,
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'Primary Button',
-                  builder: (context) => Button.primary(
-                    label: context.knobs.text(
-                      label: 'Label',
-                      initialValue: 'Button',
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-                WidgetbookUseCase(
-                  name: 'Secondary Button',
-                  builder: (context) => Button.secondary(
-                    label: context.knobs.text(
-                      label: 'Label',
-                      initialValue: 'Button',
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-                WidgetbookUseCase(
-                  name: 'Primary Outline Button',
-                  builder: (context) => Button.primaryOutline(
-                    label: context.knobs.text(
-                      label: 'Label',
-                      initialValue: 'Button',
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-                WidgetbookUseCase(
-                  name: 'Secondary Outline Button',
-                  builder: (context) => Button.secondaryOutline(
-                    label: context.knobs.text(
-                      label: 'Label',
-                      initialValue: 'Button',
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-              ],
-            ),
-            WidgetbookComponent(
-              name: 'Avatar',
-              isExpanded: true,
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'Default',
-                  builder: (context) => Avatar(
-                    imageUrl: context.knobs.text(
-                      label: 'Image URL',
-                      initialValue:
-                          'https://pbs.twimg.com/profile_images/1446021572960133120/UZYljO51_400x400.jpg',
-                    ),
-                  ),
-                ),
-                WidgetbookUseCase(
-                  name: 'Small',
-                  builder: (context) => Avatar.small(
-                    imageUrl: context.knobs.text(
-                      label: 'Image URL',
-                      initialValue: '',
-                    ),
-                  ),
-                ),
-                WidgetbookUseCase(
-                  name: 'Smaller',
-                  builder: (context) => Avatar.smaller(
-                    imageUrl: context.knobs.text(
-                      label: 'Image URL',
-                      initialValue: '',
-                    ),
-                  ),
-                ),
-                WidgetbookUseCase(
-                  name: 'Smallest',
-                  builder: (context) => Avatar.smallest(
-                    imageUrl: context.knobs.text(
-                      label: 'Image URL',
-                      initialValue: '',
-                    ),
-                  ),
                 ),
               ],
             ),
@@ -231,6 +233,11 @@ class WidgetbookApp extends StatelessWidget {
           data: AppThemes.getTheme(isDark: true),
         ),
       ],
+      useCaseBuilder: (BuildContext context, Widget child) {
+        return Center(
+          child: child,
+        );
+      },
       appInfo: AppInfo(name: 'Widgetbook Demo App'),
       textScaleFactors: [1, 1.5, 2],
     );
