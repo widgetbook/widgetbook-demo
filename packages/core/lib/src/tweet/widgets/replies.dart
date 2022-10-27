@@ -22,26 +22,8 @@ class Replies extends StatefulWidget {
   State<Replies> createState() => _RepliesState();
 }
 
-class _RepliesState extends State<Replies>
-    with SingleTickerProviderStateMixin {
+class _RepliesState extends State<Replies> {
   bool _isActive = false;
-
-  late final AnimationController animationController;
-
-  @override
-  void initState() {
-    animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 600),
-    );
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    animationController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
