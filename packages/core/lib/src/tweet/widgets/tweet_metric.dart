@@ -36,7 +36,7 @@ class TweetMetric extends StatefulWidget {
   final Color activeColor;
 
   /// Callback to notify parent widget of active/inactive change
-  final ValueChanged<bool> onChanged;
+  final ValueChanged<bool>? onChanged;
 
   @override
   State<TweetMetric> createState() => _TweetMetricState();
@@ -62,7 +62,7 @@ class _TweetMetricState extends State<TweetMetric>
             setState(() {
               _isActive = !_isActive;
             });
-            widget.onChanged(_isActive);
+            widget.onChanged?.call(_isActive);
           },
         ),
         MetricText(

@@ -9,6 +9,7 @@ class Retweets extends StatelessWidget {
     super.key,
     this.metricValue = 0,
     this.iconSize = 15,
+    this.onChanged,
   });
 
   /// Retweets metric value
@@ -16,6 +17,9 @@ class Retweets extends StatelessWidget {
 
   /// Size of retweets icon
   final double iconSize;
+
+  /// Callback to notify parent widget of active/inactive change
+  final ValueChanged<bool>? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +30,7 @@ class Retweets extends StatelessWidget {
       activeIcon: const Icon(Icons.repeat),
       iconSize: iconSize,
       activeColor: AppColors.success,
-      onChanged: (value) {
-        // Todo: implement retweet action
-      },
+      onChanged: onChanged,
     );
   }
 }
