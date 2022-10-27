@@ -34,7 +34,7 @@ class WidgetbookApp extends StatelessWidget {
                           name: 'Default',
                           builder: (context) {
                             return Center(
-                              child: LikeIcon(
+                              child: LikeIconButton(
                                 onPressed: () {},
                                 isActive: context.knobs.boolean(
                                   label: 'Active',

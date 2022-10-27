@@ -2,12 +2,14 @@ import 'dart:math';
 
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
+/// Animated icon button widget for the like metric of a tweet
 ///
-class LikeIcon extends StatefulWidget {
-  ///
-  LikeIcon({
+/// Mainly used within the [Likes] widget next to a
+/// [MetricText] widget for the number of likes
+class LikeIconButton extends StatefulWidget {
+  /// Creates a new instance of [LikeIconButton]
+  const LikeIconButton({
     super.key,
     this.isActive = false,
     this.onPressed,
@@ -15,21 +17,24 @@ class LikeIcon extends StatefulWidget {
     this.animationController,
   });
 
+  /// Indicated if icon button is clicked by the user
   final bool isActive;
+
+  /// Optional animation controller provided by the parent
   final AnimationController? animationController;
 
+  /// Callback for [AppIconButton.onPressed]
   final VoidCallback? onPressed;
 
+  /// The icon size for [AppIconButton.size]
   final double size;
 
   @override
-  State<LikeIcon> createState() => _LikeIconState();
+  State<LikeIconButton> createState() => _LikeIconButtonState();
 }
 
-class _LikeIconState extends State<LikeIcon>
+class _LikeIconButtonState extends State<LikeIconButton>
     with SingleTickerProviderStateMixin {
-  bool _isHovered = false;
-
   late final AnimationController animationController;
 
   @override
@@ -51,7 +56,7 @@ class _LikeIconState extends State<LikeIcon>
   }
 
   @override
-  void didUpdateWidget(covariant LikeIcon oldWidget) {
+  void didUpdateWidget(covariant LikeIconButton oldWidget) {
     if (oldWidget.isActive != widget.isActive) {
       if (widget.isActive) {
         animationController.forward().then((_) {
@@ -65,75 +70,49 @@ class _LikeIconState extends State<LikeIcon>
   @override
   Widget build(BuildContext context) {
     final splashRadius = widget.size / 2 + widget.size * 0.7;
+    final iconButtonSize = splashRadius * 2;
     return SizedBox(
-      width: splashRadius * 2,
-      height: splashRadius * 2,
+      width: iconButtonSize,
+      height: iconButtonSize,
       child: Stack(
         children: [
-          SizedBox(
-            width: splashRadius * 2,
-            height: splashRadius * 2,
-            child: Theme(
-              data: Theme.of(context).copyWith(
-                splashFactory: NoSplash.splashFactory,
+          AppIconButton(
+            activeColor: AppColors.pink,
+            isActive: widget.isActive,
+            hoverColor: AppColors.pink,
+            size: widget.size,
+            onPressed: widget.onPressed,
+            icon: AnimatedCrossFade(
+              duration: const Duration(milliseconds: 100),
+              crossFadeState: widget.isActive
+                  ? CrossFadeState.showSecond
+                  : CrossFadeState.showFirst,
+              firstChild: AnimatedOpacity(
+                opacity: widget.isActive ? 0 : 1,
+                duration: const Duration(milliseconds: 100),
+                child: const Icon(Icons.favorite_border_outlined),
               ),
-              child: MouseRegion(
-                onEnter: (PointerEnterEvent event) {
-                  setState(() {
-                    _isHovered = true;
-                  });
-                },
-                onExit: (PointerExitEvent event) {
-                  setState(() {
-                    _isHovered = false;
-                  });
-                },
-                // Todo: extract IconButton to separate widget
-                child: IconButton(
-                  onPressed: widget.onPressed,
-                  splashRadius: splashRadius,
-                  iconSize: widget.size,
-                  splashColor: AppColors.pink.withOpacity(0.1),
-                  highlightColor: AppColors.pink.withOpacity(0.1),
-                  hoverColor: AppColors.pink.withOpacity(0.1),
-                  padding: const EdgeInsets.all(10),
-                  color: widget.isActive || _isHovered
-                      ? AppColors.pink
-                      : AppColors.textLight,
-                  icon: AnimatedCrossFade(
-                    duration: const Duration(milliseconds: 100),
-                    crossFadeState: widget.isActive
-                        ? CrossFadeState.showSecond
-                        : CrossFadeState.showFirst,
-                    firstChild: AnimatedOpacity(
-                      opacity: widget.isActive ? 0 : 1,
-                      duration: const Duration(milliseconds: 100),
-                      child: const Icon(Icons.favorite_border_outlined),
-                    ),
-                    secondChild: const Icon(Icons.favorite),
-                  ),
-                ),
-              ),
+              secondChild: const Icon(Icons.favorite),
             ),
           ),
           Transform.translate(
             offset: const Offset(-5, -5),
             child: CustomPaint(
-              painter: BubblesPainter(
+              painter: LikeBubblesPainter(
                 animationController: animationController,
-                splashRadius: splashRadius + 5,
+                canvasSize: iconButtonSize + 10,
                 bubblesRadius: 3,
               ),
             ),
           ),
           CustomPaint(
-            foregroundPainter: LikePainter(
+            foregroundPainter: LikeCirclePainter(
               animationController: animationController,
-              splashRadius: splashRadius,
+              canvasSize: iconButtonSize,
             ),
-            painter: BubblesPainter(
+            painter: LikeBubblesPainter(
               animationController: animationController,
-              splashRadius: splashRadius,
+              canvasSize: iconButtonSize,
             ),
           ),
         ],
@@ -142,17 +121,17 @@ class _LikeIconState extends State<LikeIcon>
   }
 }
 
-///
-class LikePainter extends CustomPainter {
-  ///
-  LikePainter({
+/// Custom painter for the animated circle of the [LikeIconButton]
+class LikeCirclePainter extends CustomPainter {
+  /// Creates a new instance of [LikeCirclePainter]
+  LikeCirclePainter({
     required this.animationController,
-    double splashRadius = 20,
+    double canvasSize = 40,
   }) : super(repaint: animationController) {
-    circleSize = splashRadius * 0.7;
-    circleOffset = Offset(splashRadius, splashRadius);
+    circleRadius = canvasSize / 2 * 0.7;
+    circleOffset = Offset(canvasSize / 2, canvasSize / 2);
 
-    circleSizeAnimation = Tween<double>(begin: 0, end: circleSize).animate(
+    circleRadiusAnimation = Tween<double>(begin: 0, end: circleRadius).animate(
       CurvedAnimation(parent: animationController, curve: Curves.easeInOut),
     );
 
@@ -166,11 +145,11 @@ class LikePainter extends CustomPainter {
 
     final circleStrokeTweenSequence = TweenSequence<double>([
       TweenSequenceItem(
-        tween: Tween<double>(begin: 0, end: splashRadius),
+        tween: Tween<double>(begin: 0, end: circleRadius),
         weight: 20,
       ),
       TweenSequenceItem(
-        tween: Tween<double>(begin: splashRadius, end: 0),
+        tween: Tween<double>(begin: circleRadius, end: 0),
         weight: 80,
       ),
     ]);
@@ -183,12 +162,30 @@ class LikePainter extends CustomPainter {
     );
   }
 
+  /// Animation controller responsible for repainting this painter
   final AnimationController animationController;
-  late double circleSize;
+
+  /// The radius of the circle
+  late double circleRadius;
+
+  /// The x and y location of the circle in the canvas
   late Offset circleOffset;
 
-  late Animation<double> circleSizeAnimation;
+  /// Animation responsible for animating the radius
+  /// of the circle from 0 to [circleRadius]
+  late Animation<double> circleRadiusAnimation;
+
+  /// Animation responsible for animating the stroke
+  /// of the circle from 0 to [circleRadius]
+  ///
+  /// Giving the circle a stroke width equal to its radius
+  /// gives the effect of a filled circle but also with the option
+  /// of animating this stroke to achieve the desired
+  /// Twitter like animation circle effect
   late Animation<double> circleStrokeAnimation;
+
+  /// Animation responsible for animating the color of the
+  /// circle's stroke from [AppColors.pink] to [AppColors.pinkLight]
   late Animation<Color?> circleColorAnimation;
 
   final Paint _circlePaint = Paint();
@@ -199,7 +196,7 @@ class LikePainter extends CustomPainter {
       ..strokeWidth = circleStrokeAnimation.value
       ..style = PaintingStyle.stroke
       ..color = circleColorAnimation.value ?? AppColors.pink;
-    canvas.drawCircle(circleOffset, circleSizeAnimation.value, _circlePaint);
+    canvas.drawCircle(circleOffset, circleRadiusAnimation.value, _circlePaint);
   }
 
   @override
@@ -208,23 +205,23 @@ class LikePainter extends CustomPainter {
   }
 }
 
-///
-class BubblesPainter extends CustomPainter {
-  ///
-  BubblesPainter({
+/// Custom painter for the animated bubbles of the [LikeIconButton]
+class LikeBubblesPainter extends CustomPainter {
+  /// Creates a new instance of [LikeBubblesPainter]
+  LikeBubblesPainter({
     required this.animationController,
-    double splashRadius = 20,
+    double canvasSize = 40,
     this.bubblesRadius = 2,
   }) : super(repaint: animationController) {
-    circleOffset = Offset(splashRadius, splashRadius);
+    final circleOffset = Offset(canvasSize / 2, canvasSize / 2);
 
     final radiantStep = 2 * pi / bubbleColors.length;
     bubblesAnimation = List.generate(bubbleColors.length, (i) {
       return Tween<Offset>(
         begin: circleOffset,
         end: Offset(
-          circleOffset.dx + sin(i * radiantStep) * splashRadius,
-          circleOffset.dy + cos(i * radiantStep) * splashRadius,
+          circleOffset.dx + sin(i * radiantStep) * canvasSize / 2,
+          circleOffset.dy + cos(i * radiantStep) * canvasSize / 2,
         ),
       ).animate(
         CurvedAnimation(
@@ -253,18 +250,24 @@ class BubblesPainter extends CustomPainter {
     );
   }
 
+  /// Animation controller responsible for repainting this painter
   final AnimationController animationController;
 
+  /// The radius of each bubble circle
   final double bubblesRadius;
 
-  late Offset circleOffset;
-
+  /// The animation responsible for animating each bubble circle offset
+  /// stating from the center of the canvas and moving further away
+  /// such that at the end all the bubbles are positioned in a single circle
   late List<Animation<Offset>> bubblesAnimation;
 
+  /// The animation responsible for animating the bubbles radius value
+  /// from 0 to [bubblesRadius] and back to 0 via a [TweenSequence]
+  /// to achieve the effect of the bubbles showing and then disappearing
+  /// as they move further from the center
   late Animation<double> bubblesRadiusAnimation;
 
-  final Paint _bubblesPaint = Paint();
-
+  /// List of bubble colors
   static const List<Color> bubbleColors = [
     Color(0xffE78BC4),
     Color(0xffDF92F9),
@@ -274,6 +277,8 @@ class BubblesPainter extends CustomPainter {
     Color(0xffB2F792),
     Color(0xffB2F792),
   ];
+
+  final Paint _bubblesPaint = Paint();
 
   @override
   void paint(Canvas canvas, Size size) {

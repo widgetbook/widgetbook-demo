@@ -1,5 +1,5 @@
 import 'package:core/src/styles/app_colors.dart';
-import 'package:core/src/tweet/widgets/like_icon.dart';
+import 'package:core/src/tweet/widgets/like_icon_button.dart';
 import 'package:core/src/tweet/widgets/metric_text.dart';
 import 'package:flutter/material.dart';
 
@@ -47,7 +47,7 @@ class _LikesState extends State<Likes> with SingleTickerProviderStateMixin {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        LikeIcon(
+        LikeIconButton(
           animationController: animationController,
           isActive: _isActive,
           size: widget.iconSize,
