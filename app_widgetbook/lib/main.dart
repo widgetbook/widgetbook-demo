@@ -79,6 +79,32 @@ class WidgetbookApp extends StatelessWidget {
                       ],
                     ),
                     WidgetbookComponent(
+                      name: 'Replies',
+                      isExpanded: true,
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) {
+                            return Center(
+                              child: Replies(
+                                metricValue: context.knobs
+                                    .slider(
+                                      label: 'Replies Count',
+                                      description:
+                                          'Note: replies should be more than 0 to be displayed',
+                                      initialValue: 0,
+                                      min: 0,
+                                      divisions: 2500 ~/ 5,
+                                      max: 2500,
+                                    )
+                                    .toInt(),
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
                       name: 'Metric',
                       useCases: [
                         WidgetbookUseCase(
