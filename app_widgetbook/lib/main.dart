@@ -232,6 +232,7 @@ class WidgetbookApp extends StatelessWidget {
         ),
       ],
       appInfo: AppInfo(name: 'Widgetbook Demo App'),
+      textScaleFactors: [1, 1.5, 2],
     );
   }
 }
