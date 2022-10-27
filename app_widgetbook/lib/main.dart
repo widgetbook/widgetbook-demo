@@ -176,6 +176,47 @@ class WidgetbookApp extends StatelessWidget {
                   ],
                 ),
                 WidgetbookComponent(
+                  name: 'AppIconButton',
+                  isExpanded: true,
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => AppIconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.home_filled),
+                        isActive: context.knobs.boolean(label: 'Active'),
+                        color: context.knobs.options<Color?>(
+                          label: 'Color',
+                          description:
+                              'Icon color for inactive and non-hovered states (defaults to Text Light color)',
+                          options: colorOptions,
+                        ),
+                        activeColor: context.knobs.options<Color?>(
+                              label: 'Active Color',
+                              description:
+                                  'Icon color for active state (defaults to Primary color)',
+                              options: colorOptions,
+                            ) ??
+                            AppColors.primary,
+                        hoverColor: context.knobs.options<Color?>(
+                              label: 'Hover Color',
+                              description:
+                                  'Icon & highlight color for hover state (defaults to Primary color)',
+                              options: colorOptions,
+                            ) ??
+                            AppColors.primary,
+                        size: context.knobs.slider(
+                          label: 'Icon Size',
+                          min: 15,
+                          max: 50,
+                          divisions: 50 - 15,
+                          initialValue: 20,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
                   name: 'Avatar',
                   isExpanded: true,
                   useCases: [
@@ -243,3 +284,34 @@ class WidgetbookApp extends StatelessWidget {
     );
   }
 }
+
+const List<Option<Color?>> colorOptions = [
+  Option(
+    label: 'Default',
+    value: null,
+  ),
+  Option(
+    label: 'Text Light',
+    value: AppColors.textLight,
+  ),
+  Option(
+    label: 'White',
+    value: AppColors.whiteLight,
+  ),
+  Option(
+    label: 'Primary',
+    value: AppColors.primary,
+  ),
+  Option(
+    label: 'Secondary',
+    value: AppColors.secondary,
+  ),
+  Option(
+    label: 'Success',
+    value: AppColors.success,
+  ),
+  Option(
+    label: 'Pink',
+    value: AppColors.pink,
+  ),
+];
