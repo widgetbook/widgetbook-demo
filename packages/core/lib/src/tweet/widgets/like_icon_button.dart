@@ -14,14 +14,10 @@ class LikeIconButton extends StatefulWidget {
     this.isActive = false,
     this.onPressed,
     this.size = 30,
-    this.animationController,
   });
 
   /// Indicated if icon button is clicked by the user
   final bool isActive;
-
-  /// Optional animation controller provided by the parent
-  final AnimationController? animationController;
 
   /// Callback for [AppIconButton.onPressed]
   final VoidCallback? onPressed;
@@ -39,19 +35,16 @@ class _LikeIconButtonState extends State<LikeIconButton>
 
   @override
   void initState() {
-    animationController = widget.animationController ??
-        AnimationController(
-          vsync: this,
-          duration: const Duration(milliseconds: 600),
-        );
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 600),
+    );
     super.initState();
   }
 
   @override
   void dispose() {
-    if (widget.animationController == null) {
-      animationController.dispose();
-    }
+    animationController.dispose();
     super.dispose();
   }
 
