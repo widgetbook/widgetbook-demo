@@ -1,4 +1,4 @@
-import 'package:core/core.dart';
+import 'package:core/src/styles/app_colors.dart';
 import 'package:core/src/tweet/widgets/like_icon.dart';
 import 'package:core/src/tweet/widgets/metric_text.dart';
 import 'package:flutter/material.dart';
