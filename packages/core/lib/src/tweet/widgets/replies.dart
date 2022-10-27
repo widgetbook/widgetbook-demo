@@ -19,9 +19,11 @@ class Replies extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TweetMetric(
+      metricValue: metricValue,
       // Todo: change to design icons
       icon: const Icon(Icons.mode_comment_outlined),
       activeIcon: const Icon(Icons.mode_comment),
+      iconSize: iconSize,
       onChanged: (value) {
         // Todo: implement reply action
       },
