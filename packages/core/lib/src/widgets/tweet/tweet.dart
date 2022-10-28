@@ -5,3 +5,4 @@ export './replies.dart';
 export './retweets.dart';
 export './tweet_actions.dart';
 export './tweet_metric.dart';
+export './detailed_tweet_metrics.dart';

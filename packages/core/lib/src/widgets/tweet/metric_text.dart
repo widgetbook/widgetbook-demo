@@ -12,6 +12,7 @@ class MetricText extends StatefulWidget {
     this.value = 0,
     this.isActive = false,
     this.activeColor = AppColors.primary,
+    this.textStyle,
   });
 
   /// Metric value
@@ -22,6 +23,9 @@ class MetricText extends StatefulWidget {
 
   /// Color of the text when active
   final Color activeColor;
+
+  /// Text style of the metric value
+  final TextStyle? textStyle;
 
   @override
   State<MetricText> createState() => _MetricTextState();
@@ -44,7 +48,7 @@ class _MetricTextState extends State<MetricText> {
               opacity: widget.value == 0 ? 0 : 1,
               child: Text(
                 NumberFormat.compact().format(value),
-                style: Theme.of(context).textTheme.caption,
+                style: widget.textStyle ?? Theme.of(context).textTheme.caption,
               ),
             ),
           ),
@@ -54,10 +58,11 @@ class _MetricTextState extends State<MetricText> {
             curve: Curves.easeInOut,
             child: Text(
               NumberFormat.compact().format(nextValue),
-              style: Theme.of(context)
-                  .textTheme
-                  .caption!
-                  .copyWith(color: widget.activeColor),
+              style: widget.textStyle ??
+                  Theme.of(context)
+                      .textTheme
+                      .caption!
+                      .copyWith(color: widget.activeColor),
             ),
           ),
         ],

@@ -79,6 +79,7 @@ class WidgetbookApp extends StatelessWidget {
                           name: 'Default',
                           builder: (context) {
                             return Replies(
+                              onPressed: () {},
                               metricValue: context.knobs
                                   .slider(
                                     label: 'Replies Count',
@@ -203,6 +204,46 @@ class WidgetbookApp extends StatelessWidget {
                               .toInt(),
                           onSharePressed: () {},
                           onRepliesPressed: () {},
+                        );
+                      },
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'Detailed Tweet Metrics',
+                  isExpanded: true,
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) {
+                        return DetailedTweetMetrics(
+                          retweetsCount: context.knobs
+                              .slider(
+                                label: 'Retweets',
+                                min: 0,
+                                max: 25000,
+                                initialValue: 15,
+                                divisions: 25000 ~/ 50,
+                              )
+                              .toInt(),
+                          quoteTweetsCount: context.knobs
+                              .slider(
+                                label: 'Quote Tweets',
+                                min: 0,
+                                max: 25000,
+                                initialValue: 15,
+                                divisions: 25000 ~/ 50,
+                              )
+                              .toInt(),
+                          likesCount: context.knobs
+                              .slider(
+                                label: 'Likes',
+                                min: 0,
+                                max: 25000,
+                                initialValue: 15,
+                                divisions: 25000 ~/ 50,
+                              )
+                              .toInt(),
                         );
                       },
                     ),
