@@ -441,9 +441,6 @@ class WidgetbookApp extends StatelessWidget {
           data: AppThemes.getTheme(isDark: true),
         ),
       ],
-      useCaseBuilder: (BuildContext context, Widget child) {
-        return Center(child: child);
-      },
       appInfo: AppInfo(name: 'Widgetbook Demo App'),
       textScaleFactors: [1, 1.5, 2],
     );
