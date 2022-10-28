@@ -1,5 +1,6 @@
 import 'package:core/src/styles/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 /// Tweet metric text widget
 ///
@@ -29,6 +30,8 @@ class MetricText extends StatefulWidget {
 class _MetricTextState extends State<MetricText> {
   @override
   Widget build(BuildContext context) {
+    final value = widget.value;
+    final nextValue = widget.value + 1;
     return ClipRect(
       child: Stack(
         fit: StackFit.passthrough,
@@ -40,7 +43,7 @@ class _MetricTextState extends State<MetricText> {
             child: Opacity(
               opacity: widget.value == 0 ? 0 : 1,
               child: Text(
-                '${widget.value}',
+                NumberFormat.compact().format(value),
                 style: Theme.of(context).textTheme.caption,
               ),
             ),
@@ -50,7 +53,7 @@ class _MetricTextState extends State<MetricText> {
             offset: Offset(0, widget.isActive ? 0 : 1),
             curve: Curves.easeInOut,
             child: Text(
-              '${widget.value + 1}',
+              NumberFormat.compact().format(nextValue),
               style: Theme.of(context)
                   .textTheme
                   .caption!
