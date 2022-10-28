@@ -1,6 +1,6 @@
 import 'package:core/src/styles/app_colors.dart';
-import 'package:core/src/widgets/tweet/tweet.dart';
 import 'package:core/src/widgets/app_icon_button.dart';
+import 'package:core/src/widgets/tweet/tweet.dart';
 import 'package:flutter/material.dart';
 
 /// Tweet metric with icon and metric text widgets
@@ -16,6 +16,7 @@ class TweetMetric extends StatefulWidget {
     this.activeIcon,
     this.activeColor = AppColors.primary,
     required this.onChanged,
+    this.hasActiveState = true,
   });
 
   /// TweetMetric metric value
@@ -38,6 +39,14 @@ class TweetMetric extends StatefulWidget {
   /// Callback to notify parent widget of active/inactive change
   final ValueChanged<bool>? onChanged;
 
+  /// Indicates if the metric has active state
+  /// in which the [icon] changed to [activeIcon] and
+  /// the color changes to [activeColor]
+  ///
+  /// For example, the [Retweets] metric can have active state
+  /// but the [Replies] can't
+  final bool hasActiveState;
+
   @override
   State<TweetMetric> createState() => _TweetMetricState();
 }
@@ -59,9 +68,11 @@ class _TweetMetricState extends State<TweetMetric>
           hoverColor: widget.activeColor,
           activeColor: widget.activeColor,
           onPressed: () {
-            setState(() {
-              _isActive = !_isActive;
-            });
+            if (widget.hasActiveState) {
+              setState(() {
+                _isActive = !_isActive;
+              });
+            }
             widget.onChanged?.call(_isActive);
           },
         ),

@@ -26,9 +26,9 @@ class Replies extends StatelessWidget {
       metricValue: metricValue,
       // Todo: change to design icons
       icon: const Icon(Icons.mode_comment_outlined),
-      activeIcon: const Icon(Icons.mode_comment),
       iconSize: iconSize,
       onChanged: onChanged,
+      hasActiveState: false,
     );
   }
 }
