@@ -25,7 +25,6 @@ class WidgetbookApp extends StatelessWidget {
               folders: [
                 WidgetbookFolder(
                   name: 'Metrics',
-                  isExpanded: true,
                   widgets: [
                     WidgetbookComponent(
                       name: 'Like Icon',
@@ -163,47 +162,49 @@ class WidgetbookApp extends StatelessWidget {
                         ),
                       ],
                     ),
-                    WidgetbookComponent(
-                      name: 'Tweet Actions',
-                      isExpanded: true,
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) {
-                            return TweetActions(
-                              repliesCount: context.knobs
-                                  .slider(
-                                    label: 'Replies',
-                                    min: 0,
-                                    max: 25000,
-                                    initialValue: 15,
-                                    divisions: 25000 ~/ 50,
-                                  )
-                                  .toInt(),
-                              retweetsCount: context.knobs
-                                  .slider(
-                                    label: 'Retweets',
-                                    min: 0,
-                                    max: 25000,
-                                    initialValue: 15,
-                                    divisions: 25000 ~/ 50,
-                                  )
-                                  .toInt(),
-                              likesCount: context.knobs
-                                  .slider(
-                                    label: 'Likes',
-                                    min: 0,
-                                    max: 25000,
-                                    initialValue: 15,
-                                    divisions: 25000 ~/ 50,
-                                  )
-                                  .toInt(),
-                              onSharePressed: () {},
-                              onRepliesPressed: () {},
-                            );
-                          },
-                        ),
-                      ],
+                  ],
+                ),
+              ],
+              widgets: [
+                WidgetbookComponent(
+                  name: 'Tweet Actions',
+                  isExpanded: true,
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) {
+                        return TweetActions(
+                          repliesCount: context.knobs
+                              .slider(
+                                label: 'Replies',
+                                min: 0,
+                                max: 25000,
+                                initialValue: 15,
+                                divisions: 25000 ~/ 50,
+                              )
+                              .toInt(),
+                          retweetsCount: context.knobs
+                              .slider(
+                                label: 'Retweets',
+                                min: 0,
+                                max: 25000,
+                                initialValue: 15,
+                                divisions: 25000 ~/ 50,
+                              )
+                              .toInt(),
+                          likesCount: context.knobs
+                              .slider(
+                                label: 'Likes',
+                                min: 0,
+                                max: 25000,
+                                initialValue: 15,
+                                divisions: 25000 ~/ 50,
+                              )
+                              .toInt(),
+                          onSharePressed: () {},
+                          onRepliesPressed: () {},
+                        );
+                      },
                     ),
                   ],
                 ),
@@ -301,6 +302,12 @@ class WidgetbookApp extends StatelessWidget {
                     ),
                   ],
                 ),
+              ],
+            ),
+            WidgetbookFolder(
+              name: 'User',
+              isExpanded: true,
+              widgets: [
                 WidgetbookComponent(
                   name: 'Avatar',
                   isExpanded: true,
@@ -341,6 +348,40 @@ class WidgetbookApp extends StatelessWidget {
                           initialValue: '',
                         ),
                       ),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'DisplayName',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) {
+                        return DisplayName(
+                          value: context.knobs.text(
+                            label: 'Value',
+                            description: 'Enter display name',
+                            initialValue: 'John Doe',
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'Username',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) {
+                        return Username(
+                          value: context.knobs.text(
+                            label: 'Value',
+                            description: 'Enter username (Twitter handle)',
+                            initialValue: 'johndoe',
+                          ),
+                        );
+                      },
                     ),
                   ],
                 ),
