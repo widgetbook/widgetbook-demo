@@ -1,4 +1,4 @@
-import 'package:core/core.dart';
+import 'package:core/src/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
