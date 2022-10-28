@@ -1,5 +1,5 @@
 import 'package:core/src/styles/app_colors.dart';
-import 'package:core/src/tweet/widgets/widgets.dart';
+import 'package:core/src/widgets/tweet/tweet.dart';
 import 'package:core/src/widgets/app_icon_button.dart';
 import 'package:flutter/material.dart';
 
