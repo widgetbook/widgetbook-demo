@@ -6,7 +6,9 @@ void main() {
   runApp(const WidgetbookApp());
 }
 
+/// Entry point for the App's Widgetbook
 class WidgetbookApp extends StatelessWidget {
+  /// Creates a new instance of [WidgetbookApp]
   const WidgetbookApp({super.key});
 
   // This widget is the root of your application.
@@ -16,7 +18,6 @@ class WidgetbookApp extends StatelessWidget {
       categories: [
         WidgetbookCategory(
           name: 'Core',
-          isExpanded: true,
           folders: [
             WidgetbookFolder(
               name: 'Tweet',
@@ -36,10 +37,8 @@ class WidgetbookApp extends StatelessWidget {
                             return Center(
                               child: LikeIconButton(
                                 onPressed: () {},
-                                isActive: context.knobs.boolean(
-                                  label: 'Active',
-                                  initialValue: false,
-                                ),
+                                isActive:
+                                    context.knobs.boolean(label: 'Active'),
                                 size: context.knobs.slider(
                                   label: 'Icon Size',
                                   initialValue: 30,
@@ -64,8 +63,8 @@ class WidgetbookApp extends StatelessWidget {
                                 metricValue: context.knobs
                                     .slider(
                                       label: 'Likes Count',
-                                      description:
-                                          'Note: likes should be more than 0 to be displayed',
+                                      description: 'Note: likes should be more'
+                                          ' than 0 to be displayed',
                                       initialValue: 0,
                                       min: 0,
                                       divisions: 2500 ~/ 5,
@@ -187,21 +186,22 @@ class WidgetbookApp extends StatelessWidget {
                         isActive: context.knobs.boolean(label: 'Active'),
                         color: context.knobs.options<Color?>(
                           label: 'Color',
-                          description:
-                              'Icon color for inactive and non-hovered states (defaults to Text Light color)',
+                          description: 'Icon color for inactive and non-hovered'
+                              ' states (defaults to Text Light color)',
                           options: colorOptions,
                         ),
                         activeColor: context.knobs.options<Color?>(
                               label: 'Active Color',
-                              description:
-                                  'Icon color for active state (defaults to Primary color)',
+                              description: 'Icon color for active state'
+                                  ' (defaults to Primary color)',
                               options: colorOptions,
                             ) ??
                             AppColors.primary,
                         hoverColor: context.knobs.options<Color?>(
                               label: 'Hover Color',
                               description:
-                                  'Icon & highlight color for hover state (defaults to Primary color)',
+                                  'Icon & highlight color for hover state'
+                                  ' (defaults to Primary color)',
                               options: colorOptions,
                             ) ??
                             AppColors.primary,
@@ -285,6 +285,7 @@ class WidgetbookApp extends StatelessWidget {
   }
 }
 
+/// List of app color options that can be used with knobs
 const List<Option<Color?>> colorOptions = [
   Option(
     label: 'Default',
