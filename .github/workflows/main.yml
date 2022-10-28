@@ -6,6 +6,10 @@ on:
       - main
 jobs:
   build:
+    defaults:
+      run:
+        working-directory: ./app_widgetbook
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,18 +23,15 @@ jobs:
           channel: stable
 
       - name: Get dependencies
-        working-directory: ./app_widgetbook
         run: flutter pub get
 
       - name: Build Website
-        working-directory: ./app_widgetbook
         run: flutter build web -t lib/main.dart
 
       - name: Install Widgetbook CLI
         run: dart pub global activate widgetbook_cli
 
       - name: Upload Widgetbook
-        working-directory: ./app_widgetbook
         run: |
           widgetbook \
                 --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY }} \
