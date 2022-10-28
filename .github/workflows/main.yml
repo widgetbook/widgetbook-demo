@@ -19,34 +19,22 @@ jobs:
           channel: stable
 
       - name: Get dependencies
+        working-directory: ./app_widgetbook
         run: flutter pub get
 
-      - name: Run build runner
-        run: flutter pub run build_runner build --delete-conflicting-outputs
-
       - name: Build Website
-        run: flutter build web -t lib/main.widgetbook.dart
+        working-directory: ./app_widgetbook
+        run: flutter build web -t lib/main.dart
 
       - name: Install Widgetbook CLI
         run: dart pub global activate widgetbook_cli
 
       - name: Upload Widgetbook
+        working-directory: ./app_widgetbook
         run: |
           widgetbook \
-                --path "./" --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY }} \
-                --branch \
-                $GITHUB_HEAD_REF \
+                --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY }} \
                 --repository \
                 $GITHUB_REPOSITORY \
-                --commit \
-                $GITHUB_SHA \
                 --actor \
-                $GITHUB_ACTOR \
-                --base-branch \
-                $GITHUB_BASE_REF \
-                --base-commit \
-                ${{ github.event.pull_request.base.sha }} \
-                --pr ${{ github.event.number }} \
-                --github-token ${{ secrets.GITHUB_TOKEN }} \
-                --git-provider \
-                "GitHub"
+                $GITHUB_ACTOR
