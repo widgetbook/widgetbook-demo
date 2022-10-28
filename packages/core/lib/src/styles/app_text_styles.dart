@@ -90,6 +90,7 @@ class AppTextStyles {
   static const TextStyle button = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w700,
+    height: 1.05,
   );
 
   /// Text style for Caption text
