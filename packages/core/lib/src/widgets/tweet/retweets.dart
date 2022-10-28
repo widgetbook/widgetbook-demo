@@ -3,13 +3,14 @@ import 'package:core/src/widgets/tweet/tweet_metric.dart';
 import 'package:flutter/material.dart';
 
 /// Tweet retweets icon and metric text widget
-class Retweets extends StatelessWidget {
+class Retweets extends StatefulWidget {
   /// Creates new instance of [Retweets]
   const Retweets({
     super.key,
     this.metricValue = 0,
     this.iconSize = 15,
-    this.onChanged,
+    this.onRetweet,
+    this.onQuoteTweet,
   });
 
   /// Retweets metric value
@@ -18,19 +19,37 @@ class Retweets extends StatelessWidget {
   /// Size of retweets icon
   final double iconSize;
 
-  /// Callback to notify parent widget of active/inactive change
-  final ValueChanged<bool>? onChanged;
+  /// Callback to notify parent widget of Retweet/Undo Retweet actions
+  final ValueChanged<bool>? onRetweet;
+
+  /// Callback to notify parent widget of quote tweet action
+  final VoidCallback? onQuoteTweet;
+
+  @override
+  State<Retweets> createState() => _RetweetsState();
+}
+
+class _RetweetsState extends State<Retweets> {
+  bool _isActive = false;
 
   @override
   Widget build(BuildContext context) {
     return TweetMetric(
-      metricValue: metricValue,
+      isActive: _isActive,
+      metricValue: widget.metricValue,
       // Todo: change to design icons
       icon: const Icon(Icons.repeat),
       activeIcon: const Icon(Icons.repeat),
-      iconSize: iconSize,
+      iconSize: widget.iconSize,
       activeColor: AppColors.success,
-      onChanged: onChanged,
+      onPressed: () {
+        // Todo: This should open a dropdown of "Retweet/Quote Tweet"
+        // Only Retweet activates the metric
+        // Quote Tweet should open a dialog to submit a tweet
+        setState(() {
+          _isActive = !_isActive;
+        });
+      },
     );
   }
 }

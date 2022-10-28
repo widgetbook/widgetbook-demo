@@ -10,6 +10,7 @@ class Likes extends StatefulWidget {
     super.key,
     this.metricValue = 0,
     this.iconSize = 15,
+    this.onLikesChanged,
   });
 
   /// Likes metric value
@@ -17,6 +18,9 @@ class Likes extends StatefulWidget {
 
   /// Size of likes icon
   final double iconSize;
+
+  /// Callback to notify parent widget of like/unlike action
+  final ValueChanged<bool>? onLikesChanged;
 
   @override
   State<Likes> createState() => _LikesState();
@@ -37,6 +41,7 @@ class _LikesState extends State<Likes> with SingleTickerProviderStateMixin {
             setState(() {
               _isActive = !_isActive;
             });
+            widget.onLikesChanged?.call(_isActive);
           },
         ),
         MetricText(

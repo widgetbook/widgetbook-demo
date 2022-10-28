@@ -8,7 +8,7 @@ class Replies extends StatelessWidget {
     super.key,
     this.metricValue = 0,
     this.iconSize = 15,
-    this.onChanged,
+    this.onPressed,
   });
 
   /// Replies metric value
@@ -18,7 +18,7 @@ class Replies extends StatelessWidget {
   final double iconSize;
 
   /// Callback to notify parent widget of active/inactive change
-  final ValueChanged<bool>? onChanged;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +27,7 @@ class Replies extends StatelessWidget {
       // Todo: change to design icons
       icon: const Icon(Icons.mode_comment_outlined),
       iconSize: iconSize,
-      onChanged: onChanged,
-      hasActiveState: false,
+      onPressed: onPressed,
     );
   }
 }

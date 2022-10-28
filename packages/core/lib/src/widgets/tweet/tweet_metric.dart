@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 /// Tweet metric with icon and metric text widgets
 ///
 /// e.g. [Likes], [Replies], [Retweets]
-class TweetMetric extends StatefulWidget {
+class TweetMetric extends StatelessWidget {
   /// Creates new instance of [TweetMetric]
   const TweetMetric({
     super.key,
@@ -15,8 +15,8 @@ class TweetMetric extends StatefulWidget {
     required this.icon,
     this.activeIcon,
     this.activeColor = AppColors.primary,
-    required this.onChanged,
-    this.hasActiveState = true,
+    required this.onPressed,
+    this.isActive = false,
   });
 
   /// TweetMetric metric value
@@ -36,24 +36,12 @@ class TweetMetric extends StatefulWidget {
   /// Color of icon and metric value text when active
   final Color activeColor;
 
-  /// Callback to notify parent widget of active/inactive change
-  final ValueChanged<bool>? onChanged;
+  /// Callback for [AppIconButton.onPressed]
+  final VoidCallback? onPressed;
 
-  /// Indicates if the metric has active state
-  /// in which the [icon] changed to [activeIcon] and
-  /// the color changes to [activeColor]
-  ///
-  /// For example, the [Retweets] metric can have active state
-  /// but the [Replies] can't
-  final bool hasActiveState;
-
-  @override
-  State<TweetMetric> createState() => _TweetMetricState();
-}
-
-class _TweetMetricState extends State<TweetMetric>
-    with SingleTickerProviderStateMixin {
-  bool _isActive = false;
+  /// Indicates if the metric is active
+  /// to change [icon] to [activeIcon] and the color to [activeColor]
+  final bool isActive;
 
   @override
   Widget build(BuildContext context) {
@@ -61,25 +49,18 @@ class _TweetMetricState extends State<TweetMetric>
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         AppIconButton(
-          isActive: _isActive,
-          size: widget.iconSize,
-          icon: widget.icon,
-          activeIcon: widget.activeIcon,
-          hoverColor: widget.activeColor,
-          activeColor: widget.activeColor,
-          onPressed: () {
-            if (widget.hasActiveState) {
-              setState(() {
-                _isActive = !_isActive;
-              });
-            }
-            widget.onChanged?.call(_isActive);
-          },
+          isActive: isActive,
+          size: iconSize,
+          icon: icon,
+          activeIcon: activeIcon,
+          hoverColor: activeColor,
+          activeColor: activeColor,
+          onPressed: onPressed,
         ),
         MetricText(
-          value: widget.metricValue,
-          isActive: _isActive,
-          activeColor: widget.activeColor,
+          value: metricValue,
+          isActive: isActive,
+          activeColor: activeColor,
         ),
       ],
     );
