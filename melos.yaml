@@ -4,3 +4,9 @@ repository: https://github.com/widgetbook/widgetbook-demo
 packages:
   - packages/**
   - app_widgetbook/**
+  - '*'
+
+command:
+  version:
+    branch: main
+    workspaceChangelog: true
