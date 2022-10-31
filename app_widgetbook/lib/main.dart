@@ -307,9 +307,12 @@ class WidgetbookApp extends StatelessWidget {
                   useCases: [
                     WidgetbookUseCase(
                       name: 'Default',
-                      builder: (context) => AppIconButton(
+                      builder: (context) => AppIconButton.builder(
                         onPressed: () {},
-                        icon: const Icon(Icons.home_filled),
+                        iconBuilder: (context, color, size) => AppIcon.heart(
+                          color: color,
+                          size: size,
+                        ),
                         isActive: context.knobs.boolean(label: 'Active'),
                         color: context.knobs.options<Color?>(
                           label: 'Color',
