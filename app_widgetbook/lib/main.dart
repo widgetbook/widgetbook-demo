@@ -346,6 +346,28 @@ class WidgetbookApp extends StatelessWidget {
                     ),
                   ],
                 ),
+                WidgetbookComponent(
+                  name: 'AppIcon',
+                  useCases: List.generate(
+                    AppIcons.iconPaths.length,
+                    (index) => WidgetbookUseCase(
+                      name: AppIcons.iconPaths[index]
+                          .replaceAll('assets/images/icons/', '')
+                          .replaceAll('.png', ''),
+                      builder: (context) => AppIcon(
+                        AppIcons.iconPaths[index],
+                        isActive: context.knobs.boolean(label: 'isActive'),
+                        activeColor: context.knobs.options<Color?>(
+                              label: 'Active Color',
+                              description: 'Icon color for active state'
+                                  ' (defaults to Primary color)',
+                              options: colorOptions,
+                            ) ??
+                            AppColors.primary,
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
             WidgetbookFolder(
