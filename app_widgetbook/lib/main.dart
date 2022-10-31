@@ -364,6 +364,13 @@ class WidgetbookApp extends StatelessWidget {
                               options: colorOptions,
                             ) ??
                             AppColors.primary,
+                        size: context.knobs.slider(
+                          label: 'Icon Size',
+                          min: 15,
+                          max: 50,
+                          divisions: 50 - 15,
+                          initialValue: 40,
+                        ),
                       ),
                     ),
                   ),
