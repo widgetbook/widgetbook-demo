@@ -99,11 +99,23 @@ abstract class AppLocalizations {
   /// **'Widgetbook'**
   String get widgetbook;
 
-  /// No description provided for @hi.
+  /// No description provided for @retweets.
   ///
   /// In en, this message translates to:
-  /// **'Hi'**
-  String get hi;
+  /// **'Retweets'**
+  String get retweets;
+
+  /// No description provided for @likes.
+  ///
+  /// In en, this message translates to:
+  /// **'Likes'**
+  String get likes;
+
+  /// No description provided for @quoteTweets.
+  ///
+  /// In en, this message translates to:
+  /// **'Quote Tweets'**
+  String get quoteTweets;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

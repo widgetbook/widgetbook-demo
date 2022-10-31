@@ -1,4 +1,6 @@
 {
     "widgetbook": "Widgetbook",
-    "hi": "Hi"
+    "retweets": "Retweets",
+    "likes": "Likes",
+    "quoteTweets": "Quote Tweets"
 }

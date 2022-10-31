@@ -8,5 +8,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get widgetbook => 'Widgetbook';
 
   @override
-  String get hi => 'Hi';
+  String get retweets => 'Retweets';
+
+  @override
+  String get likes => 'Likes';
+
+  @override
+  String get quoteTweets => 'Quote Tweets';
 }

@@ -8,5 +8,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String get widgetbook => 'Widgetbook';
 
   @override
-  String get hi => 'مرحباً';
+  String get retweets => 'اعادة تغريد';
+
+  @override
+  String get likes => 'اعجابات';
+
+  @override
+  String get quoteTweets => 'تغريدات الاقتباس';
 }

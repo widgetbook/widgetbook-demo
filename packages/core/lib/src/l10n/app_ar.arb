@@ -1,4 +1,6 @@
 {
     "widgetbook": "Widgetbook",
-    "hi": "مرحباً"
+    "retweets": "اعادة تغريد",
+    "likes": "اعجابات",
+    "quoteTweets": "تغريدات الاقتباس"
 }
