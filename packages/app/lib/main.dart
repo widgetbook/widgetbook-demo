@@ -2,11 +2,13 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+/// App entry point
+class App extends StatelessWidget {
+  /// Creates new instance of [App]
+  const App({super.key});
 
   // This widget is the root of your application.
   @override
@@ -23,7 +25,9 @@ class MyApp extends StatelessWidget {
   }
 }
 
+/// Test home page
 class HomePage extends StatelessWidget {
+  /// Creates new instance of [HomePage]
   const HomePage({super.key});
 
   @override
