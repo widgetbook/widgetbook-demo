@@ -320,6 +320,15 @@ class AppIcon extends StatelessWidget {
   })  : image = AppIcons.replyPath,
         activeColor = _activeColor;
 
+  /// Creates a new instance of [AppIcon] with `reply-fill` icon image
+  const AppIcon.replyFill({
+    super.key,
+    this.size = 20,
+    this.color,
+    this.isActive = false,
+  })  : image = AppIcons.replyFillPath,
+        activeColor = _activeColor;
+
   /// Creates a new instance of [AppIcon] with `retweet` icon image
   const AppIcon.retweet({
     super.key,
@@ -372,6 +381,15 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
   })  : image = AppIcons.userPath,
+        activeColor = _activeColor;
+
+  /// Creates a new instance of [AppIcon] with `user-fill` icon image
+  const AppIcon.userFill({
+    super.key,
+    this.size = 20,
+    this.color,
+    this.isActive = false,
+  })  : image = AppIcons.userFillPath,
         activeColor = _activeColor;
 
   static const Color _activeColor = AppColors.primary;
