@@ -15,7 +15,9 @@ class MyApp extends StatelessWidget {
       title: 'Widgetbook Demo App',
       theme: AppThemes.getTheme(),
       darkTheme: AppThemes.getTheme(),
-      themeMode: ThemeMode.system,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: const Locale('en'),
       home: const HomePage(),
     );
   }
@@ -26,9 +28,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text('Widgetbook Demo App'),
+        child: Text(AppLocalizations.of(context)!.widgetbook),
       ),
     );
   }
