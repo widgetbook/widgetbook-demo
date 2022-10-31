@@ -91,13 +91,6 @@ class AppIcons {
   /// pin.png icon path
   static const String pinPath = 'assets/images/icons/pin.png';
 
-  /// plus-circle-fill.png icon path
-  static const String plusCircleFillPath =
-      'assets/images/icons/plus-circle-fill.png';
-
-  /// plus-circle.png icon path
-  static const String plusCirclePath = 'assets/images/icons/plus-circle.png';
-
   /// plus.png icon path
   static const String plusPath = 'assets/images/icons/plus.png';
 
@@ -160,8 +153,6 @@ class AppIcons {
     mailPath,
     mapPinPath,
     pinPath,
-    plusCircleFillPath,
-    plusCirclePath,
     plusPath,
     pollPath,
     qrPath,

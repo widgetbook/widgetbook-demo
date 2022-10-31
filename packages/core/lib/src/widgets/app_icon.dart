@@ -315,26 +315,6 @@ class AppIcon extends StatelessWidget {
         isAutoColored = true,
         activeColor = _activeColor;
 
-  /// Creates a new instance of [AppIcon] with `plusCircleFill` icon image
-  const AppIcon.plusCircleFill({
-    super.key,
-    this.size = 20,
-    this.color,
-    this.isActive = false,
-  })  : image = AppIcons.plusCircleFillPath,
-        isAutoColored = true,
-        activeColor = _activeColor;
-
-  /// Creates a new instance of [AppIcon] with `plusCircle` icon image
-  const AppIcon.plusCircle({
-    super.key,
-    this.size = 20,
-    this.color,
-    this.isActive = false,
-  })  : image = AppIcons.plusCirclePath,
-        isAutoColored = false,
-        activeColor = _activeColor;
-
   /// Creates a new instance of [AppIcon] with `plus` icon image
   const AppIcon.plus({
     super.key,
