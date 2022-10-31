@@ -1,6 +1,12 @@
 {
     "widgetbook": "Widgetbook",
+    "and": "and",
     "retweets": "Retweets",
     "likes": "Likes",
-    "quoteTweets": "Quote Tweets"
+    "quoteTweets": "Quote Tweets",
+    "liked": "liked",
+    "pinnedTweet": "Pinned Tweet",
+    "replied": "replied",
+    "follows": "follows",
+    "receivedNewReplies": "Received new replies"
 }

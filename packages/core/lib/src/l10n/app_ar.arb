@@ -1,6 +1,13 @@
 {
     "widgetbook": "Widgetbook",
+    "and": "and",
     "retweets": "اعادة تغريد",
     "likes": "اعجابات",
-    "quoteTweets": "تغريدات الاقتباس"
+    "quoteTweets": "تغريدات الاقتباس",
+    "quoteTweets": "Quote Tweets",
+    "liked": "liked",
+    "pinnedTweet": "Pinned Tweet",
+    "replied": "replied",
+    "follows": "follows",
+    "receivedNewReplies": "Received new replies"
 }
