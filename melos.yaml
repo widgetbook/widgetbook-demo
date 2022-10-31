@@ -3,3 +3,4 @@ repository: https://github.com/widgetbook/widgetbook-demo
 
 packages:
   - packages/**
+  - app_widgetbook/**
