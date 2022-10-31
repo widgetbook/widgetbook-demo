@@ -28,9 +28,9 @@ enum TweetAnnotationType {
         return const AppIcon.heartFill(size: 12);
       case reply:
       case newReplies:
-        return const AppIcon.reply(size: 12);
+        return const AppIcon.replyFill(size: 12);
       case follow:
-        return const AppIcon.user(size: 12);
+        return const AppIcon.userFill(size: 12);
       case retweet:
         return const AppIcon.retweet(size: 12);
       case pinned:
