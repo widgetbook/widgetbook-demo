@@ -103,6 +103,9 @@ class AppIcons {
   /// reply.png icon path
   static const String replyPath = 'assets/images/icons/reply.png';
 
+  /// reply-fill.png icon path
+  static const String replyFillPath = 'assets/images/icons/reply-fill.png';
+
   /// Retweet.png icon path
   static const String retweetPath = 'assets/images/icons/Retweet.png';
 
@@ -120,6 +123,9 @@ class AppIcons {
 
   /// user.png icon path
   static const String userPath = 'assets/images/icons/user.png';
+
+  /// user-fill.png icon path
+  static const String userFillPath = 'assets/images/icons/user-fill.png';
 
   /// List of all icon paths
   static const List<String> iconPaths = [
@@ -157,11 +163,13 @@ class AppIcons {
     pollPath,
     qrPath,
     replyPath,
+    replyFillPath,
     retweetPath,
     searchFillPath,
     searchPath,
     sharePath,
     topicsPath,
     userPath,
+    userFillPath,
   ];
 }
