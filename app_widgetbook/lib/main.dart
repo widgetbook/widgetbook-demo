@@ -15,6 +15,11 @@ class WidgetbookApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Widgetbook.material(
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: const <Locale>[
+        Locale('en'),
+        Locale('ar'),
+      ],
       categories: [
         WidgetbookCategory(
           name: 'Core',

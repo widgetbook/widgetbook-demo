@@ -57,7 +57,7 @@ class DetailedTweetMetrics extends StatelessWidget {
                 ),
                 const SizedBox(width: 5),
                 Text(
-                  'Retweets',
+                  AppLocalizations.of(context)!.retweets,
                   style: metricTitleTextStyle,
                 ),
                 const SizedBox(width: 10),
@@ -73,7 +73,7 @@ class DetailedTweetMetrics extends StatelessWidget {
                 ),
                 const SizedBox(width: 5),
                 Text(
-                  'Quote Tweets',
+                  AppLocalizations.of(context)!.quoteTweets,
                   style: metricTitleTextStyle,
                 ),
                 const SizedBox(width: 10),
@@ -89,7 +89,7 @@ class DetailedTweetMetrics extends StatelessWidget {
                 ),
                 const SizedBox(width: 5),
                 Text(
-                  'Likes',
+                  AppLocalizations.of(context)!.likes,
                   style: metricTitleTextStyle,
                 ),
               ],

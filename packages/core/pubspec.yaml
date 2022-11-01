@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   intl: ^0.17.0
   widgetbook_annotation: ^2.1.0
 
@@ -23,6 +25,7 @@ dev_dependencies:
   widgetbook_generator: ^2.4.1
 
 flutter:
+  generate: true
 
   # To add assets to your package, add an assets section, like this:
   assets:
