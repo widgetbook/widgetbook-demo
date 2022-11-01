@@ -25,7 +25,6 @@ class WidgetbookApp extends StatelessWidget {
               folders: [
                 WidgetbookFolder(
                   name: 'Metrics',
-                  isExpanded: true,
                   widgets: [
                     WidgetbookComponent(
                       name: 'Like Icon',
@@ -34,17 +33,14 @@ class WidgetbookApp extends StatelessWidget {
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) {
-                            return Center(
-                              child: LikeIconButton(
-                                onPressed: () {},
-                                isActive:
-                                    context.knobs.boolean(label: 'Active'),
-                                size: context.knobs.slider(
-                                  label: 'Icon Size',
-                                  initialValue: 30,
-                                  min: 15,
-                                  max: 50,
-                                ),
+                            return LikeIconButton(
+                              onPressed: () {},
+                              isActive: context.knobs.boolean(label: 'Active'),
+                              size: context.knobs.slider(
+                                label: 'Icon Size',
+                                initialValue: 30,
+                                min: 15,
+                                max: 50,
                               ),
                             );
                           },
@@ -58,67 +54,198 @@ class WidgetbookApp extends StatelessWidget {
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) {
-                            return Center(
-                              child: Likes(
-                                metricValue: context.knobs
-                                    .slider(
-                                      label: 'Likes Count',
-                                      description: 'Note: likes should be more'
-                                          ' than 0 to be displayed',
-                                      initialValue: 0,
-                                      min: 0,
-                                      divisions: 2500 ~/ 5,
-                                      max: 2500,
-                                    )
-                                    .toInt(),
-                              ),
+                            return Likes(
+                              metricValue: context.knobs
+                                  .slider(
+                                    label: 'Likes Count',
+                                    description: 'Note: likes should be more'
+                                        ' than 0 to be displayed',
+                                    initialValue: 0,
+                                    min: 0,
+                                    divisions: 2500 ~/ 5,
+                                    max: 2500,
+                                  )
+                                  .toInt(),
                             );
                           },
                         ),
                       ],
                     ),
                     WidgetbookComponent(
-                      name: 'Metric',
+                      name: 'Replies',
+                      isExpanded: true,
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) {
-                            return Center(
-                              child: MetricText(
-                                value: context.knobs
-                                    .slider(
-                                      label: 'Value',
-                                      min: 0,
-                                      max: 200,
-                                      initialValue: 15,
-                                      divisions: 200 ~/ 5,
-                                    )
-                                    .toInt(),
-                                isActive: context.knobs.boolean(
-                                  label: 'Active',
-                                ),
-                                activeColor: context.knobs.options(
-                                  label: 'Active Color',
-                                  options: [
-                                    const Option(
-                                      label: 'Primary',
-                                      value: AppColors.primary,
-                                    ),
-                                    const Option(
-                                      label: 'Pink',
-                                      value: AppColors.pink,
-                                    ),
-                                    const Option(
-                                      label: 'Success',
-                                      value: AppColors.success,
-                                    ),
-                                  ],
-                                ),
+                            return Replies(
+                              onPressed: () {},
+                              metricValue: context.knobs
+                                  .slider(
+                                    label: 'Replies Count',
+                                    description:
+                                        'Note: replies should be more than'
+                                        ' 0 to be displayed',
+                                    initialValue: 0,
+                                    min: 0,
+                                    divisions: 25000 ~/ 50,
+                                    max: 25000,
+                                  )
+                                  .toInt(),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'Retweets',
+                      isExpanded: true,
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) {
+                            return Retweets(
+                              metricValue: context.knobs
+                                  .slider(
+                                    label: 'Retweets Count',
+                                    description: 'Note: retweets should be more'
+                                        ' than 0 to be displayed',
+                                    initialValue: 0,
+                                    min: 0,
+                                    divisions: 2500 ~/ 5,
+                                    max: 2500,
+                                  )
+                                  .toInt(),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'Metric Text',
+                      isExpanded: true,
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) {
+                            return MetricText(
+                              value: context.knobs
+                                  .slider(
+                                    label: 'Value',
+                                    min: 0,
+                                    max: 25000,
+                                    initialValue: 15,
+                                    divisions: 25000 ~/ 50,
+                                  )
+                                  .toInt(),
+                              isActive: context.knobs.boolean(
+                                label: 'Active',
+                              ),
+                              activeColor: context.knobs.options(
+                                label: 'Active Color',
+                                options: [
+                                  const Option(
+                                    label: 'Primary',
+                                    value: AppColors.primary,
+                                  ),
+                                  const Option(
+                                    label: 'Pink',
+                                    value: AppColors.pink,
+                                  ),
+                                  const Option(
+                                    label: 'Success',
+                                    value: AppColors.success,
+                                  ),
+                                ],
                               ),
                             );
                           },
                         ),
                       ],
+                    ),
+                  ],
+                ),
+              ],
+              widgets: [
+                WidgetbookComponent(
+                  name: 'Tweet Actions',
+                  isExpanded: true,
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) {
+                        return TweetActions(
+                          repliesCount: context.knobs
+                              .slider(
+                                label: 'Replies',
+                                min: 0,
+                                max: 25000,
+                                initialValue: 15,
+                                divisions: 25000 ~/ 50,
+                              )
+                              .toInt(),
+                          retweetsCount: context.knobs
+                              .slider(
+                                label: 'Retweets',
+                                min: 0,
+                                max: 25000,
+                                initialValue: 15,
+                                divisions: 25000 ~/ 50,
+                              )
+                              .toInt(),
+                          likesCount: context.knobs
+                              .slider(
+                                label: 'Likes',
+                                min: 0,
+                                max: 25000,
+                                initialValue: 15,
+                                divisions: 25000 ~/ 50,
+                              )
+                              .toInt(),
+                          onSharePressed: () {},
+                          onRepliesPressed: () {},
+                        );
+                      },
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'Detailed Tweet Metrics',
+                  isExpanded: true,
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) {
+                        return DetailedTweetMetrics(
+                          retweetsCount: context.knobs
+                              .slider(
+                                label: 'Retweets',
+                                min: 0,
+                                max: 25000,
+                                initialValue: 15,
+                                divisions: 25000 ~/ 50,
+                              )
+                              .toInt(),
+                          quoteTweetsCount: context.knobs
+                              .slider(
+                                label: 'Quote Tweets',
+                                min: 0,
+                                max: 25000,
+                                initialValue: 15,
+                                divisions: 25000 ~/ 50,
+                              )
+                              .toInt(),
+                          likesCount: context.knobs
+                              .slider(
+                                label: 'Likes',
+                                min: 0,
+                                max: 25000,
+                                initialValue: 15,
+                                divisions: 25000 ~/ 50,
+                              )
+                              .toInt(),
+                        );
+                      },
                     ),
                   ],
                 ),
@@ -216,6 +343,12 @@ class WidgetbookApp extends StatelessWidget {
                     ),
                   ],
                 ),
+              ],
+            ),
+            WidgetbookFolder(
+              name: 'User',
+              isExpanded: true,
+              widgets: [
                 WidgetbookComponent(
                   name: 'Avatar',
                   isExpanded: true,
@@ -259,6 +392,40 @@ class WidgetbookApp extends StatelessWidget {
                     ),
                   ],
                 ),
+                WidgetbookComponent(
+                  name: 'DisplayName',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) {
+                        return DisplayName(
+                          value: context.knobs.text(
+                            label: 'Value',
+                            description: 'Enter display name',
+                            initialValue: 'John Doe',
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'Username',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) {
+                        return Username(
+                          value: context.knobs.text(
+                            label: 'Value',
+                            description: 'Enter username (Twitter handle)',
+                            initialValue: 'johndoe',
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
               ],
             ),
           ],
@@ -274,11 +441,6 @@ class WidgetbookApp extends StatelessWidget {
           data: AppThemes.getTheme(isDark: true),
         ),
       ],
-      useCaseBuilder: (BuildContext context, Widget child) {
-        return Center(
-          child: child,
-        );
-      },
       appInfo: AppInfo(name: 'Widgetbook Demo App'),
       textScaleFactors: [1, 1.5, 2],
     );
