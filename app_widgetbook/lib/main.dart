@@ -286,6 +286,44 @@ class WidgetbookApp extends StatelessWidget {
                     ),
                   ],
                 ),
+                WidgetbookComponent(
+                  name: 'Tweet Date',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => TweetDate(
+                        date: context.knobs.options<DateTime>(
+                          label: 'Date',
+                          description:
+                              "The date should be a timeago string if it's "
+                              'less than 24 hours ago, and it should '
+                              "include the year only if it's different "
+                              'than the one we are currently in',
+                          options: [
+                            Option(
+                              label: '12 hours ago',
+                              value: DateTime.now().subtract(
+                                const Duration(hours: 12),
+                              ),
+                            ),
+                            Option(
+                              label: '2 days ago',
+                              value: DateTime.now().subtract(
+                                const Duration(days: 2),
+                              ),
+                            ),
+                            Option(
+                              label: '2 years ago',
+                              value: DateTime.now().subtract(
+                                const Duration(days: 365 * 3),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
             WidgetbookFolder(

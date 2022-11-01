@@ -6,4 +6,5 @@ export './replies.dart';
 export './retweets.dart';
 export './tweet_actions.dart';
 export './tweet_annotation.dart';
+export './tweet_date.dart';
 export './tweet_metric.dart';
