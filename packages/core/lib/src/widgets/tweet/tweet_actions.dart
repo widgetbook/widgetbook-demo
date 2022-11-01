@@ -66,7 +66,7 @@ class TweetActions extends StatelessWidget {
         Expanded(
           child: AppIconButton(
             size: 15,
-            icon: const Icon(Icons.ios_share_rounded),
+            iconPath: AppIcons.share,
             onPressed: onSharePressed,
           ),
         ),

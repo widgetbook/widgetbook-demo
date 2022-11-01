@@ -1,175 +1,175 @@
 /// Helper class with necessary data for app icons
 class AppIcons {
   /// add-feather.png icon path
-  static const String addFeatherPath = 'assets/images/icons/add-feather.png';
+  static const String addFeather = 'assets/images/icons/add-feather.png';
 
   /// angle-back.png icon path
-  static const String angleBackPath = 'assets/images/icons/angle-back.png';
+  static const String angleBack = 'assets/images/icons/angle-back.png';
 
   /// apple-fill.png icon path
-  static const String appleFillPath = 'assets/images/icons/apple-fill.png';
+  static const String appleFill = 'assets/images/icons/apple-fill.png';
 
   /// bell-fill.png icon path
-  static const String bellFillPath = 'assets/images/icons/bell-fill.png';
+  static const String bellFill = 'assets/images/icons/bell-fill.png';
 
   /// bell.png icon path
-  static const String bellPath = 'assets/images/icons/bell.png';
+  static const String bell = 'assets/images/icons/bell.png';
 
   /// bookmark.png icon path
-  static const String bookmarkPath = 'assets/images/icons/bookmark.png';
+  static const String bookmark = 'assets/images/icons/bookmark.png';
 
   /// bulb.png icon path
-  static const String bulbPath = 'assets/images/icons/bulb.png';
+  static const String bulb = 'assets/images/icons/bulb.png';
 
   /// calendar.png icon path
-  static const String calendarPath = 'assets/images/icons/calendar.png';
+  static const String calendar = 'assets/images/icons/calendar.png';
 
   /// circle.png icon path
-  static const String circlePath = 'assets/images/icons/circle.png';
+  static const String circle = 'assets/images/icons/circle.png';
 
   /// close.png icon path
-  static const String closePath = 'assets/images/icons/close.png';
+  static const String close = 'assets/images/icons/close.png';
 
   /// down.png icon path
-  static const String downPath = 'assets/images/icons/down.png';
+  static const String down = 'assets/images/icons/down.png';
 
   /// eye-crossed.png icon path
-  static const String eyeCrossedPath = 'assets/images/icons/eye-crossed.png';
+  static const String eyeCrossed = 'assets/images/icons/eye-crossed.png';
 
   /// eye.png icon path
-  static const String eyePath = 'assets/images/icons/eye.png';
+  static const String eye = 'assets/images/icons/eye.png';
 
   /// feature.png icon path
-  static const String featurePath = 'assets/images/icons/feature.png';
+  static const String feature = 'assets/images/icons/feature.png';
 
   /// gif.png icon path
-  static const String gifPath = 'assets/images/icons/gif.png';
+  static const String gif = 'assets/images/icons/gif.png';
 
   /// google.png icon path
-  static const String googlePath = 'assets/images/icons/google.png';
+  static const String google = 'assets/images/icons/google.png';
 
   /// hash.png icon path
-  static const String hashPath = 'assets/images/icons/hash.png';
+  static const String hash = 'assets/images/icons/hash.png';
 
   /// heart-fill.png icon path
-  static const String heartFillPath = 'assets/images/icons/heart-fill.png';
+  static const String heartFill = 'assets/images/icons/heart-fill.png';
 
   /// heart.png icon path
-  static const String heartPath = 'assets/images/icons/heart.png';
+  static const String heart = 'assets/images/icons/heart.png';
 
   /// home-fill.png icon path
-  static const String homeFillPath = 'assets/images/icons/home-fill.png';
+  static const String homeFill = 'assets/images/icons/home-fill.png';
 
   /// home.png icon path
-  static const String homePath = 'assets/images/icons/home.png';
+  static const String home = 'assets/images/icons/home.png';
 
   /// image.png icon path
-  static const String imagePath = 'assets/images/icons/image.png';
+  static const String image = 'assets/images/icons/image.png';
 
   /// info-menu-circle.png icon path
-  static const String infoMenuCirclePath =
+  static const String infoMenuCircle =
       'assets/images/icons/info-menu-circle.png';
 
   /// info-menu.png icon path
-  static const String infoMenuPath = 'assets/images/icons/info-menu.png';
+  static const String infoMenu = 'assets/images/icons/info-menu.png';
 
   /// link.png icon path
-  static const String linkPath = 'assets/images/icons/link.png';
+  static const String link = 'assets/images/icons/link.png';
 
   /// list.png icon path
-  static const String listPath = 'assets/images/icons/list.png';
+  static const String list = 'assets/images/icons/list.png';
 
   /// mail-fill.png icon path
-  static const String mailFillPath = 'assets/images/icons/mail-fill.png';
+  static const String mailFill = 'assets/images/icons/mail-fill.png';
 
   /// mail.png icon path
-  static const String mailPath = 'assets/images/icons/mail.png';
+  static const String mail = 'assets/images/icons/mail.png';
 
   /// map-pin.png icon path
-  static const String mapPinPath = 'assets/images/icons/map-pin.png';
+  static const String mapPin = 'assets/images/icons/map-pin.png';
 
   /// pin.png icon path
-  static const String pinPath = 'assets/images/icons/pin.png';
+  static const String pin = 'assets/images/icons/pin.png';
 
   /// plus.png icon path
-  static const String plusPath = 'assets/images/icons/plus.png';
+  static const String plus = 'assets/images/icons/plus.png';
 
   /// poll.png icon path
-  static const String pollPath = 'assets/images/icons/poll.png';
+  static const String poll = 'assets/images/icons/poll.png';
 
   /// qr.png icon path
-  static const String qrPath = 'assets/images/icons/qr.png';
+  static const String qr = 'assets/images/icons/qr.png';
 
   /// reply.png icon path
-  static const String replyPath = 'assets/images/icons/reply.png';
+  static const String reply = 'assets/images/icons/reply.png';
 
   /// reply-fill.png icon path
-  static const String replyFillPath = 'assets/images/icons/reply-fill.png';
+  static const String replyFill = 'assets/images/icons/reply-fill.png';
 
   /// Retweet.png icon path
-  static const String retweetPath = 'assets/images/icons/Retweet.png';
+  static const String retweet = 'assets/images/icons/Retweet.png';
 
   /// search-fill.png icon path
-  static const String searchFillPath = 'assets/images/icons/search-fill.png';
+  static const String searchFill = 'assets/images/icons/search-fill.png';
 
   /// search.png icon path
-  static const String searchPath = 'assets/images/icons/search.png';
+  static const String search = 'assets/images/icons/search.png';
 
   /// share.png icon path
-  static const String sharePath = 'assets/images/icons/share.png';
+  static const String share = 'assets/images/icons/share.png';
 
   /// topics.png icon path
-  static const String topicsPath = 'assets/images/icons/topics.png';
+  static const String topics = 'assets/images/icons/topics.png';
 
   /// user.png icon path
-  static const String userPath = 'assets/images/icons/user.png';
+  static const String user = 'assets/images/icons/user.png';
 
   /// user-fill.png icon path
-  static const String userFillPath = 'assets/images/icons/user-fill.png';
+  static const String userFill = 'assets/images/icons/user-fill.png';
 
   /// List of all icon paths
   static const List<String> iconPaths = [
-    addFeatherPath,
-    angleBackPath,
-    appleFillPath,
-    bellFillPath,
-    bellPath,
-    bookmarkPath,
-    bulbPath,
-    calendarPath,
-    circlePath,
-    closePath,
-    downPath,
-    eyeCrossedPath,
-    eyePath,
-    featurePath,
-    gifPath,
-    googlePath,
-    hashPath,
-    heartFillPath,
-    heartPath,
-    homeFillPath,
-    homePath,
-    imagePath,
-    infoMenuCirclePath,
-    infoMenuPath,
-    linkPath,
-    listPath,
-    mailFillPath,
-    mailPath,
-    mapPinPath,
-    pinPath,
-    plusPath,
-    pollPath,
-    qrPath,
-    replyPath,
-    replyFillPath,
-    retweetPath,
-    searchFillPath,
-    searchPath,
-    sharePath,
-    topicsPath,
-    userPath,
-    userFillPath,
+    addFeather,
+    angleBack,
+    appleFill,
+    bellFill,
+    bell,
+    bookmark,
+    bulb,
+    calendar,
+    circle,
+    close,
+    down,
+    eyeCrossed,
+    eye,
+    feature,
+    gif,
+    google,
+    hash,
+    heartFill,
+    heart,
+    homeFill,
+    home,
+    image,
+    infoMenuCircle,
+    infoMenu,
+    link,
+    list,
+    mailFill,
+    mail,
+    mapPin,
+    pin,
+    plus,
+    poll,
+    qr,
+    reply,
+    replyFill,
+    retweet,
+    searchFill,
+    search,
+    share,
+    topics,
+    user,
+    userFill,
   ];
 }

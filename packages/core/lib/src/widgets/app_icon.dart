@@ -21,7 +21,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.addFeatherPath;
+  }) : image = AppIcons.addFeather;
 
   /// Creates a new instance of [AppIcon] with `angleBack` icon image
   const AppIcon.angleBack({
@@ -30,7 +30,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.angleBackPath;
+  }) : image = AppIcons.angleBack;
 
   /// Creates a new instance of [AppIcon] with `appleFill` icon image
   const AppIcon.appleFill({
@@ -39,7 +39,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.appleFillPath;
+  }) : image = AppIcons.appleFill;
 
   /// Creates a new instance of [AppIcon] with `bellFill` icon image
   const AppIcon.bellFill({
@@ -48,7 +48,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.bellFillPath;
+  }) : image = AppIcons.bellFill;
 
   /// Creates a new instance of [AppIcon] with `bell` icon image
   const AppIcon.bell({
@@ -57,7 +57,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.bellPath;
+  }) : image = AppIcons.bell;
 
   /// Creates a new instance of [AppIcon] with `bookmark` icon image
   const AppIcon.bookmark({
@@ -66,7 +66,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.bookmarkPath;
+  }) : image = AppIcons.bookmark;
 
   /// Creates a new instance of [AppIcon] with `bulb` icon image
   const AppIcon.bulb({
@@ -75,7 +75,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.bulbPath;
+  }) : image = AppIcons.bulb;
 
   /// Creates a new instance of [AppIcon] with `calendar` icon image
   const AppIcon.calendar({
@@ -84,7 +84,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.calendarPath;
+  }) : image = AppIcons.calendar;
 
   /// Creates a new instance of [AppIcon] with `circle` icon image
   const AppIcon.circle({
@@ -93,7 +93,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.circlePath;
+  }) : image = AppIcons.circle;
 
   /// Creates a new instance of [AppIcon] with `close` icon image
   const AppIcon.close({
@@ -102,7 +102,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.closePath;
+  }) : image = AppIcons.close;
 
   /// Creates a new instance of [AppIcon] with `down` icon image
   const AppIcon.down({
@@ -111,7 +111,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.downPath;
+  }) : image = AppIcons.down;
 
   /// Creates a new instance of [AppIcon] with `eyeCrossed` icon image
   const AppIcon.eyeCrossed({
@@ -120,7 +120,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.eyeCrossedPath;
+  }) : image = AppIcons.eyeCrossed;
 
   /// Creates a new instance of [AppIcon] with `eye` icon image
   const AppIcon.eye({
@@ -129,7 +129,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.eyePath;
+  }) : image = AppIcons.eye;
 
   /// Creates a new instance of [AppIcon] with `feature` icon image
   const AppIcon.feature({
@@ -138,7 +138,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.featurePath;
+  }) : image = AppIcons.feature;
 
   /// Creates a new instance of [AppIcon] with `gif` icon image
   const AppIcon.gif({
@@ -147,7 +147,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.gifPath;
+  }) : image = AppIcons.gif;
 
   /// Creates a new instance of [AppIcon] with `google` icon image
   const AppIcon.google({
@@ -156,7 +156,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.googlePath;
+  }) : image = AppIcons.google;
 
   /// Creates a new instance of [AppIcon] with `hash` icon image
   const AppIcon.hash({
@@ -165,7 +165,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.hashPath;
+  }) : image = AppIcons.hash;
 
   /// Creates a new instance of [AppIcon] with `heartFill` icon image
   const AppIcon.heartFill({
@@ -173,7 +173,7 @@ class AppIcon extends StatelessWidget {
     this.size = 20,
     this.color,
     this.isActive = false,
-  })  : image = AppIcons.heartFillPath,
+  })  : image = AppIcons.heartFill,
         activeColor = AppColors.pink;
 
   /// Creates a new instance of [AppIcon] with `heart` icon image
@@ -182,7 +182,7 @@ class AppIcon extends StatelessWidget {
     this.size = 20,
     this.color,
     this.isActive = false,
-  })  : image = AppIcons.heartPath,
+  })  : image = AppIcons.heart,
         activeColor = AppColors.pink;
 
   /// Creates a new instance of [AppIcon] with `homeFill` icon image
@@ -192,7 +192,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.homeFillPath;
+  }) : image = AppIcons.homeFill;
 
   /// Creates a new instance of [AppIcon] with `home` icon image
   const AppIcon.home({
@@ -201,7 +201,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.homePath;
+  }) : image = AppIcons.home;
 
   /// Creates a new instance of [AppIcon] with `image` icon image
   const AppIcon.image({
@@ -210,7 +210,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.imagePath;
+  }) : image = AppIcons.image;
 
   /// Creates a new instance of [AppIcon] with `infoMenuCircle` icon image
   const AppIcon.infoMenuCircle({
@@ -219,7 +219,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.infoMenuCirclePath;
+  }) : image = AppIcons.infoMenuCircle;
 
   /// Creates a new instance of [AppIcon] with `infoMenu` icon image
   const AppIcon.infoMenu({
@@ -228,7 +228,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.infoMenuPath;
+  }) : image = AppIcons.infoMenu;
 
   /// Creates a new instance of [AppIcon] with `link` icon image
   const AppIcon.link({
@@ -237,7 +237,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.linkPath;
+  }) : image = AppIcons.link;
 
   /// Creates a new instance of [AppIcon] with `list` icon image
   const AppIcon.list({
@@ -246,7 +246,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.listPath;
+  }) : image = AppIcons.list;
 
   /// Creates a new instance of [AppIcon] with `mailFill` icon image
   const AppIcon.mailFill({
@@ -255,7 +255,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.mailFillPath;
+  }) : image = AppIcons.mailFill;
 
   /// Creates a new instance of [AppIcon] with `mail` icon image
   const AppIcon.mail({
@@ -264,7 +264,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.mailPath;
+  }) : image = AppIcons.mail;
 
   /// Creates a new instance of [AppIcon] with `mapPin` icon image
   const AppIcon.mapPin({
@@ -273,7 +273,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.mapPinPath;
+  }) : image = AppIcons.mapPin;
 
   /// Creates a new instance of [AppIcon] with `pin` icon image
   const AppIcon.pin({
@@ -282,7 +282,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.pinPath;
+  }) : image = AppIcons.pin;
 
   /// Creates a new instance of [AppIcon] with `plus` icon image
   const AppIcon.plus({
@@ -291,7 +291,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.plusPath;
+  }) : image = AppIcons.plus;
 
   /// Creates a new instance of [AppIcon] with `poll` icon image
   const AppIcon.poll({
@@ -300,7 +300,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.pollPath;
+  }) : image = AppIcons.poll;
 
   /// Creates a new instance of [AppIcon] with `qr` icon image
   const AppIcon.qr({
@@ -309,7 +309,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.qrPath;
+  }) : image = AppIcons.qr;
 
   /// Creates a new instance of [AppIcon] with `reply` icon image
   const AppIcon.reply({
@@ -318,7 +318,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.replyPath;
+  }) : image = AppIcons.reply;
 
   /// Creates a new instance of [AppIcon] with `reply-fill` icon image
   const AppIcon.replyFill({
@@ -327,7 +327,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.replyFillPath;
+  }) : image = AppIcons.replyFill;
 
   /// Creates a new instance of [AppIcon] with `retweet` icon image
   const AppIcon.retweet({
@@ -335,7 +335,7 @@ class AppIcon extends StatelessWidget {
     this.size = 20,
     this.color,
     this.isActive = false,
-  })  : image = AppIcons.retweetPath,
+  })  : image = AppIcons.retweet,
         activeColor = AppColors.success;
 
   /// Creates a new instance of [AppIcon] with `searchFill` icon image
@@ -345,7 +345,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.searchFillPath;
+  }) : image = AppIcons.searchFill;
 
   /// Creates a new instance of [AppIcon] with `search` icon image
   const AppIcon.search({
@@ -354,7 +354,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.searchPath;
+  }) : image = AppIcons.search;
 
   /// Creates a new instance of [AppIcon] with `share` icon image
   const AppIcon.share({
@@ -363,7 +363,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.sharePath;
+  }) : image = AppIcons.share;
 
   /// Creates a new instance of [AppIcon] with `topics` icon image
   const AppIcon.topics({
@@ -372,7 +372,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.topicsPath;
+  }) : image = AppIcons.topics;
 
   /// Creates a new instance of [AppIcon] with `user` icon image
   const AppIcon.user({
@@ -381,7 +381,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.userPath;
+  }) : image = AppIcons.user;
 
   /// Creates a new instance of [AppIcon] with `user-fill` icon image
   const AppIcon.userFill({
@@ -390,7 +390,7 @@ class AppIcon extends StatelessWidget {
     this.color,
     this.isActive = false,
     this.activeColor = _activeColor,
-  }) : image = AppIcons.userFillPath;
+  }) : image = AppIcons.userFill;
 
   static const Color _activeColor = AppColors.primary;
 

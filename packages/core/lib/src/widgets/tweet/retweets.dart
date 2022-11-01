@@ -38,10 +38,7 @@ class _RetweetsState extends State<Retweets> {
     return TweetMetric(
       isActive: _isActive,
       metricValue: widget.metricValue,
-      iconBuilder: (context, color, size) => AppIcon.retweet(
-        color: color,
-        size: size,
-      ),
+      icon: AppIcons.retweet,
       iconSize: widget.iconSize,
       activeColor: AppColors.success,
       onPressed: () {
