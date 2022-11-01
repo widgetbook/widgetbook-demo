@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:core/src/styles/app_colors.dart';
+import 'package:core/src/styles/twitter_icons.dart';
 import 'package:core/src/widgets/app_icon_button.dart';
 import 'package:core/src/widgets/tweet/tweet.dart';
 import 'package:flutter/material.dart';
@@ -85,9 +86,9 @@ class _LikeIconButtonState extends State<LikeIconButton>
               firstChild: AnimatedOpacity(
                 opacity: widget.isActive ? 0 : 1,
                 duration: const Duration(milliseconds: 100),
-                child: const Icon(Icons.favorite_border_outlined),
+                child: const Icon(TwitterIcons.heart),
               ),
-              secondChild: const Icon(Icons.favorite),
+              secondChild: const Icon(TwitterIcons.heart_fill),
             ),
           ),
           Transform.translate(

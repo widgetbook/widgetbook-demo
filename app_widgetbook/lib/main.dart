@@ -314,7 +314,7 @@ class WidgetbookApp extends StatelessWidget {
                       name: 'Default',
                       builder: (context) => AppIconButton(
                         onPressed: () {},
-                        icon: const Icon(Icons.home_filled),
+                        icon: const Icon(TwitterIcons.heart),
                         isActive: context.knobs.boolean(label: 'Active'),
                         color: context.knobs.options<Color?>(
                           label: 'Color',

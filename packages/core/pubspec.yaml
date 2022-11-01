@@ -32,6 +32,9 @@ flutter:
     - assets/images/
 
   fonts:
+    - family: TwitterIcons
+      fonts:
+        - asset: assets/fonts/TwitterIcons.ttf
     - family: Roboto
       fonts:
         - asset: assets/fonts/Roboto-Regular.ttf

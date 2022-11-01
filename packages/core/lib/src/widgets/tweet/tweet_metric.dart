@@ -13,7 +13,6 @@ class TweetMetric extends StatelessWidget {
     this.metricValue = 0,
     this.iconSize = 15,
     required this.icon,
-    this.activeIcon,
     this.activeColor = AppColors.primary,
     required this.onPressed,
     this.isActive = false,
@@ -25,11 +24,6 @@ class TweetMetric extends StatelessWidget {
   /// Metric icon
   final Widget icon;
 
-  /// Optional metric icon when active
-  ///
-  /// [icon] is used with [activeColor] when not provided
-  final Widget? activeIcon;
-
   /// Size of metric icon
   final double iconSize;
 
@@ -40,7 +34,9 @@ class TweetMetric extends StatelessWidget {
   final VoidCallback? onPressed;
 
   /// Indicates if the metric is active
-  /// to change [icon] to [activeIcon] and the color to [activeColor]
+  /// to change the color value passed by [icon] from its
+  /// default color to [activeColor]
+  /// and the [AppIconButton.hoverColor] to [activeColor]
   final bool isActive;
 
   @override
@@ -52,7 +48,6 @@ class TweetMetric extends StatelessWidget {
           isActive: isActive,
           size: iconSize,
           icon: icon,
-          activeIcon: activeIcon,
           hoverColor: activeColor,
           activeColor: activeColor,
           onPressed: onPressed,
