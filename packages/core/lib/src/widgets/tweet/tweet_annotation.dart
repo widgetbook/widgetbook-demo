@@ -25,16 +25,16 @@ enum TweetAnnotationType {
   Widget get icon {
     switch (this) {
       case liked:
-        return const AppIcon.heartFill(size: 12);
+        return const Icon(TwitterIcons.heart_fill);
       case replied:
       case newReplies:
-        return const AppIcon.replyFill(size: 12);
+        return const Icon(TwitterIcons.reply_fill);
       case follow:
-        return const AppIcon.userFill(size: 12);
+        return const Icon(TwitterIcons.user_fill);
       case retweeted:
-        return const AppIcon.retweet(size: 12);
+        return const Icon(TwitterIcons.retweet);
       case pinned:
-        return const AppIcon.pin(size: 12);
+        return const Icon(TwitterIcons.pin);
     }
   }
 
