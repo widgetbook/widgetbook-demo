@@ -292,36 +292,28 @@ class WidgetbookApp extends StatelessWidget {
                     WidgetbookUseCase(
                       name: 'Default',
                       builder: (context) => TweetDate(
-                        date: context.knobs.options<DateTime>(
-                          label: 'Date',
-                          description:
-                              "The date should be a timeago string if it's "
-                              'less than 24 hours ago, and it should '
-                              "include the year only if it's different "
-                              'than the one we are currently in',
-                          options: [
-                            Option(
-                              label: '12 hours ago',
-                              value: DateTime.now().subtract(
-                                const Duration(hours: 12),
-                              ),
-                            ),
-                            Option(
-                              label: '2 days ago',
-                              value: DateTime.now().subtract(
-                                const Duration(days: 2),
-                              ),
-                            ),
-                            Option(
-                              label: '2 years ago',
-                              value: DateTime.now().subtract(
-                                const Duration(days: 365 * 3),
-                              ),
-                            ),
-                          ],
-                        ),
+                        date: getTweetDateOption(context),
                       ),
                     ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'Tweet Header',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => TweetHeader(
+                        displayName: context.knobs.text(
+                          label: 'Display Name',
+                          initialValue: 'John Doe',
+                        ),
+                        username: context.knobs.text(
+                          label: 'Username',
+                          initialValue: 'johndoe',
+                        ),
+                        tweetDate: getTweetDateOption(context),
+                      ),
+                    )
                   ],
                 ),
               ],
@@ -600,6 +592,37 @@ class WidgetbookApp extends StatelessWidget {
       textScaleFactors: [1, 1.5, 2],
     );
   }
+}
+
+/// Predefined options knob for a tweet date
+DateTime getTweetDateOption(BuildContext context) {
+  return context.knobs.options<DateTime>(
+    label: 'Date',
+    description: "The date should be a timeago string if it's "
+        'less than 24 hours ago, and it should '
+        "include the year only if it's different "
+        'than the one we are currently in',
+    options: [
+      Option(
+        label: '12 hours ago',
+        value: DateTime.now().subtract(
+          const Duration(hours: 12),
+        ),
+      ),
+      Option(
+        label: '2 days ago',
+        value: DateTime.now().subtract(
+          const Duration(days: 2),
+        ),
+      ),
+      Option(
+        label: '2 years ago',
+        value: DateTime.now().subtract(
+          const Duration(days: 365 * 3),
+        ),
+      ),
+    ],
+  );
 }
 
 /// List of app color options that can be used with knobs
