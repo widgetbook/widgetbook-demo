@@ -1,7 +1,4 @@
-## 0.0.1
+## 0.1.1
 
- - chore(release): version core package
+ - Bump "core" to `0.1.1`.
 
-# 0.1.0+1
-
-- feat: initial commit 🎉
