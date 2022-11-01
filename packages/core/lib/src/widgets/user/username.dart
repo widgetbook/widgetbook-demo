@@ -21,7 +21,7 @@ class Username extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      value,
+      '@$value',
       style: Theme.of(context).textTheme.bodyText2!.copyWith(
             color: color ??
                 (Theme.of(context).brightness == Brightness.light
