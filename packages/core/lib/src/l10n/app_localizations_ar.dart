@@ -17,7 +17,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get likes => 'اعجابات';
 
   @override
-  String get quoteTweets => 'Quote Tweets';
+  String get quoteTweets => 'تغريدات الاقتباس';
 
   @override
   String get liked => 'liked';
