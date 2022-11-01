@@ -254,6 +254,43 @@ class WidgetbookApp extends StatelessWidget {
                     ),
                   ],
                 ),
+                WidgetbookComponent(
+                  name: 'Tweet Annotation',
+                  isExpanded: true,
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) {
+                        final type = context.knobs.options<TweetAnnotationType>(
+                          label: 'Type',
+                          options: TweetAnnotationType.values
+                              .map(
+                                (value) => Option(
+                                  label: value.name.toUpperCase(),
+                                  value: value,
+                                ),
+                              )
+                              .toList(),
+                        );
+                        return TweetAnnotation(
+                          type: type,
+                          users: type.hasUsers
+                              ? [
+                                  context.knobs.text(
+                                    label: 'User 1',
+                                    initialValue: 'John Doe',
+                                  ),
+                                  context.knobs.text(
+                                    label: 'User 2',
+                                    initialValue: '',
+                                  ),
+                                ]
+                              : [],
+                        );
+                      },
+                    ),
+                  ],
+                ),
               ],
             ),
             WidgetbookFolder(
