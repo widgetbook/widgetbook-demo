@@ -343,12 +343,9 @@ class WidgetbookApp extends StatelessWidget {
                   useCases: [
                     WidgetbookUseCase(
                       name: 'Default',
-                      builder: (context) => AppIconButton.builder(
+                      builder: (context) => AppIconButton(
                         onPressed: () {},
-                        iconBuilder: (context, color, size) => AppIcon.heart(
-                          color: color,
-                          size: size,
-                        ),
+                        icon: const Icon(TwitterIcons.heart),
                         isActive: context.knobs.boolean(label: 'Active'),
                         color: context.knobs.options<Color?>(
                           label: 'Color',
@@ -381,35 +378,6 @@ class WidgetbookApp extends StatelessWidget {
                       ),
                     ),
                   ],
-                ),
-                WidgetbookComponent(
-                  name: 'AppIcon',
-                  useCases: List.generate(
-                    AppIcons.iconPaths.length,
-                    (index) => WidgetbookUseCase(
-                      name: AppIcons.iconPaths[index]
-                          .replaceAll('assets/images/icons/', '')
-                          .replaceAll('.png', ''),
-                      builder: (context) => AppIcon(
-                        AppIcons.iconPaths[index],
-                        isActive: context.knobs.boolean(label: 'isActive'),
-                        activeColor: context.knobs.options<Color?>(
-                              label: 'Active Color',
-                              description: 'Icon color for active state'
-                                  ' (defaults to Primary color)',
-                              options: colorOptions,
-                            ) ??
-                            AppColors.primary,
-                        size: context.knobs.slider(
-                          label: 'Icon Size',
-                          min: 15,
-                          max: 50,
-                          divisions: 50 - 15,
-                          initialValue: 40,
-                        ),
-                      ),
-                    ),
-                  ),
                 ),
               ],
             ),

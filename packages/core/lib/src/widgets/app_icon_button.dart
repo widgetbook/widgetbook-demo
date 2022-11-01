@@ -2,13 +2,6 @@ import 'package:core/src/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-/// Icon builder to access color changes
-typedef IconBuilder = Widget Function(
-  BuildContext context,
-  Color? color,
-  double size,
-);
-
 /// Icon buttons with customizable hover colors
 ///
 /// Wrapped with a [Theme] with [NoSplash.splashFactory] to remove
@@ -26,20 +19,7 @@ class AppIconButton extends StatefulWidget {
     this.activeIcon,
     this.onPressed,
     this.isActive = false,
-  }) : iconBuilder = null;
-
-  /// Creates a new instance of [AppIconButton]
-  const AppIconButton.builder({
-    super.key,
-    this.size = 20,
-    this.hoverColor = AppColors.primary,
-    this.color,
-    this.activeColor = AppColors.primary,
-    required this.iconBuilder,
-    this.activeIcon,
-    this.onPressed,
-    this.isActive = false,
-  }) : icon = null;
+  });
 
   /// Size of the icon
   ///
@@ -67,10 +47,7 @@ class AppIconButton extends StatefulWidget {
   final Color activeColor;
 
   /// The icon widget
-  final Widget? icon;
-
-  /// The icon builder with access to color based on hover state
-  final IconBuilder? iconBuilder;
+  final Widget icon;
 
   /// Optional icon widget for when [isActive] is true
   final Widget? activeIcon;
@@ -122,19 +99,9 @@ class _AppIconButtonState extends State<AppIconButton> {
                 : widget.isActive
                     ? widget.activeColor
                     : widget.color,
-            icon: widget.icon != null
-                ? (widget.isActive && widget.activeIcon != null
-                    ? widget.activeIcon!
-                    : widget.icon!)
-                : widget.iconBuilder!.call(
-                    context,
-                    _isHovered
-                        ? widget.hoverColor
-                        : widget.isActive
-                            ? widget.activeColor
-                            : widget.color,
-                    widget.size,
-                  ),
+            icon: widget.isActive && widget.activeIcon != null
+                ? widget.activeIcon!
+                : widget.icon,
           ),
         ),
       ),

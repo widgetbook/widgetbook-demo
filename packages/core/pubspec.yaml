@@ -30,9 +30,11 @@ flutter:
   # To add assets to your package, add an assets section, like this:
   assets:
     - assets/images/
-    - assets/images/icons/
 
   fonts:
+    - family: TwitterIcons
+      fonts:
+        - asset: assets/fonts/TwitterIcons.ttf
     - family: Roboto
       fonts:
         - asset: assets/fonts/Roboto-Regular.ttf

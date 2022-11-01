@@ -1,5 +1,6 @@
 import 'package:core/core.dart';
 import 'package:core/src/styles/app_colors.dart';
+import 'package:core/src/styles/twitter_icons.dart';
 import 'package:core/src/widgets/tweet/tweet_metric.dart';
 import 'package:flutter/material.dart';
 
@@ -38,10 +39,7 @@ class _RetweetsState extends State<Retweets> {
     return TweetMetric(
       isActive: _isActive,
       metricValue: widget.metricValue,
-      iconBuilder: (context, color, size) => AppIcon.retweet(
-        color: color,
-        size: size,
-      ),
+      icon: const Icon(TwitterIcons.retweet),
       iconSize: widget.iconSize,
       activeColor: AppColors.success,
       onPressed: () {

@@ -1,4 +1,4 @@
-import 'package:core/src/widgets/app_icon.dart';
+import 'package:core/src/styles/twitter_icons.dart';
 import 'package:core/src/widgets/tweet/tweet_metric.dart';
 import 'package:flutter/material.dart';
 
@@ -25,10 +25,7 @@ class Replies extends StatelessWidget {
   Widget build(BuildContext context) {
     return TweetMetric(
       metricValue: metricValue,
-      iconBuilder: (context, color, size) => AppIcon.reply(
-        color: color,
-        size: size,
-      ),
+      icon: const Icon(TwitterIcons.reply),
       iconSize: iconSize,
       onPressed: onPressed,
     );
