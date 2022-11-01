@@ -21,20 +21,20 @@ enum TweetAnnotationType {
   /// A pinned tweet. e.g. in a profile feed
   pinned;
 
-  /// [AppIcon] widget based on the tweet annotation type
-  Widget get icon {
+  /// Icon data based on the tweet annotation type
+  IconData get icon {
     switch (this) {
       case liked:
-        return const Icon(TwitterIcons.heart_fill);
+        return TwitterIcons.heart_fill;
       case replied:
       case newReplies:
-        return const Icon(TwitterIcons.reply_fill);
+        return TwitterIcons.reply_fill;
       case follow:
-        return const Icon(TwitterIcons.user_fill);
+        return TwitterIcons.user_fill;
       case retweeted:
-        return const Icon(TwitterIcons.retweet);
+        return TwitterIcons.retweet;
       case pinned:
-        return const Icon(TwitterIcons.pin);
+        return TwitterIcons.pin;
     }
   }
 
@@ -88,7 +88,7 @@ enum TweetAnnotationType {
 /// - Pinned tweet (pin icon)
 class TweetAnnotation extends StatelessWidget {
   /// Creates a new instance of [TweetAnnotation]
-  TweetAnnotation({
+  const TweetAnnotation({
     super.key,
     required this.type,
     this.user,
@@ -106,7 +106,7 @@ class TweetAnnotation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        type.icon,
+        Icon(type.icon, size: 12),
         const SizedBox(width: 5),
         if (type.hasUser && user != null && user!.isNotEmpty)
           Text(
