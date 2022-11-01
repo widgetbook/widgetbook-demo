@@ -1,7 +1,6 @@
 name: Build
 on:
   pull_request:
-    types: [ready_for_review]
     branches:
       - staging
   push:
