@@ -61,7 +61,7 @@ class FormattedDateTime extends StatelessWidget {
     ).format(date);
 
     final timeString = DateFormat(
-      isTime12h ? 'hh:mm a' : 'HH:MM',
+      isTime12h ? 'hh:mm a' : 'HH:mm',
       localeCode,
     ).format(date);
 
