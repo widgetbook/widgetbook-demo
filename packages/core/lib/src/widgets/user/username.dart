@@ -28,6 +28,7 @@ class Username extends StatelessWidget {
                     ? AppColors.textLight
                     : AppColors.whiteLight),
           ),
+      textDirection: TextDirection.ltr,
     );
   }
 }
