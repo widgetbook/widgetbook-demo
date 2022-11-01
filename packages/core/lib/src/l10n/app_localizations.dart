@@ -158,6 +158,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Received new replies'**
   String get receivedNewReplies;
+
+  /// No description provided for @twitterWebApp.
+  ///
+  /// In en, this message translates to:
+  /// **'Twitter Web App'**
+  String get twitterWebApp;
+
+  /// No description provided for @twitterForIphone.
+  ///
+  /// In en, this message translates to:
+  /// **'Twitter for iPhone'**
+  String get twitterForIphone;
+
+  /// No description provided for @twitterForAndroid.
+  ///
+  /// In en, this message translates to:
+  /// **'Twitter for Android'**
+  String get twitterForAndroid;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

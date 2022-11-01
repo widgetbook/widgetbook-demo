@@ -36,4 +36,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get receivedNewReplies => 'Received new replies';
+
+  @override
+  String get twitterWebApp => 'Twitter Web App';
+
+  @override
+  String get twitterForIphone => 'Twitter for iPhone';
+
+  @override
+  String get twitterForAndroid => 'Twitter for Android';
 }

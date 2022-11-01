@@ -9,5 +9,8 @@
     "replied": "replied",
     "follows": "follows",
     "retweeted": "retweeted",
-    "receivedNewReplies": "Received new replies"
+    "receivedNewReplies": "Received new replies",
+    "twitterWebApp": "Twitter Web App",
+    "twitterForIphone": "Twitter for iPhone",
+    "twitterForAndroid": "Twitter for Android"
 }

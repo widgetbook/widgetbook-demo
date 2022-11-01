@@ -8,7 +8,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get widgetbook => 'Widgetbook';
 
   @override
-  String get and => 'and';
+  String get and => 'و';
 
   @override
   String get retweets => 'اعادة تغريد';
@@ -20,20 +20,29 @@ class AppLocalizationsAr extends AppLocalizations {
   String get quoteTweets => 'تغريدات الاقتباس';
 
   @override
-  String get liked => 'liked';
+  String get liked => 'اعجب';
 
   @override
-  String get pinnedTweet => 'Pinned Tweet';
+  String get pinnedTweet => 'تغريدة مثبتة';
 
   @override
-  String get replied => 'replied';
+  String get replied => 'علَّق';
 
   @override
-  String get follows => 'follows';
+  String get follows => 'يتابع';
 
   @override
-  String get retweeted => 'retweeted';
+  String get retweeted => 'اعاد التغريد';
 
   @override
-  String get receivedNewReplies => 'Received new replies';
+  String get receivedNewReplies => 'تلقت تعليقات جديدة';
+
+  @override
+  String get twitterWebApp => 'تطبيف تويتر على الويب';
+
+  @override
+  String get twitterForIphone => 'تطبيق تويتر على الأيفون';
+
+  @override
+  String get twitterForAndroid => 'تطبيق تويتر على الأندرويد';
 }
