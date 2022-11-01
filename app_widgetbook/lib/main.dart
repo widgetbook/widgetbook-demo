@@ -314,7 +314,17 @@ class WidgetbookApp extends StatelessWidget {
                       name: 'Default',
                       builder: (context) => AppIconButton(
                         onPressed: () {},
-                        iconPath: AppIcons.heartFill,
+                        iconPath: context.knobs.options(
+                          label: 'Icon',
+                          options: AppIcons.iconPaths
+                              .map(
+                                (icon) => Option<String>(
+                                  label: AppIcons.getName(icon),
+                                  value: icon,
+                                ),
+                              )
+                              .toList(),
+                        ),
                         isActive: context.knobs.boolean(label: 'Active'),
                         color: context.knobs.options<Color?>(
                           label: 'Color',
