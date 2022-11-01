@@ -25,14 +25,12 @@ class DetailedTweetMetrics extends StatelessWidget {
     final metricValueTextStyle =
         Theme.of(context).textTheme.bodyText2!.copyWith(
               fontWeight: FontWeight.w700,
+              color: Theme.of(context).brightness == Brightness.dark
+                  ? AppColors.white
+                  : AppColors.black,
             );
 
-    final metricTitleTextStyle =
-        Theme.of(context).textTheme.bodyText2!.copyWith(
-              color: Theme.of(context).brightness == Brightness.light
-                  ? AppColors.textLight
-                  : AppColors.whiteLight,
-            );
+    final metricTitleTextStyle = Theme.of(context).textTheme.bodyText2;
 
     return Container(
       decoration: BoxDecoration(
