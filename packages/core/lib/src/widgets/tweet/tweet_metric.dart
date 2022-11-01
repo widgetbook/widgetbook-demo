@@ -22,7 +22,7 @@ class TweetMetric extends StatelessWidget {
   final int metricValue;
 
   /// Metric icon
-  final String? icon;
+  final Widget icon;
 
   /// Size of metric icon
   final double iconSize;
@@ -47,7 +47,7 @@ class TweetMetric extends StatelessWidget {
         AppIconButton(
           isActive: isActive,
           size: iconSize,
-          iconPath: icon,
+          icon: icon,
           hoverColor: activeColor,
           activeColor: activeColor,
           onPressed: onPressed,

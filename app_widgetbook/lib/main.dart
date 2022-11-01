@@ -314,17 +314,7 @@ class WidgetbookApp extends StatelessWidget {
                       name: 'Default',
                       builder: (context) => AppIconButton(
                         onPressed: () {},
-                        iconPath: context.knobs.options(
-                          label: 'Icon',
-                          options: AppIcons.iconPaths
-                              .map(
-                                (icon) => Option<String>(
-                                  label: AppIcons.getName(icon),
-                                  value: icon,
-                                ),
-                              )
-                              .toList(),
-                        ),
+                        icon: const Icon(TwitterIcons.heart),
                         isActive: context.knobs.boolean(label: 'Active'),
                         color: context.knobs.options<Color?>(
                           label: 'Color',
@@ -357,33 +347,6 @@ class WidgetbookApp extends StatelessWidget {
                       ),
                     ),
                   ],
-                ),
-                WidgetbookComponent(
-                  name: 'AppIcon',
-                  useCases: List.generate(
-                    AppIcons.iconPaths.length,
-                    (index) => WidgetbookUseCase(
-                      name: AppIcons.getName(AppIcons.iconPaths[index]),
-                      builder: (context) => AppIcon(
-                        AppIcons.iconPaths[index],
-                        isActive: context.knobs.boolean(label: 'isActive'),
-                        activeColor: context.knobs.options<Color?>(
-                              label: 'Active Color',
-                              description: 'Icon color for active state'
-                                  ' (defaults to Primary color)',
-                              options: colorOptions,
-                            ) ??
-                            AppColors.primary,
-                        size: context.knobs.slider(
-                          label: 'Icon Size',
-                          min: 15,
-                          max: 50,
-                          divisions: 50 - 15,
-                          initialValue: 40,
-                        ),
-                      ),
-                    ),
-                  ),
                 ),
               ],
             ),

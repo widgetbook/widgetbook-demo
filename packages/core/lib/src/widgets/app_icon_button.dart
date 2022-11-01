@@ -1,14 +1,6 @@
 import 'package:core/src/styles/app_colors.dart';
-import 'package:core/src/widgets/app_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-/// Icon builder to access color changes
-typedef IconBuilder = Widget Function(
-  BuildContext context,
-  Color? color,
-  double size,
-);
 
 /// Icon buttons with customizable hover colors
 ///
@@ -23,24 +15,11 @@ class AppIconButton extends StatefulWidget {
     this.hoverColor = AppColors.primary,
     this.color,
     this.activeColor = AppColors.primary,
-    required this.iconPath,
-    this.activeIconPath,
+    required this.icon,
+    this.activeIcon,
     this.onPressed,
     this.isActive = false,
-  }) : iconBuilder = null;
-
-  /// Creates a new instance of [AppIconButton]
-  const AppIconButton.builder({
-    super.key,
-    this.size = 20,
-    this.hoverColor = AppColors.primary,
-    this.color,
-    this.activeColor = AppColors.primary,
-    required this.iconBuilder,
-    this.activeIconPath,
-    this.onPressed,
-    this.isActive = false,
-  }) : iconPath = null;
+  });
 
   /// Size of the icon
   ///
@@ -68,19 +47,16 @@ class AppIconButton extends StatefulWidget {
   final Color activeColor;
 
   /// The icon widget
-  final String? iconPath;
-
-  /// The icon builder with access to color based on hover state
-  final IconBuilder? iconBuilder;
+  final Widget icon;
 
   /// Optional icon widget for when [isActive] is true
-  final String? activeIconPath;
+  final Widget? activeIcon;
 
   /// Callback for [IconButton.onPressed]
   final VoidCallback? onPressed;
 
   /// If the icon button is in active state,
-  /// the [activeIconPath] & [activeColor] are used
+  /// the [activeIcon] & [activeColor] are used
   final bool isActive;
 
   @override
@@ -123,27 +99,9 @@ class _AppIconButtonState extends State<AppIconButton> {
                 : widget.isActive
                     ? widget.activeColor
                     : widget.color,
-            icon: widget.iconPath != null
-                ? AppIcon(
-                    widget.isActive && widget.activeIconPath != null
-                        ? widget.activeIconPath!
-                        : widget.iconPath!,
-                    color: _isHovered
-                        ? widget.hoverColor
-                        : widget.isActive
-                            ? widget.activeColor
-                            : widget.color,
-                    size: widget.size,
-                  )
-                : widget.iconBuilder!.call(
-                    context,
-                    _isHovered
-                        ? widget.hoverColor
-                        : widget.isActive
-                            ? widget.activeColor
-                            : widget.color,
-                    widget.size,
-                  ),
+            icon: widget.isActive && widget.activeIcon != null
+                ? widget.activeIcon!
+                : widget.icon,
           ),
         ),
       ),
