@@ -7,4 +7,4 @@ packages:
 
 command:
   version:
-    workspaceChangelog: true
+    branch: staging
