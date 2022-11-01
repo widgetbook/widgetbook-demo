@@ -353,9 +353,7 @@ class WidgetbookApp extends StatelessWidget {
                   useCases: List.generate(
                     AppIcons.iconPaths.length,
                     (index) => WidgetbookUseCase(
-                      name: AppIcons.iconPaths[index]
-                          .replaceAll('assets/images/icons/', '')
-                          .replaceAll('.png', ''),
+                      name: AppIcons.getName(AppIcons.iconPaths[index]),
                       builder: (context) => AppIcon(
                         AppIcons.iconPaths[index],
                         isActive: context.knobs.boolean(label: 'isActive'),

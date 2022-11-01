@@ -127,6 +127,11 @@ class AppIcons {
   /// user-fill.png icon path
   static const String userFill = 'assets/images/icons/user-fill.png';
 
+  /// Retrieves icon name from path
+  static String getName(String path) {
+    return path.split('/').last.replaceAll('.png', '');
+  }
+
   /// List of all icon paths
   static const List<String> iconPaths = [
     addFeather,
