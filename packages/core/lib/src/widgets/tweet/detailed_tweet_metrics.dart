@@ -22,15 +22,7 @@ class DetailedTweetMetrics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final metricValueTextStyle =
-        Theme.of(context).textTheme.bodyText2!.copyWith(
-              fontWeight: FontWeight.w700,
-              color: Theme.of(context).brightness == Brightness.dark
-                  ? AppColors.white
-                  : AppColors.black,
-            );
-
-    final metricTitleTextStyle = Theme.of(context).textTheme.bodyText2;
+    final metricValueTextStyle = Theme.of(context).textTheme.bodyText1;
 
     return Container(
       decoration: BoxDecoration(
@@ -54,10 +46,7 @@ class DetailedTweetMetrics extends StatelessWidget {
                   textStyle: metricValueTextStyle,
                 ),
                 const SizedBox(width: 5),
-                Text(
-                  AppLocalizations.of(context)!.retweets,
-                  style: metricTitleTextStyle,
-                ),
+                Text(AppLocalizations.of(context)!.retweets),
                 const SizedBox(width: 10),
               ],
             ),
@@ -70,10 +59,7 @@ class DetailedTweetMetrics extends StatelessWidget {
                   textStyle: metricValueTextStyle,
                 ),
                 const SizedBox(width: 5),
-                Text(
-                  AppLocalizations.of(context)!.quoteTweets,
-                  style: metricTitleTextStyle,
-                ),
+                Text(AppLocalizations.of(context)!.quoteTweets),
                 const SizedBox(width: 10),
               ],
             ),
@@ -86,10 +72,7 @@ class DetailedTweetMetrics extends StatelessWidget {
                   textStyle: metricValueTextStyle,
                 ),
                 const SizedBox(width: 5),
-                Text(
-                  AppLocalizations.of(context)!.likes,
-                  style: metricTitleTextStyle,
-                ),
+                Text(AppLocalizations.of(context)!.likes),
               ],
             ),
         ],

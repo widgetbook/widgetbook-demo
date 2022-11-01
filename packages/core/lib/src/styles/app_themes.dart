@@ -33,9 +33,7 @@ class AppThemes {
         caption: AppTextStyles.caption.copyWith(
           color: isDark ? AppColors.whiteLight : AppColors.textLight,
         ),
-        bodyText1: AppTextStyles.bodyLg.copyWith(
-          color: isDark ? AppColors.whiteLight : AppColors.textLight,
-        ),
+        bodyText1: AppTextStyles.bodyBold,
         bodyText2: AppTextStyles.body.copyWith(
           color: isDark ? AppColors.whiteLight : AppColors.textLight,
         ),
