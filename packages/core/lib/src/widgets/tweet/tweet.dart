@@ -1,3 +1,4 @@
+export './detailed_tweet_info.dart';
 export './detailed_tweet_metrics.dart';
 export './like_icon_button.dart';
 export './likes.dart';

@@ -316,6 +316,28 @@ class WidgetbookApp extends StatelessWidget {
                     )
                   ],
                 ),
+                WidgetbookComponent(
+                  name: 'Detailed Tweet Info',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => DetailedTweetInfo(
+                        tweetSource: context.knobs.options<TweetSource>(
+                          label: 'Tweet Source',
+                          options: TweetSource.values
+                              .map(
+                                (source) => Option(
+                                  label: source.getText(context),
+                                  value: source,
+                                ),
+                              )
+                              .toList(),
+                        ),
+                        tweetDate: getTweetDateOption(context),
+                      ),
+                    )
+                  ],
+                ),
               ],
             ),
             WidgetbookFolder(
