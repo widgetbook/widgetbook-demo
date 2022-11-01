@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:core/src/styles/app_colors.dart';
-import 'package:core/src/tweet/widgets/widgets.dart';
 import 'package:core/src/widgets/app_icon_button.dart';
+import 'package:core/src/widgets/tweet/tweet.dart';
 import 'package:flutter/material.dart';
 
 /// Animated icon button widget for the like metric of a tweet
@@ -16,14 +16,10 @@ class LikeIconButton extends StatefulWidget {
     this.isActive = false,
     this.onPressed,
     this.size = 30,
-    this.animationController,
   });
 
   /// Indicated if icon button is clicked by the user
   final bool isActive;
-
-  /// Optional animation controller provided by the parent
-  final AnimationController? animationController;
 
   /// Callback for [AppIconButton.onPressed]
   final VoidCallback? onPressed;
@@ -41,19 +37,16 @@ class _LikeIconButtonState extends State<LikeIconButton>
 
   @override
   void initState() {
-    animationController = widget.animationController ??
-        AnimationController(
-          vsync: this,
-          duration: const Duration(milliseconds: 600),
-        );
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 600),
+    );
     super.initState();
   }
 
   @override
   void dispose() {
-    if (widget.animationController == null) {
-      animationController.dispose();
-    }
+    animationController.dispose();
     super.dispose();
   }
 

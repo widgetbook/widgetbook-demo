@@ -1,5 +1,6 @@
 import 'package:core/src/styles/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 /// Tweet metric text widget
 ///
@@ -11,6 +12,7 @@ class MetricText extends StatefulWidget {
     this.value = 0,
     this.isActive = false,
     this.activeColor = AppColors.primary,
+    this.textStyle,
   });
 
   /// Metric value
@@ -22,6 +24,9 @@ class MetricText extends StatefulWidget {
   /// Color of the text when active
   final Color activeColor;
 
+  /// Text style of the metric value
+  final TextStyle? textStyle;
+
   @override
   State<MetricText> createState() => _MetricTextState();
 }
@@ -29,6 +34,8 @@ class MetricText extends StatefulWidget {
 class _MetricTextState extends State<MetricText> {
   @override
   Widget build(BuildContext context) {
+    final value = widget.value;
+    final nextValue = widget.value + 1;
     return ClipRect(
       child: Stack(
         fit: StackFit.passthrough,
@@ -40,8 +47,8 @@ class _MetricTextState extends State<MetricText> {
             child: Opacity(
               opacity: widget.value == 0 ? 0 : 1,
               child: Text(
-                '${widget.value}',
-                style: Theme.of(context).textTheme.caption,
+                NumberFormat.compact().format(value),
+                style: widget.textStyle ?? Theme.of(context).textTheme.caption,
               ),
             ),
           ),
@@ -50,11 +57,12 @@ class _MetricTextState extends State<MetricText> {
             offset: Offset(0, widget.isActive ? 0 : 1),
             curve: Curves.easeInOut,
             child: Text(
-              '${widget.value + 1}',
-              style: Theme.of(context)
-                  .textTheme
-                  .caption!
-                  .copyWith(color: widget.activeColor),
+              NumberFormat.compact().format(nextValue),
+              style: widget.textStyle ??
+                  Theme.of(context)
+                      .textTheme
+                      .caption!
+                      .copyWith(color: widget.activeColor),
             ),
           ),
         ],
