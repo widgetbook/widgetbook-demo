@@ -32,5 +32,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get follows => 'follows';
 
   @override
+  String get retweeted => 'retweeted';
+
+  @override
   String get receivedNewReplies => 'Received new replies';
 }

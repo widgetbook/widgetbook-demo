@@ -1,8 +1,9 @@
+export './detailed_tweet_metrics.dart';
 export './like_icon_button.dart';
 export './likes.dart';
 export './metric_text.dart';
 export './replies.dart';
 export './retweets.dart';
 export './tweet_actions.dart';
+export './tweet_annotation.dart';
 export './tweet_metric.dart';
-export './detailed_tweet_metrics.dart';

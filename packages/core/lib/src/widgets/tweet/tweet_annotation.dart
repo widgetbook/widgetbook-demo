@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 /// Type of Tweet Annotation (reason to appear in a feed)
 enum TweetAnnotationType {
   /// Someone followed by the user liked the tweet
-  like,
+  liked,
 
   /// Someone followed by the user replied to the tweet
-  reply,
+  replied,
 
   /// Tweet received new replies or
   newReplies,
@@ -16,7 +16,7 @@ enum TweetAnnotationType {
   follow,
 
   /// Someone followed by the user retweeted the tweet
-  retweet,
+  retweeted,
 
   /// A pinned tweet. e.g. in a profile feed
   pinned;
@@ -24,14 +24,14 @@ enum TweetAnnotationType {
   /// [AppIcon] widget based on the tweet annotation type
   Widget get icon {
     switch (this) {
-      case like:
+      case liked:
         return const AppIcon.heartFill(size: 12);
-      case reply:
+      case replied:
       case newReplies:
         return const AppIcon.replyFill(size: 12);
       case follow:
         return const AppIcon.userFill(size: 12);
-      case retweet:
+      case retweeted:
         return const AppIcon.retweet(size: 12);
       case pinned:
         return const AppIcon.pin(size: 12);
@@ -42,18 +42,37 @@ enum TweetAnnotationType {
   /// based on the type
   String getText(BuildContext context) {
     switch (this) {
-      case like:
+      case liked:
         return AppLocalizations.of(context)!.liked;
-      case reply:
+      case replied:
         return AppLocalizations.of(context)!.replied;
       case newReplies:
         return AppLocalizations.of(context)!.receivedNewReplies;
       case follow:
         return AppLocalizations.of(context)!.receivedNewReplies;
-      case retweet:
-        return '';
+      case retweeted:
+        return AppLocalizations.of(context)!.retweeted;
       case pinned:
-        return '';
+        return AppLocalizations.of(context)!.pinnedTweet;
+    }
+  }
+
+  /// Determines which types have users
+  ///
+  /// For example, the [TweetAnnotationType.newReplies] does not
+  /// have users because it's used as `received new replies`
+  /// Whereas [TweetAnnotationType.liked] has users because it's used as
+  /// `user1 (and user2) liked`
+  bool get hasUsers {
+    switch (this) {
+      case liked:
+      case replied:
+      case follow:
+      case retweeted:
+        return true;
+      case newReplies:
+      case pinned:
+        return false;
     }
   }
 }
@@ -89,12 +108,13 @@ class TweetAnnotation extends StatelessWidget {
     return Row(
       children: [
         type.icon,
-        if (users.isNotEmpty)
+        const SizedBox(width: 5),
+        if (type.hasUsers && users.isNotEmpty && users[0].isNotEmpty)
           Text(
             '${users[0]} ',
             style: Theme.of(context).textTheme.caption,
           ),
-        if (users.length > 1)
+        if (type.hasUsers && users.length > 1 && users[1].isNotEmpty)
           Text(
             '${AppLocalizations.of(context)!.and} ${users[1]} ',
             style: Theme.of(context).textTheme.caption,

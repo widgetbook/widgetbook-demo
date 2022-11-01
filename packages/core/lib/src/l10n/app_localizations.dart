@@ -147,6 +147,12 @@ abstract class AppLocalizations {
   /// **'follows'**
   String get follows;
 
+  /// No description provided for @retweeted.
+  ///
+  /// In en, this message translates to:
+  /// **'retweeted'**
+  String get retweeted;
+
   /// No description provided for @receivedNewReplies.
   ///
   /// In en, this message translates to:

@@ -8,5 +8,6 @@
     "pinnedTweet": "Pinned Tweet",
     "replied": "replied",
     "follows": "follows",
+    "retweeted": "retweeted",
     "receivedNewReplies": "Received new replies"
 }
