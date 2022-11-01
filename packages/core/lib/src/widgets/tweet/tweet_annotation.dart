@@ -63,7 +63,7 @@ enum TweetAnnotationType {
   /// have users because it's used as `received new replies`
   /// Whereas [TweetAnnotationType.liked] has users because it's used as
   /// `user1 (and user2) liked`
-  bool get hasUsers {
+  bool get hasUser {
     switch (this) {
       case liked:
       case replied:
@@ -88,20 +88,19 @@ enum TweetAnnotationType {
 /// - Pinned tweet (pin icon)
 class TweetAnnotation extends StatelessWidget {
   /// Creates a new instance of [TweetAnnotation]
-  const TweetAnnotation({
+  TweetAnnotation({
     super.key,
     required this.type,
-    this.users = const [],
+    this.user,
   });
 
   /// The type of the annotation
   final TweetAnnotationType type;
 
-  /// List of display names of users responsible for
-  /// the annotation
+  /// Display name of user responsible for the annotation
   ///
-  /// e.g. `John Doe` replied, `John Doe` and `Jane Doe` liked
-  final List<String> users;
+  /// e.g. `John Doe` replied, `John Doe` liked
+  final String? user;
 
   @override
   Widget build(BuildContext context) {
@@ -109,14 +108,9 @@ class TweetAnnotation extends StatelessWidget {
       children: [
         type.icon,
         const SizedBox(width: 5),
-        if (type.hasUsers && users.isNotEmpty && users[0].isNotEmpty)
+        if (type.hasUser && user != null && user!.isNotEmpty)
           Text(
-            '${users[0]} ',
-            style: Theme.of(context).textTheme.caption,
-          ),
-        if (type.hasUsers && users.length > 1 && users[1].isNotEmpty)
-          Text(
-            '${AppLocalizations.of(context)!.and} ${users[1]} ',
+            '$user ',
             style: Theme.of(context).textTheme.caption,
           ),
         Text(

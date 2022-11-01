@@ -274,18 +274,12 @@ class WidgetbookApp extends StatelessWidget {
                         );
                         return TweetAnnotation(
                           type: type,
-                          users: type.hasUsers
-                              ? [
-                                  context.knobs.text(
-                                    label: 'User 1',
-                                    initialValue: 'John Doe',
-                                  ),
-                                  context.knobs.text(
-                                    label: 'User 2',
-                                    initialValue: '',
-                                  ),
-                                ]
-                              : [],
+                          user: type.hasUser
+                              ? context.knobs.text(
+                                  label: 'User',
+                                  initialValue: 'John Doe',
+                                )
+                              : null,
                         );
                       },
                     ),
