@@ -174,7 +174,8 @@ class WidgetbookApp extends StatelessWidget {
               ],
               widgets: [
                 WidgetbookComponent(
-                  name: 'TweetActions',
+                  name: 'Tweet Actions',
+                  isExpanded: true,
                   useCases: [
                     WidgetbookUseCase(
                       name: 'Default',
@@ -215,7 +216,8 @@ class WidgetbookApp extends StatelessWidget {
                   ],
                 ),
                 WidgetbookComponent(
-                  name: 'DetailedTweetMetrics',
+                  name: 'Detailed Tweet Metrics',
+                  isExpanded: true,
                   useCases: [
                     WidgetbookUseCase(
                       name: 'Default',
@@ -254,7 +256,8 @@ class WidgetbookApp extends StatelessWidget {
                   ],
                 ),
                 WidgetbookComponent(
-                  name: 'TweetAnnotation',
+                  name: 'Tweet Annotation',
+                  isExpanded: true,
                   useCases: [
                     WidgetbookUseCase(
                       name: 'Default',
@@ -284,7 +287,7 @@ class WidgetbookApp extends StatelessWidget {
                   ],
                 ),
                 WidgetbookComponent(
-                  name: 'TweetDate',
+                  name: 'Tweet Date',
                   useCases: [
                     WidgetbookUseCase(
                       name: 'Default',
@@ -295,7 +298,7 @@ class WidgetbookApp extends StatelessWidget {
                   ],
                 ),
                 WidgetbookComponent(
-                  name: 'TweetHeader',
+                  name: 'Tweet Header',
                   useCases: [
                     WidgetbookUseCase(
                       name: 'Default',
