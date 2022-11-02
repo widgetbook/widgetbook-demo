@@ -335,6 +335,34 @@ class WidgetbookApp extends StatelessWidget {
                     )
                   ],
                 ),
+                WidgetbookComponent(
+                  name: 'TweetImage',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => const Center(
+                        child: TweetImage(
+                          imageUrl:
+                              'https://pbs.twimg.com/media/FfhIN93XkAEW0wq?format=jpg&name=medium',
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'TweetImage',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => const Center(
+                        child: TweetImage(
+                          imageUrl:
+                              'https://pbs.twimg.com/media/FfhIN93XkAEW0wq?format=jpg&name=medium',
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
             WidgetbookFolder(
