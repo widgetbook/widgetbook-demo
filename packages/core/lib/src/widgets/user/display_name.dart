@@ -15,9 +15,7 @@ class DisplayName extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       value,
-      style: Theme.of(context).textTheme.bodyText2!.copyWith(
-            fontWeight: FontWeight.w700,
-          ),
+      style: Theme.of(context).textTheme.bodyText1,
     );
   }
 }

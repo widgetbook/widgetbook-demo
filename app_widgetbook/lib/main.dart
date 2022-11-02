@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 void main() {
+  TimeagoUtils.setMessages();
   runApp(const WidgetbookApp());
 }
 
@@ -254,6 +255,89 @@ class WidgetbookApp extends StatelessWidget {
                     ),
                   ],
                 ),
+                WidgetbookComponent(
+                  name: 'Tweet Annotation',
+                  isExpanded: true,
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) {
+                        final type = context.knobs.options<TweetAnnotationType>(
+                          label: 'Type',
+                          options: TweetAnnotationType.values
+                              .map(
+                                (value) => Option(
+                                  label: value.name.toUpperCase(),
+                                  value: value,
+                                ),
+                              )
+                              .toList(),
+                        );
+                        return TweetAnnotation(
+                          type: type,
+                          user: type.hasUser
+                              ? context.knobs.text(
+                                  label: 'User',
+                                  initialValue: 'John Doe',
+                                )
+                              : null,
+                        );
+                      },
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'Tweet Date',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => TweetDate(
+                        date: getTweetDateOption(context),
+                      ),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'Tweet Header',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => TweetHeader(
+                        displayName: context.knobs.text(
+                          label: 'Display Name',
+                          initialValue: 'John Doe',
+                        ),
+                        username: context.knobs.text(
+                          label: 'Username',
+                          initialValue: 'johndoe',
+                        ),
+                        tweetDate: getTweetDateOption(context),
+                      ),
+                    )
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'Detailed Tweet Info',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => DetailedTweetInfo(
+                        tweetSource: context.knobs.options<TweetSource>(
+                          label: 'Tweet Source',
+                          options: TweetSource.values
+                              .map(
+                                (source) => Option(
+                                  label: source.getText(context),
+                                  value: source,
+                                ),
+                              )
+                              .toList(),
+                        ),
+                        tweetDate: getTweetDateOption(context),
+                      ),
+                    )
+                  ],
+                ),
               ],
             ),
             WidgetbookFolder(
@@ -344,6 +428,86 @@ class WidgetbookApp extends StatelessWidget {
                           divisions: 50 - 15,
                           initialValue: 20,
                         ),
+                      ),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'FormattedDateTime',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Date & Time',
+                      builder: (context) => FormattedDateTime(
+                        date: DateTime.now(),
+                        isDateOnly: false,
+                        isTime12h: context.knobs.boolean(
+                          label: '12-Hour Format',
+                          initialValue: true,
+                        ),
+                        hasYear: context.knobs.boolean(
+                          label: 'Has Year',
+                          initialValue: true,
+                        ),
+                      ),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Date',
+                      builder: (context) => FormattedDateTime(
+                        date: DateTime.now(),
+                        hasYear: context.knobs.boolean(
+                          label: 'Has Year',
+                          initialValue: true,
+                        ),
+                      ),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Time',
+                      builder: (context) => FormattedDateTime(
+                        date: DateTime.now(),
+                        isTimeOnly: true,
+                        isTime12h: context.knobs.boolean(
+                          label: '12-Hour Format',
+                          initialValue: true,
+                        ),
+                      ),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'TimeAgo',
+                      builder: (context) => FormattedDateTime(
+                        date: context.knobs.options<DateTime>(
+                          label: 'Date',
+                          options: [
+                            Option(
+                              label: 'Now',
+                              value: DateTime.now(),
+                            ),
+                            Option(
+                              label: '5 Minutes Ago',
+                              value: DateTime.now().subtract(
+                                const Duration(minutes: 5),
+                              ),
+                            ),
+                            Option(
+                              label: '12 hours ago',
+                              value: DateTime.now().subtract(
+                                const Duration(hours: 12),
+                              ),
+                            ),
+                            Option(
+                              label: '2 days ago',
+                              value: DateTime.now().subtract(
+                                const Duration(days: 2),
+                              ),
+                            ),
+                            Option(
+                              label: '3 months ago',
+                              value: DateTime.now().subtract(
+                                const Duration(days: 30 * 3),
+                              ),
+                            ),
+                          ],
+                        ),
+                        isTimeAgo: true,
                       ),
                     ),
                   ],
@@ -450,6 +614,37 @@ class WidgetbookApp extends StatelessWidget {
       textScaleFactors: [1, 1.5, 2],
     );
   }
+}
+
+/// Predefined options knob for a tweet date
+DateTime getTweetDateOption(BuildContext context) {
+  return context.knobs.options<DateTime>(
+    label: 'Date',
+    description: "The date should be a timeago string if it's "
+        'less than 24 hours ago, and it should '
+        "include the year only if it's different "
+        'than the one we are currently in',
+    options: [
+      Option(
+        label: '12 hours ago',
+        value: DateTime.now().subtract(
+          const Duration(hours: 12),
+        ),
+      ),
+      Option(
+        label: '2 days ago',
+        value: DateTime.now().subtract(
+          const Duration(days: 2),
+        ),
+      ),
+      Option(
+        label: '2 years ago',
+        value: DateTime.now().subtract(
+          const Duration(days: 365 * 3),
+        ),
+      ),
+    ],
+  );
 }
 
 /// List of app color options that can be used with knobs

@@ -24,7 +24,7 @@ class AppTextStyles {
   /// Text style for Body Bold text
   static const TextStyle bodyBold = TextStyle(
     fontSize: bodyFontSize,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w700,
     height: 1,
   );
 

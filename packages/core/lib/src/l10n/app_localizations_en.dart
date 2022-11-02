@@ -8,6 +8,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get widgetbook => 'Widgetbook';
 
   @override
+  String get and => 'and';
+
+  @override
   String get retweets => 'Retweets';
 
   @override
@@ -15,4 +18,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get quoteTweets => 'Quote Tweets';
+
+  @override
+  String get liked => 'liked';
+
+  @override
+  String get pinnedTweet => 'Pinned Tweet';
+
+  @override
+  String get replied => 'replied';
+
+  @override
+  String get follows => 'follows';
+
+  @override
+  String get retweeted => 'retweeted';
+
+  @override
+  String get receivedNewReplies => 'Received new replies';
+
+  @override
+  String get twitterWebApp => 'Twitter Web App';
+
+  @override
+  String get twitterForIphone => 'Twitter for iPhone';
+
+  @override
+  String get twitterForAndroid => 'Twitter for Android';
 }

@@ -99,6 +99,12 @@ abstract class AppLocalizations {
   /// **'Widgetbook'**
   String get widgetbook;
 
+  /// No description provided for @and.
+  ///
+  /// In en, this message translates to:
+  /// **'and'**
+  String get and;
+
   /// No description provided for @retweets.
   ///
   /// In en, this message translates to:
@@ -116,6 +122,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Quote Tweets'**
   String get quoteTweets;
+
+  /// No description provided for @liked.
+  ///
+  /// In en, this message translates to:
+  /// **'liked'**
+  String get liked;
+
+  /// No description provided for @pinnedTweet.
+  ///
+  /// In en, this message translates to:
+  /// **'Pinned Tweet'**
+  String get pinnedTweet;
+
+  /// No description provided for @replied.
+  ///
+  /// In en, this message translates to:
+  /// **'replied'**
+  String get replied;
+
+  /// No description provided for @follows.
+  ///
+  /// In en, this message translates to:
+  /// **'follows'**
+  String get follows;
+
+  /// No description provided for @retweeted.
+  ///
+  /// In en, this message translates to:
+  /// **'retweeted'**
+  String get retweeted;
+
+  /// No description provided for @receivedNewReplies.
+  ///
+  /// In en, this message translates to:
+  /// **'Received new replies'**
+  String get receivedNewReplies;
+
+  /// No description provided for @twitterWebApp.
+  ///
+  /// In en, this message translates to:
+  /// **'Twitter Web App'**
+  String get twitterWebApp;
+
+  /// No description provided for @twitterForIphone.
+  ///
+  /// In en, this message translates to:
+  /// **'Twitter for iPhone'**
+  String get twitterForIphone;
+
+  /// No description provided for @twitterForAndroid.
+  ///
+  /// In en, this message translates to:
+  /// **'Twitter for Android'**
+  String get twitterForAndroid;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

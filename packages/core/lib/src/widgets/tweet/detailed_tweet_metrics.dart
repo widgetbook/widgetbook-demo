@@ -22,17 +22,7 @@ class DetailedTweetMetrics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final metricValueTextStyle =
-        Theme.of(context).textTheme.bodyText2!.copyWith(
-              fontWeight: FontWeight.w700,
-            );
-
-    final metricTitleTextStyle =
-        Theme.of(context).textTheme.bodyText2!.copyWith(
-              color: Theme.of(context).brightness == Brightness.light
-                  ? AppColors.textLight
-                  : AppColors.whiteLight,
-            );
+    final metricValueTextStyle = Theme.of(context).textTheme.bodyText1;
 
     return Container(
       decoration: BoxDecoration(
@@ -56,10 +46,7 @@ class DetailedTweetMetrics extends StatelessWidget {
                   textStyle: metricValueTextStyle,
                 ),
                 const SizedBox(width: 5),
-                Text(
-                  AppLocalizations.of(context)!.retweets,
-                  style: metricTitleTextStyle,
-                ),
+                Text(AppLocalizations.of(context)!.retweets),
                 const SizedBox(width: 10),
               ],
             ),
@@ -72,10 +59,7 @@ class DetailedTweetMetrics extends StatelessWidget {
                   textStyle: metricValueTextStyle,
                 ),
                 const SizedBox(width: 5),
-                Text(
-                  AppLocalizations.of(context)!.quoteTweets,
-                  style: metricTitleTextStyle,
-                ),
+                Text(AppLocalizations.of(context)!.quoteTweets),
                 const SizedBox(width: 10),
               ],
             ),
@@ -88,10 +72,7 @@ class DetailedTweetMetrics extends StatelessWidget {
                   textStyle: metricValueTextStyle,
                 ),
                 const SizedBox(width: 5),
-                Text(
-                  AppLocalizations.of(context)!.likes,
-                  style: metricTitleTextStyle,
-                ),
+                Text(AppLocalizations.of(context)!.likes),
               ],
             ),
         ],

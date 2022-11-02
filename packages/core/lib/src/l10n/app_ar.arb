@@ -1,6 +1,16 @@
 {
     "widgetbook": "Widgetbook",
+    "and": "و",
     "retweets": "اعادة تغريد",
     "likes": "اعجابات",
-    "quoteTweets": "تغريدات الاقتباس"
+    "quoteTweets": "تغريدات الاقتباس",
+    "liked": "اعجب",
+    "pinnedTweet": "تغريدة مثبتة",
+    "replied": "علَّق",
+    "retweeted": "اعاد التغريد",
+    "follows": "يتابع",
+    "receivedNewReplies": "تلقت تعليقات جديدة",
+    "twitterWebApp": "تطبيف تويتر على الويب",
+    "twitterForIphone": "تطبيق تويتر على الأيفون",
+    "twitterForAndroid": "تطبيق تويتر على الأندرويد"
 }
