@@ -41,4 +41,6 @@ jobs:
                 --repository \
                 $GITHUB_REPOSITORY \
                 --actor \
-                $GITHUB_ACTOR
+                $GITHUB_ACTOR \
+                --branch \
+                $GITHUB_HEAD_REF
