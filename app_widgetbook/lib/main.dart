@@ -342,7 +342,7 @@ class WidgetbookApp extends StatelessWidget {
                       name: 'Default',
                       builder: (context) => Center(
                         child: TweetImage(
-                          imageUrl: tweetImages[0],
+                          imageUrl: DummyMedia.singlePhotoMedia[0].url,
                         ),
                       ),
                     ),
@@ -354,6 +354,10 @@ class WidgetbookApp extends StatelessWidget {
                     WidgetbookUseCase(
                       name: 'Default',
                       builder: (context) {
+                        final tweetImages = DummyMedia.fourPhotosMedia
+                            .map((media) => media.url)
+                            .toList();
+
                         return TweetGallery(
                           imageUrls: context.knobs.options(
                             label: 'Image Count',
@@ -367,6 +371,24 @@ class WidgetbookApp extends StatelessWidget {
                           ),
                         );
                       },
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'TweetMedia',
+                  isExpanded: true,
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Image',
+                      builder: (context) => TweetMedia(
+                        tweetMedia: DummyMedia.singlePhotoMedia,
+                      ),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Gallery',
+                      builder: (context) => TweetMedia(
+                        tweetMedia: DummyMedia.fourPhotosMedia,
+                      ),
                     ),
                   ],
                 ),
@@ -709,12 +731,4 @@ const List<Option<Color?>> colorOptions = [
     label: 'Pink',
     value: AppColors.pink,
   ),
-];
-
-/// List of example tweet images from the Widgetbook Twitter account
-const List<String> tweetImages = [
-  'https://pbs.twimg.com/media/FGjqnF9XMAIX0zi.jpg',
-  'https://pbs.twimg.com/media/FGjqnGBXEAIApJM.jpg',
-  'https://pbs.twimg.com/media/FGjqnGEXoAACPRt.jpg',
-  'https://pbs.twimg.com/media/FGjqnF_WYAE34ZZ.jpg',
 ];
