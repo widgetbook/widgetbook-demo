@@ -340,10 +340,8 @@ class WidgetbookApp extends StatelessWidget {
                   useCases: [
                     WidgetbookUseCase(
                       name: 'Default',
-                      builder: (context) => Center(
-                        child: TweetImage(
-                          imageUrl: DummyMedia.singlePhotoMedia[0].url,
-                        ),
+                      builder: (context) => TweetImage(
+                        imageUrl: DummyMedia.singlePhotoMedia[0].url,
                       ),
                     ),
                   ],
