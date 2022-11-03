@@ -29,6 +29,12 @@ class AppCachedNetworkImage extends StatelessWidget {
       imageUrl: imageUrl,
       fit: fit,
       alignment: alignment,
+      placeholderFadeInDuration: const Duration(milliseconds: 300),
+      placeholder: (BuildContext context, String url) {
+        return ColoredBox(
+          color: Theme.of(context).highlightColor,
+        );
+      },
     );
   }
 }

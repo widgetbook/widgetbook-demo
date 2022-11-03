@@ -12,6 +12,9 @@ class AppThemes {
       primaryColor: AppColors.getMaterialColorFromColor(AppColors.primary),
       scaffoldBackgroundColor: isDark ? AppColors.black : AppColors.white,
       dividerColor: AppColors.border,
+      highlightColor: isDark
+          ? AppColors.white.withOpacity(0.2)
+          : AppColors.black.withOpacity(0.1),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
