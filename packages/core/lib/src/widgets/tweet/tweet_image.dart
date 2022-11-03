@@ -1,4 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:core/src/widgets/app_cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 /// Tweet image widget
@@ -14,14 +14,10 @@ class TweetImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: const BoxConstraints(
-        maxHeight: 800,
-        minHeight: 200,
-      ),
-      child: CachedNetworkImage(
+    return LimitedBox(
+      maxHeight: 800,
+      child: AppCachedNetworkImage(
         imageUrl: imageUrl,
-        fit: BoxFit.cover,
       ),
     );
   }
