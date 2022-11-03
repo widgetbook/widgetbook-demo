@@ -340,26 +340,33 @@ class WidgetbookApp extends StatelessWidget {
                   useCases: [
                     WidgetbookUseCase(
                       name: 'Default',
-                      builder: (context) => const Center(
+                      builder: (context) => Center(
                         child: TweetImage(
-                          imageUrl:
-                              'https://pbs.twimg.com/media/FfhIN93XkAEW0wq?format=jpg&name=medium',
+                          imageUrl: tweetImages[0],
                         ),
                       ),
                     ),
                   ],
                 ),
                 WidgetbookComponent(
-                  name: 'TweetImage',
+                  name: 'TweetGallery',
                   useCases: [
                     WidgetbookUseCase(
                       name: 'Default',
-                      builder: (context) => const Center(
-                        child: TweetImage(
-                          imageUrl:
-                              'https://pbs.twimg.com/media/FfhIN93XkAEW0wq?format=jpg&name=medium',
-                        ),
-                      ),
+                      builder: (context) {
+                        return TweetGallery(
+                          imageUrls: context.knobs.options(
+                            label: 'Image Count',
+                            options: [
+                              for (int i = 4; i >= 2; i--)
+                                Option(
+                                  label: '$i Images',
+                                  value: tweetImages.take(i).toList(),
+                                ),
+                            ],
+                          ),
+                        );
+                      },
                     ),
                   ],
                 ),
@@ -702,4 +709,12 @@ const List<Option<Color?>> colorOptions = [
     label: 'Pink',
     value: AppColors.pink,
   ),
+];
+
+/// List of example tweet images from the Widgetbook Twitter account
+const List<String> tweetImages = [
+  'https://pbs.twimg.com/media/FGjqnF9XMAIX0zi.jpg',
+  'https://pbs.twimg.com/media/FGjqnGBXEAIApJM.jpg',
+  'https://pbs.twimg.com/media/FGjqnGEXoAACPRt.jpg',
+  'https://pbs.twimg.com/media/FGjqnF_WYAE34ZZ.jpg',
 ];
