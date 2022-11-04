@@ -1,4 +1,4 @@
-import 'package:core/src/models/media.dart';
+import 'package:core/core.dart';
 
 /// Holds dummy media used for testing and the Widgetbook app
 class DummyMedia {
