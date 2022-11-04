@@ -1,5 +1,4 @@
 import 'package:core/core.dart';
-import 'package:core/src/models/media.dart';
 import 'package:flutter/material.dart';
 
 /// Tweet media widget

@@ -1,9 +1,6 @@
 import 'dart:math';
 
-import 'package:core/src/styles/app_colors.dart';
-import 'package:core/src/styles/twitter_icons.dart';
-import 'package:core/src/widgets/app_icon_button.dart';
-import 'package:core/src/widgets/tweet/tweet.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
 /// Animated icon button widget for the like metric of a tweet
