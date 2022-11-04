@@ -1,5 +1,4 @@
 import 'package:core/core.dart';
-import 'package:core/src/styles/twitter_icons.dart';
 import 'package:flutter/material.dart';
 
 /// Tweet metrics and share action widget

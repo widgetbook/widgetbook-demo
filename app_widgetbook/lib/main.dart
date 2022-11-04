@@ -1,3 +1,4 @@
+import 'package:app_widgetbook/dummy_data/dummy_media.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';
@@ -174,8 +175,7 @@ class WidgetbookApp extends StatelessWidget {
               ],
               widgets: [
                 WidgetbookComponent(
-                  name: 'Tweet Actions',
-                  isExpanded: true,
+                  name: 'TweetActions',
                   useCases: [
                     WidgetbookUseCase(
                       name: 'Default',
@@ -216,8 +216,7 @@ class WidgetbookApp extends StatelessWidget {
                   ],
                 ),
                 WidgetbookComponent(
-                  name: 'Detailed Tweet Metrics',
-                  isExpanded: true,
+                  name: 'DetailedTweetMetrics',
                   useCases: [
                     WidgetbookUseCase(
                       name: 'Default',
@@ -256,8 +255,7 @@ class WidgetbookApp extends StatelessWidget {
                   ],
                 ),
                 WidgetbookComponent(
-                  name: 'Tweet Annotation',
-                  isExpanded: true,
+                  name: 'TweetAnnotation',
                   useCases: [
                     WidgetbookUseCase(
                       name: 'Default',
@@ -287,7 +285,7 @@ class WidgetbookApp extends StatelessWidget {
                   ],
                 ),
                 WidgetbookComponent(
-                  name: 'Tweet Date',
+                  name: 'TweetDate',
                   useCases: [
                     WidgetbookUseCase(
                       name: 'Default',
@@ -298,7 +296,7 @@ class WidgetbookApp extends StatelessWidget {
                   ],
                 ),
                 WidgetbookComponent(
-                  name: 'Tweet Header',
+                  name: 'TweetHeader',
                   useCases: [
                     WidgetbookUseCase(
                       name: 'Default',
@@ -336,6 +334,61 @@ class WidgetbookApp extends StatelessWidget {
                         tweetDate: getTweetDateOption(context),
                       ),
                     )
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'TweetImage',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => TweetImage(
+                        imageUrl: DummyMedia.singlePhotoMedia[0].url,
+                      ),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'TweetGallery',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) {
+                        final tweetImages = DummyMedia.fourPhotosMedia
+                            .map((media) => media.url)
+                            .toList();
+
+                        return TweetGallery(
+                          imageUrls: context.knobs.options(
+                            label: 'Image Count',
+                            options: [
+                              for (int i = 4; i >= 2; i--)
+                                Option(
+                                  label: '$i Images',
+                                  value: tweetImages.take(i).toList(),
+                                ),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'TweetMedia',
+                  isExpanded: true,
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Image',
+                      builder: (context) => TweetMedia(
+                        tweetMedia: DummyMedia.singlePhotoMedia,
+                      ),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Gallery',
+                      builder: (context) => TweetMedia(
+                        tweetMedia: DummyMedia.fourPhotosMedia,
+                      ),
+                    ),
                   ],
                 ),
               ],

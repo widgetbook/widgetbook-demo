@@ -8,5 +8,8 @@ export './retweets.dart';
 export './tweet_actions.dart';
 export './tweet_annotation.dart';
 export './tweet_date.dart';
+export './tweet_gallery.dart';
 export './tweet_header.dart';
+export './tweet_image.dart';
+export './tweet_media.dart';
 export './tweet_metric.dart';
