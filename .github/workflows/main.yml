@@ -43,4 +43,6 @@ jobs:
                 --actor \
                 $GITHUB_ACTOR \
                 --branch \
-                $GITHUB_HEAD_REF
+                $GITHUB_HEAD_REF \
+                --pr ${{ github.event.number }} \
+                --github-token ${{ secrets.GITHUB_TOKEN }}

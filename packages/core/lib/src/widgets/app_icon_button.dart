@@ -1,4 +1,4 @@
-import 'package:core/src/styles/app_colors.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
