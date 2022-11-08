@@ -187,7 +187,7 @@ class WidgetbookApp extends StatelessWidget {
                             rawText: context.knobs.text(
                               label: 'Tweet Text',
                               initialValue:
-                                  'Lorem ipsum dolor sit amit #hastag @mention',
+                                  'Lorem ipsum dolor sit amit #hashtag @mention',
                             ),
                             user: DummyUsers.widgetbook,
                             media: context.knobs.options(
