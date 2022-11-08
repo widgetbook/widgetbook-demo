@@ -56,7 +56,7 @@ class FormattedDateTime extends StatelessWidget {
     final localeCode = Localizations.localeOf(context).languageCode;
 
     final dateString = DateFormat(
-      hasYear ? 'yMMMMd' : 'MMMMd',
+      hasYear ? 'yMMMd' : 'MMMd',
       localeCode,
     ).format(date);
 

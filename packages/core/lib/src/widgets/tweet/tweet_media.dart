@@ -13,6 +13,7 @@ class TweetMedia extends StatelessWidget {
   const TweetMedia({
     super.key,
     required this.tweetMedia,
+    this.autoPlay = true,
   }) : assert(
           tweetMedia.length > 0,
           'Tweet media should not be empty',
@@ -20,6 +21,16 @@ class TweetMedia extends StatelessWidget {
 
   /// The type of tweet media (Video, GIF, Images)
   final List<Media> tweetMedia;
+
+  /// If GIF/Video media should autoPlay
+  ///
+  /// Defaults to `true`, allowing videos and GIFs to
+  /// auto play as soon as the widget is built.
+  ///
+  /// Optimally, when this is true, this widget should be included
+  /// in the widget tree in a way such that it doesn't
+  /// get built unless it is visible (e.g. child of [ListView.builder])
+  final bool autoPlay;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +41,10 @@ class TweetMedia extends StatelessWidget {
           mediaWidget = TweetImage(imageUrl: tweetMedia[0].url);
           break;
         case MediaType.gif:
-          mediaWidget = Container();
+          mediaWidget = TweetGif(
+            gifUrl: tweetMedia[0].url,
+            autoPlay: autoPlay,
+          );
           break;
         case MediaType.video:
           mediaWidget = Container();
@@ -43,7 +57,12 @@ class TweetMedia extends StatelessWidget {
     }
     return ClipRRect(
       borderRadius: BorderRadius.circular(15),
-      child: mediaWidget,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          border: Border.all(color: Theme.of(context).dividerColor, width: 0.5),
+        ),
+        child: mediaWidget,
+      ),
     );
   }
 }

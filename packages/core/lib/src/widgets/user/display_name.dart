@@ -16,6 +16,8 @@ class DisplayName extends StatelessWidget {
     return Text(
       value,
       style: Theme.of(context).textTheme.bodyText1,
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
     );
   }
 }

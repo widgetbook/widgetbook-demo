@@ -29,6 +29,8 @@ class Username extends StatelessWidget {
                     : AppColors.whiteLight),
           ),
       textDirection: TextDirection.ltr,
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
     );
   }
 }

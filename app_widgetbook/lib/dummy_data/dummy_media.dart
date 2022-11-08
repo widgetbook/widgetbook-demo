@@ -38,4 +38,17 @@ class DummyMedia {
       url: 'https://pbs.twimg.com/media/FIRDSEFX0AAh1cI.jpg',
     ),
   ];
+
+  /// List of media for a tweet with a GIF
+  ///
+  /// https://twitter.com/widgetbook_io/status/1473588853135007746
+  static const List<Media> gifMedia = [
+    Media(
+      key: '16_1473588204599136259',
+      type: MediaType.gif,
+      url: 'https://video.twimg.com/tweet_video/FHM8qihWUAM_TsU.mp4',
+      previewImageUrl:
+          'https://pbs.twimg.com/tweet_video_thumb/FHM8qihWUAM_TsU.jpg',
+    ),
+  ];
 }
