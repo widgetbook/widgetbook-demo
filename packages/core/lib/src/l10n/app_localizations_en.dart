@@ -45,4 +45,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get twitterForAndroid => 'Twitter for Android';
+
+  @override
+  String get showThisThread => 'Show this thread';
+
+  @override
+  String get showMoreReplies => 'Show more replies';
+
+  @override
+  String get replyingTo => 'Replying to';
 }

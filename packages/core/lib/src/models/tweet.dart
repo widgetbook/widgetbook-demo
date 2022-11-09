@@ -7,11 +7,12 @@ class Tweet {
   const Tweet({
     required this.rawText,
     this.annotationType,
-    required this.user,
+    required this.author,
     this.media = const [],
     this.publicMetrics = const PublicMetrics(),
     required this.createdAt,
     this.entities = const TweetEntities(),
+    this.inReplyToUser,
   });
 
   /// Tweet text
@@ -50,8 +51,8 @@ class Tweet {
   /// Tweet annotation
   final TweetAnnotationType? annotationType;
 
-  /// Tweet user
-  final User user;
+  /// Tweet author
+  final User author;
 
   /// Tweet media list
   final List<Media> media;
@@ -64,4 +65,12 @@ class Tweet {
 
   /// Entities inside a tweet text (mentions, hashtags, urls, ..etc)
   final TweetEntities entities;
+
+  /// Id of the user that this tweet is a reply to
+  ///
+  /// Only available when this tweet is a reply.
+  ///
+  /// If available, a `replying to @{inReplyToUser.username}` text
+  /// will be shown
+  final User? inReplyToUser;
 }

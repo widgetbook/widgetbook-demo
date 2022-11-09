@@ -29,7 +29,7 @@ import 'package:app_widgetbook/core/user/username.dart';
 import 'package:app_widgetbook/main.dart';
 import 'package:core/core.dart';
 import 'package:core/src/styles/app_colors.dart';
-import 'package:core/src/widgets/tweet/tweet_text.dart';
+import 'package:core/src/widgets/hover_detector.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
@@ -294,6 +294,10 @@ class HotReload extends StatelessWidget {
                           name: 'Default',
                           builder: (context) => usernameDefaultUseCase(context),
                         ),
+                        WidgetbookUseCase(
+                          name: 'Active',
+                          builder: (context) => usernameActiveuseCase(context),
+                        ),
                       ],
                     ),
                     WidgetbookComponent(
@@ -303,6 +307,11 @@ class HotReload extends StatelessWidget {
                           name: 'Default',
                           builder: (context) =>
                               displayNameDefaultUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Active',
+                          builder: (context) =>
+                              displayNameActiveUseCase(context),
                         ),
                       ],
                     ),

@@ -4,7 +4,7 @@ class DummyTweets {
   static final Tweet tweet = Tweet(
     rawText: 'Learn more about #Widgetbook and how you can speed '
         'up your app #development process on #YouTube',
-    user: const User(
+    author: const User(
       id: '0',
       username: 'widgetbook_io',
       displayName: 'Widgetbook',

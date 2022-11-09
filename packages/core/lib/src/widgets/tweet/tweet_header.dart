@@ -7,16 +7,12 @@ class TweetHeader extends StatelessWidget {
   /// Creates a new instance of [TweetHeader]
   const TweetHeader({
     super.key,
-    required this.displayName,
-    required this.username,
+    required this.author,
     required this.tweetDate,
   });
 
-  /// Tweet user display name
-  final String displayName;
-
-  /// Tweet username
-  final String username;
+  /// Tweet user
+  final User author;
 
   /// Tweet date
   final DateTime tweetDate;
@@ -29,11 +25,11 @@ class TweetHeader extends StatelessWidget {
           child: Row(
             children: [
               Flexible(
-                child: DisplayName(value: displayName),
+                child: DisplayName.active(user: author),
               ),
               const SizedBox(width: 5),
               Flexible(
-                child: Username(value: username),
+                child: Username(user: author),
               ),
               const Text(' · '),
               TweetDate(date: tweetDate),
