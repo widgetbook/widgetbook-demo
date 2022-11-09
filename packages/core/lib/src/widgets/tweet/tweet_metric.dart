@@ -1,6 +1,4 @@
-import 'package:core/src/styles/app_colors.dart';
-import 'package:core/src/widgets/app_icon_button.dart';
-import 'package:core/src/widgets/tweet/tweet.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
 /// Tweet metric with icon and metric text widgets

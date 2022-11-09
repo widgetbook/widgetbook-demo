@@ -1,4 +1,4 @@
-import 'package:core/src/widgets/app_cached_network_image.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
 /// Tweet image widget

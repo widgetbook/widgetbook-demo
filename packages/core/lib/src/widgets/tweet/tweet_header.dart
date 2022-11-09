@@ -28,9 +28,13 @@ class TweetHeader extends StatelessWidget {
         Expanded(
           child: Row(
             children: [
-              DisplayName(value: displayName),
+              Flexible(
+                child: DisplayName(value: displayName),
+              ),
               const SizedBox(width: 5),
-              Username(value: username),
+              Flexible(
+                child: Username(value: username),
+              ),
               const Text(' · '),
               TweetDate(date: tweetDate),
             ],
