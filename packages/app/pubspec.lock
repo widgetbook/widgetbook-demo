@@ -154,11 +154,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_web_plugins:
+  freezed_annotation:
     dependency: transitive
-    description: flutter
-    source: sdk
-    version: "0.0.0"
+    description:
+      name: freezed_annotation
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.2.0"
   html:
     dependency: transitive
     description:
@@ -194,6 +196,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.4"
+  json_annotation:
+    dependency: transitive
+    description:
+      name: json_annotation
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.7.0"
   markdown:
     dependency: transitive
     description:
@@ -459,48 +468,26 @@ packages:
     source: hosted
     version: "2.0.12"
   widgetbook_annotation:
-  video_player:
     dependency: transitive
     description:
-      name: video_player
+      name: widgetbook_annotation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.4.7"
-  video_player_android:
+    version: "2.1.0"
+  widgetbook_models:
     dependency: transitive
     description:
-      name: video_player_android
+      name: widgetbook_models
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.3.9"
-  video_player_avfoundation:
-    dependency: transitive
-    description:
-      name: video_player_avfoundation
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.3.7"
-  video_player_platform_interface:
-    dependency: transitive
-    description:
-      name: video_player_platform_interface
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "5.1.4"
-  video_player_web:
-    dependency: transitive
-    description:
-      name: video_player_web
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.12"
+    version: "0.0.7"
   win32:
     dependency: transitive
     description:
       name: win32
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.1"
+    version: "3.1.1"
   xdg_directories:
     dependency: transitive
     description:
