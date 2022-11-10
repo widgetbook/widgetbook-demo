@@ -6,6 +6,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 @WidgetbookUseCase(name: 'Default', type: TweetActions)
 Widget tweetActionsDefaultUseCase(BuildContext context) {
   return TweetActions(
+    hideValues: context.knobs.boolean(label: 'Hide Values'),
     publicMetrics: PublicMetrics(
       replies: context.knobs
           .slider(

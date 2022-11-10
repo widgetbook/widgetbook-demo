@@ -7,8 +7,9 @@
 import 'dart:core';
 import 'dart:math';
 import 'package:app_widgetbook/core/tweet/collapsed_tweet.dart';
-import 'package:app_widgetbook/core/tweet/detailed_tweet_info.dart';
-import 'package:app_widgetbook/core/tweet/detailed_tweet_metrics.dart';
+import 'package:app_widgetbook/core/tweet/expanded_tweet_info.dart';
+import 'package:app_widgetbook/core/tweet/expanded_tweet_metrics.dart';
+import 'package:app_widgetbook/core/tweet/expanded_tweet.dart';
 import 'package:app_widgetbook/core/tweet/metrics/like_icon_button.dart';
 import 'package:app_widgetbook/core/tweet/metrics/likes.dart';
 import 'package:app_widgetbook/core/tweet/metrics/metric_text.dart';
@@ -175,12 +176,12 @@ class HotReload extends StatelessWidget {
                       ],
                     ),
                     WidgetbookComponent(
-                      name: 'DetailedTweetMetrics',
+                      name: 'ExpandedTweetMetrics',
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) =>
-                              detailedTweetMetricsDefaultUseCase(context),
+                              ExpandedTweetMetricsDefaultUseCase(context),
                         ),
                       ],
                     ),
@@ -209,6 +210,16 @@ class HotReload extends StatelessWidget {
                         WidgetbookUseCase(
                           name: 'GIF',
                           builder: (context) => tweetMediaGIFuseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'ExpandedTweet',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) =>
+                              expandedTweetDefaultUseCase(context),
                         ),
                       ],
                     ),

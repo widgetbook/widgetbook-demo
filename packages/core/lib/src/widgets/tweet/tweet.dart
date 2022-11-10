@@ -1,6 +1,7 @@
 export './collapsed_tweet.dart';
-export './detailed_tweet_info.dart';
-export './detailed_tweet_metrics.dart';
+export './expanded_tweet_info.dart';
+export './expanded_tweet_metrics.dart';
+export './expanded_tweet.dart';
 export './like_icon_button.dart';
 export './likes.dart';
 export './metric_text.dart';
@@ -14,5 +15,5 @@ export './tweet_gif.dart';
 export './tweet_header.dart';
 export './tweet_image.dart';
 export './tweet_media.dart';
-export './tweet_text.dart';
 export './tweet_metric.dart';
+export './tweet_text.dart';

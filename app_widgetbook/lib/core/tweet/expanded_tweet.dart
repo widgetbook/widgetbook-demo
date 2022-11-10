@@ -6,13 +6,24 @@ import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart' show Knobs, Option;
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@WidgetbookUseCase(name: 'Default', type: CollapsedTweet)
-Widget collapsedTweetDefaultUseCase(BuildContext context) {
-  return CollapsedTweet(
+@WidgetbookUseCase(name: 'Default', type: ExpandedTweet)
+Widget expandedTweetDefaultUseCase(BuildContext context) {
+  return ExpandedTweet(
     tweet: Tweet(
       rawText: context.knobs.text(
         label: 'Tweet Text',
         initialValue: 'Lorem ipsum dolor sit amit #hashtag @mention',
+      ),
+      source: context.knobs.options<TweetSource>(
+        label: 'Tweet Source',
+        options: TweetSource.values
+            .map(
+              (source) => Option(
+                label: source.toText(),
+                value: source,
+              ),
+            )
+            .toList(),
       ),
       inReplyToUser:
           context.knobs.boolean(label: 'Is Reply', initialValue: true)
@@ -46,31 +57,31 @@ Widget collapsedTweetDefaultUseCase(BuildContext context) {
         ],
       ),
       publicMetrics: PublicMetrics(
-        replies: context.knobs
+        quoteTweets: context.knobs
             .slider(
-              label: 'Replies',
+              label: 'Quote Tweets',
               min: 0,
-              max: 25000,
-              initialValue: 15,
-              divisions: 25000 ~/ 50,
+              max: 2500,
+              initialValue: 0,
+              divisions: 2500 ~/ 50,
             )
             .toInt(),
         retweets: context.knobs
             .slider(
               label: 'Retweets',
               min: 0,
-              max: 25000,
+              max: 2500,
               initialValue: 15,
-              divisions: 25000 ~/ 50,
+              divisions: 2500 ~/ 50,
             )
             .toInt(),
         likes: context.knobs
             .slider(
               label: 'Likes',
               min: 0,
-              max: 25000,
+              max: 2500,
               initialValue: 15,
-              divisions: 25000 ~/ 50,
+              divisions: 2500 ~/ 50,
             )
             .toInt(),
       ),
@@ -97,33 +108,6 @@ Widget collapsedTweetDefaultUseCase(BuildContext context) {
           ),
         ],
       ),
-      source: context.knobs.options<TweetSource>(
-        label: 'Tweet Source',
-        options: TweetSource.values
-            .map(
-              (source) => Option(
-                label: source.toText(),
-                value: source,
-              ),
-            )
-            .toList(),
-      ),
     ),
-    isThread: context.knobs.boolean(
-      label: 'Is Thread',
-      initialValue: true,
-    ),
-    onShowThisThread: context.knobs.boolean(
-      label: 'Has Show Thread',
-      initialValue: true,
-    )
-        ? () {}
-        : null,
-    onShowMoreReplies: context.knobs.boolean(
-      label: 'Has Show More Replies',
-      initialValue: true,
-    )
-        ? () {}
-        : null,
   );
 }

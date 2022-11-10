@@ -10,6 +10,7 @@ class Retweets extends StatefulWidget {
     this.iconSize = 15,
     this.onRetweet,
     this.onQuoteTweet,
+    this.hideValue = false,
   });
 
   /// Retweets metric value
@@ -23,6 +24,9 @@ class Retweets extends StatefulWidget {
 
   /// Callback to notify parent widget of quote tweet action
   final VoidCallback? onQuoteTweet;
+
+  /// Whether the value text is hidden
+  final bool hideValue;
 
   @override
   State<Retweets> createState() => _RetweetsState();
@@ -39,6 +43,7 @@ class _RetweetsState extends State<Retweets> {
       icon: const Icon(TwitterIcons.retweet),
       iconSize: widget.iconSize,
       activeColor: AppColors.success,
+      hideValue: widget.hideValue,
       onPressed: () {
         // Todo: This should open a dropdown of "Retweet/Quote Tweet"
         // Only Retweet activates the metric

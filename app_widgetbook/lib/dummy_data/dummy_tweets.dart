@@ -8,6 +8,7 @@ class DummyTweets {
   ///
   /// https://twitter.com/widgetbook_io/status/1470683773419278339
   static Tweet fourPhotosTweet = Tweet(
+    source: TweetSource.iPhone,
     rawText:
         '𝐊𝐞𝐞𝐩𝐢𝐧𝐠 𝐚𝐧 𝐨𝐯𝐞𝐫𝐯𝐢𝐞𝐰 𝐨𝐟 𝐚𝐥𝐥 𝐲𝐨𝐮𝐫 𝐰𝐢𝐝𝐠𝐞𝐭𝐬 🔎Learn more: https://t.co/a2ry2mhMyw#flutter #flutterapprentice #flutterdev #dart #programming #dev #appdev #dart #app #flutterappdevelopment #mobileapp #development #ui #Widgetbook https://t.co/O4rYEjggsH',
     author: DummyUsers.widgetbook,

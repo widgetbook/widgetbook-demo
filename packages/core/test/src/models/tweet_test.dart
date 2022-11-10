@@ -9,6 +9,7 @@ void main() {
       rawText: 'Learn more about @widgetbook_io and how you can speed up '
           'your app #development process on #YouTube ',
       author: DummyUsers.widgetbook,
+      source: TweetSource.iPhone,
       createdAt: DateTime(2021, 12, 24),
       entities: TweetEntities(
         hashtags: const [
