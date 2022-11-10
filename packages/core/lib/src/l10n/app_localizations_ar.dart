@@ -45,4 +45,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get twitterForAndroid => 'تطبيق تويتر على الأندرويد';
+
+  @override
+  String get showThisThread => 'عرض هذه السلسلة';
+
+  @override
+  String get showMoreReplies => 'عرض المزيد من الردود';
+
+  @override
+  String get replyingTo => 'رد على';
 }

@@ -12,5 +12,8 @@
     "receivedNewReplies": "Received new replies",
     "twitterWebApp": "Twitter Web App",
     "twitterForIphone": "Twitter for iPhone",
-    "twitterForAndroid": "Twitter for Android"
+    "twitterForAndroid": "Twitter for Android",
+    "showThisThread": "Show this thread",
+    "showMoreReplies": "Show more replies",
+    "replyingTo": "Replying to"
 }

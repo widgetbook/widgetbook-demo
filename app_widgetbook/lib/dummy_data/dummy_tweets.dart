@@ -10,7 +10,7 @@ class DummyTweets {
   static Tweet fourPhotosTweet = Tweet(
     rawText:
         '𝐊𝐞𝐞𝐩𝐢𝐧𝐠 𝐚𝐧 𝐨𝐯𝐞𝐫𝐯𝐢𝐞𝐰 𝐨𝐟 𝐚𝐥𝐥 𝐲𝐨𝐮𝐫 𝐰𝐢𝐝𝐠𝐞𝐭𝐬 🔎Learn more: https://t.co/a2ry2mhMyw#flutter #flutterapprentice #flutterdev #dart #programming #dev #appdev #dart #app #flutterappdevelopment #mobileapp #development #ui #Widgetbook https://t.co/O4rYEjggsH',
-    user: DummyUsers.widgetbook,
+    author: DummyUsers.widgetbook,
     createdAt: DateTime(2021, 12, 24),
     media: DummyMedia.fourPhotosMedia,
     publicMetrics: const PublicMetrics(likes: 2, retweets: 2),

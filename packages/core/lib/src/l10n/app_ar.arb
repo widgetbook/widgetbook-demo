@@ -12,5 +12,8 @@
     "receivedNewReplies": "تلقت تعليقات جديدة",
     "twitterWebApp": "تطبيف تويتر على الويب",
     "twitterForIphone": "تطبيق تويتر على الأيفون",
-    "twitterForAndroid": "تطبيق تويتر على الأندرويد"
+    "twitterForAndroid": "تطبيق تويتر على الأندرويد",
+    "showThisThread": "عرض هذه السلسلة",
+    "showMoreReplies": "عرض المزيد من الردود",
+    "replyingTo": "رد على"
 }

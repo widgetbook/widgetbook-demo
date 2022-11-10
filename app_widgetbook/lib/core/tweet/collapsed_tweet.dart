@@ -14,7 +14,11 @@ Widget collapsedTweetDefaultUseCase(BuildContext context) {
         label: 'Tweet Text',
         initialValue: 'Lorem ipsum dolor sit amit #hashtag @mention',
       ),
-      user: DummyUsers.widgetbook,
+      inReplyToUser:
+          context.knobs.boolean(label: 'Is Reply', initialValue: true)
+              ? DummyUsers.roaakdm
+              : null,
+      author: DummyUsers.widgetbook,
       media: context.knobs.options(
         label: 'Media',
         options: [
@@ -25,7 +29,7 @@ Widget collapsedTweetDefaultUseCase(BuildContext context) {
           Option(
             label: '3 Images',
             value: DummyMedia.fourPhotosMedia.take(3).toList(),
-          ),/**/
+          ),
           Option(
             label: '2 Images',
             value: DummyMedia.fourPhotosMedia.take(2).toList(),
@@ -94,5 +98,21 @@ Widget collapsedTweetDefaultUseCase(BuildContext context) {
         ],
       ),
     ),
+    isThread: context.knobs.boolean(
+      label: 'Is Thread',
+      initialValue: true,
+    ),
+    onShowThisThread: context.knobs.boolean(
+      label: 'Has Show Thread',
+      initialValue: true,
+    )
+        ? () {}
+        : null,
+    onShowMoreReplies: context.knobs.boolean(
+      label: 'Has Show More Replies',
+      initialValue: true,
+    )
+        ? () {}
+        : null,
   );
 }

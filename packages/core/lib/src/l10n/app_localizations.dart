@@ -176,6 +176,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Twitter for Android'**
   String get twitterForAndroid;
+
+  /// No description provided for @showThisThread.
+  ///
+  /// In en, this message translates to:
+  /// **'Show this thread'**
+  String get showThisThread;
+
+  /// No description provided for @showMoreReplies.
+  ///
+  /// In en, this message translates to:
+  /// **'Show more replies'**
+  String get showMoreReplies;
+
+  /// No description provided for @replyingTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Replying to'**
+  String get replyingTo;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
