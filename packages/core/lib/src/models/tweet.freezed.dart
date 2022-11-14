@@ -31,6 +31,7 @@ mixin _$Tweet {
   /// If available, a `replying to @{inReplyToUser.username}` text
   /// will be shown
   User? get inReplyToUser => throw _privateConstructorUsedError;
+  Tweet? get quotedTweet => throw _privateConstructorUsedError;
   TweetSource get source => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -51,7 +52,10 @@ abstract class $TweetCopyWith<$Res> {
       DateTime createdAt,
       TweetEntities entities,
       User? inReplyToUser,
+      Tweet? quotedTweet,
       TweetSource source});
+
+  $TweetCopyWith<$Res>? get quotedTweet;
 }
 
 /// @nodoc
@@ -75,6 +79,7 @@ class _$TweetCopyWithImpl<$Res, $Val extends Tweet>
     Object? createdAt = null,
     Object? entities = null,
     Object? inReplyToUser = freezed,
+    Object? quotedTweet = freezed,
     Object? source = null,
   }) {
     return _then(_value.copyWith(
@@ -110,11 +115,27 @@ class _$TweetCopyWithImpl<$Res, $Val extends Tweet>
           ? _value.inReplyToUser
           : inReplyToUser // ignore: cast_nullable_to_non_nullable
               as User?,
+      quotedTweet: freezed == quotedTweet
+          ? _value.quotedTweet
+          : quotedTweet // ignore: cast_nullable_to_non_nullable
+              as Tweet?,
       source: null == source
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
               as TweetSource,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TweetCopyWith<$Res>? get quotedTweet {
+    if (_value.quotedTweet == null) {
+      return null;
+    }
+
+    return $TweetCopyWith<$Res>(_value.quotedTweet!, (value) {
+      return _then(_value.copyWith(quotedTweet: value) as $Val);
+    });
   }
 }
 
@@ -133,7 +154,11 @@ abstract class _$$_TweetCopyWith<$Res> implements $TweetCopyWith<$Res> {
       DateTime createdAt,
       TweetEntities entities,
       User? inReplyToUser,
+      Tweet? quotedTweet,
       TweetSource source});
+
+  @override
+  $TweetCopyWith<$Res>? get quotedTweet;
 }
 
 /// @nodoc
@@ -153,6 +178,7 @@ class __$$_TweetCopyWithImpl<$Res> extends _$TweetCopyWithImpl<$Res, _$_Tweet>
     Object? createdAt = null,
     Object? entities = null,
     Object? inReplyToUser = freezed,
+    Object? quotedTweet = freezed,
     Object? source = null,
   }) {
     return _then(_$_Tweet(
@@ -188,6 +214,10 @@ class __$$_TweetCopyWithImpl<$Res> extends _$TweetCopyWithImpl<$Res, _$_Tweet>
           ? _value.inReplyToUser
           : inReplyToUser // ignore: cast_nullable_to_non_nullable
               as User?,
+      quotedTweet: freezed == quotedTweet
+          ? _value.quotedTweet
+          : quotedTweet // ignore: cast_nullable_to_non_nullable
+              as Tweet?,
       source: null == source
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
@@ -208,6 +238,7 @@ class _$_Tweet extends _Tweet {
       required this.createdAt,
       this.entities = const TweetEntities(),
       this.inReplyToUser,
+      this.quotedTweet,
       required this.source})
       : _media = media,
         super._();
@@ -244,11 +275,13 @@ class _$_Tweet extends _Tweet {
   @override
   final User? inReplyToUser;
   @override
+  final Tweet? quotedTweet;
+  @override
   final TweetSource source;
 
   @override
   String toString() {
-    return 'Tweet(rawText: $rawText, annotationType: $annotationType, author: $author, media: $media, publicMetrics: $publicMetrics, createdAt: $createdAt, entities: $entities, inReplyToUser: $inReplyToUser, source: $source)';
+    return 'Tweet(rawText: $rawText, annotationType: $annotationType, author: $author, media: $media, publicMetrics: $publicMetrics, createdAt: $createdAt, entities: $entities, inReplyToUser: $inReplyToUser, quotedTweet: $quotedTweet, source: $source)';
   }
 
   @override
@@ -269,6 +302,8 @@ class _$_Tweet extends _Tweet {
                 other.entities == entities) &&
             (identical(other.inReplyToUser, inReplyToUser) ||
                 other.inReplyToUser == inReplyToUser) &&
+            (identical(other.quotedTweet, quotedTweet) ||
+                other.quotedTweet == quotedTweet) &&
             (identical(other.source, source) || other.source == source));
   }
 
@@ -283,6 +318,7 @@ class _$_Tweet extends _Tweet {
       createdAt,
       entities,
       inReplyToUser,
+      quotedTweet,
       source);
 
   @JsonKey(ignore: true)
@@ -302,6 +338,7 @@ abstract class _Tweet extends Tweet {
       required final DateTime createdAt,
       final TweetEntities entities,
       final User? inReplyToUser,
+      final Tweet? quotedTweet,
       required final TweetSource source}) = _$_Tweet;
   const _Tweet._() : super._();
 
@@ -328,6 +365,8 @@ abstract class _Tweet extends Tweet {
   /// If available, a `replying to @{inReplyToUser.username}` text
   /// will be shown
   User? get inReplyToUser;
+  @override
+  Tweet? get quotedTweet;
   @override
   TweetSource get source;
   @override

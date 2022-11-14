@@ -1,10 +1,11 @@
 export './collapsed_tweet.dart';
+export './expanded_tweet.dart';
 export './expanded_tweet_info.dart';
 export './expanded_tweet_metrics.dart';
-export './expanded_tweet.dart';
 export './like_icon_button.dart';
 export './likes.dart';
 export './metric_text.dart';
+export './quoted_tweet.dart';
 export './replies.dart';
 export './retweets.dart';
 export './tweet_actions.dart';
