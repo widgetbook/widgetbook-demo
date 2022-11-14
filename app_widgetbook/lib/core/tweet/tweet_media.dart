@@ -9,11 +9,15 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 Widget tweetMediaImageUseCase(BuildContext context) {
   return TweetMedia(
     tweetMedia: DummyMedia.singlePhotoMedia,
+    hasDecoration: context.knobs.boolean(
+      label: 'Has Decoration',
+      initialValue: true,
+    ),
   );
 }
 
 @WidgetbookUseCase(name: 'Gallery', type: TweetMedia)
-Widget tweetMediaGalleryuseCase(BuildContext context) {
+Widget tweetMediaGalleryUseCase(BuildContext context) {
   return TweetMedia(
     tweetMedia: context.knobs.options(
       label: 'Image Count',
@@ -25,11 +29,15 @@ Widget tweetMediaGalleryuseCase(BuildContext context) {
           ),
       ],
     ),
+    hasDecoration: context.knobs.boolean(
+      label: 'Has Decoration',
+      initialValue: true,
+    ),
   );
 }
 
 @WidgetbookUseCase(name: 'GIF', type: TweetMedia)
-Widget tweetMediaGIFuseCase(BuildContext context) {
+Widget tweetMediaGIFUseCase(BuildContext context) {
   if (defaultTargetPlatform == TargetPlatform.macOS && !kIsWeb) {
     return const Center(
       child: Text(
@@ -43,6 +51,10 @@ Widget tweetMediaGIFuseCase(BuildContext context) {
         label: 'Auto Play',
         description: 'Turning off Auto Play will'
             ' show a Play button',
+        initialValue: true,
+      ),
+      hasDecoration: context.knobs.boolean(
+        label: 'Has Decoration',
         initialValue: true,
       ),
     );

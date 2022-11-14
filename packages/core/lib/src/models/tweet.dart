@@ -24,6 +24,7 @@ class Tweet with _$Tweet {
     /// If available, a `replying to @{inReplyToUser.username}` text
     /// will be shown
     User? inReplyToUser,
+    Tweet? quotedTweet,
     required TweetSource source,
   }) = _Tweet;
 

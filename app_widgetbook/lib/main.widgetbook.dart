@@ -7,14 +7,15 @@
 import 'dart:core';
 import 'dart:math';
 import 'package:app_widgetbook/core/tweet/collapsed_tweet.dart';
+import 'package:app_widgetbook/core/tweet/expanded_tweet.dart';
 import 'package:app_widgetbook/core/tweet/expanded_tweet_info.dart';
 import 'package:app_widgetbook/core/tweet/expanded_tweet_metrics.dart';
-import 'package:app_widgetbook/core/tweet/expanded_tweet.dart';
 import 'package:app_widgetbook/core/tweet/metrics/like_icon_button.dart';
 import 'package:app_widgetbook/core/tweet/metrics/likes.dart';
 import 'package:app_widgetbook/core/tweet/metrics/metric_text.dart';
 import 'package:app_widgetbook/core/tweet/metrics/replies.dart';
 import 'package:app_widgetbook/core/tweet/metrics/retweets.dart';
+import 'package:app_widgetbook/core/tweet/quoted_tweet.dart';
 import 'package:app_widgetbook/core/tweet/tweet_actions.dart';
 import 'package:app_widgetbook/core/tweet/tweet_annotation.dart';
 import 'package:app_widgetbook/core/tweet/tweet_date.dart';
@@ -156,32 +157,12 @@ class HotReload extends StatelessWidget {
                       ],
                     ),
                     WidgetbookComponent(
-                      name: 'DetailedTweetInfo',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              detailedTweetInfoDefaultUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
                       name: 'LikeIconButton',
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) =>
                               likeIconButtnonDefaultUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'ExpandedTweetMetrics',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              ExpandedTweetMetricsDefaultUseCase(context),
                         ),
                       ],
                     ),
@@ -205,11 +186,11 @@ class HotReload extends StatelessWidget {
                         WidgetbookUseCase(
                           name: 'Gallery',
                           builder: (context) =>
-                              tweetMediaGalleryuseCase(context),
+                              tweetMediaGalleryUseCase(context),
                         ),
                         WidgetbookUseCase(
                           name: 'GIF',
-                          builder: (context) => tweetMediaGIFuseCase(context),
+                          builder: (context) => tweetMediaGIFUseCase(context),
                         ),
                       ],
                     ),
@@ -220,6 +201,11 @@ class HotReload extends StatelessWidget {
                           name: 'Default',
                           builder: (context) =>
                               expandedTweetDefaultUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Quote Tweet',
+                          builder: (context) =>
+                              expandedTweetQuoteTweetUseCase(context),
                         ),
                       ],
                     ),
@@ -234,12 +220,32 @@ class HotReload extends StatelessWidget {
                       ],
                     ),
                     WidgetbookComponent(
+                      name: 'QuotedTweet',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Large Media',
+                          builder: (context) =>
+                              quotedTweetLargeMediaUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Thumbnail Media',
+                          builder: (context) =>
+                              quotedTweetThumbnailMediaUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
                       name: 'CollapsedTweet',
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) =>
                               collapsedTweetDefaultUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Quote Tweet',
+                          builder: (context) =>
+                              collapsedTweetQuoteTweetUseCase(context),
                         ),
                       ],
                     ),
@@ -260,6 +266,26 @@ class HotReload extends StatelessWidget {
                           name: 'Default',
                           builder: (context) =>
                               tweetHeaderDefaultUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'ExpandedTweetInfo',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) =>
+                              detailedTweetInfoDefaultUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'ExpandedTweetMetrics',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) =>
+                              ExpandedTweetMetricsDefaultUseCase(context),
                         ),
                       ],
                     ),
