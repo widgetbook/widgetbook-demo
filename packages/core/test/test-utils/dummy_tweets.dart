@@ -2,6 +2,7 @@ import 'package:core/core.dart';
 
 class DummyTweets {
   static final Tweet tweet = Tweet(
+    source: TweetSource.iPhone,
     rawText: 'Learn more about #Widgetbook and how you can speed '
         'up your app #development process on #YouTube',
     author: const User(

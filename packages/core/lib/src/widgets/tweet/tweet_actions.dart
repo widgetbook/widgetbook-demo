@@ -12,6 +12,7 @@ class TweetActions extends StatelessWidget {
     this.onRetweet,
     this.onLikesChanged,
     this.onSharePressed,
+    this.hideValues = false,
   });
 
   /// Replies metric onPressed callback [Replies.onPressed]
@@ -32,6 +33,9 @@ class TweetActions extends StatelessWidget {
   /// Tweet Public Metrics (likes, retweets, quoteTweets, replies)
   final PublicMetrics publicMetrics;
 
+  /// Whether the value text is hidden
+  final bool hideValues;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -40,6 +44,7 @@ class TweetActions extends StatelessWidget {
           child: Replies(
             onPressed: onRepliesPressed,
             metricValue: publicMetrics.replies,
+            hideValue: hideValues,
           ),
         ),
         Expanded(
@@ -47,12 +52,14 @@ class TweetActions extends StatelessWidget {
             onRetweet: onRetweet,
             onQuoteTweet: onQuoteTweet,
             metricValue: publicMetrics.retweets,
+            hideValue: hideValues,
           ),
         ),
         Expanded(
           child: Likes(
             onLikesChanged: onLikesChanged,
             metricValue: publicMetrics.likes,
+            hideValue: hideValues,
           ),
         ),
         Expanded(

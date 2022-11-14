@@ -14,6 +14,7 @@ class TweetMetric extends StatelessWidget {
     this.activeColor = AppColors.primary,
     required this.onPressed,
     this.isActive = false,
+    this.hideValue = false,
   });
 
   /// TweetMetric metric value
@@ -37,6 +38,9 @@ class TweetMetric extends StatelessWidget {
   /// and the [AppIconButton.hoverColor] to [activeColor]
   final bool isActive;
 
+  /// Whether the value text is hidden
+  final bool hideValue;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -50,11 +54,12 @@ class TweetMetric extends StatelessWidget {
           activeColor: activeColor,
           onPressed: onPressed,
         ),
-        MetricText(
-          value: metricValue,
-          isActive: isActive,
-          activeColor: activeColor,
-        ),
+        if (!hideValue)
+          MetricText(
+            value: metricValue,
+            isActive: isActive,
+            activeColor: activeColor,
+          ),
       ],
     );
   }

@@ -2,23 +2,15 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
 /// Likes, Retweets, and Quote Tweet metrics for a detailed tweet
-class DetailedTweetMetrics extends StatelessWidget {
-  /// Creates a new instance of [DetailedTweetMetrics]
-  const DetailedTweetMetrics({
+class ExpandedTweetMetrics extends StatelessWidget {
+  /// Creates a new instance of [ExpandedTweetMetrics]
+  const ExpandedTweetMetrics({
     super.key,
-    this.retweetsCount = 0,
-    this.quoteTweetsCount = 0,
-    this.likesCount = 0,
+    required this.metrics,
   });
 
   /// Number of tweet retweets
-  final int retweetsCount;
-
-  /// Number of tweet quote retweets
-  final int quoteTweetsCount;
-
-  /// Number of tweet likes
-  final int likesCount;
+  final PublicMetrics metrics;
 
   @override
   Widget build(BuildContext context) {
@@ -36,39 +28,39 @@ class DetailedTweetMetrics extends StatelessWidget {
         vertical: 14,
       ),
       child: Wrap(
+        runSpacing: 10,
+        spacing: 8,
         children: [
-          if (retweetsCount > 0)
+          if (metrics.retweets > 0)
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 MetricText(
-                  value: retweetsCount,
+                  value: metrics.retweets,
                   textStyle: metricValueTextStyle,
                 ),
                 const SizedBox(width: 5),
                 Text(AppLocalizations.of(context)!.retweets),
-                const SizedBox(width: 10),
               ],
             ),
-          if (quoteTweetsCount > 0)
+          if (metrics.quoteTweets > 0)
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 MetricText(
-                  value: quoteTweetsCount,
+                  value: metrics.quoteTweets,
                   textStyle: metricValueTextStyle,
                 ),
                 const SizedBox(width: 5),
                 Text(AppLocalizations.of(context)!.quoteTweets),
-                const SizedBox(width: 10),
               ],
             ),
-          if (likesCount > 0)
+          if (metrics.likes > 0)
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 MetricText(
-                  value: likesCount,
+                  value: metrics.likes,
                   textStyle: metricValueTextStyle,
                 ),
                 const SizedBox(width: 5),

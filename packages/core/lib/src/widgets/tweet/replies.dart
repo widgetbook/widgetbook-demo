@@ -9,6 +9,7 @@ class Replies extends StatelessWidget {
     this.metricValue = 0,
     this.iconSize = 15,
     this.onPressed,
+    this.hideValue = false,
   });
 
   /// Replies metric value
@@ -20,6 +21,9 @@ class Replies extends StatelessWidget {
   /// Callback to notify parent widget of active/inactive change
   final VoidCallback? onPressed;
 
+  /// Whether the value text is hidden
+  final bool hideValue;
+
   @override
   Widget build(BuildContext context) {
     return TweetMetric(
@@ -27,6 +31,7 @@ class Replies extends StatelessWidget {
       icon: const Icon(TwitterIcons.reply),
       iconSize: iconSize,
       onPressed: onPressed,
+      hideValue: hideValue,
     );
   }
 }
