@@ -1,7 +1,6 @@
 export './collapsed_tweet.dart';
 export './expanded_tweet.dart';
 export './expanded_tweet_info.dart';
-export './expanded_tweet_metrics.dart';
 export './metrics/metrics.dart';
 export './quoted_tweet.dart';
 export './tweet_actions.dart';
