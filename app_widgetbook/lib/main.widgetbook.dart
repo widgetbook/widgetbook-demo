@@ -334,12 +334,32 @@ class HotReload extends StatelessWidget {
                       ],
                     ),
                     WidgetbookComponent(
+                      name: 'QuotedTweet',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Large Media',
+                          builder: (context) =>
+                              quotedTweetLargeMediaUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Thumbnail Media',
+                          builder: (context) =>
+                              quotedTweetThumbnailMediaUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
                       name: 'TweetActions',
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) =>
                               tweetActionsDefaultUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Quote Tweet',
+                          builder: (context) =>
+                              collapsedTweetQuoteTweetUseCase(context),
                         ),
                       ],
                     ),
