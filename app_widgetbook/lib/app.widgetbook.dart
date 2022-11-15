@@ -34,7 +34,6 @@ import 'package:app_widgetbook/core/user/username.dart';
 import 'package:auth/src/widgets/auth_buttons.dart';
 import 'package:core/core.dart';
 import 'package:core/src/styles/app_colors.dart';
-import 'package:core/src/widgets/hover_detector.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -126,54 +125,6 @@ class HotReload extends StatelessWidget {
               name: 'widgets',
               widgets: [
                 WidgetbookComponent(
-                  name: 'FormattedDateTime',
-                  useCases: [
-                    WidgetbookUseCase(
-                      name: 'Date & Time',
-                      builder: (context) =>
-                          formattedDateTimeDateAndTimeUseCase(context),
-                    ),
-                    WidgetbookUseCase(
-                      name: 'Date',
-                      builder: (context) =>
-                          formattedDateTimeDateUseCase(context),
-                    ),
-                    WidgetbookUseCase(
-                      name: 'Time',
-                      builder: (context) =>
-                          formattedDateTimeTimeUseCase(context),
-                    ),
-                    WidgetbookUseCase(
-                      name: 'TimeAgo',
-                      builder: (context) =>
-                          formattedDateTimeTimeAgoUseCase(context),
-                    ),
-                  ],
-                ),
-                WidgetbookComponent(
-                  name: 'Button',
-                  useCases: [
-                    WidgetbookUseCase(
-                      name: 'Primary Button',
-                      builder: (context) => primaryButtonUseCase(context),
-                    ),
-                    WidgetbookUseCase(
-                      name: 'Secondary Button',
-                      builder: (context) => secondaryButtonUseCase(context),
-                    ),
-                    WidgetbookUseCase(
-                      name: 'Primary Outline Button',
-                      builder: (context) =>
-                          primaryOutlineButtonUseCase(context),
-                    ),
-                    WidgetbookUseCase(
-                      name: 'Secondary Outline Button',
-                      builder: (context) =>
-                          secondaryOutlineButtonUseCase(context),
-                    ),
-                  ],
-                ),
-                WidgetbookComponent(
                   name: 'AuthButtons',
                   useCases: [
                     WidgetbookUseCase(
@@ -182,27 +133,82 @@ class HotReload extends StatelessWidget {
                     ),
                   ],
                 ),
-                WidgetbookComponent(
-                  name: 'AppIconButton',
-                  useCases: [
-                    WidgetbookUseCase(
-                      name: 'Default',
-                      builder: (context) =>
-                          appIconButtonDefaultUseCase(context),
-                    ),
-                  ],
-                ),
-                WidgetbookComponent(
-                  name: 'PlayButton',
-                  useCases: [
-                    WidgetbookUseCase(
-                      name: 'Default',
-                      builder: (context) => playButtonUseCase(context),
-                    ),
-                  ],
-                ),
               ],
               folders: [
+                WidgetbookFolder(
+                  name: 'ui',
+                  widgets: [
+                    WidgetbookComponent(
+                      name: 'FormattedDateTime',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Date & Time',
+                          builder: (context) =>
+                              formattedDateTimeDateAndTimeUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Date',
+                          builder: (context) =>
+                              formattedDateTimeDateUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Time',
+                          builder: (context) =>
+                              formattedDateTimeTimeUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'TimeAgo',
+                          builder: (context) =>
+                              formattedDateTimeTimeAgoUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'Button',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Primary Button',
+                          builder: (context) => primaryButtonUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Secondary Button',
+                          builder: (context) => secondaryButtonUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Primary Outline Button',
+                          builder: (context) =>
+                              primaryOutlineButtonUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Secondary Outline Button',
+                          builder: (context) =>
+                              secondaryOutlineButtonUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'AppIconButton',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) =>
+                              appIconButtonDefaultUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'PlayButton',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) => playButtonUseCase(context),
+                        ),
+                      ],
+                    ),
+                  ],
+                  folders: [],
+                  isExpanded: true,
+                ),
                 WidgetbookFolder(
                   name: 'user',
                   widgets: [
@@ -263,78 +269,6 @@ class HotReload extends StatelessWidget {
                   name: 'tweet',
                   widgets: [
                     WidgetbookComponent(
-                      name: 'Likes',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) => likesDefaultUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'LikeIconButton',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              likeIconButtnonDefaultUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'TweetMedia',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Image',
-                          builder: (context) => tweetMediaImageUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Gallery',
-                          builder: (context) =>
-                              tweetMediaGalleryUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'GIF',
-                          builder: (context) => tweetMediaGIFUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'TweetAnnotation',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              tweetAnnotationDefaultUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'ExpandedTweet',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              expandedTweetDefaultUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Quote Tweet',
-                          builder: (context) =>
-                              expandedTweetQuoteTweetUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'TweetDate',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              tweetDateDefaultuseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
                       name: 'TweetActions',
                       useCases: [
                         WidgetbookUseCase(
@@ -385,12 +319,30 @@ class HotReload extends StatelessWidget {
                       ],
                     ),
                     WidgetbookComponent(
-                      name: 'ExpandedTweetInfo',
+                      name: 'TweetMedia',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Image',
+                          builder: (context) => tweetMediaImageUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Gallery',
+                          builder: (context) =>
+                              tweetMediaGalleryUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'GIF',
+                          builder: (context) => tweetMediaGIFUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'TweetAnnotation',
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) =>
-                              detailedTweetInfoDefaultUseCase(context),
+                              tweetAnnotationDefaultUseCase(context),
                         ),
                       ],
                     ),
@@ -405,35 +357,100 @@ class HotReload extends StatelessWidget {
                       ],
                     ),
                     WidgetbookComponent(
-                      name: 'Replies',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) => repliesDefaultUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'Retweets',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) => retweetsDefaultUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'MetricText',
+                      name: 'ExpandedTweetInfo',
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) =>
-                              metricTextDefaultUseCase(context),
+                              detailedTweetInfoDefaultUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'ExpandedTweet',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) =>
+                              expandedTweetDefaultUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Quote Tweet',
+                          builder: (context) =>
+                              expandedTweetQuoteTweetUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'TweetDate',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) =>
+                              tweetDateDefaultuseCase(context),
                         ),
                       ],
                     ),
                   ],
-                  folders: [],
+                  folders: [
+                    WidgetbookFolder(
+                      name: 'metrics',
+                      widgets: [
+                        WidgetbookComponent(
+                          name: 'Likes',
+                          useCases: [
+                            WidgetbookUseCase(
+                              name: 'Default',
+                              builder: (context) =>
+                                  likesDefaultUseCase(context),
+                            ),
+                          ],
+                        ),
+                        WidgetbookComponent(
+                          name: 'Replies',
+                          useCases: [
+                            WidgetbookUseCase(
+                              name: 'Default',
+                              builder: (context) =>
+                                  repliesDefaultUseCase(context),
+                            ),
+                          ],
+                        ),
+                        WidgetbookComponent(
+                          name: 'LikeIconButton',
+                          useCases: [
+                            WidgetbookUseCase(
+                              name: 'Default',
+                              builder: (context) =>
+                                  likeIconButtnonDefaultUseCase(context),
+                            ),
+                          ],
+                        ),
+                        WidgetbookComponent(
+                          name: 'Retweets',
+                          useCases: [
+                            WidgetbookUseCase(
+                              name: 'Default',
+                              builder: (context) =>
+                                  retweetsDefaultUseCase(context),
+                            ),
+                          ],
+                        ),
+                        WidgetbookComponent(
+                          name: 'MetricText',
+                          useCases: [
+                            WidgetbookUseCase(
+                              name: 'Default',
+                              builder: (context) =>
+                                  metricTextDefaultUseCase(context),
+                            ),
+                          ],
+                        ),
+                      ],
+                      folders: [],
+                      isExpanded: true,
+                    ),
+                  ],
                   isExpanded: true,
                 ),
               ],
