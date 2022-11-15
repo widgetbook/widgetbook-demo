@@ -9,6 +9,7 @@ class Button extends StatelessWidget {
     required this.label,
     this.onPressed,
     this.backgroundColor,
+    this.icon,
     this.textColor,
     required this.height,
     required this.borderSide,
@@ -18,6 +19,7 @@ class Button extends StatelessWidget {
   const Button.primary({
     super.key,
     required this.label,
+    this.icon,
     this.onPressed,
     this.height = 40,
   })  : backgroundColor = AppColors.primary,
@@ -28,6 +30,7 @@ class Button extends StatelessWidget {
   const Button.primaryOutline({
     super.key,
     required this.label,
+    this.icon,
     this.onPressed,
     this.height = 40,
   })  : backgroundColor = AppColors.white,
@@ -38,6 +41,7 @@ class Button extends StatelessWidget {
   const Button.secondary({
     super.key,
     required this.label,
+    this.icon,
     this.onPressed,
     this.height = 40,
   })  : backgroundColor = AppColors.secondary,
@@ -48,6 +52,7 @@ class Button extends StatelessWidget {
   const Button.secondaryOutline({
     super.key,
     required this.label,
+    this.icon,
     this.onPressed,
     this.height = 40,
   })  : backgroundColor = AppColors.white,
@@ -72,6 +77,9 @@ class Button extends StatelessWidget {
   /// Button border
   final BorderSide borderSide;
 
+  /// Optional icon
+  final IconData? icon;
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -84,8 +92,23 @@ class Button extends StatelessWidget {
           borderRadius: BorderRadius.circular(height / 2),
           side: borderSide,
         ),
+        textStyle: Theme.of(context)
+            .textTheme
+            .button!
+            .copyWith(height: icon == null ? 1.05 : null),
       ),
-      child: Text(label),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (icon != null)
+            Padding(
+              padding: const EdgeInsetsDirectional.only(end: 10),
+              child: Icon(icon, size: 20),
+            ),
+          Text(label),
+        ],
+      ),
     );
   }
 }

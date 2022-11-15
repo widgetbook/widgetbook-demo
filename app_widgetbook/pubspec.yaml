@@ -17,6 +17,8 @@ dependencies:
   widgetbook: ^2.4.1
   core:
     path: ../packages/core
+  auth:
+    path: ../packages/auth
   widgetbook_annotation: ^2.1.0
 
 dev_dependencies:

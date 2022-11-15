@@ -14,6 +14,7 @@ class TweetMedia extends StatelessWidget {
     super.key,
     required this.tweetMedia,
     this.autoPlay = true,
+    this.hasDecoration = true,
   }) : assert(
           tweetMedia.length > 0,
           'Tweet media should not be empty',
@@ -31,6 +32,9 @@ class TweetMedia extends StatelessWidget {
   /// in the widget tree in a way such that it doesn't
   /// get built unless it is visible (e.g. child of [ListView.builder])
   final bool autoPlay;
+
+  /// Whether the media has a border and borderRadius decoration
+  final bool hasDecoration;
 
   @override
   Widget build(BuildContext context) {
@@ -55,14 +59,20 @@ class TweetMedia extends StatelessWidget {
         imageUrls: tweetMedia.map((media) => media.url).toList(),
       );
     }
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(15),
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          border: Border.all(color: Theme.of(context).dividerColor, width: 0.5),
+    if (hasDecoration) {
+      return ClipRRect(
+        borderRadius: BorderRadius.circular(15),
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            border:
+                Border.all(color: Theme.of(context).dividerColor, width: 0.5),
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: mediaWidget,
         ),
-        child: mediaWidget,
-      ),
-    );
+      );
+    } else {
+      return mediaWidget;
+    }
   }
 }
