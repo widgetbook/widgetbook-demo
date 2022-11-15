@@ -5,4 +5,5 @@ export './formatted_date_time.dart';
 export './hover_detector.dart';
 export './play_button.dart';
 export './tweet/tweet.dart';
+export './twitter_logo.dart';
 export './user/user.dart';

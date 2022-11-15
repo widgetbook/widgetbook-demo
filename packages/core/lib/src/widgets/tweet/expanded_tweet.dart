@@ -63,8 +63,18 @@ class ExpandedTweet extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           TweetText(tweet.text),
-          const SizedBox(height: 10),
-          TweetMedia(tweetMedia: tweet.media),
+          if (tweet.media.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: TweetMedia(tweetMedia: tweet.media),
+            ),
+          if (tweet.quotedTweet != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: QuotedTweet(
+                tweet: tweet.quotedTweet!,
+              ),
+            ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 14),
             child: ExpandedTweetInfo(tweet: tweet),

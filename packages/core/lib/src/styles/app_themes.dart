@@ -20,6 +20,10 @@ class AppThemes {
       highlightColor: isDark
           ? AppColors.white.withOpacity(0.2)
           : AppColors.black.withOpacity(0.1),
+      appBarTheme: const AppBarTheme(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
@@ -27,6 +31,9 @@ class AppThemes {
           ),
           elevation: 0,
           textStyle: AppTextStyles.button,
+          splashFactory: defaultTargetPlatform == TargetPlatform.android
+              ? InkSplash.splashFactory
+              : NoSplash.splashFactory,
         ),
       ),
       iconTheme: IconThemeData(
@@ -35,7 +42,9 @@ class AppThemes {
       textTheme: TextTheme(
         headline1: AppTextStyles.h1,
         headline2: AppTextStyles.h2,
-        headline3: AppTextStyles.h3,
+        headline3: AppTextStyles.h3.copyWith(
+          color: isDark ? AppColors.white : AppColors.black,
+        ),
         headline4: AppTextStyles.h4,
         headline5: AppTextStyles.h5,
         caption: AppTextStyles.caption.copyWith(
