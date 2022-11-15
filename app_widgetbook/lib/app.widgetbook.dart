@@ -6,6 +6,7 @@
 
 import 'dart:core';
 import 'dart:math';
+import 'package:app_widgetbook/app.dart';
 import 'package:app_widgetbook/auth/components/auth_buttons.dart';
 import 'package:app_widgetbook/auth/pages/auth_page.dart';
 import 'package:app_widgetbook/core/tweet/collapsed_tweet.dart';
@@ -30,11 +31,11 @@ import 'package:app_widgetbook/core/ui_elements/play_button.dart';
 import 'package:app_widgetbook/core/user/avatar.dart';
 import 'package:app_widgetbook/core/user/display_name.dart';
 import 'package:app_widgetbook/core/user/username.dart';
-import 'package:app_widgetbook/main.dart';
 import 'package:auth/src/widgets/auth_buttons.dart';
 import 'package:core/core.dart';
 import 'package:core/src/styles/app_colors.dart';
 import 'package:core/src/widgets/hover_detector.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
@@ -334,32 +335,12 @@ class HotReload extends StatelessWidget {
                       ],
                     ),
                     WidgetbookComponent(
-                      name: 'QuotedTweet',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Large Media',
-                          builder: (context) =>
-                              quotedTweetLargeMediaUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Thumbnail Media',
-                          builder: (context) =>
-                              quotedTweetThumbnailMediaUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
                       name: 'TweetActions',
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) =>
                               tweetActionsDefaultUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Quote Tweet',
-                          builder: (context) =>
-                              collapsedTweetQuoteTweetUseCase(context),
                         ),
                       ],
                     ),
