@@ -9,6 +9,7 @@ import 'dart:math';
 import 'package:app_widgetbook/app.dart';
 import 'package:app_widgetbook/auth/components/auth_buttons.dart';
 import 'package:app_widgetbook/auth/pages/auth_page.dart';
+import 'package:app_widgetbook/auth/pages/login_page.dart';
 import 'package:app_widgetbook/core/tweet/collapsed_tweet.dart';
 import 'package:app_widgetbook/core/tweet/expanded_tweet.dart';
 import 'package:app_widgetbook/core/tweet/expanded_tweet_info.dart';
@@ -347,16 +348,6 @@ class HotReload extends StatelessWidget {
                       ],
                     ),
                     WidgetbookComponent(
-                      name: 'ExpandedTweetMetrics',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              ExpandedTweetMetricsDefaultUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
                       name: 'ExpandedTweetInfo',
                       useCases: [
                         WidgetbookUseCase(
@@ -396,6 +387,16 @@ class HotReload extends StatelessWidget {
                     WidgetbookFolder(
                       name: 'metrics',
                       widgets: [
+                        WidgetbookComponent(
+                          name: 'ExpandedTweetMetrics',
+                          useCases: [
+                            WidgetbookUseCase(
+                              name: 'Default',
+                              builder: (context) =>
+                                  ExpandedTweetMetricsDefaultUseCase(context),
+                            ),
+                          ],
+                        ),
                         WidgetbookComponent(
                           name: 'Likes',
                           useCases: [
@@ -459,6 +460,15 @@ class HotReload extends StatelessWidget {
             WidgetbookFolder(
               name: 'pages',
               widgets: [
+                WidgetbookComponent(
+                  name: 'LoginPage',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => loginPageDefaultUseCase(context),
+                    ),
+                  ],
+                ),
                 WidgetbookComponent(
                   name: 'AuthPage',
                   useCases: [

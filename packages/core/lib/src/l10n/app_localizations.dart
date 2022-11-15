@@ -237,6 +237,36 @@ abstract class AppLocalizations {
   /// **'By signing up, you agree to our Terms, Privacy Policy, and Cookie Use'**
   String get termsText;
 
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @loginPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'To get started, first enter your phone, email, or @username'**
+  String get loginPageTitle;
+
+  /// No description provided for @phoneEmailOrUsername.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone, email, or username'**
+  String get phoneEmailOrUsername;
+
+  /// No description provided for @forgotPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot password?'**
+  String get forgotPassword;
+
+  /// No description provided for @next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
+
   /// No description provided for @or.
   ///
   /// In en, this message translates to:

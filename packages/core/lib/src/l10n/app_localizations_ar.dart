@@ -77,5 +77,20 @@ class AppLocalizationsAr extends AppLocalizations {
   String get termsText => 'عن طريق انشاءك لحساب جديد، فأنت توافق على الشروط، سياسة الخصوصية، واستخدام الكوكيز ';
 
   @override
+  String get cancel => 'الغاء';
+
+  @override
+  String get loginPageTitle => 'للبدء، ادخل رقم الهاتف، البريد الالكتروني، أو اسم المستخدم';
+
+  @override
+  String get phoneEmailOrUsername => 'رقم الهاتف، البريد الالكتروني، أو اسم المستخدم';
+
+  @override
+  String get forgotPassword => 'نسيت كلمة المرور؟';
+
+  @override
+  String get next => 'التالي';
+
+  @override
   String get or => 'أو';
 }
