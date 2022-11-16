@@ -77,5 +77,20 @@ class AppLocalizationsEn extends AppLocalizations {
   String get termsText => 'By signing up, you agree to our Terms, Privacy Policy, and Cookie Use';
 
   @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get loginPageTitle => 'To get started, first enter your phone, email, or @username';
+
+  @override
+  String get phoneEmailOrUsername => 'Phone, email, or username';
+
+  @override
+  String get forgotPassword => 'Forgot password?';
+
+  @override
+  String get next => 'Next';
+
+  @override
   String get or => 'or';
 }

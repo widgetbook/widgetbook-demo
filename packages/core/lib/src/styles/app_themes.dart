@@ -2,6 +2,7 @@ import 'package:core/src/styles/app_colors.dart';
 import 'package:core/src/styles/app_text_styles.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 /// Helper class for app wide themes
 class AppThemes {
@@ -20,9 +21,21 @@ class AppThemes {
       highlightColor: isDark
           ? AppColors.white.withOpacity(0.2)
           : AppColors.black.withOpacity(0.1),
-      appBarTheme: const AppBarTheme(
+      appBarTheme: AppBarTheme(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        titleTextStyle: AppTextStyles.bodyLgBlack.copyWith(
+          color: isDark ? AppColors.white : AppColors.black,
+        ),
+        systemOverlayStyle:
+            isDark ? SystemUiOverlayStyle.dark : SystemUiOverlayStyle.light,
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        hintStyle: AppTextStyles.body,
+        labelStyle: AppTextStyles.body,
+        floatingLabelStyle: AppTextStyles.body.copyWith(
+          color: AppColors.primary,
+        ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -45,7 +58,9 @@ class AppThemes {
         headline3: AppTextStyles.h3.copyWith(
           color: isDark ? AppColors.white : AppColors.black,
         ),
-        headline4: AppTextStyles.h4,
+        headline4: AppTextStyles.h4.copyWith(
+          color: isDark ? AppColors.white : AppColors.black,
+        ),
         headline5: AppTextStyles.h5,
         caption: AppTextStyles.caption.copyWith(
           color: isDark ? AppColors.whiteLight : AppColors.textLight,
