@@ -21,7 +21,6 @@ class AppThemes {
       highlightColor: isDark
           ? AppColors.white.withOpacity(0.2)
           : AppColors.black.withOpacity(0.1),
-<<<<<<< HEAD
       appBarTheme: AppBarTheme(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -37,11 +36,6 @@ class AppThemes {
         floatingLabelStyle: AppTextStyles.body.copyWith(
           color: AppColors.primary,
         ),
-=======
-      appBarTheme: const AppBarTheme(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -64,13 +58,9 @@ class AppThemes {
         headline3: AppTextStyles.h3.copyWith(
           color: isDark ? AppColors.white : AppColors.black,
         ),
-<<<<<<< HEAD
         headline4: AppTextStyles.h4.copyWith(
           color: isDark ? AppColors.white : AppColors.black,
         ),
-=======
-        headline4: AppTextStyles.h4,
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12
         headline5: AppTextStyles.h5,
         caption: AppTextStyles.caption.copyWith(
           color: isDark ? AppColors.whiteLight : AppColors.textLight,

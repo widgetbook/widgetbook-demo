@@ -9,10 +9,6 @@ import 'dart:math';
 import 'package:app_widgetbook/app.dart';
 import 'package:app_widgetbook/auth/components/auth_buttons.dart';
 import 'package:app_widgetbook/auth/pages/auth_page.dart';
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-import 'package:app_widgetbook/auth/pages/login_page.dart';
-=======
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
 import 'package:app_widgetbook/core/tweet/collapsed_tweet.dart';
 import 'package:app_widgetbook/core/tweet/expanded_tweet.dart';
 import 'package:app_widgetbook/core/tweet/expanded_tweet_info.dart';
@@ -150,7 +146,6 @@ class HotReload extends StatelessWidget {
                           name: 'Date & Time',
                           builder: (context) =>
                               formattedDateTimeDateAndTimeUseCase(context),
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
                         ),
                         WidgetbookUseCase(
                           name: 'Date',
@@ -170,99 +165,23 @@ class HotReload extends StatelessWidget {
                       ],
                     ),
                     WidgetbookComponent(
-                      name: 'Button',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Primary Button',
-                          builder: (context) => primaryButtonUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Secondary Button',
-                          builder: (context) => secondaryButtonUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Primary Outline Button',
-                          builder: (context) =>
-                              primaryOutlineButtonUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Secondary Outline Button',
-                          builder: (context) =>
-                              secondaryOutlineButtonUseCase(context),
-=======
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Date',
-                          builder: (context) =>
-                              formattedDateTimeDateUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Time',
-                          builder: (context) =>
-                              formattedDateTimeTimeUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'TimeAgo',
-                          builder: (context) =>
-                              formattedDateTimeTimeAgoUseCase(context),
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                      name: 'AppIconButton',
-=======
                       name: 'TwitterLogo',
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) =>
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                              appIconButtonDefaultUseCase(context),
-=======
                               twitterLogoDefaultUseCase(context),
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                         ),
                       ],
                     ),
                     WidgetbookComponent(
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                      name: 'PlayButton',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) => playButtonUseCase(context),
-=======
                       name: 'Button',
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Primary Button',
                           builder: (context) => primaryButtonUseCase(context),
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
-                        ),
-                      ],
-                    ),
-                  ],
-                  folders: [],
-                  isExpanded: true,
-                ),
-                WidgetbookFolder(
-                  name: 'user',
-                  widgets: [
-                    WidgetbookComponent(
-                      name: 'Username',
-                      useCases: [
-                        WidgetbookUseCase(
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                          name: 'Default',
-                          builder: (context) => usernameDefaultUseCase(context),
                         ),
                         WidgetbookUseCase(
-                          name: 'Active',
-                          builder: (context) => usernameActiveuseCase(context),
-=======
                           name: 'Secondary Button',
                           builder: (context) => secondaryButtonUseCase(context),
                         ),
@@ -275,76 +194,25 @@ class HotReload extends StatelessWidget {
                           name: 'Secondary Outline Button',
                           builder: (context) =>
                               secondaryOutlineButtonUseCase(context),
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                         ),
                       ],
                     ),
                     WidgetbookComponent(
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                      name: 'DisplayName',
-=======
                       name: 'AppIconButton',
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) =>
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                              displayNameDefaultUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Active',
-                          builder: (context) =>
-                              displayNameActiveUseCase(context),
-=======
                               appIconButtonDefaultUseCase(context),
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                         ),
                       ],
                     ),
                     WidgetbookComponent(
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                      name: 'Avatar',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) => avatarDefaultUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Small',
-                          builder: (context) => avatarSmallUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Smaller',
-                          builder: (context) => avatarSmallerUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Smallest',
-                          builder: (context) => avatarSmallestUseCase(context),
-                        ),
-                      ],
-                    ),
-                  ],
-                  folders: [],
-                  isExpanded: true,
-                ),
-                WidgetbookFolder(
-                  name: 'tweet',
-                  widgets: [
-                    WidgetbookComponent(
-                      name: 'TweetActions',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              tweetActionsDefaultUseCase(context),
-=======
                       name: 'PlayButton',
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) => playButtonUseCase(context),
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                         ),
                       ],
                     ),
@@ -384,9 +252,6 @@ class HotReload extends StatelessWidget {
                       ],
                     ),
                     WidgetbookComponent(
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                      name: 'TweetHeader',
-=======
                       name: 'Avatar',
                       useCases: [
                         WidgetbookUseCase(
@@ -416,7 +281,6 @@ class HotReload extends StatelessWidget {
                   widgets: [
                     WidgetbookComponent(
                       name: 'TweetActions',
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Default',
@@ -426,14 +290,6 @@ class HotReload extends StatelessWidget {
                       ],
                     ),
                     WidgetbookComponent(
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                      name: 'TweetMedia',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Image',
-                          builder: (context) => tweetMediaImageUseCase(context),
-                        ),
-=======
                       name: 'QuotedTweet',
                       useCases: [
                         WidgetbookUseCase(
@@ -451,17 +307,9 @@ class HotReload extends StatelessWidget {
                     WidgetbookComponent(
                       name: 'CollapsedTweet',
                       useCases: [
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                         WidgetbookUseCase(
-                          name: 'Gallery',
+                          name: 'Default',
                           builder: (context) =>
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                              tweetMediaGalleryUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'GIF',
-                          builder: (context) => tweetMediaGIFUseCase(context),
-=======
                               collapsedTweetDefaultUseCase(context),
                         ),
                         WidgetbookUseCase(
@@ -478,19 +326,10 @@ class HotReload extends StatelessWidget {
                           name: 'Default',
                           builder: (context) =>
                               tweetHeaderDefaultUseCase(context),
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                         ),
                       ],
                     ),
                     WidgetbookComponent(
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                      name: 'TweetAnnotation',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              tweetAnnotationDefaultUseCase(context),
-=======
                       name: 'TweetMedia',
                       useCases: [
                         WidgetbookUseCase(
@@ -505,84 +344,35 @@ class HotReload extends StatelessWidget {
                         WidgetbookUseCase(
                           name: 'GIF',
                           builder: (context) => tweetMediaGIFUseCase(context),
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                         ),
                       ],
                     ),
                     WidgetbookComponent(
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                      name: 'ExpandedTweetInfo',
-=======
                       name: 'TweetAnnotation',
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) =>
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                              detailedTweetInfoDefaultUseCase(context),
-=======
                               tweetAnnotationDefaultUseCase(context),
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                         ),
                       ],
                     ),
                     WidgetbookComponent(
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                      name: 'ExpandedTweet',
-=======
                       name: 'ExpandedTweetInfo',
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) =>
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                              expandedTweetDefaultUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Quote Tweet',
-                          builder: (context) =>
-                              expandedTweetQuoteTweetUseCase(context),
-=======
                               detailedTweetInfoDefaultUseCase(context),
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                         ),
                       ],
                     ),
                     WidgetbookComponent(
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                      name: 'TweetDate',
-=======
                       name: 'ExpandedTweet',
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) =>
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                              tweetDateDefaultuseCase(context),
-                        ),
-                      ],
-                    ),
-                  ],
-                  folders: [
-                    WidgetbookFolder(
-                      name: 'metrics',
-                      widgets: [
-                        WidgetbookComponent(
-                          name: 'ExpandedTweetMetrics',
-                          useCases: [
-                            WidgetbookUseCase(
-                              name: 'Default',
-                              builder: (context) =>
-                                  ExpandedTweetMetricsDefaultUseCase(context),
-                            ),
-                          ],
-                        ),
-                        WidgetbookComponent(
-                          name: 'Likes',
-=======
                               expandedTweetDefaultUseCase(context),
                         ),
                         WidgetbookUseCase(
@@ -609,40 +399,25 @@ class HotReload extends StatelessWidget {
                       widgets: [
                         WidgetbookComponent(
                           name: 'ExpandedTweetMetrics',
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                           useCases: [
                             WidgetbookUseCase(
                               name: 'Default',
                               builder: (context) =>
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                                  likesDefaultUseCase(context),
-=======
                                   ExpandedTweetMetricsDefaultUseCase(context),
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                             ),
                           ],
                         ),
                         WidgetbookComponent(
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                          name: 'Replies',
-=======
                           name: 'Likes',
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                           useCases: [
                             WidgetbookUseCase(
                               name: 'Default',
                               builder: (context) =>
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                                  repliesDefaultUseCase(context),
-=======
                                   likesDefaultUseCase(context),
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                             ),
                           ],
                         ),
                         WidgetbookComponent(
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-=======
                           name: 'Replies',
                           useCases: [
                             WidgetbookUseCase(
@@ -653,7 +428,6 @@ class HotReload extends StatelessWidget {
                           ],
                         ),
                         WidgetbookComponent(
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                           name: 'LikeIconButton',
                           useCases: [
                             WidgetbookUseCase(
@@ -697,18 +471,6 @@ class HotReload extends StatelessWidget {
               name: 'pages',
               widgets: [
                 WidgetbookComponent(
-<<<<<<< HEAD:app_widgetbook/lib/app.widgetbook.dart
-                  name: 'LoginPage',
-                  useCases: [
-                    WidgetbookUseCase(
-                      name: 'Default',
-                      builder: (context) => loginPageDefaultUseCase(context),
-                    ),
-                  ],
-                ),
-                WidgetbookComponent(
-=======
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12:app_widgetbook/lib/main.widgetbook.dart
                   name: 'AuthPage',
                   useCases: [
                     WidgetbookUseCase(

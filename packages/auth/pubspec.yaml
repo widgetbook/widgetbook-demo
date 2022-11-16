@@ -1,9 +1,5 @@
 name: auth
-<<<<<<< HEAD
-description: A Very Good Project created by Very Good CLI.
-=======
 description: Authentication components for Widgetbook Demo App
->>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12
 version: 0.1.0+1
 publish_to: none
 

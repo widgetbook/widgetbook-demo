@@ -96,4 +96,28 @@ class AppLocalizationsAr extends AppLocalizations {
 =======
 >>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12
   String get or => 'أو';
+
+  @override
+  String get authPageTitle => 'اتطلع على مايحدث في العالم الآن';
+
+  @override
+  String get continueWithGoogle => 'متابعة بحساب Google';
+
+  @override
+  String get continueWithApple => 'متابعة بحساب Apple';
+
+  @override
+  String get haveAnAccountAlready => 'لديك حساب اصلاً؟';
+
+  @override
+  String get createAccount => 'انشئ حساب';
+
+  @override
+  String get logIn => 'تسجيل الدخول';
+
+  @override
+  String get termsText => 'عن طريق انشاءك لحساب جديد، فأنت توافق على الشروط، سياسة الخصوصية، واستخدام الكوكيز ';
+
+  @override
+  String get or => 'أو';
 }
