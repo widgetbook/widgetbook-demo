@@ -142,3 +142,27 @@ PublicMetrics getPublicMetricsOptions(BuildContext context) {
         .toInt(),
   );
 }
+
+/// Predefined list of icons for options knob
+const List<Option<IconData>> iconOptions = [
+  Option(
+    label: 'Home',
+    value: TwitterIcons.home,
+  ),
+  Option(
+    label: 'Bell',
+    value: TwitterIcons.bell,
+  ),
+  Option(
+    label: 'Message',
+    value: TwitterIcons.mail,
+  ),
+  Option(
+    label: 'Bookmark',
+    value: TwitterIcons.bookmark,
+  ),
+  Option(
+    label: 'Profile',
+    value: TwitterIcons.user,
+  ),
+];

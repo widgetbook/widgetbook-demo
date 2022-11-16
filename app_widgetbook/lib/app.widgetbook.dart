@@ -9,6 +9,7 @@ import 'dart:math';
 import 'package:app_widgetbook/app.dart';
 import 'package:app_widgetbook/auth/components/auth_buttons.dart';
 import 'package:app_widgetbook/auth/pages/auth_page.dart';
+import 'package:app_widgetbook/auth/pages/login_page.dart';
 import 'package:app_widgetbook/core/tweet/collapsed_tweet.dart';
 import 'package:app_widgetbook/core/tweet/expanded_tweet.dart';
 import 'package:app_widgetbook/core/tweet/expanded_tweet_info.dart';
@@ -27,6 +28,7 @@ import 'package:app_widgetbook/core/tweet/tweet_media.dart';
 import 'package:app_widgetbook/core/ui_elements/app_icon_button.dart';
 import 'package:app_widgetbook/core/ui_elements/button.dart';
 import 'package:app_widgetbook/core/ui_elements/formatted_date_time.dart';
+import 'package:app_widgetbook/core/ui_elements/menu_item.dart';
 import 'package:app_widgetbook/core/ui_elements/play_button.dart';
 import 'package:app_widgetbook/core/ui_elements/twitter_logo.dart';
 import 'package:app_widgetbook/core/user/avatar.dart';
@@ -213,6 +215,15 @@ class HotReload extends StatelessWidget {
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) => playButtonUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'MenuItem',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) => menuItemDefaultUseCase(context),
                         ),
                       ],
                     ),
@@ -470,6 +481,15 @@ class HotReload extends StatelessWidget {
             WidgetbookFolder(
               name: 'pages',
               widgets: [
+                WidgetbookComponent(
+                  name: 'LoginPage',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => loginPageDefaultUseCase(context),
+                    ),
+                  ],
+                ),
                 WidgetbookComponent(
                   name: 'AuthPage',
                   useCases: [

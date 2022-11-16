@@ -77,3 +77,11 @@ class AppThemes {
     );
   }
 }
+
+/// Theme extension with helper getters and methods
+extension ThemeExtension on ThemeData {
+  /// Whether theme brightness is dark
+  bool get isDark {
+    return brightness == Brightness.dark;
+  }
+}
