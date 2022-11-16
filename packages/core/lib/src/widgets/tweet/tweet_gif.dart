@@ -1,5 +1,5 @@
 import 'package:core/core.dart';
-import 'package:core/src/widgets/app_video_player.dart';
+import 'package:core/src/widgets/ui/app_video_player.dart';
 import 'package:flutter/material.dart';
 
 /// Widget for a tweet GIF media

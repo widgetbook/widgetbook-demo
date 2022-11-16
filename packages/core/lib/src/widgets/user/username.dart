@@ -1,5 +1,4 @@
 import 'package:core/core.dart';
-import 'package:core/src/widgets/hover_detector.dart';
 import 'package:flutter/material.dart';
 
 /// Twitter user's username (handle)

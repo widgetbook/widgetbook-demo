@@ -15,7 +15,7 @@ host-on-push:
     - cd app_widgetbook
     - flutter pub get
     - flutter pub run build_runner build --delete-conflicting-outputs
-    - flutter build web -t lib/main.widgetbook.dart
+    - flutter build web -t lib/app.widgetbook.dart
     - dart pub global activate widgetbook_cli 3.0.0-beta.12
     - widgetbook publish --api-key FwMdbhElTrjoPiz5wI2mWZTm39U2deZc --repository $CI_PROJECT_PATH --actor $GITLAB_USER_LOGIN --branch $CI_COMMIT_BRANCH
 
@@ -32,6 +32,6 @@ host-on-merge-request:
     - cd app_widgetbook
     - flutter pub get
     - flutter pub run build_runner build --delete-conflicting-outputs
-    - flutter build web -t lib/main.widgetbook.dart
+    - flutter build web -t lib/app.widgetbook.dart
     - dart pub global activate widgetbook_cli 3.0.0-beta.12
     - widgetbook publish --api-key FwMdbhElTrjoPiz5wI2mWZTm39U2deZc --repository $CI_PROJECT_PATH --actor $GITLAB_USER_LOGIN --branch $CI_MERGE_REQUEST_TARGET_BRANCH_NAME --base-branch $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME
