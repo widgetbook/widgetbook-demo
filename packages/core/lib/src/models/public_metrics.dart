@@ -19,4 +19,9 @@ class PublicMetrics {
 
   /// Tweet replies count
   final int replies;
+
+  /// Whether all metrics except replies are zero
+  bool get isZero {
+    return retweets == 0 && quoteTweets == 0 && likes == 0;
+  }
 }

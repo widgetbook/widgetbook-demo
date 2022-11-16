@@ -1,0 +1,37 @@
+stages:
+  - compile
+  - host
+
+host-on-push:
+  stage: compile
+  image: 
+    name: cirrusci/flutter:stable
+  rules:
+    - if: $CI_COMMIT_BRANCH == 'staging'
+
+  before_script:
+    - export PATH="$PATH":"$HOME/.pub-cache/bin"
+  script:
+    - cd app_widgetbook
+    - flutter pub get
+    - flutter pub run build_runner build --delete-conflicting-outputs
+    - flutter build web -t lib/app.widgetbook.dart
+    - dart pub global activate widgetbook_cli 3.0.0-beta.12
+    - widgetbook publish --api-key FwMdbhElTrjoPiz5wI2mWZTm39U2deZc --repository $CI_PROJECT_PATH --actor $GITLAB_USER_LOGIN --branch $CI_COMMIT_BRANCH
+
+host-on-merge-request:
+  stage: compile
+  image: 
+    name: cirrusci/flutter:stable
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+
+  before_script:
+    - export PATH="$PATH":"$HOME/.pub-cache/bin"
+  script:
+    - cd app_widgetbook
+    - flutter pub get
+    - flutter pub run build_runner build --delete-conflicting-outputs
+    - flutter build web -t lib/app.widgetbook.dart
+    - dart pub global activate widgetbook_cli 3.0.0-beta.12
+    - widgetbook publish --api-key FwMdbhElTrjoPiz5wI2mWZTm39U2deZc --repository $CI_PROJECT_PATH --actor $GITLAB_USER_LOGIN --branch $CI_MERGE_REQUEST_TARGET_BRANCH_NAME --base-branch $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME

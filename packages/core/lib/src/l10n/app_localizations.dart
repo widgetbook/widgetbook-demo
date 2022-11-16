@@ -194,6 +194,87 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Replying to'**
   String get replyingTo;
+
+  /// No description provided for @authPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'See what\'s happening in the world right now.'**
+  String get authPageTitle;
+
+  /// No description provided for @continueWithGoogle.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with Google'**
+  String get continueWithGoogle;
+
+  /// No description provided for @continueWithApple.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with Apple'**
+  String get continueWithApple;
+
+  /// No description provided for @haveAnAccountAlready.
+  ///
+  /// In en, this message translates to:
+  /// **'Have and account already?'**
+  String get haveAnAccountAlready;
+
+  /// No description provided for @createAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create account'**
+  String get createAccount;
+
+  /// No description provided for @logIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in'**
+  String get logIn;
+
+  /// No description provided for @termsText.
+  ///
+  /// In en, this message translates to:
+  /// **'By signing up, you agree to our Terms, Privacy Policy, and Cookie Use'**
+  String get termsText;
+
+<<<<<<< HEAD
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @loginPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'To get started, first enter your phone, email, or @username'**
+  String get loginPageTitle;
+
+  /// No description provided for @phoneEmailOrUsername.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone, email, or username'**
+  String get phoneEmailOrUsername;
+
+  /// No description provided for @forgotPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot password?'**
+  String get forgotPassword;
+
+  /// No description provided for @next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
+
+=======
+>>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12
+  /// No description provided for @or.
+  ///
+  /// In en, this message translates to:
+  /// **'or'**
+  String get or;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

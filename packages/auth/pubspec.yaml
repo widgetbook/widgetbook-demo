@@ -1,0 +1,24 @@
+name: auth
+<<<<<<< HEAD
+description: A Very Good Project created by Very Good CLI.
+=======
+description: Authentication components for Widgetbook Demo App
+>>>>>>> 048c9357b9a11b01017657653e8cce3f8c56fe12
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+  flutter: 3.3.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+  core:
+    path: ../core
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^0.3.0
+  very_good_analysis: ^3.1.0

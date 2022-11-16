@@ -32,6 +32,12 @@ List<LocalizationsDelegate<dynamic>> localizationsDelegates =
   name: 'App Widgetbook',
   textScaleFactors: [1, 1.5, 2],
   foldersExpanded: true,
+  devices: [
+    Apple.iPhone12,
+    Apple.iPhone13,
+    Apple.iPadMini,
+    Desktop.desktop1080p,
+  ],
 )
 class App extends StatelessWidget {
   /// Creates a new instance of [App]
