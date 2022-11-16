@@ -92,5 +92,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String get next => 'التالي';
 
   @override
+  String get enterYourPassword => 'ادخل كلمة المرور';
+
+  @override
+  String get password => 'كلمة المرور';
+
+  @override
   String get or => 'أو';
 }
