@@ -54,4 +54,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get replyingTo => 'Replying to';
+
+  @override
+  String get authPageTitle => 'See what\'s happening in the world right now.';
+
+  @override
+  String get continueWithGoogle => 'Continue with Google';
+
+  @override
+  String get continueWithApple => 'Continue with Apple';
+
+  @override
+  String get haveAnAccountAlready => 'Have and account already?';
+
+  @override
+  String get createAccount => 'Create account';
+
+  @override
+  String get logIn => 'Log in';
+
+  @override
+  String get termsText => 'By signing up, you agree to our Terms, Privacy Policy, and Cookie Use';
+
+  @override
+  String get or => 'or';
 }

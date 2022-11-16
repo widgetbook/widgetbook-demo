@@ -1,4 +1,6 @@
+import 'package:app_widgetbook/dummy_data/dummy_media.dart';
 import 'package:core/core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';
 
@@ -35,9 +37,12 @@ const List<Option<Color?>> colorOptions = [
 ];
 
 /// Predefined options knob for a tweet date
-DateTime getTweetDateOption(BuildContext context) {
+DateTime getTweetDateOption(
+  BuildContext context, {
+  String label = 'Date',
+}) {
   return context.knobs.options<DateTime>(
-    label: 'Date',
+    label: label,
     description: "The date should be a timeago string if it's "
         'less than 24 hours ago, and it should '
         "include the year only if it's different "
@@ -65,3 +70,75 @@ DateTime getTweetDateOption(BuildContext context) {
   );
 }
 
+/// Predefined options knob for a list of media
+List<Media> getMediaOptions(
+  BuildContext context, {
+  String label = 'Media',
+  String? description,
+}) {
+  return context.knobs.options<List<Media>>(
+    label: label,
+    description: description,
+    options: [
+      const Option(
+        label: '4 Images',
+        value: DummyMedia.fourPhotosMedia,
+      ),
+      Option(
+        label: '3 Images',
+        value: DummyMedia.fourPhotosMedia.take(3).toList(),
+      ),
+      Option(
+        label: '2 Images',
+        value: DummyMedia.fourPhotosMedia.take(2).toList(),
+      ),
+      const Option(
+        label: 'Image',
+        value: DummyMedia.singlePhotoMedia,
+      ),
+      if (defaultTargetPlatform != TargetPlatform.macOS && kIsWeb)
+        const Option(
+          label: 'GIF',
+          value: DummyMedia.gifMedia,
+        ),
+      const Option(
+        label: 'No Media',
+        value: [],
+      ),
+    ],
+  );
+}
+
+/// Predefined sliders knobs for
+/// likes, retweets, quote tweets, and replies metrics
+PublicMetrics getPublicMetricsOptions(BuildContext context) {
+  return PublicMetrics(
+    replies: context.knobs
+        .slider(
+          label: 'Replies',
+          min: 0,
+          max: 25000,
+          initialValue: 15,
+          divisions: 25000 ~/ 50,
+        )
+        .toInt(),
+    retweets: context.knobs
+        .slider(
+          label: 'Retweets',
+          min: 0,
+          max: 25000,
+          initialValue: 15,
+          divisions: 25000 ~/ 50,
+        )
+        .toInt(),
+    likes: context.knobs
+        .slider(
+          label: 'Likes',
+          min: 0,
+          max: 25000,
+          initialValue: 15,
+          divisions: 25000 ~/ 50,
+        )
+        .toInt(),
+  );
+}
