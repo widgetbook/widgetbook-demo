@@ -12,7 +12,7 @@ class Button extends StatelessWidget {
     this.icon,
     this.textColor,
     required this.height,
-    required this.borderSide,
+    required this.borderColor,
   });
 
   /// Creates new instance of [Button] with Primary button style
@@ -24,7 +24,7 @@ class Button extends StatelessWidget {
     this.height = 40,
   })  : backgroundColor = AppColors.primary,
         textColor = AppColors.white,
-        borderSide = BorderSide.none;
+        borderColor = null;
 
   /// Creates new instance of [Button] with Primary Outline button style
   const Button.primaryOutline({
@@ -35,7 +35,7 @@ class Button extends StatelessWidget {
     this.height = 40,
   })  : backgroundColor = AppColors.white,
         textColor = AppColors.primary,
-        borderSide = const BorderSide(color: AppColors.primary);
+        borderColor = AppColors.primary;
 
   /// Creates new instance of [Button] with secondary button style
   const Button.secondary({
@@ -46,7 +46,7 @@ class Button extends StatelessWidget {
     this.height = 40,
   })  : backgroundColor = AppColors.secondary,
         textColor = AppColors.white,
-        borderSide = BorderSide.none;
+        borderColor = null;
 
   /// Creates new instance of [Button] with secondary outline button style
   const Button.secondaryOutline({
@@ -57,7 +57,7 @@ class Button extends StatelessWidget {
     this.height = 40,
   })  : backgroundColor = AppColors.white,
         textColor = AppColors.secondary,
-        borderSide = const BorderSide(color: AppColors.border);
+        borderColor = AppColors.border;
 
   /// Button text label
   final String label;
@@ -75,7 +75,7 @@ class Button extends StatelessWidget {
   final double height;
 
   /// Button border
-  final BorderSide borderSide;
+  final Color? borderColor;
 
   /// Optional icon
   final IconData? icon;
@@ -116,7 +116,9 @@ class Button extends StatelessWidget {
         fixedSize: Size.fromHeight(height),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(height / 2),
-          side: borderSide,
+          side: borderColor == null
+              ? BorderSide.none
+              : BorderSide(color: borderColor!),
         ),
         textStyle: Theme.of(context).textTheme.button!.copyWith(
               height: icon == null ? 1.05 : null,
