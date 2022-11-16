@@ -9,6 +9,7 @@ class TweetHeader extends StatelessWidget {
     super.key,
     required this.author,
     required this.tweetDate,
+    this.hasInfoIconButton = true,
   });
 
   /// Tweet user
@@ -16,6 +17,9 @@ class TweetHeader extends StatelessWidget {
 
   /// Tweet date
   final DateTime tweetDate;
+
+  /// Whether this widget has an info icon button
+  final bool hasInfoIconButton;
 
   @override
   Widget build(BuildContext context) {
@@ -36,11 +40,12 @@ class TweetHeader extends StatelessWidget {
             ],
           ),
         ),
-        AppIconButton(
-          onPressed: () {},
-          icon: const Icon(TwitterIcons.info),
-          size: 14,
-        ),
+        if (hasInfoIconButton)
+          AppIconButton(
+            onPressed: () {},
+            icon: const Icon(TwitterIcons.info),
+            size: 14,
+          ),
       ],
     );
   }

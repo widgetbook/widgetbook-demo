@@ -84,7 +84,16 @@ class CollapsedTweet extends StatelessWidget {
                           ),
                         TweetText(tweet.text),
                         const SizedBox(height: 10),
-                        TweetMedia(tweetMedia: tweet.media),
+                        if (tweet.media.isNotEmpty)
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: TweetMedia(tweetMedia: tweet.media),
+                          ),
+                        if (tweet.quotedTweet != null)
+                          QuotedTweet(
+                            tweet: tweet.quotedTweet!,
+                            isLargeMedia: tweet.media.isEmpty,
+                          ),
                         const SizedBox(height: 10),
                         TweetActions(
                           publicMetrics: tweet.publicMetrics,

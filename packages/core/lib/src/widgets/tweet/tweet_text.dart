@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
@@ -10,10 +11,17 @@ class TweetText extends StatelessWidget {
   const TweetText(
     this.text, {
     super.key,
+    this.disabled = false,
   });
 
   /// The text of the tweet
   final String text;
+
+  /// Whether this text is disabled
+  ///
+  /// If `true`, the hashtags, mentions, and links will not be primary
+  /// colored nor clickable
+  final bool disabled;
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +32,19 @@ class TweetText extends StatelessWidget {
               fontWeight: FontWeight.w400,
               height: 1.3,
             ),
+        a: Theme.of(context).textTheme.bodyText1!.copyWith(
+              fontWeight: FontWeight.w400,
+              height: 1.3,
+              color: disabled
+                  ? Theme.of(context).textTheme.bodyText1!.color
+                  : AppColors.primary,
+            ),
       ),
-      onTapLink: (String text, String? href, String title) {
-        log('text: $text, link: ${href ?? ''}');
-      },
+      onTapLink: disabled
+          ? null
+          : (String text, String? href, String title) {
+              log('text: $text, link: ${href ?? ''}');
+            },
     );
   }
 }
