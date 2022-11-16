@@ -194,6 +194,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Replying to'**
   String get replyingTo;
+
+  /// No description provided for @authPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'See what\'s happening in the world right now.'**
+  String get authPageTitle;
+
+  /// No description provided for @continueWithGoogle.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with Google'**
+  String get continueWithGoogle;
+
+  /// No description provided for @continueWithApple.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with Apple'**
+  String get continueWithApple;
+
+  /// No description provided for @haveAnAccountAlready.
+  ///
+  /// In en, this message translates to:
+  /// **'Have and account already?'**
+  String get haveAnAccountAlready;
+
+  /// No description provided for @createAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create account'**
+  String get createAccount;
+
+  /// No description provided for @logIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in'**
+  String get logIn;
+
+  /// No description provided for @termsText.
+  ///
+  /// In en, this message translates to:
+  /// **'By signing up, you agree to our Terms, Privacy Policy, and Cookie Use'**
+  String get termsText;
+
+  /// No description provided for @or.
+  ///
+  /// In en, this message translates to:
+  /// **'or'**
+  String get or;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

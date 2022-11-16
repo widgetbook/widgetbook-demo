@@ -15,5 +15,13 @@
     "twitterForAndroid": "تطبيق تويتر على الأندرويد",
     "showThisThread": "عرض هذه السلسلة",
     "showMoreReplies": "عرض المزيد من الردود",
-    "replyingTo": "رد على"
+    "replyingTo": "رد على",
+    "authPageTitle": "اتطلع على مايحدث في العالم الآن",
+    "continueWithGoogle": "متابعة بحساب Google",
+    "continueWithApple": "متابعة بحساب Apple",
+    "haveAnAccountAlready": "لديك حساب اصلاً؟",
+    "createAccount": "انشئ حساب",
+    "termsText": "عن طريق انشاءك لحساب جديد، فأنت توافق على الشروط، سياسة الخصوصية، واستخدام الكوكيز ",
+    "logIn": "تسجيل الدخول",
+    "or": "أو"
 }

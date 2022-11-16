@@ -6,6 +6,8 @@
 
 import 'dart:core';
 import 'dart:math';
+import 'package:app_widgetbook/auth/components/auth_buttons.dart';
+import 'package:app_widgetbook/auth/pages/auth_page.dart';
 import 'package:app_widgetbook/core/tweet/collapsed_tweet.dart';
 import 'package:app_widgetbook/core/tweet/expanded_tweet.dart';
 import 'package:app_widgetbook/core/tweet/expanded_tweet_info.dart';
@@ -25,13 +27,16 @@ import 'package:app_widgetbook/core/ui_elements/app_icon_button.dart';
 import 'package:app_widgetbook/core/ui_elements/button.dart';
 import 'package:app_widgetbook/core/ui_elements/formatted_date_time.dart';
 import 'package:app_widgetbook/core/ui_elements/play_button.dart';
+import 'package:app_widgetbook/core/ui_elements/twitter_logo.dart';
 import 'package:app_widgetbook/core/user/avatar.dart';
 import 'package:app_widgetbook/core/user/display_name.dart';
 import 'package:app_widgetbook/core/user/username.dart';
 import 'package:app_widgetbook/main.dart';
+import 'package:auth/src/widgets/auth_buttons.dart';
 import 'package:core/core.dart';
 import 'package:core/src/styles/app_colors.dart';
 import 'package:core/src/widgets/hover_detector.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
@@ -61,6 +66,52 @@ class HotReload extends StatelessWidget {
         WidgetbookTheme(
           name: 'Dark',
           data: getDarkTheme(),
+        ),
+      ],
+      devices: [
+        Device(
+          name: 'iPhone 12',
+          resolution: Resolution(
+            nativeSize: DeviceSize(
+              height: 2532.0,
+              width: 1170.0,
+            ),
+            scaleFactor: 3.0,
+          ),
+          type: DeviceType.mobile,
+        ),
+        Device(
+          name: 'iPhone 13',
+          resolution: Resolution(
+            nativeSize: DeviceSize(
+              height: 2532.0,
+              width: 1170.0,
+            ),
+            scaleFactor: 3.0,
+          ),
+          type: DeviceType.mobile,
+        ),
+        Device(
+          name: '7.9" iPad mini',
+          resolution: Resolution(
+            nativeSize: DeviceSize(
+              height: 1024.0,
+              width: 768.0,
+            ),
+            scaleFactor: 2.0,
+          ),
+          type: DeviceType.tablet,
+        ),
+        Device(
+          name: 'Desktop 1080p',
+          resolution: Resolution(
+            nativeSize: DeviceSize(
+              height: 1080.0,
+              width: 1920.0,
+            ),
+            scaleFactor: 2.0,
+          ),
+          type: DeviceType.desktop,
         ),
       ],
       textScaleFactors: [
@@ -101,6 +152,15 @@ class HotReload extends StatelessWidget {
                   ],
                 ),
                 WidgetbookComponent(
+                  name: 'TwitterLogo',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => twitterLogoDefaultUseCase(context),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
                   name: 'Button',
                   useCases: [
                     WidgetbookUseCase(
@@ -120,6 +180,15 @@ class HotReload extends StatelessWidget {
                       name: 'Secondary Outline Button',
                       builder: (context) =>
                           secondaryOutlineButtonUseCase(context),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'AuthButtons',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => authButtonsDefaultUseCase(context),
                     ),
                   ],
                 ),
@@ -145,6 +214,62 @@ class HotReload extends StatelessWidget {
               ],
               folders: [
                 WidgetbookFolder(
+                  name: 'user',
+                  widgets: [
+                    WidgetbookComponent(
+                      name: 'Username',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) => usernameDefaultUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Active',
+                          builder: (context) => usernameActiveuseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'DisplayName',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) =>
+                              displayNameDefaultUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Active',
+                          builder: (context) =>
+                              displayNameActiveUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'Avatar',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) => avatarDefaultUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Small',
+                          builder: (context) => avatarSmallUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Smaller',
+                          builder: (context) => avatarSmallerUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Smallest',
+                          builder: (context) => avatarSmallestUseCase(context),
+                        ),
+                      ],
+                    ),
+                  ],
+                  folders: [],
+                  isExpanded: true,
+                ),
+                WidgetbookFolder(
                   name: 'tweet',
                   widgets: [
                     WidgetbookComponent(
@@ -167,16 +292,6 @@ class HotReload extends StatelessWidget {
                       ],
                     ),
                     WidgetbookComponent(
-                      name: 'TweetAnnotation',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              tweetAnnotationDefaultUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
                       name: 'TweetMedia',
                       useCases: [
                         WidgetbookUseCase(
@@ -191,6 +306,16 @@ class HotReload extends StatelessWidget {
                         WidgetbookUseCase(
                           name: 'GIF',
                           builder: (context) => tweetMediaGIFUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'TweetAnnotation',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) =>
+                              tweetAnnotationDefaultUseCase(context),
                         ),
                       ],
                     ),
@@ -235,6 +360,36 @@ class HotReload extends StatelessWidget {
                       ],
                     ),
                     WidgetbookComponent(
+                      name: 'TweetActions',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) =>
+                              tweetActionsDefaultUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Quote Tweet',
+                          builder: (context) =>
+                              collapsedTweetQuoteTweetUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'QuotedTweet',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Large Media',
+                          builder: (context) =>
+                              quotedTweetLargeMediaUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Thumbnail Media',
+                          builder: (context) =>
+                              quotedTweetThumbnailMediaUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
                       name: 'CollapsedTweet',
                       useCases: [
                         WidgetbookUseCase(
@@ -246,16 +401,6 @@ class HotReload extends StatelessWidget {
                           name: 'Quote Tweet',
                           builder: (context) =>
                               collapsedTweetQuoteTweetUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'TweetActions',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              tweetActionsDefaultUseCase(context),
                         ),
                       ],
                     ),
@@ -321,63 +466,23 @@ class HotReload extends StatelessWidget {
                   folders: [],
                   isExpanded: true,
                 ),
-                WidgetbookFolder(
-                  name: 'user',
-                  widgets: [
-                    WidgetbookComponent(
-                      name: 'Username',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) => usernameDefaultUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Active',
-                          builder: (context) => usernameActiveuseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'DisplayName',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              displayNameDefaultUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Active',
-                          builder: (context) =>
-                              displayNameActiveUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'Avatar',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) => avatarDefaultUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Small',
-                          builder: (context) => avatarSmallUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Smaller',
-                          builder: (context) => avatarSmallerUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Smallest',
-                          builder: (context) => avatarSmallestUseCase(context),
-                        ),
-                      ],
+              ],
+              isExpanded: true,
+            ),
+            WidgetbookFolder(
+              name: 'pages',
+              widgets: [
+                WidgetbookComponent(
+                  name: 'AuthPage',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => authPageDefaultUseCase(context),
                     ),
                   ],
-                  folders: [],
-                  isExpanded: true,
                 ),
               ],
+              folders: [],
               isExpanded: true,
             ),
           ],

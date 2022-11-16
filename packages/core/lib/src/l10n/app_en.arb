@@ -15,5 +15,13 @@
     "twitterForAndroid": "Twitter for Android",
     "showThisThread": "Show this thread",
     "showMoreReplies": "Show more replies",
-    "replyingTo": "Replying to"
+    "replyingTo": "Replying to",
+    "authPageTitle": "See what's happening in the world right now.",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithApple": "Continue with Apple",
+    "haveAnAccountAlready": "Have and account already?",
+    "createAccount": "Create account",
+    "logIn": "Log in",
+    "termsText": "By signing up, you agree to our Terms, Privacy Policy, and Cookie Use",
+    "or": "or"
 }
