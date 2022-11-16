@@ -32,10 +32,7 @@ Widget secondaryButtonUseCase(BuildContext context) {
 Widget primaryOutlineButtonUseCase(BuildContext context) {
   return Button.primaryOutline(
     label: context.knobs.text(
-      label: context.knobs.text(
-        label: 'Label',
-        initialValue: 'Button',
-      ),
+      label: 'Label',
       initialValue: 'Button',
     ),
     onPressed: () {},
@@ -47,10 +44,7 @@ Widget primaryOutlineButtonUseCase(BuildContext context) {
 Widget secondaryOutlineButtonUseCase(BuildContext context) {
   return Button.secondaryOutline(
     label: context.knobs.text(
-      label: context.knobs.text(
-        label: 'Label',
-        initialValue: 'Button',
-      ),
+      label: 'Label',
       initialValue: 'Button',
     ),
     onPressed: () {},
