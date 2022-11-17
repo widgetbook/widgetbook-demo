@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 /// Widget for an item in a menu
 ///
 /// Used in the drawer for mobile and in the sidebar for tablet/desktop
-class MenuItem extends StatelessWidget {
+class MenuListItem extends StatelessWidget {
   /// Creates a widget for an item in a menu
-  const MenuItem({
+  const MenuListItem({
     super.key,
     required this.icon,
     required this.label,
