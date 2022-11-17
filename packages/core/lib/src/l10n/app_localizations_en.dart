@@ -92,5 +92,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get next => 'Next';
 
   @override
+  String get enterYourPassword => 'Enter your password';
+
+  @override
+  String get password => 'Password';
+
+  @override
   String get or => 'or';
 }

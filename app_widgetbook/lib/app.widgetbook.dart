@@ -180,6 +180,10 @@ class HotReload extends StatelessWidget {
                       name: 'Button',
                       useCases: [
                         WidgetbookUseCase(
+                          name: 'Custom',
+                          builder: (context) => customButtonUseCase(context),
+                        ),
+                        WidgetbookUseCase(
                           name: 'Primary Button',
                           builder: (context) => primaryButtonUseCase(context),
                         ),

@@ -71,4 +71,20 @@ class AppColors {
     };
     return MaterialColor(color.value, colorShades);
   }
+
+  /// Gets the text color based on a background color brightness
+  static Color textColorFromBackground(Color background) =>
+      getBrightness(background) == Brightness.light
+          ? AppColors.text
+          : AppColors.white;
+
+  /// Gets brightness of a color (dark/light)
+  static Brightness getBrightness(Color color) {
+    final relativeLuminance = color.computeLuminance();
+    const kThreshold = 0.15;
+    return ((relativeLuminance + 0.05) * (relativeLuminance + 0.05) >
+            kThreshold)
+        ? Brightness.light
+        : Brightness.dark;
+  }
 }

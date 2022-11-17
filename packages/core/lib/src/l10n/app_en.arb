@@ -36,5 +36,7 @@
     "createAccount": "Create account",
     "logIn": "Log in",
     "termsText": "By signing up, you agree to our Terms, Privacy Policy, and Cookie Use",
+    "enterYourPassword": "Enter your password",
+    "password": "Password",
     "or": "or"
 }
