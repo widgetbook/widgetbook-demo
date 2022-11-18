@@ -92,5 +92,38 @@ class AppLocalizationsAr extends AppLocalizations {
   String get next => 'التالي';
 
   @override
+  String get following => 'متابّع';
+
+  @override
+  String get followers => 'متابِعين';
+
+  @override
+  String get profile => 'الملف الشخصي';
+
+  @override
+  String get lists => 'القوائم';
+
+  @override
+  String get topics => 'المواضيع';
+
+  @override
+  String get notifications => 'التنبيهات';
+
+  @override
+  String get bookmarks => 'العلامات المرجعية';
+
+  @override
+  String get settingsAndPrivacy => 'الاعدادات والخصوصية';
+
+  @override
+  String get helpCenter => 'موارد اضافية';
+
+  @override
+  String get enterYourPassword => 'ادخل كلمة المرور';
+
+  @override
+  String get password => 'كلمة المرور';
+
+  @override
   String get or => 'أو';
 }

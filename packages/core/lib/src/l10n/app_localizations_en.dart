@@ -92,5 +92,38 @@ class AppLocalizationsEn extends AppLocalizations {
   String get next => 'Next';
 
   @override
+  String get following => 'following';
+
+  @override
+  String get followers => 'followers';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get lists => 'Lists';
+
+  @override
+  String get topics => 'Topics';
+
+  @override
+  String get notifications => 'Notifications';
+
+  @override
+  String get bookmarks => 'Bookmarks';
+
+  @override
+  String get settingsAndPrivacy => 'Settings and Privacy';
+
+  @override
+  String get helpCenter => 'Help Center';
+
+  @override
+  String get enterYourPassword => 'Enter your password';
+
+  @override
+  String get password => 'Password';
+
+  @override
   String get or => 'or';
 }

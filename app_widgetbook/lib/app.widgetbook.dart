@@ -25,10 +25,11 @@ import 'package:app_widgetbook/core/tweet/tweet_annotation.dart';
 import 'package:app_widgetbook/core/tweet/tweet_date.dart';
 import 'package:app_widgetbook/core/tweet/tweet_header.dart';
 import 'package:app_widgetbook/core/tweet/tweet_media.dart';
+import 'package:app_widgetbook/core/ui_elements/app_drawer.dart';
 import 'package:app_widgetbook/core/ui_elements/app_icon_button.dart';
 import 'package:app_widgetbook/core/ui_elements/button.dart';
 import 'package:app_widgetbook/core/ui_elements/formatted_date_time.dart';
-import 'package:app_widgetbook/core/ui_elements/menu_item.dart';
+import 'package:app_widgetbook/core/ui_elements/menu_list_item.dart';
 import 'package:app_widgetbook/core/ui_elements/play_button.dart';
 import 'package:app_widgetbook/core/ui_elements/twitter_logo.dart';
 import 'package:app_widgetbook/core/user/avatar.dart';
@@ -180,6 +181,10 @@ class HotReload extends StatelessWidget {
                       name: 'Button',
                       useCases: [
                         WidgetbookUseCase(
+                          name: 'Custom',
+                          builder: (context) => customButtonUseCase(context),
+                        ),
+                        WidgetbookUseCase(
                           name: 'Primary Button',
                           builder: (context) => primaryButtonUseCase(context),
                         ),
@@ -218,17 +223,36 @@ class HotReload extends StatelessWidget {
                         ),
                       ],
                     ),
-                    WidgetbookComponent(
-                      name: 'MenuItem',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) => menuItemDefaultUseCase(context),
+                  ],
+                  folders: [
+                    WidgetbookFolder(
+                      name: 'navigation',
+                      widgets: [
+                        WidgetbookComponent(
+                          name: 'MenuListItem',
+                          useCases: [
+                            WidgetbookUseCase(
+                              name: 'Default',
+                              builder: (context) =>
+                                  menuItemDefaultUseCase(context),
+                            ),
+                          ],
+                        ),
+                        WidgetbookComponent(
+                          name: 'AppDrawer',
+                          useCases: [
+                            WidgetbookUseCase(
+                              name: 'Default',
+                              builder: (context) =>
+                                  appDrawerDefaultUseCase(context),
+                            ),
+                          ],
                         ),
                       ],
+                      folders: [],
+                      isExpanded: true,
                     ),
                   ],
-                  folders: [],
                   isExpanded: true,
                 ),
                 WidgetbookFolder(
