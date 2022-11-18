@@ -10,6 +10,7 @@ import 'package:app_widgetbook/app.dart';
 import 'package:app_widgetbook/auth/components/auth_buttons.dart';
 import 'package:app_widgetbook/auth/pages/auth_page.dart';
 import 'package:app_widgetbook/auth/pages/login_page.dart';
+import 'package:app_widgetbook/auth/pages/password_page.dart';
 import 'package:app_widgetbook/core/tweet/collapsed_tweet.dart';
 import 'package:app_widgetbook/core/tweet/expanded_tweet.dart';
 import 'package:app_widgetbook/core/tweet/expanded_tweet_info.dart';
@@ -245,26 +246,6 @@ class HotReload extends StatelessWidget {
                               name: 'Default',
                               builder: (context) =>
                                   appDrawerDefaultUseCase(context),
-                            ),
-                          ],
-                        ),
-                      ],
-                      folders: [],
-                      isExpanded: true,
-                    ),
-                  ],
-                  ],
-                  folders: [
-                    WidgetbookFolder(
-                      name: 'navigation',
-                      widgets: [
-                        WidgetbookComponent(
-                          name: 'MenuListItem',
-                          useCases: [
-                            WidgetbookUseCase(
-                              name: 'Default',
-                              builder: (context) =>
-                                  menuItemDefaultUseCase(context),
                             ),
                           ],
                         ),
@@ -531,6 +512,15 @@ class HotReload extends StatelessWidget {
                     WidgetbookUseCase(
                       name: 'Default',
                       builder: (context) => loginPageDefaultUseCase(context),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'PasswordPage',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => passwordPageDefaultUseCase(context),
                     ),
                   ],
                 ),
