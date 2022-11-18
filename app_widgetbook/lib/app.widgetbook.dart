@@ -253,6 +253,26 @@ class HotReload extends StatelessWidget {
                       isExpanded: true,
                     ),
                   ],
+                  ],
+                  folders: [
+                    WidgetbookFolder(
+                      name: 'navigation',
+                      widgets: [
+                        WidgetbookComponent(
+                          name: 'MenuListItem',
+                          useCases: [
+                            WidgetbookUseCase(
+                              name: 'Default',
+                              builder: (context) =>
+                                  menuItemDefaultUseCase(context),
+                            ),
+                          ],
+                        ),
+                      ],
+                      folders: [],
+                      isExpanded: true,
+                    ),
+                  ],
                   isExpanded: true,
                 ),
                 WidgetbookFolder(
