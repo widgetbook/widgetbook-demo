@@ -29,6 +29,7 @@ import 'package:app_widgetbook/core/tweet/tweet_media.dart';
 import 'package:app_widgetbook/core/ui_elements/app_drawer.dart';
 import 'package:app_widgetbook/core/ui_elements/app_icon_button.dart';
 import 'package:app_widgetbook/core/ui_elements/button.dart';
+import 'package:app_widgetbook/core/ui_elements/drawer_page_wrapper.dart';
 import 'package:app_widgetbook/core/ui_elements/formatted_date_time.dart';
 import 'package:app_widgetbook/core/ui_elements/menu_list_item.dart';
 import 'package:app_widgetbook/core/ui_elements/play_button.dart';
@@ -231,6 +232,16 @@ class HotReload extends StatelessWidget {
                     WidgetbookFolder(
                       name: 'navigation',
                       widgets: [
+                        WidgetbookComponent(
+                          name: 'DrawerPageWrapper',
+                          useCases: [
+                            WidgetbookUseCase(
+                              name: 'Default',
+                              builder: (context) =>
+                                  drawerPageWrapperDefaultUseCase(context),
+                            ),
+                          ],
+                        ),
                         WidgetbookComponent(
                           name: 'MenuListItem',
                           useCases: [
