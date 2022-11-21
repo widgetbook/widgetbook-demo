@@ -63,23 +63,7 @@ class AppDrawer extends StatelessWidget {
                   DisplayName(user: user),
                   Username(user: user),
                   const SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Text(
-                        '${user.following}',
-                        style: Theme.of(context).textTheme.bodyText1,
-                      ),
-                      const SizedBox(width: 5),
-                      Text(AppLocalizations.of(context)!.following),
-                      const SizedBox(width: 20),
-                      Text(
-                        '${user.following}',
-                        style: Theme.of(context).textTheme.bodyText1,
-                      ),
-                      const SizedBox(width: 5),
-                      Text(AppLocalizations.of(context)!.followers),
-                    ],
-                  )
+                  UserFollows(user),
                 ],
               ),
             ),

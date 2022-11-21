@@ -270,13 +270,13 @@ abstract class AppLocalizations {
   /// No description provided for @following.
   ///
   /// In en, this message translates to:
-  /// **'following'**
+  /// **'Following'**
   String get following;
 
   /// No description provided for @followers.
   ///
   /// In en, this message translates to:
-  /// **'followers'**
+  /// **'Followers'**
   String get followers;
 
   /// No description provided for @profile.
