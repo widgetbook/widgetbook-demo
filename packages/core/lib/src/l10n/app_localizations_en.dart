@@ -92,10 +92,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get next => 'Next';
 
   @override
-  String get following => 'following';
+  String get following => 'Following';
 
   @override
-  String get followers => 'followers';
+  String get followers => 'Followers';
 
   @override
   String get profile => 'Profile';

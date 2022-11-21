@@ -35,10 +35,12 @@ import 'package:app_widgetbook/core/ui_elements/play_button.dart';
 import 'package:app_widgetbook/core/ui_elements/twitter_logo.dart';
 import 'package:app_widgetbook/core/user/avatar.dart';
 import 'package:app_widgetbook/core/user/display_name.dart';
+import 'package:app_widgetbook/core/user/user_follows.dart';
 import 'package:app_widgetbook/core/user/username.dart';
 import 'package:auth/src/widgets/auth_buttons.dart';
 import 'package:core/core.dart';
 import 'package:core/src/styles/app_colors.dart';
+import 'package:core/src/widgets/user/user_follows.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -305,6 +307,16 @@ class HotReload extends StatelessWidget {
                         WidgetbookUseCase(
                           name: 'Smallest',
                           builder: (context) => avatarSmallestUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'UserFollows',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) =>
+                              userFollowsDefaultUseCase(context),
                         ),
                       ],
                     ),
