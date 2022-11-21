@@ -267,6 +267,60 @@ abstract class AppLocalizations {
   /// **'Next'**
   String get next;
 
+  /// No description provided for @following.
+  ///
+  /// In en, this message translates to:
+  /// **'following'**
+  String get following;
+
+  /// No description provided for @followers.
+  ///
+  /// In en, this message translates to:
+  /// **'followers'**
+  String get followers;
+
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
+
+  /// No description provided for @lists.
+  ///
+  /// In en, this message translates to:
+  /// **'Lists'**
+  String get lists;
+
+  /// No description provided for @topics.
+  ///
+  /// In en, this message translates to:
+  /// **'Topics'**
+  String get topics;
+
+  /// No description provided for @notifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notifications;
+
+  /// No description provided for @bookmarks.
+  ///
+  /// In en, this message translates to:
+  /// **'Bookmarks'**
+  String get bookmarks;
+
+  /// No description provided for @settingsAndPrivacy.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings and Privacy'**
+  String get settingsAndPrivacy;
+
+  /// No description provided for @helpCenter.
+  ///
+  /// In en, this message translates to:
+  /// **'Help Center'**
+  String get helpCenter;
+
   /// No description provided for @enterYourPassword.
   ///
   /// In en, this message translates to:
