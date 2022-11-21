@@ -22,11 +22,12 @@ class AppThemes {
           ? AppColors.white.withOpacity(0.2)
           : AppColors.black.withOpacity(0.1),
       appBarTheme: AppBarTheme(
-        backgroundColor: Colors.transparent,
+        backgroundColor: isDark ? AppColors.black : AppColors.white,
         elevation: 0,
         titleTextStyle: AppTextStyles.bodyLgBlack.copyWith(
           color: isDark ? AppColors.white : AppColors.black,
         ),
+        shadowColor: AppColors.border,
         systemOverlayStyle:
             isDark ? SystemUiOverlayStyle.dark : SystemUiOverlayStyle.light,
       ),
