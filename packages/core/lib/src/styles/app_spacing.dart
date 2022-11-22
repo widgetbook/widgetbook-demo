@@ -10,7 +10,7 @@ class AppSpacing {
   /// A spacing of size small
   static const double sm = 10;
 
-  /// A spacing of size medium
+  /// A spacing of size medium (default)
   static const double md = 20;
 
   /// A spacing of size large
