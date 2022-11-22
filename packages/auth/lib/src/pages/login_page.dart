@@ -68,7 +68,7 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(AppLocalizations.of(context)!.forgotPassword),
-                    Button.secondary(
+                    AppElevatedButton.secondary(
                       label: AppLocalizations.of(context)!.next,
                       onPressed: () {},
                     ),
