@@ -27,8 +27,8 @@ import 'package:app_widgetbook/core/tweet/tweet_date.dart';
 import 'package:app_widgetbook/core/tweet/tweet_header.dart';
 import 'package:app_widgetbook/core/tweet/tweet_media.dart';
 import 'package:app_widgetbook/core/ui_elements/app_drawer.dart';
+import 'package:app_widgetbook/core/ui_elements/app_elevated_button.dart';
 import 'package:app_widgetbook/core/ui_elements/app_icon_button.dart';
-import 'package:app_widgetbook/core/ui_elements/button.dart';
 import 'package:app_widgetbook/core/ui_elements/drawer_page_wrapper.dart';
 import 'package:app_widgetbook/core/ui_elements/formatted_date_time.dart';
 import 'package:app_widgetbook/core/ui_elements/menu_list_item.dart';
@@ -41,8 +41,8 @@ import 'package:app_widgetbook/core/user/username.dart';
 import 'package:auth/src/widgets/auth_buttons.dart';
 import 'package:core/core.dart';
 import 'package:core/src/styles/app_colors.dart';
-import 'package:core/src/widgets/user/user_follows.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
@@ -182,33 +182,6 @@ class HotReload extends StatelessWidget {
                       ],
                     ),
                     WidgetbookComponent(
-                      name: 'Button',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Custom',
-                          builder: (context) => customButtonUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Primary Button',
-                          builder: (context) => primaryButtonUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Secondary Button',
-                          builder: (context) => secondaryButtonUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Primary Outline Button',
-                          builder: (context) =>
-                              primaryOutlineButtonUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Secondary Outline Button',
-                          builder: (context) =>
-                              secondaryOutlineButtonUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
                       name: 'AppIconButton',
                       useCases: [
                         WidgetbookUseCase(
@@ -224,6 +197,36 @@ class HotReload extends StatelessWidget {
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) => playButtonUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'AppElevatedButton',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Custom',
+                          builder: (context) =>
+                              customAppElevatedButtonUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Primary Button',
+                          builder: (context) =>
+                              primaryAppElevatedButtonUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Secondary Button',
+                          builder: (context) =>
+                              secondaryAppElevatedButtonUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Primary Outline Button',
+                          builder: (context) =>
+                              primaryOutlineAppElevatedButtonUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Secondary Outline Button',
+                          builder: (context) =>
+                              secondaryOutlineAppElevatedButtonUseCase(context),
                         ),
                       ],
                     ),
