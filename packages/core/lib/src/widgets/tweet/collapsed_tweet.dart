@@ -64,7 +64,7 @@ class CollapsedTweet extends StatelessWidget {
                         ),
                     ],
                   ),
-                  const SizedBox(width: 10),
+                  const AppGap.sm(),
                   Expanded(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -78,12 +78,12 @@ class CollapsedTweet extends StatelessWidget {
                           Row(
                             children: [
                               Text(AppLocalizations.of(context)!.replyingTo),
-                              const SizedBox(width: 4),
+                              const AppGap.xxs(),
                               Username.active(user: tweet.inReplyToUser!),
                             ],
                           ),
                         TweetText(tweet.text),
-                        const SizedBox(height: 10),
+                        const AppGap.sm(),
                         if (tweet.media.isNotEmpty)
                           Padding(
                             padding: const EdgeInsets.only(bottom: 10),
@@ -94,7 +94,7 @@ class CollapsedTweet extends StatelessWidget {
                             tweet: tweet.quotedTweet!,
                             isLargeMedia: tweet.media.isEmpty,
                           ),
-                        const SizedBox(height: 10),
+                        const AppGap.sm(),
                         TweetActions(
                           publicMetrics: tweet.publicMetrics,
                           onSharePressed: () {},

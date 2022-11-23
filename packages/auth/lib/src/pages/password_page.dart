@@ -50,12 +50,12 @@ class PasswordPage extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 30),
+              const AppGap.lg(),
               Text(
                 AppLocalizations.of(context)!.enterYourPassword,
                 style: Theme.of(context).textTheme.headline4,
               ),
-              const SizedBox(height: 20),
+              const AppGap.md(),
               TextFormField(
                 style: Theme.of(context).textTheme.bodyText2!.copyWith(
                       color: textColor,
@@ -63,7 +63,7 @@ class PasswordPage extends StatelessWidget {
                 initialValue: userInput,
                 enabled: false,
               ),
-              const SizedBox(height: 20),
+              const AppGap.md(),
               TextFormField(
                 style: Theme.of(context).textTheme.bodyText2!.copyWith(
                       color: textColor,
@@ -76,13 +76,13 @@ class PasswordPage extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 70),
+              const AppGap.xxl(),
               AppElevatedButton.secondary(
                 label: AppLocalizations.of(context)!.logIn,
                 onPressed: () {},
                 height: 56,
               ),
-              const SizedBox(height: 30),
+              const AppGap.lg(),
               Center(
                 child: InkWell(
                   onTap: () {},
