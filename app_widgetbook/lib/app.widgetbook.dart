@@ -37,6 +37,7 @@ import 'package:app_widgetbook/core/ui_elements/twitter_logo.dart';
 import 'package:app_widgetbook/core/user/avatar.dart';
 import 'package:app_widgetbook/core/user/display_name.dart';
 import 'package:app_widgetbook/core/user/user_follows.dart';
+import 'package:app_widgetbook/core/user/user_info.dart';
 import 'package:app_widgetbook/core/user/username.dart';
 import 'package:auth/src/widgets/auth_buttons.dart';
 import 'package:core/core.dart';
@@ -275,6 +276,15 @@ class HotReload extends StatelessWidget {
                 WidgetbookFolder(
                   name: 'user',
                   widgets: [
+                    WidgetbookComponent(
+                      name: 'UserInfo',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) => userInfoDefaultUseCase(context),
+                        ),
+                      ],
+                    ),
                     WidgetbookComponent(
                       name: 'Username',
                       useCases: [
