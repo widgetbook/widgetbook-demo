@@ -6,13 +6,18 @@ import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart' show Knobs, Option;
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
+@WidgetbookUseCase(name: 'Default Test', type: CollapsedTweet)
+Widget test(BuildContext context) {
+  return Container();
+}
+
 @WidgetbookUseCase(name: 'Default', type: CollapsedTweet)
 Widget collapsedTweetDefaultUseCase(BuildContext context) {
   return CollapsedTweet(
     tweet: Tweet(
       rawText: context.knobs.text(
         label: 'Tweet Text',
-        initialValue: 'Lorem ipsum dolor sit amit #hashtag @mention',
+        initialValue: 'Lorem ipsum dolor sit amit #hashtag @mention test',
       ),
       inReplyToUser:
           context.knobs.boolean(label: 'Is Reply', initialValue: true)

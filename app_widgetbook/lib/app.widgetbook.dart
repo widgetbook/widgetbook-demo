@@ -41,8 +41,8 @@ import 'package:app_widgetbook/core/user/username.dart';
 import 'package:auth/src/widgets/auth_buttons.dart';
 import 'package:core/core.dart';
 import 'package:core/src/styles/app_colors.dart';
-import 'package:core/src/widgets/user/user_follows.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
@@ -366,6 +366,10 @@ class HotReload extends StatelessWidget {
                     WidgetbookComponent(
                       name: 'CollapsedTweet',
                       useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default Test',
+                          builder: (context) => test(context),
+                        ),
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) =>
