@@ -23,7 +23,6 @@ class TweetGallery extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const gap = 2.0;
     return AspectRatio(
       aspectRatio: 1.9,
       child: Row(
@@ -40,7 +39,7 @@ class TweetGallery extends StatelessWidget {
                     imageUrl: imageUrls[0],
                   ),
                 ),
-                if (imageUrls.length == 4) const SizedBox(height: gap),
+                if (imageUrls.length == 4) const AppGap.xxs(),
                 if (imageUrls.length == 4)
                   Expanded(
                     child: AppCachedNetworkImage(
@@ -50,7 +49,7 @@ class TweetGallery extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(width: gap),
+          const AppGap.xxs(),
           Expanded(
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -62,7 +61,7 @@ class TweetGallery extends StatelessWidget {
                     imageUrl: imageUrls[1],
                   ),
                 ),
-                if (imageUrls.length > 2) const SizedBox(height: gap),
+                if (imageUrls.length > 2) const AppGap.xxs(),
                 if (imageUrls.length > 2)
                   Expanded(
                     child: AppCachedNetworkImage(

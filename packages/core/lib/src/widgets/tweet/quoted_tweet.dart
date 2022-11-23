@@ -47,7 +47,7 @@ class QuotedTweet extends StatelessWidget {
                     Avatar.smallest(
                       imageUrl: tweet.author.avatarUrl,
                     ),
-                    const SizedBox(width: 5),
+                    const AppGap.xs(),
                     Expanded(
                       child: TweetHeader(
                         author: tweet.author,

@@ -107,7 +107,7 @@ class TweetAnnotation extends StatelessWidget {
     return Row(
       children: [
         Icon(type.icon, size: 12),
-        const SizedBox(width: 5),
+        const AppGap.xs(),
         if (type.hasUser && user != null && user!.isNotEmpty)
           Text(
             '$user ',
