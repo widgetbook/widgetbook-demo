@@ -77,7 +77,7 @@ class PasswordPage extends StatelessWidget {
                 ),
               ),
               const AppGap.xxl(),
-              Button.secondary(
+              AppElevatedButton.secondary(
                 label: AppLocalizations.of(context)!.logIn,
                 onPressed: () {},
                 height: 56,

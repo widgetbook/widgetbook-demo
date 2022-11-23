@@ -1,12 +1,12 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
-/// Button widget with variations
-class Button extends StatelessWidget {
-  /// Creates new instance of [Button]
-  const Button({
+/// ElevatedButton wrapper for the app with variations
+class AppElevatedButton extends StatelessWidget {
+  /// Creates ElevatedButton wrapper
+  const AppElevatedButton({
     super.key,
-    required this.label,
+    this.label,
     this.onPressed,
     this.backgroundColor,
     this.icon,
@@ -15,8 +15,8 @@ class Button extends StatelessWidget {
     required this.borderColor,
   });
 
-  /// Creates new instance of [Button] with Primary button style
-  const Button.primary({
+  /// Creates new instance of [AppElevatedButton] with Primary button style
+  const AppElevatedButton.primary({
     super.key,
     required this.label,
     this.icon,
@@ -26,8 +26,8 @@ class Button extends StatelessWidget {
         textColor = AppColors.white,
         borderColor = null;
 
-  /// Creates new instance of [Button] with Primary Outline button style
-  const Button.primaryOutline({
+  /// Creates new instance of [AppElevatedButton] with Primary Outline button style
+  const AppElevatedButton.primaryOutline({
     super.key,
     required this.label,
     this.icon,
@@ -37,8 +37,8 @@ class Button extends StatelessWidget {
         textColor = AppColors.primary,
         borderColor = AppColors.primary;
 
-  /// Creates new instance of [Button] with secondary button style
-  const Button.secondary({
+  /// Creates new instance of [AppElevatedButton] with secondary button style
+  const AppElevatedButton.secondary({
     super.key,
     required this.label,
     this.icon,
@@ -48,8 +48,8 @@ class Button extends StatelessWidget {
         textColor = AppColors.white,
         borderColor = null;
 
-  /// Creates new instance of [Button] with secondary outline button style
-  const Button.secondaryOutline({
+  /// Creates new instance of [AppElevatedButton] with secondary outline button style
+  const AppElevatedButton.secondaryOutline({
     super.key,
     required this.label,
     this.icon,
@@ -60,7 +60,7 @@ class Button extends StatelessWidget {
         borderColor = AppColors.border;
 
   /// Button text label
-  final String label;
+  final String? label;
 
   /// Button background color
   final Color? backgroundColor;
@@ -120,9 +120,7 @@ class Button extends StatelessWidget {
               ? BorderSide.none
               : BorderSide(color: borderColor!),
         ),
-        textStyle: Theme.of(context).textTheme.button!.copyWith(
-              height: icon == null ? 1.05 : null,
-            ),
+        textStyle: Theme.of(context).textTheme.button!.copyWith(height: 1.05),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -130,10 +128,10 @@ class Button extends StatelessWidget {
         children: [
           if (icon != null)
             Padding(
-              padding: const EdgeInsetsDirectional.only(end: 10),
-              child: Icon(icon, size: 20),
+              padding: EdgeInsetsDirectional.only(end: label == null ? 0 : 10),
+              child: Icon(icon, size: height * 0.3),
             ),
-          Text(label),
+          if (label != null) Text(label!),
         ],
       ),
     );
