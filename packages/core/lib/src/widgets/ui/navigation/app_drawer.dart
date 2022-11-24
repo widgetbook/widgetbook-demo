@@ -113,7 +113,7 @@ class AppDrawer extends StatelessWidget {
               ),
               Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
                 decoration: BoxDecoration(
                   border: Border(
                     top: BorderSide(color: Theme.of(context).dividerColor),

@@ -26,6 +26,7 @@ import 'package:app_widgetbook/core/tweet/tweet_annotation.dart';
 import 'package:app_widgetbook/core/tweet/tweet_date.dart';
 import 'package:app_widgetbook/core/tweet/tweet_header.dart';
 import 'package:app_widgetbook/core/tweet/tweet_media.dart';
+import 'package:app_widgetbook/core/ui_elements/app_bottom_navigation_bar.dart';
 import 'package:app_widgetbook/core/ui_elements/app_drawer.dart';
 import 'package:app_widgetbook/core/ui_elements/app_elevated_button.dart';
 import 'package:app_widgetbook/core/ui_elements/app_icon_button.dart';
@@ -235,6 +236,16 @@ class HotReload extends StatelessWidget {
                     WidgetbookFolder(
                       name: 'navigation',
                       widgets: [
+                        WidgetbookComponent(
+                          name: 'AppBottomNavigationBar',
+                          useCases: [
+                            WidgetbookUseCase(
+                              name: 'Default',
+                              builder: (context) =>
+                                  appBottomNavigationBarDefaultUseCase(context),
+                            ),
+                          ],
+                        ),
                         WidgetbookComponent(
                           name: 'DrawerPageWrapper',
                           useCases: [
