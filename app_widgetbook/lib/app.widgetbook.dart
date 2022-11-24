@@ -10,6 +10,7 @@ import 'package:app_widgetbook/app.dart';
 import 'package:app_widgetbook/auth/components/auth_buttons.dart';
 import 'package:app_widgetbook/auth/pages/auth_page.dart';
 import 'package:app_widgetbook/auth/pages/login_page.dart';
+import 'package:app_widgetbook/auth/pages/password_page.dart';
 import 'package:app_widgetbook/core/tweet/collapsed_tweet.dart';
 import 'package:app_widgetbook/core/tweet/expanded_tweet.dart';
 import 'package:app_widgetbook/core/tweet/expanded_tweet_info.dart';
@@ -25,19 +26,25 @@ import 'package:app_widgetbook/core/tweet/tweet_annotation.dart';
 import 'package:app_widgetbook/core/tweet/tweet_date.dart';
 import 'package:app_widgetbook/core/tweet/tweet_header.dart';
 import 'package:app_widgetbook/core/tweet/tweet_media.dart';
+import 'package:app_widgetbook/core/ui_elements/app_drawer.dart';
+import 'package:app_widgetbook/core/ui_elements/app_elevated_button.dart';
 import 'package:app_widgetbook/core/ui_elements/app_icon_button.dart';
-import 'package:app_widgetbook/core/ui_elements/button.dart';
+import 'package:app_widgetbook/core/ui_elements/app_sidebar.dart';
+import 'package:app_widgetbook/core/ui_elements/drawer_page_wrapper.dart';
 import 'package:app_widgetbook/core/ui_elements/formatted_date_time.dart';
 import 'package:app_widgetbook/core/ui_elements/menu_list_item.dart';
 import 'package:app_widgetbook/core/ui_elements/play_button.dart';
 import 'package:app_widgetbook/core/ui_elements/twitter_logo.dart';
 import 'package:app_widgetbook/core/user/avatar.dart';
 import 'package:app_widgetbook/core/user/display_name.dart';
+import 'package:app_widgetbook/core/user/user_follows.dart';
+import 'package:app_widgetbook/core/user/user_info.dart';
 import 'package:app_widgetbook/core/user/username.dart';
 import 'package:auth/src/widgets/auth_buttons.dart';
 import 'package:core/core.dart';
 import 'package:core/src/styles/app_colors.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
@@ -177,33 +184,6 @@ class HotReload extends StatelessWidget {
                       ],
                     ),
                     WidgetbookComponent(
-                      name: 'Button',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Custom',
-                          builder: (context) => customButtonUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Primary Button',
-                          builder: (context) => primaryButtonUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Secondary Button',
-                          builder: (context) => secondaryButtonUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Primary Outline Button',
-                          builder: (context) =>
-                              primaryOutlineButtonUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Secondary Outline Button',
-                          builder: (context) =>
-                              secondaryOutlineButtonUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
                       name: 'AppIconButton',
                       useCases: [
                         WidgetbookUseCase(
@@ -222,18 +202,83 @@ class HotReload extends StatelessWidget {
                         ),
                       ],
                     ),
+                    WidgetbookComponent(
+                      name: 'AppElevatedButton',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Custom',
+                          builder: (context) =>
+                              customAppElevatedButtonUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Primary Button',
+                          builder: (context) =>
+                              primaryAppElevatedButtonUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Secondary Button',
+                          builder: (context) =>
+                              secondaryAppElevatedButtonUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Primary Outline Button',
+                          builder: (context) =>
+                              primaryOutlineAppElevatedButtonUseCase(context),
+                        ),
+                        WidgetbookUseCase(
+                          name: 'Secondary Outline Button',
+                          builder: (context) =>
+                              secondaryOutlineAppElevatedButtonUseCase(context),
+                        ),
+                      ],
+                    ),
                   ],
                   folders: [
                     WidgetbookFolder(
                       name: 'navigation',
                       widgets: [
                         WidgetbookComponent(
-                          name: 'MenuListItem',
+                          name: 'AppSidebar',
                           useCases: [
                             WidgetbookUseCase(
                               name: 'Default',
                               builder: (context) =>
+                                  appSidebarDefaultUseCase(context),
+                            ),
+                          ],
+                        ),
+                        WidgetbookComponent(
+                          name: 'DrawerPageWrapper',
+                          useCases: [
+                            WidgetbookUseCase(
+                              name: 'Default',
+                              builder: (context) =>
+                                  drawerPageWrapperDefaultUseCase(context),
+                            ),
+                          ],
+                        ),
+                        WidgetbookComponent(
+                          name: 'MenuListItem',
+                          useCases: [
+                            WidgetbookUseCase(
+                              name: 'Mobile',
+                              builder: (context) =>
                                   menuItemDefaultUseCase(context),
+                            ),
+                            WidgetbookUseCase(
+                              name: 'Web',
+                              builder: (context) =>
+                                  menuListItemWebUseCase(context),
+                            ),
+                          ],
+                        ),
+                        WidgetbookComponent(
+                          name: 'AppDrawer',
+                          useCases: [
+                            WidgetbookUseCase(
+                              name: 'Default',
+                              builder: (context) =>
+                                  appDrawerDefaultUseCase(context),
                             ),
                           ],
                         ),
@@ -247,6 +292,15 @@ class HotReload extends StatelessWidget {
                 WidgetbookFolder(
                   name: 'user',
                   widgets: [
+                    WidgetbookComponent(
+                      name: 'UserInfo',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) => userInfoDefaultUseCase(context),
+                        ),
+                      ],
+                    ),
                     WidgetbookComponent(
                       name: 'Username',
                       useCases: [
@@ -293,6 +347,16 @@ class HotReload extends StatelessWidget {
                         WidgetbookUseCase(
                           name: 'Smallest',
                           builder: (context) => avatarSmallestUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'UserFollows',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) =>
+                              userFollowsDefaultUseCase(context),
                         ),
                       ],
                     ),
@@ -500,6 +564,15 @@ class HotReload extends StatelessWidget {
                     WidgetbookUseCase(
                       name: 'Default',
                       builder: (context) => loginPageDefaultUseCase(context),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'PasswordPage',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => passwordPageDefaultUseCase(context),
                     ),
                   ],
                 ),

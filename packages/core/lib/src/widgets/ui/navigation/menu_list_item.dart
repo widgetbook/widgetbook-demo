@@ -8,17 +8,18 @@ class MenuListItem extends StatelessWidget {
   /// Creates a widget for an item in a menu
   const MenuListItem({
     super.key,
-    required this.icon,
-    required this.label,
+    this.icon,
+    this.label,
     this.onTap,
     this.isActive = false,
+    this.isWeb = false,
   });
 
   /// Icon data of the menu item
-  final IconData icon;
+  final IconData? icon;
 
   /// Label of the menu item
-  final String label;
+  final String? label;
 
   /// onTap callback for the menu item
   final VoidCallback? onTap;
@@ -26,30 +27,44 @@ class MenuListItem extends StatelessWidget {
   /// Whether the menu item is active
   final bool isActive;
 
+  /// Whether this list item is
+  final bool isWeb;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
+      borderRadius: isWeb ? BorderRadius.circular(40) : null,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 20,
+        ),
         child: Row(
+          mainAxisSize: isWeb ? MainAxisSize.min : MainAxisSize.max,
           children: [
-            Icon(
-              icon,
-              size: 24,
-              color: isActive
-                  ? AppColors.primary
-                  : Theme.of(context).isDark
-                      ? AppColors.white
-                      : AppColors.secondary,
-            ),
-            const SizedBox(width: 12),
-            Text(
-              label,
-              style: Theme.of(context).textTheme.headline5!.copyWith(
-                    color: isActive ? AppColors.primary : null,
-                  ),
-            ),
+            if (icon != null)
+              Padding(
+                padding: EdgeInsetsDirectional.only(
+                  end: label == null ? 0 : 20,
+                ),
+                child: Icon(
+                  icon,
+                  size: 24,
+                  color: isActive
+                      ? AppColors.primary
+                      : Theme.of(context).isDark
+                          ? AppColors.white
+                          : AppColors.secondary,
+                ),
+              ),
+            if (label != null)
+              Text(
+                label!,
+                style: Theme.of(context).textTheme.headline5!.copyWith(
+                      color: isActive ? AppColors.primary : null,
+                    ),
+              ),
           ],
         ),
       ),

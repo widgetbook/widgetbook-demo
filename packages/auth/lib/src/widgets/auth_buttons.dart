@@ -12,14 +12,14 @@ class AuthButtons extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Button.secondaryOutline(
+        AppElevatedButton.secondaryOutline(
           label: AppLocalizations.of(context)!.continueWithGoogle,
           icon: TwitterIcons.google,
           onPressed: () {},
           height: 56,
         ),
         const SizedBox(height: 20),
-        Button.secondaryOutline(
+        AppElevatedButton.secondaryOutline(
           label: AppLocalizations.of(context)!.continueWithApple,
           icon: TwitterIcons.apple,
           onPressed: () {},
@@ -37,7 +37,7 @@ class AuthButtons extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 5),
-        Button.secondary(
+        AppElevatedButton.secondary(
           label: AppLocalizations.of(context)!.createAccount,
           onPressed: () {},
           height: 56,

@@ -6,6 +6,8 @@ class User {
     required this.username,
     required this.displayName,
     this.avatarUrl,
+    this.followers = 0,
+    this.following = 0,
   });
 
   /// User id
@@ -19,4 +21,10 @@ class User {
 
   /// User's avatar url
   final String? avatarUrl;
+
+  /// Number of user followers
+  final int followers;
+
+  /// Number of user following
+  final int following;
 }

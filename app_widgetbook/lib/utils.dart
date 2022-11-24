@@ -166,3 +166,15 @@ const List<Option<IconData>> iconOptions = [
     value: TwitterIcons.user,
   ),
 ];
+
+/// Predefined list of icons for options knob of AppElevatedButton use cases
+const List<Option<IconData>> buttonIconOptions = [
+  Option(
+    label: 'Plus',
+    value: TwitterIcons.plus,
+  ),
+  Option(
+    label: 'Add Tweet Feather',
+    value: TwitterIcons.add_feather_fill,
+  ),
+];
