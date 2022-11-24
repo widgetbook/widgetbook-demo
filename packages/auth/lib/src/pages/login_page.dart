@@ -42,12 +42,12 @@ class LoginPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 30),
+                  const AppGap.lg(),
                   Text(
                     AppLocalizations.of(context)!.loginPageTitle,
                     style: Theme.of(context).textTheme.headline4,
                   ),
-                  const SizedBox(height: 20),
+                  const AppGap.md(),
                   TextFormField(
                     style: Theme.of(context).textTheme.bodyText2!.copyWith(
                           color: Theme.of(context).brightness == Brightness.dark

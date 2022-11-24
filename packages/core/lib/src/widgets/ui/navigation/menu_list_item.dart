@@ -12,7 +12,7 @@ class MenuListItem extends StatelessWidget {
     this.label,
     this.onTap,
     this.isActive = false,
-    this.isWeb = false,
+    this.isLargeScreen = false,
   });
 
   /// Icon data of the menu item
@@ -28,20 +28,20 @@ class MenuListItem extends StatelessWidget {
   final bool isActive;
 
   /// Whether this list item is
-  final bool isWeb;
+  final bool isLargeScreen;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      borderRadius: isWeb ? BorderRadius.circular(40) : null,
+      borderRadius: isLargeScreen ? BorderRadius.circular(40) : null,
       child: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 20,
           vertical: 20,
         ),
         child: Row(
-          mainAxisSize: isWeb ? MainAxisSize.min : MainAxisSize.max,
+          mainAxisSize: isLargeScreen ? MainAxisSize.min : MainAxisSize.max,
           children: [
             if (icon != null)
               Padding(

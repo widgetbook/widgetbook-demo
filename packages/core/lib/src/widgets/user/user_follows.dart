@@ -30,7 +30,7 @@ class UserFollows extends StatelessWidget {
               .bodyText1!
               .copyWith(fontSize: fontSize),
         ),
-        const SizedBox(width: 5),
+        const AppGap.xs(),
         Text(
           AppLocalizations.of(context)!.following,
           style: Theme.of(context)
@@ -38,7 +38,7 @@ class UserFollows extends StatelessWidget {
               .bodyText2!
               .copyWith(fontSize: fontSize),
         ),
-        const SizedBox(width: 20),
+        const AppGap.md(),
         Text(
           '${user.following}',
           style: Theme.of(context)
@@ -46,7 +46,7 @@ class UserFollows extends StatelessWidget {
               .bodyText1!
               .copyWith(fontSize: fontSize),
         ),
-        const SizedBox(width: 5),
+        const AppGap.xs(),
         Text(
           AppLocalizations.of(context)!.followers,
           style: Theme.of(context)

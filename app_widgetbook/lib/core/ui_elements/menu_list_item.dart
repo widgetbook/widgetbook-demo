@@ -29,7 +29,7 @@ Widget menuListItemWebUseCase(BuildContext context) {
 
   return MenuListItem(
     onTap: () {},
-    isWeb: true,
+    isLargeScreen: true,
     isActive: context.knobs.boolean(label: 'Active'),
     label: hasLabel
         ? context.knobs.text(

@@ -61,24 +61,24 @@ class AppDrawer extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Avatar(imageUrl: user.avatarUrl),
-                    const SizedBox(height: 10),
+                    const AppGap.sm(),
                     DisplayName(user: user),
                     Username(user: user),
-                    const SizedBox(height: 20),
+                    const AppGap.md(),
                     Row(
                       children: [
                         Text(
                           '${user.following}',
                           style: Theme.of(context).textTheme.bodyText1,
                         ),
-                        const SizedBox(width: 5),
+                        const AppGap.xs(),
                         Text(AppLocalizations.of(context)!.following),
-                        const SizedBox(width: 20),
+                        const AppGap.md(),
                         Text(
                           '${user.following}',
                           style: Theme.of(context).textTheme.bodyText1,
                         ),
-                        const SizedBox(width: 5),
+                        const AppGap.xs(),
                         Text(AppLocalizations.of(context)!.followers),
                       ],
                     )

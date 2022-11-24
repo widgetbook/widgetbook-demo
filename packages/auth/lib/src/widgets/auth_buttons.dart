@@ -1,5 +1,4 @@
 import 'package:core/core.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 /// Widget for Authentication Buttons
@@ -18,14 +17,14 @@ class AuthButtons extends StatelessWidget {
           onPressed: () {},
           height: 56,
         ),
-        const SizedBox(height: 20),
+        const AppGap.md(),
         AppElevatedButton.secondaryOutline(
           label: AppLocalizations.of(context)!.continueWithApple,
           icon: TwitterIcons.apple,
           onPressed: () {},
           height: 56,
         ),
-        const SizedBox(height: 20),
+        const AppGap.md(),
         Row(
           children: [
             const Expanded(child: Divider(height: 1)),
@@ -36,7 +35,7 @@ class AuthButtons extends StatelessWidget {
             const Expanded(child: Divider(height: 1)),
           ],
         ),
-        const SizedBox(height: 5),
+        const AppGap.xs(),
         AppElevatedButton.secondary(
           label: AppLocalizations.of(context)!.createAccount,
           onPressed: () {},

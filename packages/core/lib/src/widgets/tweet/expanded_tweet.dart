@@ -38,13 +38,13 @@ class ExpandedTweet extends StatelessWidget {
                       Avatar(
                         imageUrl: tweet.author.avatarUrl,
                       ),
-                      const SizedBox(width: 10),
+                      const AppGap.sm(),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             DisplayName.active(user: tweet.author),
-                            const SizedBox(height: 3),
+                            const AppGap.xxs(),
                             Username(user: tweet.author),
                           ],
                         ),
@@ -53,7 +53,7 @@ class ExpandedTweet extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(width: 10),
+              const AppGap.sm(),
               AppIconButton(
                 icon: const Icon(TwitterIcons.info),
                 onPressed: () {},
@@ -61,7 +61,7 @@ class ExpandedTweet extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 20),
+          const AppGap.md(),
           TweetText(tweet.text),
           if (tweet.media.isNotEmpty)
             Padding(

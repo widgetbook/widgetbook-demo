@@ -276,6 +276,21 @@ class HotReload extends StatelessWidget {
                           name: 'AppDrawer',
                           useCases: [
                             WidgetbookUseCase(
+                              name: 'Mobile',
+                              builder: (context) =>
+                                  menuItemDefaultUseCase(context),
+                            ),
+                            WidgetbookUseCase(
+                              name: 'Web',
+                              builder: (context) =>
+                                  menuListItemWebUseCase(context),
+                            ),
+                          ],
+                        ),
+                        WidgetbookComponent(
+                          name: 'AppDrawer',
+                          useCases: [
+                            WidgetbookUseCase(
                               name: 'Default',
                               builder: (context) =>
                                   appDrawerDefaultUseCase(context),
