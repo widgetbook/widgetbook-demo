@@ -250,9 +250,14 @@ class HotReload extends StatelessWidget {
                           name: 'MenuListItem',
                           useCases: [
                             WidgetbookUseCase(
-                              name: 'Default',
+                              name: 'Mobile',
                               builder: (context) =>
                                   menuItemDefaultUseCase(context),
+                            ),
+                            WidgetbookUseCase(
+                              name: 'Web',
+                              builder: (context) =>
+                                  menuListItemWebUseCase(context),
                             ),
                           ],
                         ),
