@@ -80,7 +80,7 @@ class AppSidebar extends StatelessWidget {
                   (index) => MenuListItem(
                     icon: sidebarItems[index].icon,
                     label: isExpanded ? sidebarItems[index].label : null,
-                    isWeb: true,
+                    isLargeScreen: true,
                     onTap: () {},
                   ),
                 ),
