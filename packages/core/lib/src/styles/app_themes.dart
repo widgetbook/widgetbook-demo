@@ -31,6 +31,18 @@ class AppThemes {
         systemOverlayStyle:
             isDark ? SystemUiOverlayStyle.dark : SystemUiOverlayStyle.light,
       ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        elevation: 0,
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: isDark ? AppColors.black : AppColors.white,
+        selectedItemColor: isDark ? AppColors.white : AppColors.text,
+        unselectedItemColor:
+            isDark ? AppColors.whiteLight : AppColors.textLight,
+        unselectedIconTheme: const IconThemeData(size: 22),
+        selectedIconTheme: const IconThemeData(size: 22),
+      ),
       inputDecorationTheme: InputDecorationTheme(
         hintStyle: AppTextStyles.body,
         labelStyle: AppTextStyles.body,

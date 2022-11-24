@@ -41,6 +41,7 @@ class _DrawerPageWrapperState extends State<DrawerPageWrapper>
     with SingleTickerProviderStateMixin {
   late final AnimationController animationController;
   late final Animation<double> xOffsetAnimation;
+  int currentIndex = 0;
 
   @override
   void initState() {
@@ -134,7 +135,14 @@ class _DrawerPageWrapperState extends State<DrawerPageWrapper>
               title: widget.appBarTitle,
             ),
             body: widget.body,
-            // Todo: add bottom navigation
+            bottomNavigationBar: AppBottomNavigationBar(
+              currentIndex: currentIndex,
+              onItemChanged: (int value) {
+                setState(() {
+                  currentIndex = value;
+                });
+              },
+            ),
           ),
         ),
       ),
