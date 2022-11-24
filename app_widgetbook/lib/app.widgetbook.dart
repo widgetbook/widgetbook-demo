@@ -29,6 +29,7 @@ import 'package:app_widgetbook/core/tweet/tweet_media.dart';
 import 'package:app_widgetbook/core/ui_elements/app_drawer.dart';
 import 'package:app_widgetbook/core/ui_elements/app_elevated_button.dart';
 import 'package:app_widgetbook/core/ui_elements/app_icon_button.dart';
+import 'package:app_widgetbook/core/ui_elements/app_sidebar.dart';
 import 'package:app_widgetbook/core/ui_elements/drawer_page_wrapper.dart';
 import 'package:app_widgetbook/core/ui_elements/formatted_date_time.dart';
 import 'package:app_widgetbook/core/ui_elements/menu_list_item.dart';
@@ -237,6 +238,16 @@ class HotReload extends StatelessWidget {
                       name: 'navigation',
                       widgets: [
                         WidgetbookComponent(
+                          name: 'AppSidebar',
+                          useCases: [
+                            WidgetbookUseCase(
+                              name: 'Default',
+                              builder: (context) =>
+                                  appSidebarDefaultUseCase(context),
+                            ),
+                          ],
+                        ),
+                        WidgetbookComponent(
                           name: 'DrawerPageWrapper',
                           useCases: [
                             WidgetbookUseCase(
@@ -248,6 +259,21 @@ class HotReload extends StatelessWidget {
                         ),
                         WidgetbookComponent(
                           name: 'MenuListItem',
+                          useCases: [
+                            WidgetbookUseCase(
+                              name: 'Mobile',
+                              builder: (context) =>
+                                  menuItemDefaultUseCase(context),
+                            ),
+                            WidgetbookUseCase(
+                              name: 'Web',
+                              builder: (context) =>
+                                  menuListItemWebUseCase(context),
+                            ),
+                          ],
+                        ),
+                        WidgetbookComponent(
+                          name: 'AppDrawer',
                           useCases: [
                             WidgetbookUseCase(
                               name: 'Mobile',
