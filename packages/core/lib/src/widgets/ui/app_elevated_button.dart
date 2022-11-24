@@ -13,6 +13,7 @@ class AppElevatedButton extends StatelessWidget {
     this.textColor,
     required this.height,
     required this.borderColor,
+    this.mainAxisSize = MainAxisSize.min,
   });
 
   /// Creates new instance of [AppElevatedButton] with Primary button style
@@ -22,6 +23,7 @@ class AppElevatedButton extends StatelessWidget {
     this.icon,
     this.onPressed,
     this.height = 40,
+    this.mainAxisSize = MainAxisSize.min,
   })  : backgroundColor = AppColors.primary,
         textColor = AppColors.white,
         borderColor = null;
@@ -33,6 +35,7 @@ class AppElevatedButton extends StatelessWidget {
     this.icon,
     this.onPressed,
     this.height = 40,
+    this.mainAxisSize = MainAxisSize.min,
   })  : backgroundColor = AppColors.white,
         textColor = AppColors.primary,
         borderColor = AppColors.primary;
@@ -44,6 +47,7 @@ class AppElevatedButton extends StatelessWidget {
     this.icon,
     this.onPressed,
     this.height = 40,
+    this.mainAxisSize = MainAxisSize.min,
   })  : backgroundColor = AppColors.secondary,
         textColor = AppColors.white,
         borderColor = null;
@@ -55,6 +59,7 @@ class AppElevatedButton extends StatelessWidget {
     this.icon,
     this.onPressed,
     this.height = 40,
+    this.mainAxisSize = MainAxisSize.min,
   })  : backgroundColor = AppColors.white,
         textColor = AppColors.secondary,
         borderColor = AppColors.border;
@@ -79,6 +84,9 @@ class AppElevatedButton extends StatelessWidget {
 
   /// Optional icon
   final IconData? icon;
+
+  /// How much space should be occupied in the main axis.
+  final MainAxisSize mainAxisSize;
 
   Color? _getBackgroundColor(bool isDark) {
     if (isDark) {
@@ -124,7 +132,7 @@ class AppElevatedButton extends StatelessWidget {
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
+        mainAxisSize: mainAxisSize,
         children: [
           if (icon != null)
             Padding(

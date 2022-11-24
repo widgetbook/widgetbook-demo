@@ -29,19 +29,19 @@ class AuthPage extends StatelessWidget {
                 ),
               ),
               const AuthButtons(),
-              const SizedBox(height: 20),
+              const AppGap.md(),
               Text(
                 AppLocalizations.of(context)!.termsText,
                 style: Theme.of(context).textTheme.subtitle2,
               ),
-              const SizedBox(height: 20),
+              const AppGap.md(),
               Row(
                 children: [
                   Text(
                     AppLocalizations.of(context)!.haveAnAccountAlready,
                     style: Theme.of(context).textTheme.subtitle2,
                   ),
-                  const SizedBox(width: 5),
+                  const AppGap.xs(),
                   InkWell(
                     onTap: () {},
                     child: Padding(

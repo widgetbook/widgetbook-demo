@@ -333,6 +333,36 @@ abstract class AppLocalizations {
   /// **'Password'**
   String get password;
 
+  /// No description provided for @home.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get home;
+
+  /// No description provided for @explore.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore'**
+  String get explore;
+
+  /// No description provided for @more.
+  ///
+  /// In en, this message translates to:
+  /// **'More'**
+  String get more;
+
+  /// No description provided for @messages.
+  ///
+  /// In en, this message translates to:
+  /// **'Messages'**
+  String get messages;
+
+  /// No description provided for @tweet.
+  ///
+  /// In en, this message translates to:
+  /// **'Tweet'**
+  String get tweet;
+
   /// No description provided for @or.
   ///
   /// In en, this message translates to:

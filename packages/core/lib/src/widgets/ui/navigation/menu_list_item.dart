@@ -9,16 +9,17 @@ class MenuListItem extends StatelessWidget {
   const MenuListItem({
     super.key,
     this.icon,
-    required this.label,
+    this.label,
     this.onTap,
     this.isActive = false,
+    this.isLargeScreen = false,
   });
 
   /// Icon data of the menu item
   final IconData? icon;
 
   /// Label of the menu item
-  final String label;
+  final String? label;
 
   /// onTap callback for the menu item
   final VoidCallback? onTap;
@@ -26,17 +27,27 @@ class MenuListItem extends StatelessWidget {
   /// Whether the menu item is active
   final bool isActive;
 
+  /// Whether this list item is
+  final bool isLargeScreen;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
+      borderRadius: isLargeScreen ? BorderRadius.circular(40) : null,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 20,
+        ),
         child: Row(
+          mainAxisSize: isLargeScreen ? MainAxisSize.min : MainAxisSize.max,
           children: [
             if (icon != null)
               Padding(
-                padding: const EdgeInsetsDirectional.only(end: 12),
+                padding: EdgeInsetsDirectional.only(
+                  end: label == null ? 0 : 20,
+                ),
                 child: Icon(
                   icon,
                   size: 24,
@@ -47,12 +58,13 @@ class MenuListItem extends StatelessWidget {
                           : AppColors.secondary,
                 ),
               ),
-            Text(
-              label,
-              style: Theme.of(context).textTheme.headline5!.copyWith(
-                    color: isActive ? AppColors.primary : null,
-                  ),
-            ),
+            if (label != null)
+              Text(
+                label!,
+                style: Theme.of(context).textTheme.headline5!.copyWith(
+                      color: isActive ? AppColors.primary : null,
+                    ),
+              ),
           ],
         ),
       ),

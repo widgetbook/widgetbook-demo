@@ -125,5 +125,20 @@ class AppLocalizationsAr extends AppLocalizations {
   String get password => 'كلمة المرور';
 
   @override
+  String get home => 'الصفحة الرئيسية';
+
+  @override
+  String get explore => 'استكشف';
+
+  @override
+  String get more => 'المزيد';
+
+  @override
+  String get messages => 'الرسائل';
+
+  @override
+  String get tweet => 'غرِّد';
+
+  @override
   String get or => 'أو';
 }

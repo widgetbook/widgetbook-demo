@@ -125,5 +125,20 @@ class AppLocalizationsEn extends AppLocalizations {
   String get password => 'Password';
 
   @override
+  String get home => 'Home';
+
+  @override
+  String get explore => 'Explore';
+
+  @override
+  String get more => 'More';
+
+  @override
+  String get messages => 'Messages';
+
+  @override
+  String get tweet => 'Tweet';
+
+  @override
   String get or => 'or';
 }

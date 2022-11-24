@@ -30,6 +30,7 @@ import 'package:app_widgetbook/core/ui_elements/app_bottom_navigation_bar.dart';
 import 'package:app_widgetbook/core/ui_elements/app_drawer.dart';
 import 'package:app_widgetbook/core/ui_elements/app_elevated_button.dart';
 import 'package:app_widgetbook/core/ui_elements/app_icon_button.dart';
+import 'package:app_widgetbook/core/ui_elements/app_sidebar.dart';
 import 'package:app_widgetbook/core/ui_elements/drawer_page_wrapper.dart';
 import 'package:app_widgetbook/core/ui_elements/formatted_date_time.dart';
 import 'package:app_widgetbook/core/ui_elements/menu_list_item.dart';
@@ -38,6 +39,7 @@ import 'package:app_widgetbook/core/ui_elements/twitter_logo.dart';
 import 'package:app_widgetbook/core/user/avatar.dart';
 import 'package:app_widgetbook/core/user/display_name.dart';
 import 'package:app_widgetbook/core/user/user_follows.dart';
+import 'package:app_widgetbook/core/user/user_info.dart';
 import 'package:app_widgetbook/core/user/username.dart';
 import 'package:auth/src/widgets/auth_buttons.dart';
 import 'package:core/core.dart';
@@ -247,6 +249,16 @@ class HotReload extends StatelessWidget {
                           ],
                         ),
                         WidgetbookComponent(
+                          name: 'AppSidebar',
+                          useCases: [
+                            WidgetbookUseCase(
+                              name: 'Default',
+                              builder: (context) =>
+                                  appSidebarDefaultUseCase(context),
+                            ),
+                          ],
+                        ),
+                        WidgetbookComponent(
                           name: 'DrawerPageWrapper',
                           useCases: [
                             WidgetbookUseCase(
@@ -260,9 +272,29 @@ class HotReload extends StatelessWidget {
                           name: 'MenuListItem',
                           useCases: [
                             WidgetbookUseCase(
-                              name: 'Default',
+                              name: 'Mobile',
                               builder: (context) =>
                                   menuItemDefaultUseCase(context),
+                            ),
+                            WidgetbookUseCase(
+                              name: 'Web',
+                              builder: (context) =>
+                                  menuListItemWebUseCase(context),
+                            ),
+                          ],
+                        ),
+                        WidgetbookComponent(
+                          name: 'AppDrawer',
+                          useCases: [
+                            WidgetbookUseCase(
+                              name: 'Mobile',
+                              builder: (context) =>
+                                  menuItemDefaultUseCase(context),
+                            ),
+                            WidgetbookUseCase(
+                              name: 'Web',
+                              builder: (context) =>
+                                  menuListItemWebUseCase(context),
                             ),
                           ],
                         ),
@@ -286,6 +318,15 @@ class HotReload extends StatelessWidget {
                 WidgetbookFolder(
                   name: 'user',
                   widgets: [
+                    WidgetbookComponent(
+                      name: 'UserInfo',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) => userInfoDefaultUseCase(context),
+                        ),
+                      ],
+                    ),
                     WidgetbookComponent(
                       name: 'Username',
                       useCases: [

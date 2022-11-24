@@ -47,5 +47,10 @@
     "termsText": "By signing up, you agree to our Terms, Privacy Policy, and Cookie Use",
     "enterYourPassword": "Enter your password",
     "password": "Password",
+    "home": "Home",
+    "explore": "Explore",
+    "more": "More",
+    "messages": "Messages",
+    "tweet": "Tweet",
     "or": "or"
 }
