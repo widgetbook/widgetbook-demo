@@ -6,23 +6,47 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @WidgetbookUseCase(name: 'Default', type: ProfileAppBar)
 Widget profileAppBarDefaultUseCase(BuildContext context) {
-  return CustomScrollView(
-    slivers: [
-      ProfileAppBar(
-        user: context.knobs.options(
-          label: 'User',
-          options: const [
-            Option(
-              label: 'Widgetbook',
-              value: DummyUsers.widgetbook,
-            ),
-            Option(
-              label: 'Roaa',
-              value: DummyUsers.roaakdm,
-            ),
-          ],
-        ),
-      ),
-    ],
-  );
+  return ProfileAppBarWrapper();
 }
+
+class ProfileAppBarWrapper extends StatefulWidget {
+  const ProfileAppBarWrapper({super.key});
+
+  @override
+  State<ProfileAppBarWrapper> createState() => _ProfileAppBarWrapperState();
+}
+
+class _ProfileAppBarWrapperState extends State<ProfileAppBarWrapper> {
+  final scrollController = ScrollController();
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomScrollView(
+      controller: scrollController,
+      slivers: [
+        ProfileAppBar(
+          scrollController: scrollController,
+          user: context.knobs.options(
+            label: 'User',
+            options: [
+              Option(
+                label: 'Widgetbook',
+                value: DummyUsers.widgetbook,
+              ),
+              Option(
+                label: 'Roaa',
+                value: DummyUsers.roaakdm,
+              ),
+            ],
+          ),
+        ),
+        const SliverToBoxAdapter(
+          child: SizedBox(
+            height: 1000,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
