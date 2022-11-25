@@ -28,6 +28,27 @@ class DummyMedia {
     ),
   ];
 
+  /// List of Media for a tweet with 4 images
+  ///
+  /// https://twitter.com/widgetbook_io/status/1482002838440103941
+  static const List<Media> threePhotosMedia = [
+    Media(
+      key: '3_1482002430543994883',
+      type: MediaType.photo,
+      url: 'https://pbs.twimg.com/media/FJEhW8zXIAMyIyO.jpg',
+    ),
+    Media(
+      key: '3_1482002430552387584',
+      type: MediaType.photo,
+      url: 'https://pbs.twimg.com/media/FJEhW81XMAAH4L_.jpg',
+    ),
+    Media(
+      key: '3_1482002430548185094',
+      type: MediaType.photo,
+      url: 'https://pbs.twimg.com/media/FJEhW80XEAYrU6N.jpg',
+    ),
+  ];
+
   /// List of media for a tweet with 1 image
   ///
   /// https://twitter.com/widgetbook_io/status/1478381071486050312

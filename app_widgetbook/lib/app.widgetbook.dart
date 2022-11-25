@@ -41,10 +41,10 @@ import 'package:app_widgetbook/core/user/display_name.dart';
 import 'package:app_widgetbook/core/user/user_follows.dart';
 import 'package:app_widgetbook/core/user/user_info.dart';
 import 'package:app_widgetbook/core/user/username.dart';
+import 'package:app_widgetbook/home/home_page.dart';
 import 'package:auth/src/widgets/auth_buttons.dart';
 import 'package:core/core.dart';
 import 'package:core/src/styles/app_colors.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -239,16 +239,6 @@ class HotReload extends StatelessWidget {
                       name: 'navigation',
                       widgets: [
                         WidgetbookComponent(
-                          name: 'AppBottomNavigationBar',
-                          useCases: [
-                            WidgetbookUseCase(
-                              name: 'Default',
-                              builder: (context) =>
-                                  appBottomNavigationBarDefaultUseCase(context),
-                            ),
-                          ],
-                        ),
-                        WidgetbookComponent(
                           name: 'AppSidebar',
                           useCases: [
                             WidgetbookUseCase(
@@ -269,22 +259,17 @@ class HotReload extends StatelessWidget {
                           ],
                         ),
                         WidgetbookComponent(
-                          name: 'MenuListItem',
+                          name: 'AppBottomNavigationBar',
                           useCases: [
                             WidgetbookUseCase(
-                              name: 'Mobile',
+                              name: 'Default',
                               builder: (context) =>
-                                  menuItemDefaultUseCase(context),
-                            ),
-                            WidgetbookUseCase(
-                              name: 'Web',
-                              builder: (context) =>
-                                  menuListItemWebUseCase(context),
+                                  appBottomNavigationBarDefaultUseCase(context),
                             ),
                           ],
                         ),
                         WidgetbookComponent(
-                          name: 'AppDrawer',
+                          name: 'MenuListItem',
                           useCases: [
                             WidgetbookUseCase(
                               name: 'Mobile',
@@ -576,6 +561,29 @@ class HotReload extends StatelessWidget {
                       isExpanded: true,
                     ),
                   ],
+                  isExpanded: true,
+                ),
+              ],
+              isExpanded: true,
+            ),
+            WidgetbookFolder(
+              name: 'home',
+              widgets: [],
+              folders: [
+                WidgetbookFolder(
+                  name: 'pages',
+                  widgets: [
+                    WidgetbookComponent(
+                      name: 'HomePage',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) => homePageDefaultUseCase(context),
+                        ),
+                      ],
+                    ),
+                  ],
+                  folders: [],
                   isExpanded: true,
                 ),
               ],

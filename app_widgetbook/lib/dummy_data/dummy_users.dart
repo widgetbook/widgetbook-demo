@@ -19,6 +19,16 @@ class DummyUsers {
     id: '2780187301',
     username: 'roaakdm',
     displayName: 'Roaa 🦄💙',
-    avatarUrl: 'https://pbs.twimg.com/profile_images/1581351928931520512/tBc3bMzJ_400x400.jpg',
+    avatarUrl: 'https://pbs.twimg.com/profile_images/1594924317954949122/R2rIPIoR_normal.jpg',
+  );
+
+  /// Roaa's Twitter Account user
+  ///
+  /// https://twitter.com/timsneath
+  static const User timSneath = User(
+    id: '5633712',
+    username: 'timsneath',
+    displayName: 'Tim Sneath',
+    avatarUrl: 'https://pbs.twimg.com/profile_images/1425115522706776065/Gm719oBc_400x400.jpg',
   );
 }
