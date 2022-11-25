@@ -5,7 +5,7 @@ import 'package:intl/intl.dart';
 /// Tweet metric text widget
 ///
 /// e.g. Likes, comments, retweets, ..etc
-class MetricText extends StatefulWidget {
+class MetricText extends StatelessWidget {
   /// Creates a new instance of [MetricText]
   const MetricText({
     super.key,
@@ -27,42 +27,48 @@ class MetricText extends StatefulWidget {
   /// Text style of the metric value
   final TextStyle? textStyle;
 
-  @override
-  State<MetricText> createState() => _MetricTextState();
-}
+  /// Get formatted value based on digit count
+  ///
+  /// If the value is 4 digits or less, only decimal commas are added
+  /// Otherwise the value is compacted (12,100 => 12.1K)
+  String getFormattedValue(int value, String locale) {
+    return value.toString().length > 4
+        ? NumberFormat.compact(locale: locale).format(value)
+        : NumberFormat.decimalPattern(locale).format(value);
+  }
 
-class _MetricTextState extends State<MetricText> {
   @override
   Widget build(BuildContext context) {
-    final value = widget.value;
-    final nextValue = widget.value + 1;
+    final nextValue = value + 1;
+    final locale = Localizations.localeOf(context).languageCode;
+
     return ClipRect(
       child: Stack(
         fit: StackFit.passthrough,
         children: [
           AnimatedSlide(
             duration: const Duration(milliseconds: 300),
-            offset: Offset(0, widget.isActive ? -1 : 0),
+            offset: Offset(0, isActive ? -1 : 0),
             curve: Curves.easeInOut,
             child: Opacity(
-              opacity: widget.value == 0 ? 0 : 1,
+              opacity: value == 0 ? 0 : 1,
               child: Text(
-                NumberFormat.compact().format(value),
-                style: widget.textStyle ?? Theme.of(context).textTheme.caption,
+                getFormattedValue(value, locale),
+                style: textStyle ?? Theme.of(context).textTheme.caption,
               ),
             ),
           ),
           AnimatedSlide(
             duration: const Duration(milliseconds: 300),
-            offset: Offset(0, widget.isActive ? 0 : 1),
+            offset: Offset(0, isActive ? 0 : 1),
             curve: Curves.easeInOut,
             child: Text(
-              NumberFormat.compact().format(nextValue),
-              style: widget.textStyle ??
+              getFormattedValue(nextValue, locale),
+              style: textStyle ??
                   Theme.of(context)
                       .textTheme
                       .caption!
-                      .copyWith(color: widget.activeColor),
+                      .copyWith(color: activeColor),
             ),
           ),
         ],

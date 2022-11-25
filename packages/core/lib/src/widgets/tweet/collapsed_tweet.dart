@@ -38,139 +38,103 @@ class CollapsedTweet extends StatelessWidget {
       onTap: () {
         // Todo: navigate to expanded tweet
       },
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (tweet.annotationType != null)
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          border: Border(
+            bottom:
+                BorderSide(width: 0.5, color: Theme.of(context).dividerColor),
+          ),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (tweet.annotationType != null)
+              Padding(
+                padding: const EdgeInsetsDirectional.only(start: 30, bottom: 5),
+                child: TweetAnnotation(type: tweet.annotationType!),
+              ),
             Padding(
-              padding: const EdgeInsetsDirectional.only(start: 30, bottom: 5),
-              child: TweetAnnotation(type: tweet.annotationType!),
-            ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
-            child: IntrinsicHeight(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Column(
-                    children: [
-                      Avatar(imageUrl: tweet.author.avatarUrl),
-                      if (isThread)
-                        const Expanded(
-                          child: Padding(
-                            padding: EdgeInsets.only(top: _verticalLineGap),
-                            child: VerticalDivider(thickness: 2),
-                          ),
-                        ),
-                    ],
-                  ),
-                  const AppGap.sm(),
-                  Expanded(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+              child: IntrinsicHeight(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Column(
                       children: [
-                        TweetHeader(
-                          author: tweet.author,
-                          tweetDate: tweet.createdAt,
-                        ),
-                        if (tweet.inReplyToUser != null)
-                          Row(
-                            children: [
-                              Text(AppLocalizations.of(context)!.replyingTo),
-                              const AppGap.xxs(),
-                              Username.active(user: tweet.inReplyToUser!),
-                            ],
+                        Avatar(imageUrl: tweet.author.avatarUrl),
+                        if (isThread)
+                          const Expanded(
+                            child: Padding(
+                              padding: EdgeInsets.only(top: _verticalLineGap),
+                              child: VerticalDivider(thickness: 2),
+                            ),
                           ),
-                        TweetText(tweet.text),
-                        const AppGap.sm(),
-                        if (tweet.media.isNotEmpty)
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 10),
-                            child: TweetMedia(tweetMedia: tweet.media),
-                          ),
-                        if (tweet.quotedTweet != null)
-                          QuotedTweet(
-                            tweet: tweet.quotedTweet!,
-                            isLargeMedia: tweet.media.isEmpty,
-                          ),
-                        const AppGap.sm(),
-                        TweetActions(
-                          publicMetrics: tweet.publicMetrics,
-                          onSharePressed: () {},
-                          onRepliesPressed: () {},
-                          onLikesChanged: (_) {},
-                        ),
                       ],
                     ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          if (onShowThisThread != null)
-            InkWell(
-              onTap: onShowThisThread,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: _verticalLineGap,
-                ),
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: 55,
-                      child: Center(
-                        child: Avatar.smaller(imageUrl: tweet.author.avatarUrl),
-                      ),
-                    ),
+                    const AppGap.sm(),
                     Expanded(
-                      child: Text(
-                        AppLocalizations.of(context)!.showThisThread,
-                        style: Theme.of(context)
-                            .primaryTextTheme
-                            .bodyText2!
-                            .copyWith(
-                              color: AppColors.primary,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          TweetHeader(
+                            author: tweet.author,
+                            tweetDate: tweet.createdAt,
+                          ),
+                          if (tweet.inReplyToUser != null)
+                            Row(
+                              children: [
+                                Text(AppLocalizations.of(context)!.replyingTo),
+                                const AppGap.xxs(),
+                                Username.active(user: tweet.inReplyToUser!),
+                              ],
                             ),
+                          TweetText(tweet.text),
+                          const AppGap.sm(),
+                          if (tweet.media.isNotEmpty)
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 10),
+                              child: TweetMedia(tweetMedia: tweet.media),
+                            ),
+                          if (tweet.quotedTweet != null)
+                            QuotedTweet(
+                              tweet: tweet.quotedTweet!,
+                              isLargeMedia: tweet.media.isEmpty,
+                            ),
+                          const AppGap.sm(),
+                          TweetActions(
+                            publicMetrics: tweet.publicMetrics,
+                            onSharePressed: () {},
+                            onRepliesPressed: () {},
+                            onLikesChanged: (_) {},
+                          ),
+                        ],
                       ),
                     ),
                   ],
                 ),
               ),
             ),
-          if (onShowMoreReplies != null)
-            InkWell(
-              onTap: onShowMoreReplies,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 10,
-                ),
-                child: IntrinsicHeight(
+            if (onShowThisThread != null)
+              InkWell(
+                onTap: onShowThisThread,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: _verticalLineGap,
+                  ),
                   child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       SizedBox(
                         width: 55,
                         child: Center(
-                          child: Column(
-                            children: List.generate(
-                              3,
-                              (index) => const Expanded(
-                                child: VerticalDivider(
-                                  indent: 2,
-                                  endIndent: 2,
-                                  thickness: 2,
-                                ),
-                              ),
-                            ),
-                          ),
+                          child:
+                              Avatar.smaller(imageUrl: tweet.author.avatarUrl),
                         ),
                       ),
                       Expanded(
                         child: Text(
-                          AppLocalizations.of(context)!.showMoreReplies,
+                          AppLocalizations.of(context)!.showThisThread,
                           style: Theme.of(context)
                               .primaryTextTheme
                               .bodyText2!
@@ -183,8 +147,53 @@ class CollapsedTweet extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-        ],
+            if (onShowMoreReplies != null)
+              InkWell(
+                onTap: onShowMoreReplies,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 10,
+                  ),
+                  child: IntrinsicHeight(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        SizedBox(
+                          width: 55,
+                          child: Center(
+                            child: Column(
+                              children: List.generate(
+                                3,
+                                (index) => const Expanded(
+                                  child: VerticalDivider(
+                                    indent: 2,
+                                    endIndent: 2,
+                                    thickness: 2,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Text(
+                            AppLocalizations.of(context)!.showMoreReplies,
+                            style: Theme.of(context)
+                                .primaryTextTheme
+                                .bodyText2!
+                                .copyWith(
+                                  color: AppColors.primary,
+                                ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }
