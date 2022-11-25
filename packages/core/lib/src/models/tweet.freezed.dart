@@ -55,6 +55,8 @@ abstract class $TweetCopyWith<$Res> {
       Tweet? quotedTweet,
       TweetSource source});
 
+  $UserCopyWith<$Res> get author;
+  $UserCopyWith<$Res>? get inReplyToUser;
   $TweetCopyWith<$Res>? get quotedTweet;
 }
 
@@ -128,6 +130,26 @@ class _$TweetCopyWithImpl<$Res, $Val extends Tweet>
 
   @override
   @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get author {
+    return $UserCopyWith<$Res>(_value.author, (value) {
+      return _then(_value.copyWith(author: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get inReplyToUser {
+    if (_value.inReplyToUser == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.inReplyToUser!, (value) {
+      return _then(_value.copyWith(inReplyToUser: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
   $TweetCopyWith<$Res>? get quotedTweet {
     if (_value.quotedTweet == null) {
       return null;
@@ -157,6 +179,10 @@ abstract class _$$_TweetCopyWith<$Res> implements $TweetCopyWith<$Res> {
       Tweet? quotedTweet,
       TweetSource source});
 
+  @override
+  $UserCopyWith<$Res> get author;
+  @override
+  $UserCopyWith<$Res>? get inReplyToUser;
   @override
   $TweetCopyWith<$Res>? get quotedTweet;
 }
