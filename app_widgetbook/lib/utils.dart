@@ -1,6 +1,5 @@
 import 'package:app_widgetbook/dummy_data/dummy_media.dart';
 import 'package:core/core.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';
 
@@ -96,11 +95,10 @@ List<Media> getMediaOptions(
         label: 'Image',
         value: DummyMedia.singlePhotoMedia,
       ),
-      if (defaultTargetPlatform != TargetPlatform.macOS && kIsWeb)
-        const Option(
-          label: 'GIF',
-          value: DummyMedia.gifMedia,
-        ),
+      const Option(
+        label: 'GIF',
+        value: DummyMedia.gifMedia,
+      ),
       const Option(
         label: 'No Media',
         value: [],
