@@ -66,16 +66,6 @@ class _ProfileAppBarState extends State<ProfileAppBar> {
   Widget build(BuildContext context) {
     return SliverAppBar(
       centerTitle: false,
-      // title: Column(
-      //   crossAxisAlignment: CrossAxisAlignment.start,
-      //   children: [
-      //     DisplayName(user: user),
-      //     Text(
-      //       '${user.tweetsCount} ${AppLocalizations.of(context)!.tweet}',
-      //       style: Theme.of(context).textTheme.caption,
-      //     ),
-      //   ],
-      // ),
       expandedHeight: 150,
       collapsedHeight: 60,
       floating: true,
