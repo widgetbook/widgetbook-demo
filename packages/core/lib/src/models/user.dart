@@ -1,30 +1,33 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'user.freezed.dart';
+
 /// User data model
-class User {
+@freezed
+class User with _$User {
   /// Creates User data model
-  const User({
-    required this.id,
-    required this.username,
-    required this.displayName,
-    this.avatarUrl,
-    this.followers = 0,
-    this.following = 0,
-  });
+  const factory User({
+    required String id,
 
-  /// User id
-  final String id;
+    /// User's username (Twitter handle)
+    required String username,
 
-  /// User's username (Twitter handle)
-  final String username;
+    /// User's display name
+    required String displayName,
 
-  /// User's display name
-  final String displayName;
+    /// User's avatar url
+    String? avatarUrl,
 
-  /// User's avatar url
-  final String? avatarUrl;
+    /// Number of user followers
+    @Default(0) int followers,
 
-  /// Number of user followers
-  final int followers;
-
-  /// Number of user following
-  final int following;
+    /// Number of user following
+    @Default(0) int following,
+    @Default(0) int tweetsCount,
+    String? coverUrl,
+    String? bio,
+    String? location,
+    DateTime? joinDate,
+    String? website,
+  }) = _User;
 }
