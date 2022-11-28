@@ -101,10 +101,10 @@ class DummyTweets {
 
   static final List<Tweet> widgetbookHomeFeed = [
     timSneathTweet,
-    roaaVikingsTweet,
     fourPhotosTweet,
     gifTweet,
-    singlePhotoTweet,
     threePhotosTweet,
+    roaaVikingsTweet,
+    singlePhotoTweet,
   ];
 }
