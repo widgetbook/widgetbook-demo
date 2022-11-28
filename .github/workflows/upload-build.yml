@@ -1,8 +1,5 @@
-name: Build
+name: Upload build
 on:
-  pull_request:
-    branches:
-      - staging
   push:
     branches:
       - staging
@@ -33,7 +30,7 @@ jobs:
         run: flutter build web -t lib/app.widgetbook.dart
 
       - name: Install Widgetbook CLI
-        run: dart pub global activate widgetbook_cli 3.0.0-beta.11
+        run: dart pub global activate widgetbook_cli 3.0.0-beta.12
 
       - name: Upload Widgetbook
         run: |
@@ -42,10 +39,4 @@ jobs:
                 --repository \
                 $GITHUB_REPOSITORY \
                 --actor \
-                $GITHUB_ACTOR \
-                --branch \
-                $GITHUB_HEAD_REF \
-                --base-branch \
-                $GITHUB_BASE_REF \
-                --pr ${{ github.event.number }} \
-                --github-token ${{ secrets.GITHUB_TOKEN }}
+                $GITHUB_ACTOR
