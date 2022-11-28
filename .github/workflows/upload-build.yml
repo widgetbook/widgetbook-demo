@@ -38,5 +38,7 @@ jobs:
                 --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY }} \
                 --repository \
                 $GITHUB_REPOSITORY \
+                --branch \
+                $GITHUB_REF \
                 --actor \
                 $GITHUB_ACTOR
