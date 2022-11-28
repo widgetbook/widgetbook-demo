@@ -100,7 +100,24 @@ class _ProfileAppBarState extends State<ProfileAppBar> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                InkWell(
+                  child: Container(
+                    width: 32,
+                    height: 32,
+                    decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.3),
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Icon(
+                      TwitterIcons.back,
+                      size: 16,
+                      color: AppColors.white,
+                    ),
+                  ),
+                ),
+                const AppGap.sm(),
                 Expanded(
                   child: FractionalTranslation(
                     translation: Offset(0, 1 - scrollProgress),
