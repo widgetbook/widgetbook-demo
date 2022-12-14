@@ -124,11 +124,21 @@ class AppDrawer extends StatelessWidget {
                   children: [
                     AppIconButton(
                       onPressed: () {},
-                      icon: const Icon(TwitterIcons.bulb),
+                      icon: Icon(
+                        TwitterIcons.bulb,
+                        color: Theme.of(context).isDark
+                            ? AppColors.white
+                            : AppColors.secondary,
+                      ),
                     ),
                     AppIconButton(
                       onPressed: () {},
-                      icon: const Icon(TwitterIcons.qr),
+                      icon: Icon(
+                        TwitterIcons.qr,
+                        color: Theme.of(context).isDark
+                            ? AppColors.white
+                            : AppColors.secondary,
+                      ),
                     ),
                   ],
                 ),
