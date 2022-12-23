@@ -14,7 +14,12 @@ Widget avatarDefaultUseCase(BuildContext context) => Avatar(
     );
 
 /// User avatar small use case
-@WidgetbookUseCase(name: 'Small', type: Avatar)
+@WidgetbookUseCase(
+  name: 'Small',
+  type: Avatar,
+  designLink:
+      'https://www.figma.com/file/taoQSMi6WeUgzEoZvZmHmI/Twitter-Clone---Widgetbook-Demo-App?node-id=134%3A264&t=bS5eQkKjgII1vkpI-4',
+)
 Widget avatarSmallUseCase(BuildContext context) => Avatar.small(
       imageUrl: context.knobs.text(
         label: 'Image URL',
@@ -23,7 +28,12 @@ Widget avatarSmallUseCase(BuildContext context) => Avatar.small(
     );
 
 /// User avatar smaller use case
-@WidgetbookUseCase(name: 'Smaller', type: Avatar)
+@WidgetbookUseCase(
+  name: 'Smaller',
+  type: Avatar,
+  designLink:
+      'https://www.figma.com/file/taoQSMi6WeUgzEoZvZmHmI/Twitter-Clone---Widgetbook-Demo-App?node-id=139%3A836&t=bS5eQkKjgII1vkpI-4',
+)
 Widget avatarSmallerUseCase(BuildContext context) => Avatar.smaller(
       imageUrl: context.knobs.text(
         label: 'Image URL',
@@ -32,9 +42,14 @@ Widget avatarSmallerUseCase(BuildContext context) => Avatar.smaller(
     );
 
 /// User avatar smallest use case
-@WidgetbookUseCase(name: 'Smallest', type: Avatar)
+@WidgetbookUseCase(
+  name: 'Smallest',
+  type: Avatar,
+  designLink:
+      'https://www.figma.com/file/taoQSMi6WeUgzEoZvZmHmI/Twitter-Clone---Widgetbook-Demo-App?node-id=260%3A3354&t=bS5eQkKjgII1vkpI-4',
+)
 Widget avatarSmallestUseCase(BuildContext context) => Avatar.smallest(
-      imageUrl: context.knobs.text(
+      imageUrl: context.knobs.nullableText(
         label: 'Image URL',
         initialValue: '',
       ),
