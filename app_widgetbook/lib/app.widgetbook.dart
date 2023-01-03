@@ -44,7 +44,9 @@ import 'package:app_widgetbook/core/user/username.dart';
 import 'package:app_widgetbook/home/home_page.dart';
 import 'package:auth/src/widgets/auth_buttons.dart';
 import 'package:core/core.dart';
+import 'package:core/src/l10n/app_localizations_extension.dart';
 import 'package:core/src/styles/app_colors.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -65,76 +67,180 @@ class HotReload extends StatelessWidget {
       appInfo: AppInfo(
         name: 'App Widgetbook',
       ),
-      supportedLocales: locales,
-      localizationsDelegates: localizationsDelegates,
-      themes: [
-        WidgetbookTheme(
-          name: 'Light',
-          data: getLightTheme(),
+      addons: [
+        CustomThemeAddon<ThemeData>(
+          setting: ThemeSetting<ThemeData>(
+            themes: [
+              WidgetbookTheme(
+                name: 'Light',
+                data: getLightTheme(),
+              ),
+              WidgetbookTheme(
+                name: 'Dark',
+                data: getDarkTheme(),
+              ),
+            ],
+            activeTheme: WidgetbookTheme(
+              name: 'Light',
+              data: getLightTheme(),
+            ),
+          ),
         ),
-        WidgetbookTheme(
-          name: 'Dark',
-          data: getDarkTheme(),
+        TextScaleAddon(
+          setting: TextScaleSetting(
+            textScales: [
+              1.0,
+              1.5,
+              2.0,
+            ],
+            activeTextScale: 1.0,
+          ),
+        ),
+        LocalizationAddon(
+          setting: LocalizationSetting(
+            locales: locales,
+            activeLocale: locales.first,
+            localizationsDelegates: localizationsDelegates,
+          ),
+        ),
+        FrameAddon(
+          setting: FrameSetting(
+            frames: [
+              NoFrame(),
+              DefaultDeviceFrame(
+                setting: DeviceSetting(
+                  devices: [
+                    Device(
+                      name: 'iPhone 12',
+                      resolution: Resolution(
+                        nativeSize: DeviceSize(
+                          height: 2532.0,
+                          width: 1170.0,
+                        ),
+                        scaleFactor: 3.0,
+                      ),
+                      type: DeviceType.mobile,
+                    ),
+                    Device(
+                      name: 'iPhone 13',
+                      resolution: Resolution(
+                        nativeSize: DeviceSize(
+                          height: 2532.0,
+                          width: 1170.0,
+                        ),
+                        scaleFactor: 3.0,
+                      ),
+                      type: DeviceType.mobile,
+                    ),
+                    Device(
+                      name: '7.9" iPad mini',
+                      resolution: Resolution(
+                        nativeSize: DeviceSize(
+                          height: 1024.0,
+                          width: 768.0,
+                        ),
+                        scaleFactor: 2.0,
+                      ),
+                      type: DeviceType.tablet,
+                    ),
+                    Device(
+                      name: 'Desktop 1080p',
+                      resolution: Resolution(
+                        nativeSize: DeviceSize(
+                          height: 1080.0,
+                          width: 1920.0,
+                        ),
+                        scaleFactor: 2.0,
+                      ),
+                      type: DeviceType.desktop,
+                    ),
+                  ],
+                  activeDevice: Device(
+                    name: 'iPhone 12',
+                    resolution: Resolution(
+                      nativeSize: DeviceSize(
+                        height: 2532.0,
+                        width: 1170.0,
+                      ),
+                      scaleFactor: 3.0,
+                    ),
+                    type: DeviceType.mobile,
+                  ),
+                ),
+              ),
+              WidgetbookFrame(
+                setting: DeviceSetting(
+                  devices: [
+                    Device(
+                      name: 'iPhone 12',
+                      resolution: Resolution(
+                        nativeSize: DeviceSize(
+                          height: 2532.0,
+                          width: 1170.0,
+                        ),
+                        scaleFactor: 3.0,
+                      ),
+                      type: DeviceType.mobile,
+                    ),
+                    Device(
+                      name: 'iPhone 13',
+                      resolution: Resolution(
+                        nativeSize: DeviceSize(
+                          height: 2532.0,
+                          width: 1170.0,
+                        ),
+                        scaleFactor: 3.0,
+                      ),
+                      type: DeviceType.mobile,
+                    ),
+                    Device(
+                      name: '7.9" iPad mini',
+                      resolution: Resolution(
+                        nativeSize: DeviceSize(
+                          height: 1024.0,
+                          width: 768.0,
+                        ),
+                        scaleFactor: 2.0,
+                      ),
+                      type: DeviceType.tablet,
+                    ),
+                    Device(
+                      name: 'Desktop 1080p',
+                      resolution: Resolution(
+                        nativeSize: DeviceSize(
+                          height: 1080.0,
+                          width: 1920.0,
+                        ),
+                        scaleFactor: 2.0,
+                      ),
+                      type: DeviceType.desktop,
+                    ),
+                  ],
+                  activeDevice: Device(
+                    name: 'iPhone 12',
+                    resolution: Resolution(
+                      nativeSize: DeviceSize(
+                        height: 2532.0,
+                        width: 1170.0,
+                      ),
+                      scaleFactor: 3.0,
+                    ),
+                    type: DeviceType.mobile,
+                  ),
+                ),
+              ),
+            ],
+            activeFrame: NoFrame(),
+          ),
         ),
       ],
-      devices: [
-        Device(
-          name: 'iPhone 12',
-          resolution: Resolution(
-            nativeSize: DeviceSize(
-              height: 2532.0,
-              width: 1170.0,
-            ),
-            scaleFactor: 3.0,
-          ),
-          type: DeviceType.mobile,
-        ),
-        Device(
-          name: 'iPhone 13',
-          resolution: Resolution(
-            nativeSize: DeviceSize(
-              height: 2532.0,
-              width: 1170.0,
-            ),
-            scaleFactor: 3.0,
-          ),
-          type: DeviceType.mobile,
-        ),
-        Device(
-          name: '7.9" iPad mini',
-          resolution: Resolution(
-            nativeSize: DeviceSize(
-              height: 1024.0,
-              width: 768.0,
-            ),
-            scaleFactor: 2.0,
-          ),
-          type: DeviceType.tablet,
-        ),
-        Device(
-          name: 'Desktop 1080p',
-          resolution: Resolution(
-            nativeSize: DeviceSize(
-              height: 1080.0,
-              width: 1920.0,
-            ),
-            scaleFactor: 2.0,
-          ),
-          type: DeviceType.desktop,
-        ),
-      ],
-      textScaleFactors: [
-        1.0,
-        1.5,
-        2.0,
-      ],
-      categories: [
+      children: [
         WidgetbookCategory(
           name: 'use cases',
-          folders: [
+          children: [
             WidgetbookFolder(
               name: 'widgets',
-              widgets: [
+              children: [
                 WidgetbookComponent(
                   name: 'AuthButtons',
                   useCases: [
@@ -144,11 +250,9 @@ class HotReload extends StatelessWidget {
                     ),
                   ],
                 ),
-              ],
-              folders: [
                 WidgetbookFolder(
                   name: 'ui',
-                  widgets: [
+                  children: [
                     WidgetbookComponent(
                       name: 'FormattedDateTime',
                       useCases: [
@@ -233,11 +337,9 @@ class HotReload extends StatelessWidget {
                         ),
                       ],
                     ),
-                  ],
-                  folders: [
                     WidgetbookFolder(
                       name: 'navigation',
-                      widgets: [
+                      children: [
                         WidgetbookComponent(
                           name: 'AppSidebar',
                           useCases: [
@@ -294,15 +396,12 @@ class HotReload extends StatelessWidget {
                           ],
                         ),
                       ],
-                      folders: [],
-                      isExpanded: true,
                     ),
                   ],
-                  isExpanded: true,
                 ),
                 WidgetbookFolder(
                   name: 'user',
-                  widgets: [
+                  children: [
                     WidgetbookComponent(
                       name: 'UserInfo',
                       useCases: [
@@ -372,12 +471,10 @@ class HotReload extends StatelessWidget {
                       ],
                     ),
                   ],
-                  folders: [],
-                  isExpanded: true,
                 ),
                 WidgetbookFolder(
                   name: 'tweet',
-                  widgets: [
+                  children: [
                     WidgetbookComponent(
                       name: 'TweetActions',
                       useCases: [
@@ -491,11 +588,9 @@ class HotReload extends StatelessWidget {
                         ),
                       ],
                     ),
-                  ],
-                  folders: [
                     WidgetbookFolder(
                       name: 'metrics',
-                      widgets: [
+                      children: [
                         WidgetbookComponent(
                           name: 'ExpandedTweetMetrics',
                           useCases: [
@@ -557,22 +652,17 @@ class HotReload extends StatelessWidget {
                           ],
                         ),
                       ],
-                      folders: [],
-                      isExpanded: true,
                     ),
                   ],
-                  isExpanded: true,
                 ),
               ],
-              isExpanded: true,
             ),
             WidgetbookFolder(
               name: 'home',
-              widgets: [],
-              folders: [
+              children: [
                 WidgetbookFolder(
                   name: 'pages',
-                  widgets: [
+                  children: [
                     WidgetbookComponent(
                       name: 'HomePage',
                       useCases: [
@@ -583,15 +673,12 @@ class HotReload extends StatelessWidget {
                       ],
                     ),
                   ],
-                  folders: [],
-                  isExpanded: true,
                 ),
               ],
-              isExpanded: true,
             ),
             WidgetbookFolder(
               name: 'pages',
-              widgets: [
+              children: [
                 WidgetbookComponent(
                   name: 'LoginPage',
                   useCases: [
@@ -620,11 +707,8 @@ class HotReload extends StatelessWidget {
                   ],
                 ),
               ],
-              folders: [],
-              isExpanded: true,
             ),
           ],
-          widgets: [],
         ),
       ],
     );
