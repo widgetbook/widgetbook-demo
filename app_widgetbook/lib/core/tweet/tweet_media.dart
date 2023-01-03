@@ -22,11 +22,9 @@ Widget tweetMediaGalleryUseCase(BuildContext context) {
       label: 'Image Count',
       options: [
         for (int i = 4; i >= 2; i--)
-          Option(
-            label: '$i Images',
-            value: DummyMedia.fourPhotosMedia.take(i).toList(),
-          ),
+          DummyMedia.fourPhotosMedia.take(i).toList(),
       ],
+      labelBuilder: (value) => '${value.length} images',
     ),
     hasDecoration: context.knobs.boolean(
       label: 'Has Decoration',

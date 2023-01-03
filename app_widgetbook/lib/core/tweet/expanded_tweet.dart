@@ -16,14 +16,8 @@ Widget expandedTweetDefaultUseCase(BuildContext context) {
       ),
       source: context.knobs.options<TweetSource>(
         label: 'Tweet Source',
-        options: TweetSource.values
-            .map(
-              (source) => Option(
-                label: source.toText(),
-                value: source,
-              ),
-            )
-            .toList(),
+        options: TweetSource.values,
+        labelBuilder: (value) => value.toText(),
       ),
       inReplyToUser:
           context.knobs.boolean(label: 'Is Reply', initialValue: true)
@@ -75,19 +69,13 @@ Widget expandedTweetQuoteTweetUseCase(BuildContext context) {
       ),
       source: context.knobs.options<TweetSource>(
         label: 'Tweet Source',
-        options: TweetSource.values
-            .map(
-              (source) => Option(
-            label: source.toText(),
-            value: source,
-          ),
-        )
-            .toList(),
+        options: TweetSource.values,
+        labelBuilder: (value) => value.toText(),
       ),
       inReplyToUser:
-      context.knobs.boolean(label: 'Is Reply', initialValue: true)
-          ? DummyUsers.roaakdm
-          : null,
+          context.knobs.boolean(label: 'Is Reply', initialValue: true)
+              ? DummyUsers.roaakdm
+              : null,
       author: DummyUsers.widgetbook,
       media: getMediaOptions(context),
       quotedTweet: DummyTweets.fourPhotosTweet.copyWith(
@@ -97,30 +85,30 @@ Widget expandedTweetQuoteTweetUseCase(BuildContext context) {
       publicMetrics: PublicMetrics(
         quoteTweets: context.knobs
             .slider(
-          label: 'Quote Tweets',
-          min: 0,
-          max: 2500,
-          initialValue: 0,
-          divisions: 2500 ~/ 50,
-        )
+              label: 'Quote Tweets',
+              min: 0,
+              max: 2500,
+              initialValue: 0,
+              divisions: 2500 ~/ 50,
+            )
             .toInt(),
         retweets: context.knobs
             .slider(
-          label: 'Retweets',
-          min: 0,
-          max: 2500,
-          initialValue: 15,
-          divisions: 2500 ~/ 50,
-        )
+              label: 'Retweets',
+              min: 0,
+              max: 2500,
+              initialValue: 15,
+              divisions: 2500 ~/ 50,
+            )
             .toInt(),
         likes: context.knobs
             .slider(
-          label: 'Likes',
-          min: 0,
-          max: 2500,
-          initialValue: 15,
-          divisions: 2500 ~/ 50,
-        )
+              label: 'Likes',
+              min: 0,
+              max: 2500,
+              initialValue: 15,
+              divisions: 2500 ~/ 50,
+            )
             .toInt(),
       ),
       createdAt: getTweetDateOption(context),

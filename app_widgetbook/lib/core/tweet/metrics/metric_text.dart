@@ -20,19 +20,11 @@ Widget metricTextDefaultUseCase(BuildContext context) {
     ),
     activeColor: context.knobs.options(
       label: 'Active Color',
+      labelBuilder: (value) => value.value.toRadixString(16),
       options: [
-        const Option(
-          label: 'Primary',
-          value: AppColors.primary,
-        ),
-        const Option(
-          label: 'Pink',
-          value: AppColors.pink,
-        ),
-        const Option(
-          label: 'Success',
-          value: AppColors.success,
-        ),
+        AppColors.primary,
+        AppColors.pink,
+        AppColors.success,
       ],
     ),
   );

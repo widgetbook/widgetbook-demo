@@ -24,14 +24,8 @@ Widget collapsedTweetDefaultUseCase(BuildContext context) {
       publicMetrics: getPublicMetricsOptions(context),
       source: context.knobs.options<TweetSource>(
         label: 'Tweet Source',
-        options: TweetSource.values
-            .map(
-              (source) => Option(
-                label: source.toText(),
-                value: source,
-              ),
-            )
-            .toList(),
+        options: TweetSource.values,
+        labelBuilder: (value) => value.toText(),
       ),
     ),
     isThread: context.knobs.boolean(
@@ -76,14 +70,8 @@ Widget collapsedTweetQuoteTweetUseCase(BuildContext context) {
       publicMetrics: getPublicMetricsOptions(context),
       source: context.knobs.options<TweetSource>(
         label: 'Tweet Source',
-        options: TweetSource.values
-            .map(
-              (source) => Option(
-                label: source.toText(),
-                value: source,
-              ),
-            )
-            .toList(),
+        options: TweetSource.values,
+        labelBuilder: (value) => value.toText(),
       ),
     ),
   );

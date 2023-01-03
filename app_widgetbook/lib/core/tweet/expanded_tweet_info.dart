@@ -11,14 +11,8 @@ Widget detailedTweetInfoDefaultUseCase(BuildContext context) {
     tweet: DummyTweets.fourPhotosTweet.copyWith(
       source: context.knobs.options<TweetSource>(
         label: 'Tweet Source',
-        options: TweetSource.values
-            .map(
-              (source) => Option(
-                label: source.toText(),
-                value: source,
-              ),
-            )
-            .toList(),
+        options: TweetSource.values,
+        labelBuilder: (value) => value.toText(),
       ),
       createdAt: getTweetDateOption(context),
     ),

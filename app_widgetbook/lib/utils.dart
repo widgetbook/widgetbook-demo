@@ -1,38 +1,18 @@
 import 'package:app_widgetbook/dummy_data/dummy_media.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:timeago/timeago.dart' as timeago;
 import 'package:widgetbook/widgetbook.dart';
 
 /// List of app color options that can be used with knobs
-const List<Option<Color?>> colorOptions = [
-  Option(
-    label: 'Default',
-    value: null,
-  ),
-  Option(
-    label: 'Text Light',
-    value: AppColors.textLight,
-  ),
-  Option(
-    label: 'White',
-    value: AppColors.whiteLight,
-  ),
-  Option(
-    label: 'Primary',
-    value: AppColors.primary,
-  ),
-  Option(
-    label: 'Secondary',
-    value: AppColors.secondary,
-  ),
-  Option(
-    label: 'Success',
-    value: AppColors.success,
-  ),
-  Option(
-    label: 'Pink',
-    value: AppColors.pink,
-  ),
+const List<Color?> colorOptions = [
+  null,
+  AppColors.textLight,
+  AppColors.whiteLight,
+  AppColors.primary,
+  AppColors.secondary,
+  AppColors.success,
+  AppColors.pink,
 ];
 
 /// Predefined options knob for a tweet date
@@ -46,24 +26,16 @@ DateTime getTweetDateOption(
         'less than 24 hours ago, and it should '
         "include the year only if it's different "
         'than the one we are currently in',
+    labelBuilder: timeago.format,
     options: [
-      Option(
-        label: '12 hours ago',
-        value: DateTime.now().subtract(
-          const Duration(hours: 12),
-        ),
+      DateTime.now().subtract(
+        const Duration(hours: 12),
       ),
-      Option(
-        label: '2 days ago',
-        value: DateTime.now().subtract(
-          const Duration(days: 2),
-        ),
+      DateTime.now().subtract(
+        const Duration(days: 2),
       ),
-      Option(
-        label: '2 years ago',
-        value: DateTime.now().subtract(
-          const Duration(days: 365 * 3),
-        ),
+      DateTime.now().subtract(
+        const Duration(days: 365 * 3),
       ),
     ],
   );
@@ -78,31 +50,14 @@ List<Media> getMediaOptions(
   return context.knobs.options<List<Media>>(
     label: label,
     description: description,
+    labelBuilder: (value) => '${value.length} images',
     options: [
-      const Option(
-        label: '4 Images',
-        value: DummyMedia.fourPhotosMedia,
-      ),
-      Option(
-        label: '3 Images',
-        value: DummyMedia.fourPhotosMedia.take(3).toList(),
-      ),
-      Option(
-        label: '2 Images',
-        value: DummyMedia.fourPhotosMedia.take(2).toList(),
-      ),
-      const Option(
-        label: 'Image',
-        value: DummyMedia.singlePhotoMedia,
-      ),
-      const Option(
-        label: 'GIF',
-        value: DummyMedia.gifMedia,
-      ),
-      const Option(
-        label: 'No Media',
-        value: [],
-      ),
+      DummyMedia.fourPhotosMedia,
+      DummyMedia.fourPhotosMedia.take(3).toList(),
+      DummyMedia.fourPhotosMedia.take(2).toList(),
+      DummyMedia.singlePhotoMedia,
+      DummyMedia.gifMedia,
+      [],
     ],
   );
 }
@@ -142,37 +97,16 @@ PublicMetrics getPublicMetricsOptions(BuildContext context) {
 }
 
 /// Predefined list of icons for options knob
-const List<Option<IconData>> iconOptions = [
-  Option(
-    label: 'Home',
-    value: TwitterIcons.home,
-  ),
-  Option(
-    label: 'Bell',
-    value: TwitterIcons.bell,
-  ),
-  Option(
-    label: 'Message',
-    value: TwitterIcons.mail,
-  ),
-  Option(
-    label: 'Bookmark',
-    value: TwitterIcons.bookmark,
-  ),
-  Option(
-    label: 'Profile',
-    value: TwitterIcons.user,
-  ),
+const List<IconData> iconOptions = [
+  TwitterIcons.home,
+  TwitterIcons.bell,
+  TwitterIcons.mail,
+  TwitterIcons.bookmark,
+  TwitterIcons.user,
 ];
 
 /// Predefined list of icons for options knob of AppElevatedButton use cases
-const List<Option<IconData>> buttonIconOptions = [
-  Option(
-    label: 'Plus',
-    value: TwitterIcons.plus,
-  ),
-  Option(
-    label: 'Add Tweet Feather',
-    value: TwitterIcons.add_feather_fill,
-  ),
+const List<IconData> buttonIconOptions = [
+  TwitterIcons.plus,
+  TwitterIcons.add_feather_fill,
 ];
