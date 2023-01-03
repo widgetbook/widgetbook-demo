@@ -6,7 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart' show Knobs, Option;
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@WidgetbookUseCase(name: 'Default', type: CollapsedTweet)
+@WidgetbookUseCase(
+  name: 'Default',
+  type: CollapsedTweet,
+  designLink:
+      'https://www.figma.com/file/taoQSMi6WeUgzEoZvZmHmI/Twitter-Clone---Widgetbook-Demo-App?node-id=179%3A1054&t=flKfsPTEbua6AWR5-4',
+)
 Widget collapsedTweetDefaultUseCase(BuildContext context) {
   return CollapsedTweet(
     tweet: Tweet(
@@ -47,7 +52,12 @@ Widget collapsedTweetDefaultUseCase(BuildContext context) {
   );
 }
 
-@WidgetbookUseCase(name: 'Quote Tweet', type: CollapsedTweet)
+@WidgetbookUseCase(
+  name: 'Quote Tweet',
+  type: CollapsedTweet,
+  designLink:
+      'https://www.figma.com/file/taoQSMi6WeUgzEoZvZmHmI/Twitter-Clone---Widgetbook-Demo-App?node-id=179%3A1054&t=flKfsPTEbua6AWR5-4',
+)
 Widget collapsedTweetQuoteTweetUseCase(BuildContext context) {
   return CollapsedTweet(
     tweet: Tweet(
