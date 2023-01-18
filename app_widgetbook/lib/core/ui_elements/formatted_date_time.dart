@@ -1,5 +1,6 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:timeago/timeago.dart' as timeago;
 import 'package:widgetbook/widgetbook.dart' show Knobs, Option;
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
@@ -46,35 +47,21 @@ Widget formattedDateTimeTimeUseCase(BuildContext context) {
 Widget formattedDateTimeTimeAgoUseCase(BuildContext context) {
   return FormattedDateTime(
     date: context.knobs.options<DateTime>(
+      labelBuilder: timeago.format,
       label: 'Date',
       options: [
-        Option(
-          label: 'Now',
-          value: DateTime.now(),
+        DateTime.now(),
+        DateTime.now().subtract(
+          const Duration(minutes: 5),
         ),
-        Option(
-          label: '5 Minutes Ago',
-          value: DateTime.now().subtract(
-            const Duration(minutes: 5),
-          ),
+        DateTime.now().subtract(
+          const Duration(hours: 12),
         ),
-        Option(
-          label: '12 hours ago',
-          value: DateTime.now().subtract(
-            const Duration(hours: 12),
-          ),
+        DateTime.now().subtract(
+          const Duration(days: 2),
         ),
-        Option(
-          label: '2 days ago',
-          value: DateTime.now().subtract(
-            const Duration(days: 2),
-          ),
-        ),
-        Option(
-          label: '3 months ago',
-          value: DateTime.now().subtract(
-            const Duration(days: 30 * 3),
-          ),
+        DateTime.now().subtract(
+          const Duration(days: 30 * 3),
         ),
       ],
     ),

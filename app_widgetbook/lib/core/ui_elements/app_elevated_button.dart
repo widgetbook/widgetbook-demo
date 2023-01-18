@@ -22,68 +22,29 @@ Widget customAppElevatedButtonUseCase(BuildContext context) {
     borderColor: context.knobs.options<Color?>(
       label: 'Border Color',
       options: const [
-        Option(
-          label: 'None',
-          value: null,
-        ),
-        Option(
-          label: 'Primary',
-          value: AppColors.primary,
-        ),
-        Option(
-          label: 'Secondary',
-          value: AppColors.secondary,
-        ),
-        Option(
-          label: 'Pink',
-          value: AppColors.pink,
-        ),
-        Option(
-          label: 'White',
-          value: AppColors.white,
-        ),
+        null,
+        AppColors.primary,
+        AppColors.secondary,
+        AppColors.pink,
+        AppColors.white,
       ],
     ),
     backgroundColor: context.knobs.options<Color?>(
       label: 'Background Color',
       options: const [
-        Option(
-          label: 'Primary',
-          value: AppColors.primary,
-        ),
-        Option(
-          label: 'Secondary',
-          value: AppColors.secondary,
-        ),
-        Option(
-          label: 'Pink',
-          value: AppColors.pink,
-        ),
-        Option(
-          label: 'White',
-          value: AppColors.white,
-        ),
+        AppColors.primary,
+        AppColors.secondary,
+        AppColors.pink,
+        AppColors.white,
       ],
     ),
     textColor: context.knobs.options<Color?>(
       label: 'Text Color',
       options: const [
-        Option(
-          label: 'White',
-          value: AppColors.white,
-        ),
-        Option(
-          label: 'Primary',
-          value: AppColors.primary,
-        ),
-        Option(
-          label: 'Secondary',
-          value: AppColors.secondary,
-        ),
-        Option(
-          label: 'Pink',
-          value: AppColors.pink,
-        ),
+        AppColors.white,
+        AppColors.primary,
+        AppColors.secondary,
+        AppColors.pink,
       ],
     ),
     height: context.knobs.boolean(label: 'Is Large') ? 56 : 40,

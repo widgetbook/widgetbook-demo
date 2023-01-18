@@ -5,7 +5,7 @@
 // **************************************************************************
 
 import 'dart:core';
-import 'dart:math';
+
 import 'package:app_widgetbook/app.dart';
 import 'package:app_widgetbook/auth/components/auth_buttons.dart';
 import 'package:app_widgetbook/auth/pages/auth_page.dart';
@@ -42,24 +42,15 @@ import 'package:app_widgetbook/core/user/user_follows.dart';
 import 'package:app_widgetbook/core/user/user_info.dart';
 import 'package:app_widgetbook/core/user/username.dart';
 import 'package:app_widgetbook/home/home_page.dart';
-import 'package:auth/src/widgets/auth_buttons.dart';
-import 'package:core/core.dart';
-import 'package:core/src/l10n/app_localizations_extension.dart';
-import 'package:core/src/styles/app_colors.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:intl/intl.dart';
-import 'package:timeago/timeago.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 void main() {
-  runApp(HotReload());
+  runApp(const HotReload());
 }
 
 class HotReload extends StatelessWidget {
-  const HotReload({Key? key}) : super(key: key);
+  const HotReload({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +84,7 @@ class HotReload extends StatelessWidget {
               1.5,
               2.0,
             ],
-            activeTextScale: 1.0,
+            activeTextScale: 1,
           ),
         ),
         LocalizationAddon(
@@ -110,59 +101,59 @@ class HotReload extends StatelessWidget {
               DefaultDeviceFrame(
                 setting: DeviceSetting(
                   devices: [
-                    Device(
+                    const Device(
                       name: 'iPhone 12',
                       resolution: Resolution(
                         nativeSize: DeviceSize(
-                          height: 2532.0,
-                          width: 1170.0,
+                          height: 2532,
+                          width: 1170,
                         ),
-                        scaleFactor: 3.0,
+                        scaleFactor: 3,
                       ),
                       type: DeviceType.mobile,
                     ),
-                    Device(
+                    const Device(
                       name: 'iPhone 13',
                       resolution: Resolution(
                         nativeSize: DeviceSize(
-                          height: 2532.0,
-                          width: 1170.0,
+                          height: 2532,
+                          width: 1170,
                         ),
-                        scaleFactor: 3.0,
+                        scaleFactor: 3,
                       ),
                       type: DeviceType.mobile,
                     ),
-                    Device(
+                    const Device(
                       name: '7.9" iPad mini',
                       resolution: Resolution(
                         nativeSize: DeviceSize(
-                          height: 1024.0,
-                          width: 768.0,
+                          height: 1024,
+                          width: 768,
                         ),
-                        scaleFactor: 2.0,
+                        scaleFactor: 2,
                       ),
                       type: DeviceType.tablet,
                     ),
-                    Device(
+                    const Device(
                       name: 'Desktop 1080p',
                       resolution: Resolution(
                         nativeSize: DeviceSize(
-                          height: 1080.0,
-                          width: 1920.0,
+                          height: 1080,
+                          width: 1920,
                         ),
-                        scaleFactor: 2.0,
+                        scaleFactor: 2,
                       ),
                       type: DeviceType.desktop,
                     ),
                   ],
-                  activeDevice: Device(
+                  activeDevice: const Device(
                     name: 'iPhone 12',
                     resolution: Resolution(
                       nativeSize: DeviceSize(
-                        height: 2532.0,
-                        width: 1170.0,
+                        height: 2532,
+                        width: 1170,
                       ),
-                      scaleFactor: 3.0,
+                      scaleFactor: 3,
                     ),
                     type: DeviceType.mobile,
                   ),
@@ -171,59 +162,59 @@ class HotReload extends StatelessWidget {
               WidgetbookFrame(
                 setting: DeviceSetting(
                   devices: [
-                    Device(
+                    const Device(
                       name: 'iPhone 12',
                       resolution: Resolution(
                         nativeSize: DeviceSize(
-                          height: 2532.0,
-                          width: 1170.0,
+                          height: 2532,
+                          width: 1170,
                         ),
-                        scaleFactor: 3.0,
+                        scaleFactor: 3,
                       ),
                       type: DeviceType.mobile,
                     ),
-                    Device(
+                    const Device(
                       name: 'iPhone 13',
                       resolution: Resolution(
                         nativeSize: DeviceSize(
-                          height: 2532.0,
-                          width: 1170.0,
+                          height: 2532,
+                          width: 1170,
                         ),
-                        scaleFactor: 3.0,
+                        scaleFactor: 3,
                       ),
                       type: DeviceType.mobile,
                     ),
-                    Device(
+                    const Device(
                       name: '7.9" iPad mini',
                       resolution: Resolution(
                         nativeSize: DeviceSize(
-                          height: 1024.0,
-                          width: 768.0,
+                          height: 1024,
+                          width: 768,
                         ),
-                        scaleFactor: 2.0,
+                        scaleFactor: 2,
                       ),
                       type: DeviceType.tablet,
                     ),
-                    Device(
+                    const Device(
                       name: 'Desktop 1080p',
                       resolution: Resolution(
                         nativeSize: DeviceSize(
-                          height: 1080.0,
-                          width: 1920.0,
+                          height: 1080,
+                          width: 1920,
                         ),
-                        scaleFactor: 2.0,
+                        scaleFactor: 2,
                       ),
                       type: DeviceType.desktop,
                     ),
                   ],
-                  activeDevice: Device(
+                  activeDevice: const Device(
                     name: 'iPhone 12',
                     resolution: Resolution(
                       nativeSize: DeviceSize(
-                        height: 2532.0,
-                        width: 1170.0,
+                        height: 2532,
+                        width: 1170,
                       ),
-                      scaleFactor: 3.0,
+                      scaleFactor: 3,
                     ),
                     type: DeviceType.mobile,
                   ),
@@ -234,503 +225,443 @@ class HotReload extends StatelessWidget {
           ),
         ),
       ],
-      categories: [
+      directories: [
         WidgetbookCategory(
           name: 'use cases',
-          folders: [
+          children: [
             WidgetbookFolder(
               name: 'widgets',
-              widgets: [
+              children: [
                 WidgetbookComponent(
                   name: 'AuthButtons',
-                  useCases: [
+                  useCases: const [
                     WidgetbookUseCase(
                       name: 'Default',
-                      builder: (context) => authButtonsDefaultUseCase(context),
+                      builder: authButtonsDefaultUseCase,
                     ),
                   ],
                 ),
-              ],
-              folders: [
                 WidgetbookFolder(
                   name: 'ui',
-                  widgets: [
+                  children: [
                     WidgetbookComponent(
                       name: 'FormattedDateTime',
-                      useCases: [
+                      useCases: const [
                         WidgetbookUseCase(
                           name: 'Date & Time',
-                          builder: (context) =>
-                              formattedDateTimeDateAndTimeUseCase(context),
+                          builder: formattedDateTimeDateAndTimeUseCase,
                         ),
                         WidgetbookUseCase(
                           name: 'Date',
-                          builder: (context) =>
-                              formattedDateTimeDateUseCase(context),
+                          builder: formattedDateTimeDateUseCase,
                         ),
                         WidgetbookUseCase(
                           name: 'Time',
-                          builder: (context) =>
-                              formattedDateTimeTimeUseCase(context),
+                          builder: formattedDateTimeTimeUseCase,
                         ),
                         WidgetbookUseCase(
                           name: 'TimeAgo',
-                          builder: (context) =>
-                              formattedDateTimeTimeAgoUseCase(context),
+                          builder: formattedDateTimeTimeAgoUseCase,
                         ),
                       ],
                     ),
                     WidgetbookComponent(
                       name: 'TwitterLogo',
-                      useCases: [
+                      useCases: const [
                         WidgetbookUseCase(
                           name: 'Default',
-                          builder: (context) =>
-                              twitterLogoDefaultUseCase(context),
+                          builder: twitterLogoDefaultUseCase,
                         ),
                       ],
                     ),
                     WidgetbookComponent(
                       name: 'AppIconButton',
-                      useCases: [
+                      useCases: const [
                         WidgetbookUseCase(
                           name: 'Default',
-                          builder: (context) =>
-                              appIconButtonDefaultUseCase(context),
+                          builder: appIconButtonDefaultUseCase,
                         ),
                       ],
                     ),
                     WidgetbookComponent(
                       name: 'PlayButton',
-                      useCases: [
+                      useCases: const [
                         WidgetbookUseCase(
                           name: 'Default',
-                          builder: (context) => playButtonUseCase(context),
+                          builder: playButtonUseCase,
                         ),
                       ],
                     ),
                     WidgetbookComponent(
                       name: 'AppElevatedButton',
-                      useCases: [
+                      useCases: const [
                         WidgetbookUseCase(
                           name: 'Custom',
-                          builder: (context) =>
-                              customAppElevatedButtonUseCase(context),
+                          builder: customAppElevatedButtonUseCase,
                         ),
                         WidgetbookUseCase(
                           name: 'Primary Button',
-                          builder: (context) =>
-                              primaryAppElevatedButtonUseCase(context),
+                          builder: primaryAppElevatedButtonUseCase,
                         ),
                         WidgetbookUseCase(
                           name: 'Secondary Button',
-                          builder: (context) =>
-                              secondaryAppElevatedButtonUseCase(context),
+                          builder: secondaryAppElevatedButtonUseCase,
                         ),
                         WidgetbookUseCase(
                           name: 'Primary Outline Button',
-                          builder: (context) =>
-                              primaryOutlineAppElevatedButtonUseCase(context),
+                          builder: primaryOutlineAppElevatedButtonUseCase,
                         ),
                         WidgetbookUseCase(
                           name: 'Secondary Outline Button',
-                          builder: (context) =>
-                              secondaryOutlineAppElevatedButtonUseCase(context),
+                          builder: secondaryOutlineAppElevatedButtonUseCase,
                         ),
                       ],
                     ),
-                  ],
-                  folders: [
                     WidgetbookFolder(
                       name: 'navigation',
-                      widgets: [
+                      children: [
                         WidgetbookComponent(
                           name: 'AppSidebar',
-                          useCases: [
+                          useCases: const [
                             WidgetbookUseCase(
                               name: 'Default',
-                              builder: (context) =>
-                                  appSidebarDefaultUseCase(context),
+                              builder: appSidebarDefaultUseCase,
                             ),
                           ],
                         ),
                         WidgetbookComponent(
                           name: 'DrawerPageWrapper',
-                          useCases: [
+                          useCases: const [
                             WidgetbookUseCase(
                               name: 'Default',
-                              builder: (context) =>
-                                  drawerPageWrapperDefaultUseCase(context),
+                              builder: drawerPageWrapperDefaultUseCase,
                             ),
                           ],
                         ),
                         WidgetbookComponent(
                           name: 'AppBottomNavigationBar',
-                          useCases: [
+                          useCases: const [
                             WidgetbookUseCase(
                               name: 'Default',
-                              builder: (context) =>
-                                  appBottomNavigationBarDefaultUseCase(context),
+                              builder: appBottomNavigationBarDefaultUseCase,
                             ),
                           ],
                         ),
                         WidgetbookComponent(
                           name: 'MenuListItem',
-                          useCases: [
+                          useCases: const [
                             WidgetbookUseCase(
                               name: 'Mobile',
-                              builder: (context) =>
-                                  menuItemDefaultUseCase(context),
+                              builder: menuItemDefaultUseCase,
                             ),
                             WidgetbookUseCase(
                               name: 'Web',
-                              builder: (context) =>
-                                  menuListItemWebUseCase(context),
+                              builder: menuListItemWebUseCase,
                             ),
                           ],
                         ),
                         WidgetbookComponent(
                           name: 'AppDrawer',
-                          useCases: [
+                          useCases: const [
                             WidgetbookUseCase(
                               name: 'Default',
-                              builder: (context) =>
-                                  appDrawerDefaultUseCase(context),
+                              builder: appDrawerDefaultUseCase,
                             ),
                           ],
                         ),
                       ],
-                      folders: [],
-                      isExpanded: true,
                     ),
                   ],
-                  isExpanded: true,
                 ),
                 WidgetbookFolder(
                   name: 'user',
-                  widgets: [
+                  children: [
                     WidgetbookComponent(
                       name: 'UserInfo',
-                      useCases: [
+                      useCases: const [
                         WidgetbookUseCase(
                           name: 'Default',
-                          builder: (context) => userInfoDefaultUseCase(context),
+                          builder: userInfoDefaultUseCase,
                         ),
                       ],
                     ),
                     WidgetbookComponent(
                       name: 'Username',
-                      useCases: [
+                      useCases: const [
                         WidgetbookUseCase(
                           name: 'Default',
-                          builder: (context) => usernameDefaultUseCase(context),
+                          builder: usernameDefaultUseCase,
                         ),
                         WidgetbookUseCase(
                           name: 'Active',
-                          builder: (context) => usernameActiveuseCase(context),
+                          builder: usernameActiveuseCase,
                         ),
                       ],
                     ),
                     WidgetbookComponent(
                       name: 'DisplayName',
-                      useCases: [
+                      useCases: const [
                         WidgetbookUseCase(
                           name: 'Default',
-                          builder: (context) =>
-                              displayNameDefaultUseCase(context),
+                          builder: displayNameDefaultUseCase,
                         ),
                         WidgetbookUseCase(
                           name: 'Active',
-                          builder: (context) =>
-                              displayNameActiveUseCase(context),
+                          builder: displayNameActiveUseCase,
                         ),
                       ],
                     ),
                     WidgetbookComponent(
                       name: 'Avatar',
-                      useCases: [
+                      useCases: const [
                         WidgetbookUseCase(
                           name: 'Default',
-                          builder: (context) => avatarDefaultUseCase(context),
+                          builder: avatarDefaultUseCase,
                         ),
                         WidgetbookUseCase(
                           name: 'Small',
-                          builder: (context) => avatarSmallUseCase(context),
+                          builder: avatarSmallUseCase,
                         ),
                         WidgetbookUseCase(
                           name: 'Smaller',
-                          builder: (context) => avatarSmallerUseCase(context),
+                          builder: avatarSmallerUseCase,
                         ),
                         WidgetbookUseCase(
                           name: 'Smallest',
-                          builder: (context) => avatarSmallestUseCase(context),
+                          builder: avatarSmallestUseCase,
                         ),
                       ],
                     ),
                     WidgetbookComponent(
                       name: 'UserFollows',
-                      useCases: [
+                      useCases: const [
                         WidgetbookUseCase(
                           name: 'Default',
-                          builder: (context) =>
-                              userFollowsDefaultUseCase(context),
+                          builder: userFollowsDefaultUseCase,
                         ),
                       ],
                     ),
                   ],
-                  folders: [],
-                  isExpanded: true,
                 ),
                 WidgetbookFolder(
                   name: 'tweet',
-                  widgets: [
+                  children: [
                     WidgetbookComponent(
                       name: 'TweetActions',
-                      useCases: [
+                      useCases: const [
                         WidgetbookUseCase(
                           name: 'Default',
-                          builder: (context) =>
-                              tweetActionsDefaultUseCase(context),
+                          builder: tweetActionsDefaultUseCase,
                         ),
                       ],
                     ),
                     WidgetbookComponent(
                       name: 'QuotedTweet',
-                      useCases: [
+                      useCases: const [
                         WidgetbookUseCase(
                           name: 'Large Media',
-                          builder: (context) =>
-                              quotedTweetLargeMediaUseCase(context),
+                          builder: quotedTweetLargeMediaUseCase,
                         ),
                         WidgetbookUseCase(
                           name: 'Thumbnail Media',
-                          builder: (context) =>
-                              quotedTweetThumbnailMediaUseCase(context),
+                          builder: quotedTweetThumbnailMediaUseCase,
                         ),
                       ],
                     ),
                     WidgetbookComponent(
                       name: 'CollapsedTweet',
-                      useCases: [
+                      useCases: const [
                         WidgetbookUseCase(
                           name: 'Default',
-                          builder: (context) =>
-                              collapsedTweetDefaultUseCase(context),
+                          builder: collapsedTweetDefaultUseCase,
                         ),
                         WidgetbookUseCase(
                           name: 'Quote Tweet',
-                          builder: (context) =>
-                              collapsedTweetQuoteTweetUseCase(context),
+                          builder: collapsedTweetQuoteTweetUseCase,
                         ),
                       ],
                     ),
                     WidgetbookComponent(
                       name: 'TweetHeader',
-                      useCases: [
+                      useCases: const [
                         WidgetbookUseCase(
                           name: 'Default',
-                          builder: (context) =>
-                              tweetHeaderDefaultUseCase(context),
+                          builder: tweetHeaderDefaultUseCase,
                         ),
                       ],
                     ),
                     WidgetbookComponent(
                       name: 'TweetMedia',
-                      useCases: [
+                      useCases: const [
                         WidgetbookUseCase(
                           name: 'Image',
-                          builder: (context) => tweetMediaImageUseCase(context),
+                          builder: tweetMediaImageUseCase,
                         ),
                         WidgetbookUseCase(
                           name: 'Gallery',
-                          builder: (context) =>
-                              tweetMediaGalleryUseCase(context),
+                          builder: tweetMediaGalleryUseCase,
                         ),
                         WidgetbookUseCase(
                           name: 'GIF',
-                          builder: (context) => tweetMediaGIFUseCase(context),
+                          builder: tweetMediaGIFUseCase,
                         ),
                       ],
                     ),
                     WidgetbookComponent(
                       name: 'TweetAnnotation',
-                      useCases: [
+                      useCases: const [
                         WidgetbookUseCase(
                           name: 'Default',
-                          builder: (context) =>
-                              tweetAnnotationDefaultUseCase(context),
+                          builder: tweetAnnotationDefaultUseCase,
                         ),
                       ],
                     ),
                     WidgetbookComponent(
                       name: 'ExpandedTweetInfo',
-                      useCases: [
+                      useCases: const [
                         WidgetbookUseCase(
                           name: 'Default',
-                          builder: (context) =>
-                              detailedTweetInfoDefaultUseCase(context),
+                          builder: detailedTweetInfoDefaultUseCase,
                         ),
                       ],
                     ),
                     WidgetbookComponent(
                       name: 'ExpandedTweet',
-                      useCases: [
+                      useCases: const [
                         WidgetbookUseCase(
                           name: 'Default',
-                          builder: (context) =>
-                              expandedTweetDefaultUseCase(context),
+                          builder: expandedTweetDefaultUseCase,
                         ),
                         WidgetbookUseCase(
                           name: 'Quote Tweet',
-                          builder: (context) =>
-                              expandedTweetQuoteTweetUseCase(context),
+                          builder: expandedTweetQuoteTweetUseCase,
                         ),
                       ],
                     ),
                     WidgetbookComponent(
                       name: 'TweetDate',
-                      useCases: [
+                      useCases: const [
                         WidgetbookUseCase(
                           name: 'Default',
-                          builder: (context) =>
-                              tweetDateDefaultuseCase(context),
+                          builder: tweetDateDefaultuseCase,
                         ),
                       ],
                     ),
-                  ],
-                  folders: [
                     WidgetbookFolder(
                       name: 'metrics',
-                      widgets: [
+                      children: [
                         WidgetbookComponent(
                           name: 'ExpandedTweetMetrics',
-                          useCases: [
+                          useCases: const [
                             WidgetbookUseCase(
                               name: 'Default',
-                              builder: (context) =>
-                                  ExpandedTweetMetricsDefaultUseCase(context),
+                              builder: ExpandedTweetMetricsDefaultUseCase,
                             ),
                           ],
                         ),
                         WidgetbookComponent(
                           name: 'Likes',
-                          useCases: [
+                          useCases: const [
                             WidgetbookUseCase(
                               name: 'Default',
-                              builder: (context) =>
-                                  likesDefaultUseCase(context),
+                              builder: likesDefaultUseCase,
                             ),
                           ],
                         ),
                         WidgetbookComponent(
                           name: 'Replies',
-                          useCases: [
+                          useCases: const [
                             WidgetbookUseCase(
                               name: 'Default',
-                              builder: (context) =>
-                                  repliesDefaultUseCase(context),
+                              builder: repliesDefaultUseCase,
                             ),
                           ],
                         ),
                         WidgetbookComponent(
                           name: 'LikeIconButton',
-                          useCases: [
+                          useCases: const [
                             WidgetbookUseCase(
                               name: 'Default',
-                              builder: (context) =>
-                                  likeIconButtnonDefaultUseCase(context),
+                              builder: likeIconButtnonDefaultUseCase,
                             ),
                           ],
                         ),
                         WidgetbookComponent(
                           name: 'Retweets',
-                          useCases: [
+                          useCases: const [
                             WidgetbookUseCase(
                               name: 'Default',
-                              builder: (context) =>
-                                  retweetsDefaultUseCase(context),
+                              builder: retweetsDefaultUseCase,
                             ),
                           ],
                         ),
                         WidgetbookComponent(
                           name: 'MetricText',
-                          useCases: [
+                          useCases: const [
                             WidgetbookUseCase(
                               name: 'Default',
-                              builder: (context) =>
-                                  metricTextDefaultUseCase(context),
+                              builder: metricTextDefaultUseCase,
                             ),
                           ],
                         ),
                       ],
-                      folders: [],
-                      isExpanded: true,
                     ),
                   ],
-                  isExpanded: true,
                 ),
               ],
-              isExpanded: true,
             ),
             WidgetbookFolder(
               name: 'home',
-              widgets: [],
-              folders: [
+              children: [
                 WidgetbookFolder(
                   name: 'pages',
-                  widgets: [
+                  children: [
                     WidgetbookComponent(
                       name: 'HomePage',
-                      useCases: [
+                      useCases: const [
                         WidgetbookUseCase(
                           name: 'Default',
-                          builder: (context) => homePageDefaultUseCase(context),
+                          builder: homePageDefaultUseCase,
                         ),
                       ],
                     ),
                   ],
-                  folders: [],
-                  isExpanded: true,
                 ),
               ],
-              isExpanded: true,
             ),
             WidgetbookFolder(
               name: 'pages',
-              widgets: [
+              children: [
                 WidgetbookComponent(
                   name: 'LoginPage',
-                  useCases: [
+                  useCases: const [
                     WidgetbookUseCase(
                       name: 'Default',
-                      builder: (context) => loginPageDefaultUseCase(context),
+                      builder: loginPageDefaultUseCase,
                     ),
                   ],
                 ),
                 WidgetbookComponent(
                   name: 'PasswordPage',
-                  useCases: [
+                  useCases: const [
                     WidgetbookUseCase(
                       name: 'Default',
-                      builder: (context) => passwordPageDefaultUseCase(context),
+                      builder: passwordPageDefaultUseCase,
                     ),
                   ],
                 ),
                 WidgetbookComponent(
                   name: 'AuthPage',
-                  useCases: [
+                  useCases: const [
                     WidgetbookUseCase(
                       name: 'Default',
-                      builder: (context) => authPageDefaultUseCase(context),
+                      builder: authPageDefaultUseCase,
                     ),
                   ],
                 ),
               ],
-              folders: [],
-              isExpanded: true,
             ),
           ],
-          widgets: [],
         ),
       ],
     );

@@ -20,12 +20,9 @@ Widget tweetMediaGalleryUseCase(BuildContext context) {
   return TweetMedia(
     tweetMedia: context.knobs.options(
       label: 'Image Count',
+      labelBuilder: (value) => '${value.length} image(s)',
       options: [
-        for (int i = 4; i >= 2; i--)
-          Option(
-            label: '$i Images',
-            value: DummyMedia.fourPhotosMedia.take(i).toList(),
-          ),
+        for (int i = 4; i >= 2; i--) DummyMedia.fourPhotosMedia.take(i).toList()
       ],
     ),
     hasDecoration: context.knobs.boolean(

@@ -7,14 +7,8 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 Widget tweetAnnotationDefaultUseCase(BuildContext context) {
   final type = context.knobs.options<TweetAnnotationType>(
     label: 'Type',
-    options: TweetAnnotationType.values
-        .map(
-          (value) => Option(
-            label: value.name.toUpperCase(),
-            value: value,
-          ),
-        )
-        .toList(),
+    labelBuilder: (value) => value.name,
+    options: TweetAnnotationType.values,
   );
   return TweetAnnotation(
     type: type,
