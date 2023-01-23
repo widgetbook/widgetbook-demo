@@ -21,6 +21,10 @@ Widget customAppElevatedButtonUseCase(BuildContext context) {
     onPressed: () {},
     borderColor: context.knobs.options<Color?>(
       label: 'Border Color',
+      labelBuilder: (value) {
+        if (value == null) return 'None';
+        return value.value.toRadixString(16);
+      },
       options: const [
         null,
         AppColors.primary,
@@ -31,6 +35,10 @@ Widget customAppElevatedButtonUseCase(BuildContext context) {
     ),
     backgroundColor: context.knobs.options<Color?>(
       label: 'Background Color',
+      labelBuilder: (value) {
+        if (value == null) return 'null';
+        return value.value.toRadixString(16);
+      },
       options: const [
         AppColors.primary,
         AppColors.secondary,
@@ -40,6 +48,10 @@ Widget customAppElevatedButtonUseCase(BuildContext context) {
     ),
     textColor: context.knobs.options<Color?>(
       label: 'Text Color',
+      labelBuilder: (value) {
+        if (value == null) return 'null';
+        return value.value.toRadixString(16);
+      },
       options: const [
         AppColors.white,
         AppColors.primary,

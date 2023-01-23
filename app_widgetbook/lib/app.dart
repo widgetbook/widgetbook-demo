@@ -31,7 +31,6 @@ List<LocalizationsDelegate<dynamic>> localizationsDelegates =
 @WidgetbookApp.material(
   name: 'App Widgetbook',
   textScaleFactors: [1, 1.5, 2],
-  foldersExpanded: true,
   devices: [
     Apple.iPhone12,
     Apple.iPhone13,

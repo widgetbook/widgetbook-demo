@@ -367,10 +367,8 @@ class HotReload extends StatelessWidget {
                       ],
                     ),
                   ],
-                  isInitiallyExpanded: true,
                 ),
               ],
-              isInitiallyExpanded: true,
             ),
             WidgetbookFolder(
               name: 'post',
@@ -408,10 +406,8 @@ class HotReload extends StatelessWidget {
                       ],
                     ),
                   ],
-                  isInitiallyExpanded: true,
                 ),
               ],
-              isInitiallyExpanded: true,
             ),
             WidgetbookFolder(
               name: 'user',
@@ -482,10 +478,8 @@ class HotReload extends StatelessWidget {
                   ],
                 ),
               ],
-              isInitiallyExpanded: true,
             ),
           ],
-          isInitiallyExpanded: true,
         ),
         WidgetbookFolder(
           name: 'home',
@@ -503,10 +497,8 @@ class HotReload extends StatelessWidget {
                   ],
                 ),
               ],
-              isInitiallyExpanded: true,
             ),
           ],
-          isInitiallyExpanded: true,
         ),
         WidgetbookFolder(
           name: 'pages',
@@ -539,7 +531,6 @@ class HotReload extends StatelessWidget {
               ],
             ),
           ],
-          isInitiallyExpanded: true,
         ),
       ],
     );
