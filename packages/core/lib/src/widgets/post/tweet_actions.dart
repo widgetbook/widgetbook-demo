@@ -47,14 +47,14 @@ class TweetActions extends StatelessWidget {
             hideValue: hideValues,
           ),
         ),
-        Expanded(
-          child: Retweets(
-            onRetweet: onRetweet,
-            onQuoteTweet: onQuoteTweet,
-            metricValue: publicMetrics.retweets,
-            hideValue: hideValues,
-          ),
-        ),
+        // Expanded(
+        //   child: Retweets(
+        //     onRetweet: onRetweet,
+        //     onQuoteTweet: onQuoteTweet,
+        //     metricValue: publicMetrics.retweets,
+        //     hideValue: hideValues,
+        //   ),
+        // ),
         Expanded(
           child: Likes(
             onLikesChanged: onLikesChanged,
@@ -65,7 +65,7 @@ class TweetActions extends StatelessWidget {
         Expanded(
           child: AppIconButton(
             size: 15,
-            icon: const Icon(TwitterIcons.share),
+            icon: const Icon(Icons.share),
             onPressed: onSharePressed,
           ),
         ),

@@ -883,10 +883,10 @@ packages:
     dependency: "direct dev"
     description:
       name: widgetbook_generator
-      sha256: c314ef271e8bb20d32b4d858c3095aa4b5208f1b9a366628dcbc87063a838901
+      sha256: "55bd6702526b022d42a586ce2b249e6ad3cb5665e9a4b78405c3bfbc9fd39ed6"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0-beta.6"
+    version: "3.0.0-beta.7"
   widgetbook_models:
     dependency: transitive
     description:

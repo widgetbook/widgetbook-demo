@@ -28,7 +28,7 @@ class Replies extends StatelessWidget {
   Widget build(BuildContext context) {
     return TweetMetric(
       metricValue: metricValue,
-      icon: const Icon(TwitterIcons.reply),
+      icon: const Icon(Icons.comment),
       iconSize: iconSize,
       onPressed: onPressed,
       hideValue: hideValue,

@@ -33,7 +33,7 @@ class Username extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = Theme.of(context).textTheme.bodyText2!.copyWith(
+    final textStyle = Theme.of(context).textTheme.bodyMedium!.copyWith(
           color: color ??
               (isActive
                   ? AppColors.primary
@@ -65,7 +65,7 @@ class Username extends StatelessWidget {
 
   Widget _buildTextWidget({required TextStyle style}) {
     return Text(
-      '@${user.username}',
+      user.username,
       style: style,
       textDirection: TextDirection.ltr,
       maxLines: 1,

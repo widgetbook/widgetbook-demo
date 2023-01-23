@@ -31,10 +31,6 @@ class TweetHeader extends StatelessWidget {
               Flexible(
                 child: DisplayName.active(user: author),
               ),
-              const AppGap.xs(),
-              Flexible(
-                child: Username(user: author),
-              ),
               const Text(' · '),
               TweetDate(date: tweetDate),
             ],

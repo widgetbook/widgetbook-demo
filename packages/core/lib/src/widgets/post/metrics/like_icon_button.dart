@@ -52,9 +52,9 @@ class _LikeIconButtonState extends State<LikeIconButton>
   void didUpdateWidget(covariant LikeIconButton oldWidget) {
     if (oldWidget.isActive != widget.isActive) {
       if (widget.isActive) {
-        animationController.forward().then((_) {
-          animationController.reset();
-        });
+        // animationController.forward().then((_) {
+        //   animationController.reset();
+        // });
       }
     }
     super.didUpdateWidget(oldWidget);
@@ -83,9 +83,9 @@ class _LikeIconButtonState extends State<LikeIconButton>
               firstChild: AnimatedOpacity(
                 opacity: widget.isActive ? 0 : 1,
                 duration: const Duration(milliseconds: 100),
-                child: const Icon(TwitterIcons.heart),
+                child: const Icon(Icons.thumb_up_outlined),
               ),
-              secondChild: const Icon(TwitterIcons.heart_fill),
+              secondChild: const Icon(Icons.thumb_up),
             ),
           ),
           Transform.translate(

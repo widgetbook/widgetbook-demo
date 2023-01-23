@@ -18,23 +18,23 @@ class AppBottomNavigationBar extends StatelessWidget {
   static final List<NavigationBarItemData> items = [
     NavigationBarItemData(
       type: NavigationBarItemType.home,
-      icon: TwitterIcons.home,
-      activeIcon: TwitterIcons.home_fill,
+      icon: Icons.home_outlined,
+      activeIcon: Icons.home,
     ),
     NavigationBarItemData(
       type: NavigationBarItemType.search,
-      icon: TwitterIcons.search,
-      activeIcon: TwitterIcons.search_fill,
+      icon: Icons.search_outlined,
+      activeIcon: Icons.search,
     ),
     NavigationBarItemData(
       type: NavigationBarItemType.notifications,
-      icon: TwitterIcons.bell,
-      activeIcon: TwitterIcons.bell_fill,
+      icon: Icons.notification_add_outlined,
+      activeIcon: Icons.notification_add,
     ),
     NavigationBarItemData(
       type: NavigationBarItemType.messages,
-      icon: TwitterIcons.mail,
-      activeIcon: TwitterIcons.mail_fill,
+      icon: Icons.message_outlined,
+      activeIcon: Icons.message,
     ),
   ];
 
