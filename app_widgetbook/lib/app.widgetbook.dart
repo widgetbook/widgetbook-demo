@@ -371,45 +371,6 @@ class HotReload extends StatelessWidget {
               ],
             ),
             WidgetbookFolder(
-              name: 'post',
-              children: [
-                WidgetbookFolder(
-                  name: 'metrics',
-                  children: [
-                    WidgetbookComponent(
-                      name: 'Likes',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) => likesDefaultUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'LikeIconButton',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              likeIconButtnonDefaultUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'MetricText',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              metricTextDefaultUseCase(context),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            WidgetbookFolder(
               name: 'user',
               children: [
                 WidgetbookComponent(
@@ -474,6 +435,45 @@ class HotReload extends StatelessWidget {
                     WidgetbookUseCase(
                       name: 'Default',
                       builder: (context) => userFollowsDefaultUseCase(context),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            WidgetbookFolder(
+              name: 'post',
+              children: [
+                WidgetbookFolder(
+                  name: 'metrics',
+                  children: [
+                    WidgetbookComponent(
+                      name: 'Likes',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) => likesDefaultUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'LikeIconButton',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) =>
+                              likeIconButtnonDefaultUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'MetricText',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) =>
+                              metricTextDefaultUseCase(context),
+                        ),
+                      ],
                     ),
                   ],
                 ),
