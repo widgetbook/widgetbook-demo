@@ -17,23 +17,15 @@ class AppDrawer extends StatelessWidget {
     return [
       MenuListItemData(
         label: AppLocalizations.of(context)!.profile,
-        icon: TwitterIcons.user,
+        icon: Icons.account_circle,
       ),
       MenuListItemData(
         label: AppLocalizations.of(context)!.lists,
-        icon: TwitterIcons.list,
-      ),
-      MenuListItemData(
-        label: AppLocalizations.of(context)!.topics,
-        icon: TwitterIcons.topics,
+        icon: Icons.newspaper,
       ),
       MenuListItemData(
         label: AppLocalizations.of(context)!.notifications,
-        icon: TwitterIcons.bell,
-      ),
-      MenuListItemData(
-        label: AppLocalizations.of(context)!.bookmarks,
-        icon: TwitterIcons.bookmark,
+        icon: Icons.notification_add,
       ),
     ];
   }
@@ -63,25 +55,6 @@ class AppDrawer extends StatelessWidget {
                     Avatar(imageUrl: user.avatarUrl),
                     const AppGap.sm(),
                     DisplayName(user: user),
-                    Username(user: user),
-                    const AppGap.md(),
-                    Row(
-                      children: [
-                        Text(
-                          '${user.following}',
-                          style: Theme.of(context).textTheme.bodyText1,
-                        ),
-                        const AppGap.xs(),
-                        Text(AppLocalizations.of(context)!.following),
-                        const AppGap.md(),
-                        Text(
-                          '${user.following}',
-                          style: Theme.of(context).textTheme.bodyText1,
-                        ),
-                        const AppGap.xs(),
-                        Text(AppLocalizations.of(context)!.followers),
-                      ],
-                    )
                   ],
                 ),
               ),
@@ -101,44 +74,13 @@ class AppDrawer extends StatelessWidget {
                       const Divider(height: 20),
                       MenuListItem(
                         label: AppLocalizations.of(context)!.settingsAndPrivacy,
-                        onTap: () {},
-                      ),
-                      MenuListItem(
-                        label: AppLocalizations.of(context)!.helpCenter,
+                        icon: Icons.settings,
                         onTap: () {},
                       ),
                     ],
                   ),
                 ),
               ),
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
-                decoration: BoxDecoration(
-                  border: Border(
-                    top: BorderSide(color: Theme.of(context).dividerColor),
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    AppIconButton(
-                      onPressed: () {},
-                      color: Theme.of(context).isDark
-                          ? AppColors.white
-                          : AppColors.black,
-                      icon: const Icon(TwitterIcons.bulb),
-                    ),
-                    AppIconButton(
-                      onPressed: () {},
-                      color: Theme.of(context).isDark
-                          ? AppColors.white
-                          : AppColors.black,
-                      icon: const Icon(TwitterIcons.qr),
-                    ),
-                  ],
-                ),
-              )
             ],
           ),
         ),

@@ -6,19 +6,14 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @WidgetbookUseCase(name: 'Default', type: DrawerPageWrapper)
 Widget drawerPageWrapperDefaultUseCase(BuildContext context) {
-  return MediaQuery(
-    data: MediaQuery.of(context).copyWith(
-      size: const Size(390, 844),
-    ),
-    child: DrawerPageWrapper(
-      user: DummyUsers.widgetbook,
-      appBarTitle: Text(
-        context.knobs.text(
-          label: 'AppBar Title',
-          initialValue: 'Home',
-        ),
+  return DrawerPageWrapper(
+    user: DummyUsers.widgetbook,
+    appBarTitle: Text(
+      context.knobs.text(
+        label: 'AppBar Title',
+        initialValue: 'Home',
       ),
-      body: Container(),
     ),
+    body: Container(),
   );
 }

@@ -1,4 +1,4 @@
-import 'package:core/src/widgets/tweet/tweet_date.dart';
+import 'package:core/src/widgets/post/tweet_date.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../../test-utils/pump_app.dart';

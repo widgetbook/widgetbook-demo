@@ -1,8 +1,8 @@
-import 'app_localizations.dart';
+import 'package:core/src/l10n/app_localizations.dart';
 
 /// The translations for English (`en`).
 class AppLocalizationsEn extends AppLocalizations {
-  AppLocalizationsEn([String locale = 'en']) : super(locale);
+  AppLocalizationsEn([super.locale = 'en']);
 
   @override
   String get widgetbook => 'Widgetbook';
@@ -56,7 +56,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get replyingTo => 'Replying to';
 
   @override
-  String get authPageTitle => 'See what\'s happening in the world right now.';
+  String get authPageTitle => "See what's happening in the world right now.";
 
   @override
   String get continueWithGoogle => 'Continue with Google';
@@ -74,13 +74,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get logIn => 'Log in';
 
   @override
-  String get termsText => 'By signing up, you agree to our Terms, Privacy Policy, and Cookie Use';
+  String get termsText =>
+      'By signing up, you agree to our Terms, Privacy Policy, and Cookie Use';
 
   @override
   String get cancel => 'Cancel';
 
   @override
-  String get loginPageTitle => 'To get started, first enter your phone, email, or @username';
+  String get loginPageTitle =>
+      'To get started, first enter your phone, email, or @username';
 
   @override
   String get phoneEmailOrUsername => 'Phone, email, or username';
@@ -101,7 +103,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profile => 'Profile';
 
   @override
-  String get lists => 'Lists';
+  String get lists => 'News';
 
   @override
   String get topics => 'Topics';
@@ -113,7 +115,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get bookmarks => 'Bookmarks';
 
   @override
-  String get settingsAndPrivacy => 'Settings and Privacy';
+  String get settingsAndPrivacy => 'Settings';
 
   @override
   String get helpCenter => 'Help Center';

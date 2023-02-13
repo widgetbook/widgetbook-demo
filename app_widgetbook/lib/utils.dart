@@ -50,14 +50,14 @@ List<Media> getMediaOptions(
   return context.knobs.options<List<Media>>(
     label: label,
     description: description,
-    labelBuilder: (value) => '${value.length} images',
+    labelBuilder: (value) => '${value.length} image(s)',
     options: [
       DummyMedia.fourPhotosMedia,
       DummyMedia.fourPhotosMedia.take(3).toList(),
       DummyMedia.fourPhotosMedia.take(2).toList(),
       DummyMedia.singlePhotoMedia,
       DummyMedia.gifMedia,
-      [],
+      []
     ],
   );
 }

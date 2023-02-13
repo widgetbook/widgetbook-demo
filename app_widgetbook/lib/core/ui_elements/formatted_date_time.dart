@@ -47,8 +47,8 @@ Widget formattedDateTimeTimeUseCase(BuildContext context) {
 Widget formattedDateTimeTimeAgoUseCase(BuildContext context) {
   return FormattedDateTime(
     date: context.knobs.options<DateTime>(
-      label: 'Date',
       labelBuilder: timeago.format,
+      label: 'Date',
       options: [
         DateTime.now(),
         DateTime.now().subtract(

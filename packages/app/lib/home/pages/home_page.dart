@@ -1,8 +1,8 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({
+class NewsPage extends StatelessWidget {
+  const NewsPage({
     super.key,
     required this.user,
     required this.homeFeed,
@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DrawerPageWrapper(
-      appBarTitle: Text('Home'),
+      appBarTitle: const Text('News'),
       body: ListView.builder(
         itemCount: homeFeed.length,
         itemBuilder: (context, index) => CollapsedTweet(

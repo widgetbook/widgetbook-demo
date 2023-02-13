@@ -40,7 +40,6 @@ Widget customAppElevatedButtonUseCase(BuildContext context) {
         return value.value.toRadixString(16);
       },
       options: const [
-        null,
         AppColors.primary,
         AppColors.secondary,
         AppColors.pink,
@@ -54,11 +53,10 @@ Widget customAppElevatedButtonUseCase(BuildContext context) {
         return value.value.toRadixString(16);
       },
       options: const [
-        null,
+        AppColors.white,
         AppColors.primary,
         AppColors.secondary,
         AppColors.pink,
-        AppColors.white,
       ],
     ),
     height: context.knobs.boolean(label: 'Is Large') ? 56 : 40,
