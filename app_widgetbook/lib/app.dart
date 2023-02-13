@@ -30,7 +30,7 @@ List<LocalizationsDelegate<dynamic>> localizationsDelegates =
 /// Entry point for the App's Widgetbook
 @WidgetbookApp.material(
   name: 'App Widgetbook',
-  textScaleFactors: [1, 1.5, 2],
+  textScaleFactors: [1, 1.5, 2, 2.5],
   devices: [
     Apple.iPhone12,
     Apple.iPhone13,
