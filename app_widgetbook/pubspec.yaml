@@ -14,14 +14,14 @@ dependencies:
   cupertino_icons: ^1.0.5
   flutter:
     sdk: flutter
-  widgetbook: ^3.0.0-beta.6
   core:
     path: ../packages/core
   auth:
     path: ../packages/auth
   app:
     path: ../packages/app
-  widgetbook_annotation: ^3.0.0-beta.2
+  widgetbook: ^3.0.0-beta.8
+  widgetbook_annotation: ^3.0.0-beta.4
   timeago: ^3.3.0
 
 dev_dependencies:
@@ -29,7 +29,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   very_good_analysis: ^3.1.0
-  widgetbook_generator: ^3.0.0-beta.5
+  widgetbook_generator: ^3.0.0-beta.8
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
