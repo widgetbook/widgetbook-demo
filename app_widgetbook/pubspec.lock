@@ -47,6 +47,14 @@ packages:
       relative: true
     source: path
     version: "0.1.0+1"
+  bloc:
+    dependency: transitive
+    description:
+      name: bloc
+      sha256: "658a5ae59edcf1e58aac98b000a71c762ad8f46f1394c34a52050cafb3e11a80"
+      url: "https://pub.dev"
+    source: hosted
+    version: "8.1.1"
   boolean_selector:
     dependency: transitive
     description:
@@ -275,6 +283,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_bloc:
+    dependency: transitive
+    description:
+      name: flutter_bloc
+      sha256: "434951eea948dbe87f737b674281465f610b8259c16c097b8163ce138749a775"
+      url: "https://pub.dev"
+    source: hosted
+    version: "8.1.2"
   flutter_blurhash:
     dependency: transitive
     description:
@@ -342,10 +358,10 @@ packages:
     dependency: transitive
     description:
       name: go_router
-      sha256: "6d1607d76bb3a6ef52947ddae870948b9fd5bc7a5d1ef992ec4bed2fc2006fc3"
+      sha256: "5a0b2e0bc88a006c09d2b419004ffabecf83a74520b8852ea148f22e82634c27"
       url: "https://pub.dev"
     source: hosted
-    version: "5.2.4"
+    version: "6.0.6"
   graphs:
     dependency: transitive
     description:
@@ -843,42 +859,42 @@ packages:
     dependency: "direct main"
     description:
       name: widgetbook
-      sha256: bd221a7baa00d56289b938b9977ff332735c707130b52f714e0d34cdc311c0dc
+      sha256: f2b1a604a3bde41bc1a10edddff4979323e01749a5ce892476d58954ef7d11dc
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0-beta.6"
+    version: "3.0.0-beta.8"
   widgetbook_annotation:
     dependency: "direct main"
     description:
       name: widgetbook_annotation
-      sha256: fbd8a2d04e6302c1d990935de4bd5b3ff015f9d8ce8a8cdfff6317b43d9cc196
+      sha256: "8441d82bd96902addb5aa7892fa0fd75af363a071f14950d2fe20a5e3f8fb96e"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0-beta.3"
+    version: "3.0.0-beta.4"
   widgetbook_core:
     dependency: transitive
     description:
       name: widgetbook_core
-      sha256: "41904edc3115f3a34a110984678da28a7dac7a35d2278c1cc5c48721236e6aad"
+      sha256: "25fc720fdf848723275fa3f8683605b74531ca4210c9227394b517916cdee98a"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0-beta.1"
+    version: "3.0.0-beta.5"
   widgetbook_generator:
     dependency: "direct dev"
     description:
       name: widgetbook_generator
-      sha256: "195ae6d6021fc9ab7c5ce88867854ad9a0b7d69c125b2a5c9671bbf8cf7a797f"
+      sha256: "7b02bdac9c3cf66af28a5bcd3f27d967a483b547d5786c7982bb78dbde4b1af6"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0-beta.5"
+    version: "3.0.0-beta.8"
   widgetbook_models:
     dependency: transitive
     description:
       name: widgetbook_models
-      sha256: "53c76033d793d5233e07d794f8f9b1fa1fb9f3b460c504dcdcd191af5f35cb71"
+      sha256: "8cd05feb1e66b81c3285a2c92e94e97ec9ef9306bd5712f88062ba0b80cd5911"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0-beta.1"
+    version: "3.0.0-beta.2"
   win32:
     dependency: transitive
     description:

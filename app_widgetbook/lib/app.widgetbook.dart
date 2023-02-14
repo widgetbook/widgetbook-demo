@@ -64,9 +64,6 @@ class HotReload extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Widgetbook.material(
-      appInfo: AppInfo(
-        name: 'App Widgetbook',
-      ),
       addons: [
         CustomThemeAddon<ThemeData>(
           setting: ThemeSetting<ThemeData>(
@@ -234,422 +231,158 @@ class HotReload extends StatelessWidget {
           ),
         ),
       ],
-      children: [
-        WidgetbookCategory(
-          name: 'use cases',
+      directories: [
+        WidgetbookFolder(
+          name: 'widgets',
           children: [
+            WidgetbookComponent(
+              name: 'AuthButtons',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Default',
+                  builder: (context) => authButtonsDefaultUseCase(context),
+                ),
+              ],
+            ),
             WidgetbookFolder(
-              name: 'widgets',
+              name: 'ui',
               children: [
                 WidgetbookComponent(
-                  name: 'AuthButtons',
+                  name: 'FormattedDateTime',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Date & Time',
+                      builder: (context) =>
+                          formattedDateTimeDateAndTimeUseCase(context),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Date',
+                      builder: (context) =>
+                          formattedDateTimeDateUseCase(context),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Time',
+                      builder: (context) =>
+                          formattedDateTimeTimeUseCase(context),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'TimeAgo',
+                      builder: (context) =>
+                          formattedDateTimeTimeAgoUseCase(context),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'TwitterLogo',
                   useCases: [
                     WidgetbookUseCase(
                       name: 'Default',
-                      builder: (context) => authButtonsDefaultUseCase(context),
+                      builder: (context) => twitterLogoDefaultUseCase(context),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'AppIconButton',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) =>
+                          appIconButtonDefaultUseCase(context),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'PlayButton',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => playButtonUseCase(context),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'AppElevatedButton',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Custom',
+                      builder: (context) =>
+                          customAppElevatedButtonUseCase(context),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Primary Button',
+                      builder: (context) =>
+                          primaryAppElevatedButtonUseCase(context),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Secondary Button',
+                      builder: (context) =>
+                          secondaryAppElevatedButtonUseCase(context),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Primary Outline Button',
+                      builder: (context) =>
+                          primaryOutlineAppElevatedButtonUseCase(context),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Secondary Outline Button',
+                      builder: (context) =>
+                          secondaryOutlineAppElevatedButtonUseCase(context),
                     ),
                   ],
                 ),
                 WidgetbookFolder(
-                  name: 'ui',
+                  name: 'navigation',
                   children: [
                     WidgetbookComponent(
-                      name: 'FormattedDateTime',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Date & Time',
-                          builder: (context) =>
-                              formattedDateTimeDateAndTimeUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Date',
-                          builder: (context) =>
-                              formattedDateTimeDateUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Time',
-                          builder: (context) =>
-                              formattedDateTimeTimeUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'TimeAgo',
-                          builder: (context) =>
-                              formattedDateTimeTimeAgoUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'TwitterLogo',
+                      name: 'AppSidebar',
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) =>
-                              twitterLogoDefaultUseCase(context),
+                              appSidebarDefaultUseCase(context),
                         ),
                       ],
                     ),
                     WidgetbookComponent(
-                      name: 'AppIconButton',
+                      name: 'DrawerPageWrapper',
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) =>
-                              appIconButtonDefaultUseCase(context),
+                              drawerPageWrapperDefaultUseCase(context),
                         ),
                       ],
                     ),
                     WidgetbookComponent(
-                      name: 'PlayButton',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) => playButtonUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'AppElevatedButton',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Custom',
-                          builder: (context) =>
-                              customAppElevatedButtonUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Primary Button',
-                          builder: (context) =>
-                              primaryAppElevatedButtonUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Secondary Button',
-                          builder: (context) =>
-                              secondaryAppElevatedButtonUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Primary Outline Button',
-                          builder: (context) =>
-                              primaryOutlineAppElevatedButtonUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Secondary Outline Button',
-                          builder: (context) =>
-                              secondaryOutlineAppElevatedButtonUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookFolder(
-                      name: 'navigation',
-                      children: [
-                        WidgetbookComponent(
-                          name: 'AppSidebar',
-                          useCases: [
-                            WidgetbookUseCase(
-                              name: 'Default',
-                              builder: (context) =>
-                                  appSidebarDefaultUseCase(context),
-                            ),
-                          ],
-                        ),
-                        WidgetbookComponent(
-                          name: 'DrawerPageWrapper',
-                          useCases: [
-                            WidgetbookUseCase(
-                              name: 'Default',
-                              builder: (context) =>
-                                  drawerPageWrapperDefaultUseCase(context),
-                            ),
-                          ],
-                        ),
-                        WidgetbookComponent(
-                          name: 'AppBottomNavigationBar',
-                          useCases: [
-                            WidgetbookUseCase(
-                              name: 'Default',
-                              builder: (context) =>
-                                  appBottomNavigationBarDefaultUseCase(context),
-                            ),
-                          ],
-                        ),
-                        WidgetbookComponent(
-                          name: 'MenuListItem',
-                          useCases: [
-                            WidgetbookUseCase(
-                              name: 'Mobile',
-                              builder: (context) =>
-                                  menuItemDefaultUseCase(context),
-                            ),
-                            WidgetbookUseCase(
-                              name: 'Web',
-                              builder: (context) =>
-                                  menuListItemWebUseCase(context),
-                            ),
-                          ],
-                        ),
-                        WidgetbookComponent(
-                          name: 'AppDrawer',
-                          useCases: [
-                            WidgetbookUseCase(
-                              name: 'Default',
-                              builder: (context) =>
-                                  appDrawerDefaultUseCase(context),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                WidgetbookFolder(
-                  name: 'user',
-                  children: [
-                    WidgetbookComponent(
-                      name: 'UserInfo',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) => userInfoDefaultUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'Username',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) => usernameDefaultUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Active',
-                          builder: (context) => usernameActiveuseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'DisplayName',
+                      name: 'AppBottomNavigationBar',
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) =>
-                              displayNameDefaultUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Active',
-                          builder: (context) =>
-                              displayNameActiveUseCase(context),
+                              appBottomNavigationBarDefaultUseCase(context),
                         ),
                       ],
                     ),
                     WidgetbookComponent(
-                      name: 'Avatar',
+                      name: 'MenuListItem',
                       useCases: [
                         WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) => avatarDefaultUseCase(context),
+                          name: 'Mobile',
+                          builder: (context) => menuItemDefaultUseCase(context),
                         ),
                         WidgetbookUseCase(
-                          name: 'Small',
-                          builder: (context) => avatarSmallUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Smaller',
-                          builder: (context) => avatarSmallerUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Smallest',
-                          builder: (context) => avatarSmallestUseCase(context),
+                          name: 'Web',
+                          builder: (context) => menuListItemWebUseCase(context),
                         ),
                       ],
                     ),
                     WidgetbookComponent(
-                      name: 'UserFollows',
+                      name: 'AppDrawer',
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) =>
-                              userFollowsDefaultUseCase(context),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                WidgetbookFolder(
-                  name: 'tweet',
-                  children: [
-                    WidgetbookComponent(
-                      name: 'TweetActions',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              tweetActionsDefaultUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'QuotedTweet',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Large Media',
-                          builder: (context) =>
-                              quotedTweetLargeMediaUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Thumbnail Media',
-                          builder: (context) =>
-                              quotedTweetThumbnailMediaUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'CollapsedTweet',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              collapsedTweetDefaultUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Quote Tweet',
-                          builder: (context) =>
-                              collapsedTweetQuoteTweetUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'TweetHeader',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              tweetHeaderDefaultUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'TweetMedia',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Image',
-                          builder: (context) => tweetMediaImageUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Gallery',
-                          builder: (context) =>
-                              tweetMediaGalleryUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'GIF',
-                          builder: (context) => tweetMediaGIFUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'TweetAnnotation',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              tweetAnnotationDefaultUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'ExpandedTweetInfo',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              detailedTweetInfoDefaultUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'ExpandedTweet',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              expandedTweetDefaultUseCase(context),
-                        ),
-                        WidgetbookUseCase(
-                          name: 'Quote Tweet',
-                          builder: (context) =>
-                              expandedTweetQuoteTweetUseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookComponent(
-                      name: 'TweetDate',
-                      useCases: [
-                        WidgetbookUseCase(
-                          name: 'Default',
-                          builder: (context) =>
-                              tweetDateDefaultuseCase(context),
-                        ),
-                      ],
-                    ),
-                    WidgetbookFolder(
-                      name: 'metrics',
-                      children: [
-                        WidgetbookComponent(
-                          name: 'ExpandedTweetMetrics',
-                          useCases: [
-                            WidgetbookUseCase(
-                              name: 'Default',
-                              builder: (context) =>
-                                  ExpandedTweetMetricsDefaultUseCase(context),
-                            ),
-                          ],
-                        ),
-                        WidgetbookComponent(
-                          name: 'Likes',
-                          useCases: [
-                            WidgetbookUseCase(
-                              name: 'Default',
-                              builder: (context) =>
-                                  likesDefaultUseCase(context),
-                            ),
-                          ],
-                        ),
-                        WidgetbookComponent(
-                          name: 'Replies',
-                          useCases: [
-                            WidgetbookUseCase(
-                              name: 'Default',
-                              builder: (context) =>
-                                  repliesDefaultUseCase(context),
-                            ),
-                          ],
-                        ),
-                        WidgetbookComponent(
-                          name: 'LikeIconButton',
-                          useCases: [
-                            WidgetbookUseCase(
-                              name: 'Default',
-                              builder: (context) =>
-                                  likeIconButtnonDefaultUseCase(context),
-                            ),
-                          ],
-                        ),
-                        WidgetbookComponent(
-                          name: 'Retweets',
-                          useCases: [
-                            WidgetbookUseCase(
-                              name: 'Default',
-                              builder: (context) =>
-                                  retweetsDefaultUseCase(context),
-                            ),
-                          ],
-                        ),
-                        WidgetbookComponent(
-                          name: 'MetricText',
-                          useCases: [
-                            WidgetbookUseCase(
-                              name: 'Default',
-                              builder: (context) =>
-                                  metricTextDefaultUseCase(context),
-                            ),
-                          ],
+                              appDrawerDefaultUseCase(context),
                         ),
                       ],
                     ),
@@ -658,17 +391,244 @@ class HotReload extends StatelessWidget {
               ],
             ),
             WidgetbookFolder(
-              name: 'home',
+              name: 'user',
               children: [
+                WidgetbookComponent(
+                  name: 'UserInfo',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => userInfoDefaultUseCase(context),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'Username',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => usernameDefaultUseCase(context),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Active',
+                      builder: (context) => usernameActiveuseCase(context),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'DisplayName',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => displayNameDefaultUseCase(context),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Active',
+                      builder: (context) => displayNameActiveUseCase(context),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'Avatar',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => avatarDefaultUseCase(context),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Small',
+                      builder: (context) => avatarSmallUseCase(context),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Smaller',
+                      builder: (context) => avatarSmallerUseCase(context),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Smallest',
+                      builder: (context) => avatarSmallestUseCase(context),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'UserFollows',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => userFollowsDefaultUseCase(context),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            WidgetbookFolder(
+              name: 'tweet',
+              children: [
+                WidgetbookComponent(
+                  name: 'TweetActions',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => tweetActionsDefaultUseCase(context),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'QuotedTweet',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Large Media',
+                      builder: (context) =>
+                          quotedTweetLargeMediaUseCase(context),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Thumbnail Media',
+                      builder: (context) =>
+                          quotedTweetThumbnailMediaUseCase(context),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'CollapsedTweet',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) =>
+                          collapsedTweetDefaultUseCase(context),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Quote Tweet',
+                      builder: (context) =>
+                          collapsedTweetQuoteTweetUseCase(context),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'TweetHeader',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => tweetHeaderDefaultUseCase(context),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'TweetMedia',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Image',
+                      builder: (context) => tweetMediaImageUseCase(context),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Gallery',
+                      builder: (context) => tweetMediaGalleryUseCase(context),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'GIF',
+                      builder: (context) => tweetMediaGIFUseCase(context),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'TweetAnnotation',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) =>
+                          tweetAnnotationDefaultUseCase(context),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'ExpandedTweetInfo',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) =>
+                          detailedTweetInfoDefaultUseCase(context),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'ExpandedTweet',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) =>
+                          expandedTweetDefaultUseCase(context),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Quote Tweet',
+                      builder: (context) =>
+                          expandedTweetQuoteTweetUseCase(context),
+                    ),
+                  ],
+                ),
+                WidgetbookComponent(
+                  name: 'TweetDate',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'Default',
+                      builder: (context) => tweetDateDefaultuseCase(context),
+                    ),
+                  ],
+                ),
                 WidgetbookFolder(
-                  name: 'pages',
+                  name: 'metrics',
                   children: [
                     WidgetbookComponent(
-                      name: 'HomePage',
+                      name: 'ExpandedTweetMetrics',
                       useCases: [
                         WidgetbookUseCase(
                           name: 'Default',
-                          builder: (context) => homePageDefaultUseCase(context),
+                          builder: (context) =>
+                              ExpandedTweetMetricsDefaultUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'Likes',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) => likesDefaultUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'Replies',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) => repliesDefaultUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'LikeIconButton',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) =>
+                              likeIconButtnonDefaultUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'Retweets',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) => retweetsDefaultUseCase(context),
+                        ),
+                      ],
+                    ),
+                    WidgetbookComponent(
+                      name: 'MetricText',
+                      useCases: [
+                        WidgetbookUseCase(
+                          name: 'Default',
+                          builder: (context) =>
+                              metricTextDefaultUseCase(context),
                         ),
                       ],
                     ),
@@ -676,35 +636,54 @@ class HotReload extends StatelessWidget {
                 ),
               ],
             ),
+          ],
+        ),
+        WidgetbookFolder(
+          name: 'home',
+          children: [
             WidgetbookFolder(
               name: 'pages',
               children: [
                 WidgetbookComponent(
-                  name: 'LoginPage',
+                  name: 'HomePage',
                   useCases: [
                     WidgetbookUseCase(
                       name: 'Default',
-                      builder: (context) => loginPageDefaultUseCase(context),
+                      builder: (context) => homePageDefaultUseCase(context),
                     ),
                   ],
                 ),
-                WidgetbookComponent(
-                  name: 'PasswordPage',
-                  useCases: [
-                    WidgetbookUseCase(
-                      name: 'Default',
-                      builder: (context) => passwordPageDefaultUseCase(context),
-                    ),
-                  ],
+              ],
+            ),
+          ],
+        ),
+        WidgetbookFolder(
+          name: 'pages',
+          children: [
+            WidgetbookComponent(
+              name: 'LoginPage',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Default',
+                  builder: (context) => loginPageDefaultUseCase(context),
                 ),
-                WidgetbookComponent(
-                  name: 'AuthPage',
-                  useCases: [
-                    WidgetbookUseCase(
-                      name: 'Default',
-                      builder: (context) => authPageDefaultUseCase(context),
-                    ),
-                  ],
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'PasswordPage',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Default',
+                  builder: (context) => passwordPageDefaultUseCase(context),
+                ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'AuthPage',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Default',
+                  builder: (context) => authPageDefaultUseCase(context),
                 ),
               ],
             ),
