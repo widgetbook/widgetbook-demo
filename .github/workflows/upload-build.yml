@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: '0'
 
       - name: Setup flutter
         uses: subosito/flutter-action@v2
@@ -30,7 +32,7 @@ jobs:
         run: flutter build web -t lib/app.widgetbook.dart
 
       - name: Install Widgetbook CLI
-        run: dart pub global activate widgetbook_cli 3.0.0-beta.17
+        run: dart pub global activate widgetbook_cli 3.0.0-beta.20
 
       - name: Upload Widgetbook
         run: |

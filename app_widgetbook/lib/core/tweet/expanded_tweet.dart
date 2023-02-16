@@ -6,7 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart' show Knobs, Option;
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@WidgetbookUseCase(name: 'Default', type: ExpandedTweet)
+@WidgetbookUseCase(
+  name: 'Default',
+  type: ExpandedTweet,
+  designLink:
+      'https://www.figma.com/file/taoQSMi6WeUgzEoZvZmHmI/Widgetbook-Demo-App?node-id=215%3A1153&t=HvlZdc2vGkHtmtHU-4',
+)
 Widget expandedTweetDefaultUseCase(BuildContext context) {
   return ExpandedTweet(
     tweet: Tweet(
@@ -59,7 +64,12 @@ Widget expandedTweetDefaultUseCase(BuildContext context) {
   );
 }
 
-@WidgetbookUseCase(name: 'Quote Tweet', type: ExpandedTweet)
+@WidgetbookUseCase(
+  name: 'Quote Tweet',
+  type: ExpandedTweet,
+  designLink:
+      'https://www.figma.com/file/taoQSMi6WeUgzEoZvZmHmI/Widgetbook-Demo-App?node-id=261%3A7189&t=HvlZdc2vGkHtmtHU-4',
+)
 Widget expandedTweetQuoteTweetUseCase(BuildContext context) {
   return ExpandedTweet(
     tweet: Tweet(
