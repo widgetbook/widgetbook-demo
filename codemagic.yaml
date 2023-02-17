@@ -1,0 +1,38 @@
+workflows:
+  widgetbook-workflow:
+    name: Widgetbook Workflow
+    working_directory: app_widgetbook
+    triggering:
+      events:
+        - pull_request
+      branch_patterns:
+        - pattern: '*'
+          include: true
+          source: true
+    environment:
+      # Used so the $WIDGETBOOK_API_KEY is accessible as it's part of the
+      # "Widgetbook Credentials" group
+      groups:
+        - Widgetbook Credentials
+    scripts:
+      - name: Get Flutter packages
+        script: | 
+          flutter packages pub get
+      - name: Get dependencies
+        script: flutter pub get
+
+      - name: Run build runner
+        script: flutter pub run build_runner build --delete-conflicting-outputs
+
+      - name: Build Website
+        script: flutter build web -t lib/app.widgetbook.dart
+
+      - name: Install Widgetbook CLI
+        script: dart pub global activate widgetbook_cli 3.0.0-beta.22
+
+      - name: Upload Widgetbook
+        script: |
+          widgetbook publish \
+                --api-key $WIDGETBOOK_API_KEY \
+                --branch $CM_BRANCH \
+                --base-branch $CM_PULL_REQUEST_DEST
