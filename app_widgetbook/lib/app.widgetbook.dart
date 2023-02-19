@@ -581,7 +581,7 @@ class HotReload extends StatelessWidget {
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) =>
-                              ExpandedTweetMetricsDefaultUseCase(context),
+                              expandedTweetMetricsDefaultUseCase(context),
                         ),
                       ],
                     ),
@@ -609,7 +609,7 @@ class HotReload extends StatelessWidget {
                         WidgetbookUseCase(
                           name: 'Default',
                           builder: (context) =>
-                              likeIconButtnonDefaultUseCase(context),
+                              likeIconButtonDefaultUseCase(context),
                         ),
                       ],
                     ),

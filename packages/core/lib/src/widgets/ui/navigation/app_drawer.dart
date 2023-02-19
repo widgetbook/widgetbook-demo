@@ -69,14 +69,14 @@ class AppDrawer extends StatelessWidget {
                       children: [
                         Text(
                           '${user.following}',
-                          style: Theme.of(context).textTheme.bodyText1,
+                          style: Theme.of(context).textTheme.bodyLarge,
                         ),
                         const AppGap.xs(),
                         Text(AppLocalizations.of(context)!.following),
                         const AppGap.md(),
                         Text(
                           '${user.following}',
-                          style: Theme.of(context).textTheme.bodyText1,
+                          style: Theme.of(context).textTheme.bodyLarge,
                         ),
                         const AppGap.xs(),
                         Text(AppLocalizations.of(context)!.followers),

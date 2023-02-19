@@ -137,7 +137,7 @@ class CollapsedTweet extends StatelessWidget {
                           AppLocalizations.of(context)!.showThisThread,
                           style: Theme.of(context)
                               .primaryTextTheme
-                              .bodyText2!
+                              .bodyMedium!
                               .copyWith(
                                 color: AppColors.primary,
                               ),
@@ -181,7 +181,7 @@ class CollapsedTweet extends StatelessWidget {
                             AppLocalizations.of(context)!.showMoreReplies,
                             style: Theme.of(context)
                                 .primaryTextTheme
-                                .bodyText2!
+                                .bodyMedium!
                                 .copyWith(
                                   color: AppColors.primary,
                                 ),

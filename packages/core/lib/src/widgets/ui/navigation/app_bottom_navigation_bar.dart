@@ -10,8 +10,10 @@ class AppBottomNavigationBar extends StatelessWidget {
     required this.currentIndex,
   });
 
+  /// Index of currently active navigation bar item
   final int currentIndex;
 
+  /// Callback for changing active navigation bar item
   final ValueChanged<int> onItemChanged;
 
   /// List of bottom navigation bar items

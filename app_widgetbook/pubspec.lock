@@ -316,10 +316,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_markdown
-      sha256: "981442432b632237ffc1cf8092b4173b9e9f2278b5740637287c3069b51c8f09"
+      sha256: "7b25c10de1fea883f3c4f9b8389506b54053cd00807beab69fd65c8653a2711f"
       url: "https://pub.dev"
     source: hosted
-    version: "0.6.13"
+    version: "0.6.14"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -430,10 +430,10 @@ packages:
     dependency: transitive
     description:
       name: json_annotation
-      sha256: "3520fa844009431b5d4491a5a778603520cdc399ab3406332dcc50f93547258c"
+      sha256: c33da08e136c3df0190bd5bbe51ae1df4a7d96e7954d1d7249fea2968a72d317
       url: "https://pub.dev"
     source: hosted
-    version: "4.7.0"
+    version: "4.8.0"
   logging:
     dependency: transitive
     description:
@@ -446,10 +446,10 @@ packages:
     dependency: transitive
     description:
       name: markdown
-      sha256: c2b81e184067b41d0264d514f7cdaa2c02d38511e39d6521a1ccc238f6d7b3f2
+      sha256: b3c60dee8c2af50ad0e6e90cceba98e47718a6ee0a7a6772c77846a0cc21f78b
       url: "https://pub.dev"
     source: hosted
-    version: "6.0.1"
+    version: "7.0.1"
   matcher:
     dependency: transitive
     description:
@@ -795,18 +795,18 @@ packages:
     dependency: "direct dev"
     description:
       name: very_good_analysis
-      sha256: "4815adc7ded57657038d2bb2a7f332c50e3c8152f7d3c6acf8f6b7c0cc81e5e2"
+      sha256: ebc48c51db35beeeec8c414e32f7bd78e612bd7f5992ccb0d46e19edaeb40b08
       url: "https://pub.dev"
     source: hosted
-    version: "3.1.0"
+    version: "4.0.0+1"
   video_player:
     dependency: transitive
     description:
       name: video_player
-      sha256: "86b4fb9e30613ef4ff7e47367bfec4b080ab17205b7d969cd12bbebde49476b1"
+      sha256: "59f7f31c919c59cbedd37c617317045f5f650dc0eeb568b0b0de9a36472bdb28"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.10"
+    version: "2.5.1"
   video_player_android:
     dependency: transitive
     description:
@@ -859,42 +859,42 @@ packages:
     dependency: "direct main"
     description:
       name: widgetbook
-      sha256: f2b1a604a3bde41bc1a10edddff4979323e01749a5ce892476d58954ef7d11dc
+      sha256: af7e26815c1698ae813c13adb0322cf8b52a67577044bfb1b4b076502a49fe93
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0-beta.8"
+    version: "3.0.0-beta.9"
   widgetbook_annotation:
     dependency: "direct main"
     description:
       name: widgetbook_annotation
-      sha256: "8441d82bd96902addb5aa7892fa0fd75af363a071f14950d2fe20a5e3f8fb96e"
+      sha256: "1dbfdc808399d17d9dd45791dc55734801a2fef82e0e55f3584f918756da9818"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0-beta.4"
+    version: "3.0.0-beta.5"
   widgetbook_core:
     dependency: transitive
     description:
       name: widgetbook_core
-      sha256: "25fc720fdf848723275fa3f8683605b74531ca4210c9227394b517916cdee98a"
+      sha256: "891224689a17646be29f25bf3faff6df7d26195e57cf9daba93e95eae271610f"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0-beta.5"
+    version: "3.0.0-beta.6"
   widgetbook_generator:
     dependency: "direct dev"
     description:
       name: widgetbook_generator
-      sha256: "7b02bdac9c3cf66af28a5bcd3f27d967a483b547d5786c7982bb78dbde4b1af6"
+      sha256: efb10018fedd4ab8a9035b024e182fc6e68415342a3bbd19252afa411247eb06
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0-beta.8"
+    version: "3.0.0-beta.9"
   widgetbook_models:
     dependency: transitive
     description:
       name: widgetbook_models
-      sha256: "8cd05feb1e66b81c3285a2c92e94e97ec9ef9306bd5712f88062ba0b80cd5911"
+      sha256: f3e146fe403c1620532deca01ece616fbdaa6a5ee623efd6196b761ba59b4ac9
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0-beta.2"
+    version: "3.0.0-beta.3"
   win32:
     dependency: transitive
     description:
@@ -920,5 +920,5 @@ packages:
     source: hosted
     version: "3.1.1"
 sdks:
-  dart: ">=2.18.5 <4.0.0"
-  flutter: ">=3.3.0"
+  dart: ">=2.19.0 <3.0.0"
+  flutter: ">=3.3.7"

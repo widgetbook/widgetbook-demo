@@ -45,11 +45,11 @@ class LoginPage extends StatelessWidget {
                   const AppGap.lg(),
                   Text(
                     AppLocalizations.of(context)!.loginPageTitle,
-                    style: Theme.of(context).textTheme.headline4,
+                    style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   const AppGap.md(),
                   TextFormField(
-                    style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           color: Theme.of(context).brightness == Brightness.dark
                               ? AppColors.white
                               : AppColors.black,

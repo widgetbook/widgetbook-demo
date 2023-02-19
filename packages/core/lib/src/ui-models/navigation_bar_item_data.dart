@@ -19,9 +19,14 @@ class NavigationBarItemData {
   final IconData activeIcon;
 }
 
+/// Type of Navigation Bar Item
 enum NavigationBarItemType {
+  /// Home Navigation bar item
   home,
+  /// Search Navigation bar item
   search,
+  /// Notifications Navigation bar item
   notifications,
+  /// Messages Navigation bar item
   messages,
 }

@@ -66,24 +66,24 @@ class AppThemes {
         color: isDark ? AppColors.whiteLight : AppColors.textLight,
       ),
       textTheme: TextTheme(
-        headline1: AppTextStyles.h1,
-        headline2: AppTextStyles.h2,
-        headline3: AppTextStyles.h3.copyWith(
+        displayLarge: AppTextStyles.h1,
+        displayMedium: AppTextStyles.h2,
+        displaySmall: AppTextStyles.h3.copyWith(
           color: isDark ? AppColors.white : AppColors.black,
         ),
-        headline4: AppTextStyles.h4.copyWith(
+        headlineMedium: AppTextStyles.h4.copyWith(
           color: isDark ? AppColors.white : AppColors.black,
         ),
-        headline5: AppTextStyles.h5,
-        caption: AppTextStyles.caption.copyWith(
+        headlineSmall: AppTextStyles.h5,
+        bodySmall: AppTextStyles.caption.copyWith(
           color: isDark ? AppColors.whiteLight : AppColors.textLight,
         ),
-        bodyText1: AppTextStyles.bodyBold,
-        bodyText2: AppTextStyles.body.copyWith(
+        bodyLarge: AppTextStyles.bodyBold,
+        bodyMedium: AppTextStyles.body.copyWith(
           color: isDark ? AppColors.whiteLight : AppColors.textLight,
         ),
-        subtitle1: AppTextStyles.bodySmBold,
-        subtitle2: AppTextStyles.bodySm.copyWith(
+        titleMedium: AppTextStyles.bodySmBold,
+        titleSmall: AppTextStyles.bodySm.copyWith(
           color: isDark ? AppColors.whiteLight : AppColors.textLight,
         ),
       ),

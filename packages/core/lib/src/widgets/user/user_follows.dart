@@ -27,7 +27,7 @@ class UserFollows extends StatelessWidget {
           '${user.following}',
           style: Theme.of(context)
               .textTheme
-              .bodyText1!
+              .bodyLarge!
               .copyWith(fontSize: fontSize),
         ),
         const AppGap.xs(),
@@ -35,7 +35,7 @@ class UserFollows extends StatelessWidget {
           AppLocalizations.of(context)!.following,
           style: Theme.of(context)
               .textTheme
-              .bodyText2!
+              .bodyMedium!
               .copyWith(fontSize: fontSize),
         ),
         const AppGap.md(),
@@ -43,7 +43,7 @@ class UserFollows extends StatelessWidget {
           '${user.following}',
           style: Theme.of(context)
               .textTheme
-              .bodyText1!
+              .bodyLarge!
               .copyWith(fontSize: fontSize),
         ),
         const AppGap.xs(),
@@ -51,7 +51,7 @@ class UserFollows extends StatelessWidget {
           AppLocalizations.of(context)!.followers,
           style: Theme.of(context)
               .textTheme
-              .bodyText2!
+              .bodyMedium!
               .copyWith(fontSize: fontSize),
         ),
       ],

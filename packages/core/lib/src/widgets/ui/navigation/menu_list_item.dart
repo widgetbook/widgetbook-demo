@@ -61,7 +61,7 @@ class MenuListItem extends StatelessWidget {
             if (label != null)
               Text(
                 label!,
-                style: Theme.of(context).textTheme.headline5!.copyWith(
+                style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                       color: isActive ? AppColors.primary : null,
                     ),
               ),

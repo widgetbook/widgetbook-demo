@@ -53,11 +53,11 @@ class PasswordPage extends StatelessWidget {
               const AppGap.lg(),
               Text(
                 AppLocalizations.of(context)!.enterYourPassword,
-                style: Theme.of(context).textTheme.headline4,
+                style: Theme.of(context).textTheme.headlineMedium,
               ),
               const AppGap.md(),
               TextFormField(
-                style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                       color: textColor,
                     ),
                 initialValue: userInput,
@@ -65,7 +65,7 @@ class PasswordPage extends StatelessWidget {
               ),
               const AppGap.md(),
               TextFormField(
-                style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                       color: textColor,
                     ),
                 decoration: InputDecoration(
@@ -90,7 +90,7 @@ class PasswordPage extends StatelessWidget {
                     padding: const EdgeInsets.all(8),
                     child: Text(
                       AppLocalizations.of(context)!.forgotPassword,
-                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             decoration: TextDecoration.underline,
                           ),
                     ),

@@ -22,7 +22,7 @@ Widget menuItemDefaultUseCase(BuildContext context) {
 
 @WidgetbookUseCase(name: 'Web', type: MenuListItem)
 Widget menuListItemWebUseCase(BuildContext context) {
-  bool hasLabel = context.knobs.boolean(
+  final hasLabel = context.knobs.boolean(
     label: 'Has Label',
     initialValue: true,
   );

@@ -1,4 +1,10 @@
 include: package:very_good_analysis/analysis_options.3.1.0.yaml
 
+analyzer:
+  exclude:
+    - "**/l10n/" # Generated Localization files
+    - "lib/src/styles/twitter_icons.dart" # Generated file
+
 linter:
   rules:
+    flutter_style_todos: false

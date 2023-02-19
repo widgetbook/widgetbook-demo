@@ -28,7 +28,8 @@ class AppElevatedButton extends StatelessWidget {
         textColor = AppColors.white,
         borderColor = null;
 
-  /// Creates new instance of [AppElevatedButton] with Primary Outline button style
+  /// Creates new instance of [AppElevatedButton]
+  /// with Primary Outline button style
   const AppElevatedButton.primaryOutline({
     super.key,
     required this.label,
@@ -52,7 +53,8 @@ class AppElevatedButton extends StatelessWidget {
         textColor = AppColors.white,
         borderColor = null;
 
-  /// Creates new instance of [AppElevatedButton] with secondary outline button style
+  /// Creates new instance of [AppElevatedButton]
+  /// with secondary outline button style
   const AppElevatedButton.secondaryOutline({
     super.key,
     required this.label,
@@ -128,7 +130,8 @@ class AppElevatedButton extends StatelessWidget {
               ? BorderSide.none
               : BorderSide(color: borderColor!),
         ),
-        textStyle: Theme.of(context).textTheme.button!.copyWith(height: 1.05),
+        textStyle:
+            Theme.of(context).textTheme.labelLarge!.copyWith(height: 1.05),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,

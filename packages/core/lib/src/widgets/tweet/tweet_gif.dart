@@ -36,7 +36,7 @@ class TweetGif extends StatelessWidget {
             ),
             child: Text(
               'GIF',
-              style: Theme.of(context).textTheme.caption!.copyWith(
+              style: Theme.of(context).textTheme.bodySmall!.copyWith(
                     color: AppColors.white,
                     fontWeight: FontWeight.w700,
                   ),

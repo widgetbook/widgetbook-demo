@@ -36,7 +36,7 @@ class ExpandedTweetInfo extends StatelessWidget {
         const Text(' · '),
         Text(
           localizedSourceText(context),
-          style: Theme.of(context).textTheme.bodyText2!.copyWith(
+          style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                 color: AppColors.primary,
               ),
         )

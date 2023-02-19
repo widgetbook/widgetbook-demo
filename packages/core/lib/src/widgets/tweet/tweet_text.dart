@@ -28,15 +28,15 @@ class TweetText extends StatelessWidget {
     return MarkdownBody(
       data: text,
       styleSheet: MarkdownStyleSheet(
-        p: Theme.of(context).textTheme.bodyText1!.copyWith(
+        p: Theme.of(context).textTheme.bodyLarge!.copyWith(
               fontWeight: FontWeight.w400,
               height: 1.3,
             ),
-        a: Theme.of(context).textTheme.bodyText1!.copyWith(
+        a: Theme.of(context).textTheme.bodyLarge!.copyWith(
               fontWeight: FontWeight.w400,
               height: 1.3,
               color: disabled
-                  ? Theme.of(context).textTheme.bodyText1!.color
+                  ? Theme.of(context).textTheme.bodyLarge!.color
                   : AppColors.primary,
             ),
       ),

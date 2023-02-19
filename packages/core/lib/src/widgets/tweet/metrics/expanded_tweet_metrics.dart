@@ -14,7 +14,7 @@ class ExpandedTweetMetrics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final metricValueTextStyle = Theme.of(context).textTheme.bodyText1;
+    final metricValueTextStyle = Theme.of(context).textTheme.bodyLarge;
     if (metrics.isZero) {
       return const Divider(height: 1);
     }

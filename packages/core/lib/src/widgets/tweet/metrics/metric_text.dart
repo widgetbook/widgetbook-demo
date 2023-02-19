@@ -54,7 +54,7 @@ class MetricText extends StatelessWidget {
               opacity: value == 0 ? 0 : 1,
               child: Text(
                 getFormattedValue(value, locale),
-                style: textStyle ?? Theme.of(context).textTheme.caption,
+                style: textStyle ?? Theme.of(context).textTheme.bodySmall,
               ),
             ),
           ),
@@ -67,7 +67,7 @@ class MetricText extends StatelessWidget {
               style: textStyle ??
                   Theme.of(context)
                       .textTheme
-                      .caption!
+                      .bodySmall!
                       .copyWith(color: activeColor),
             ),
           ),

@@ -5,7 +5,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @WidgetbookUseCase(name: 'Default', type: AppDrawer)
 Widget appDrawerDefaultUseCase(BuildContext context) {
-  return AppDrawer(
+  return const AppDrawer(
     user: DummyUsers.widgetbook,
   );
 }

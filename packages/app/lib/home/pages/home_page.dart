@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DrawerPageWrapper(
-      appBarTitle: Text('Home'),
+      appBarTitle: const Text('Home'),
       body: ListView.builder(
         itemCount: homeFeed.length,
         itemBuilder: (context, index) => CollapsedTweet(

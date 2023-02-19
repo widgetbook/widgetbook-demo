@@ -111,11 +111,11 @@ class TweetAnnotation extends StatelessWidget {
         if (type.hasUser && user != null && user!.isNotEmpty)
           Text(
             '$user ',
-            style: Theme.of(context).textTheme.caption,
+            style: Theme.of(context).textTheme.bodySmall,
           ),
         Text(
           type.getText(context),
-          style: Theme.of(context).textTheme.caption,
+          style: Theme.of(context).textTheme.bodySmall,
         ),
       ],
     );

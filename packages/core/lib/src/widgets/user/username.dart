@@ -33,7 +33,7 @@ class Username extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = Theme.of(context).textTheme.bodyText2!.copyWith(
+    final textStyle = Theme.of(context).textTheme.bodyMedium!.copyWith(
           color: color ??
               (isActive
                   ? AppColors.primary

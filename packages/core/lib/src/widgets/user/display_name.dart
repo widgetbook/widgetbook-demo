@@ -33,7 +33,7 @@ class DisplayName extends StatelessWidget {
             // Todo: navigate to user profile page
           },
           child: _buildTextWidget(
-            style: Theme.of(context).textTheme.bodyText1!.copyWith(
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                   decoration: isHovered
                       ? TextDecoration.underline
                       : TextDecoration.none,
@@ -43,7 +43,7 @@ class DisplayName extends StatelessWidget {
       );
     } else {
       return _buildTextWidget(
-        style: Theme.of(context).textTheme.bodyText1!,
+        style: Theme.of(context).textTheme.bodyLarge!,
       );
     }
   }

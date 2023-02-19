@@ -76,7 +76,7 @@ class FormattedDateTime extends StatelessWidget {
               : isDateOnly
                   ? dateString
                   : '$timeString · $dateString',
-      style: Theme.of(context).textTheme.bodyText2,
+      style: Theme.of(context).textTheme.bodyMedium,
     );
   }
 }

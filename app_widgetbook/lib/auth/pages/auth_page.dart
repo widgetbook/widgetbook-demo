@@ -4,5 +4,5 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @WidgetbookUseCase(name: 'Default', type: AuthPage)
 Widget authPageDefaultUseCase(BuildContext context) {
-  return AuthPage();
+  return const AuthPage();
 }

@@ -24,7 +24,7 @@ class AuthPage extends StatelessWidget {
                 child: Center(
                   child: Text(
                     AppLocalizations.of(context)!.authPageTitle,
-                    style: Theme.of(context).textTheme.headline3,
+                    style: Theme.of(context).textTheme.displaySmall,
                   ),
                 ),
               ),
@@ -32,14 +32,14 @@ class AuthPage extends StatelessWidget {
               const AppGap.md(),
               Text(
                 AppLocalizations.of(context)!.termsText,
-                style: Theme.of(context).textTheme.subtitle2,
+                style: Theme.of(context).textTheme.titleSmall,
               ),
               const AppGap.md(),
               Row(
                 children: [
                   Text(
                     AppLocalizations.of(context)!.haveAnAccountAlready,
-                    style: Theme.of(context).textTheme.subtitle2,
+                    style: Theme.of(context).textTheme.titleSmall,
                   ),
                   const AppGap.xs(),
                   InkWell(
@@ -48,7 +48,7 @@ class AuthPage extends StatelessWidget {
                       padding: const EdgeInsets.all(3),
                       child: Text(
                         AppLocalizations.of(context)!.logIn,
-                        style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                        style: Theme.of(context).textTheme.titleSmall!.copyWith(
                               color: AppColors.primary,
                             ),
                       ),
