@@ -12,7 +12,7 @@ Widget collapsedTweetDefaultUseCase(BuildContext context) {
     tweet: Tweet(
       rawText: context.knobs.text(
         label: 'Tweet Text',
-        initialValue: 'Lorem ipsum dolor sit amit #hashtag @mention',
+        initialValue: 'This is Lucas Test Tweet #hashtag @mention',
       ),
       inReplyToUser:
           context.knobs.boolean(label: 'Is Reply', initialValue: true)
