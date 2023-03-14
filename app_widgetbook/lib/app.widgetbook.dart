@@ -50,9 +50,6 @@ class HotReload extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Widgetbook.material(
-      appInfo: AppInfo(
-        name: 'App Widgetbook',
-      ),
       addons: [
         CustomThemeAddon<ThemeData>(
           setting: ThemeSetting<ThemeData>(
@@ -78,6 +75,7 @@ class HotReload extends StatelessWidget {
               1.0,
               1.5,
               2.0,
+              2.5,
             ],
             activeTextScale: 1.0,
           ),
