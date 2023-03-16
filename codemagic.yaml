@@ -55,6 +55,8 @@ workflows:
           git rev-parse HEAD
           echo "Staging SHA"
           git rev-parse $CM_PULL_REQUEST_DEST
+          echo "Commit"
+          echo $CM_COMMIT
           echo "Branches"
           git branch
           echo "Diff"
