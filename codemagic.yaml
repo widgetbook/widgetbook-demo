@@ -68,6 +68,7 @@ workflows:
 
       - name: Upload Widgetbook
         script: |
+          echo $CM_PULL_REQUEST_DEST
           widgetbook publish \
                 --api-key $WIDGETBOOK_API_KEY \
                 --branch $CM_BRANCH \
