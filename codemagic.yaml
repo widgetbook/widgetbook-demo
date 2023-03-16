@@ -45,9 +45,12 @@ workflows:
       # "Widgetbook Credentials" group
       groups:
         - Widgetbook Credentials
+
     scripts:
       - name: Get Flutter packages
         script: | 
+          echo "LOG"
+          git log
           echo "HEAD SHA"
           git rev-parse HEAD
           echo "Staging SHA"
@@ -56,6 +59,8 @@ workflows:
           git branch
           echo "Diff"
           git diff $CM_PULL_REQUEST_DEST
+      - name: Get Flutter packages
+        script: | 
           echo "Get"
           flutter packages pub get
       - name: Get dependencies
