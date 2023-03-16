@@ -45,8 +45,11 @@ workflows:
       # "Widgetbook Credentials" group
       groups:
         - Widgetbook Credentials
-
+    
     scripts:
+      - name: Switch branch
+        script: |
+          git switch -c $CM_BRANCH
       - name: Get Flutter packages
         script: | 
           echo "LOG"
