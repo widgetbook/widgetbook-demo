@@ -1,6 +1,6 @@
 workflows:
   widgetbook-base:
-    name: Widgetbook Workflow
+    name: Widgetbook Workflow Base
     working_directory: app_widgetbook
     triggering:
       events:
@@ -36,7 +36,7 @@ workflows:
                 --api-key $WIDGETBOOK_API_KEY \
                 --branch $CM_BRANCH
   widgetbook-head:
-    name: Widgetbook Workflow
+    name: Widgetbook Workflow Head
     working_directory: app_widgetbook
     triggering:
       events:
