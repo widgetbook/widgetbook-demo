@@ -44,9 +44,6 @@ workflows:
         - pattern: '*'
           include: true
           source: true
-        - pattern: 'staging'
-          include: false
-          source: false
     environment:
       # Used so the $WIDGETBOOK_API_KEY is accessible as it's part of the
       # "Widgetbook Credentials" group
