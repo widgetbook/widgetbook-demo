@@ -53,6 +53,7 @@ workflows:
     scripts:
       - name: Get Flutter packages
         script: | 
+          git diff $CM_PULL_REQUEST_DEST
           flutter packages pub get
       - name: Get dependencies
         script: flutter pub get
