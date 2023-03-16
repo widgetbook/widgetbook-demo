@@ -4,7 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart' show Knobs, Option;
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@WidgetbookUseCase(name: 'Default', type: UserInfo)
+@WidgetbookUseCase(
+  name: 'Default',
+  type: UserInfo,
+  designLink:
+      'https://www.figma.com/file/taoQSMi6WeUgzEoZvZmHmI/Widgetbook-Demo-App?node-id=197%3A1729&t=bCZtYXCKMQ9kkAPS-4',
+)
 Widget userInfoDefaultUseCase(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.all(20),

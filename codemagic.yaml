@@ -1,6 +1,6 @@
 workflows:
   widgetbook-base:
-    name: Widgetbook Workflow
+    name: Widgetbook Workflow Base
     working_directory: app_widgetbook
     triggering:
       events:
@@ -8,7 +8,6 @@ workflows:
       branch_patterns:
         - pattern: 'staging'
           include: true
-          source: true
     environment:
       # Used so the $WIDGETBOOK_API_KEY is accessible as it's part of the
       # "Widgetbook Credentials" group
@@ -36,23 +35,43 @@ workflows:
                 --api-key $WIDGETBOOK_API_KEY \
                 --branch $CM_BRANCH
   widgetbook-head:
-    name: Widgetbook Workflow
+    name: Widgetbook Workflow Head
     working_directory: app_widgetbook
     triggering:
       events:
         - pull_request
-      branch_patterns:
-        - pattern: '*'
-          include: true
-          source: true
     environment:
       # Used so the $WIDGETBOOK_API_KEY is accessible as it's part of the
       # "Widgetbook Credentials" group
       groups:
         - Widgetbook Credentials
+    
     scripts:
+      - name: Switch branch
+        script: |
+          git switch -c $CM_BRANCH
+          git branch -D $CM_PULL_REQUEST_DEST
+          git switch -c $CM_PULL_REQUEST_DEST source/$CM_PULL_REQUEST_DEST
+          git switch $CM_BRANCH
       - name: Get Flutter packages
         script: | 
+          echo "LOG"
+          git log
+          echo "HEAD SHA"
+          git rev-parse HEAD
+          echo "Staging SHA"
+          git rev-parse $CM_PULL_REQUEST_DEST
+          echo "Commit"
+          echo $CM_COMMIT
+          echo "Branches"
+          git branch
+          echo "Remote Branches"
+          git branch -r
+          echo "Diff"
+          git diff $CM_PULL_REQUEST_DEST
+      - name: Get Flutter packages
+        script: | 
+          echo "Get"
           flutter packages pub get
       - name: Get dependencies
         script: flutter pub get
@@ -68,6 +87,7 @@ workflows:
 
       - name: Upload Widgetbook
         script: |
+          echo $CM_PULL_REQUEST_DEST
           widgetbook publish \
                 --api-key $WIDGETBOOK_API_KEY \
                 --branch $CM_BRANCH \
