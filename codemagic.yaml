@@ -42,9 +42,9 @@ workflows:
       events:
         - pull_request
       branch_patterns:
-        - pattern: '*'
+        - pattern: 'staging'
           include: true
-          source: true
+          source: false
     environment:
       # Used so the $WIDGETBOOK_API_KEY is accessible as it's part of the
       # "Widgetbook Credentials" group
