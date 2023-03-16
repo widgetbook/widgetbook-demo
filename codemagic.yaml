@@ -1,4 +1,5 @@
 workflows:
+  # Push a new build everytime the staging branch is updated
   widgetbook-base:
     name: Widgetbook Workflow Base
     working_directory: app_widgetbook
@@ -34,6 +35,7 @@ workflows:
           widgetbook publish \
                 --api-key $WIDGETBOOK_API_KEY \
                 --branch $CM_BRANCH
+  # Create review information and push a build everytime the pull request is updated
   widgetbook-head:
     name: Widgetbook Workflow Head
     working_directory: app_widgetbook
@@ -47,6 +49,7 @@ workflows:
         - Widgetbook Credentials
     
     scripts:
+      # Necessary to make the correct branch information available 
       - name: Switch branch
         script: |
           git switch -c $CM_BRANCH
@@ -55,23 +58,6 @@ workflows:
           git switch $CM_BRANCH
       - name: Get Flutter packages
         script: | 
-          echo "LOG"
-          git log
-          echo "HEAD SHA"
-          git rev-parse HEAD
-          echo "Staging SHA"
-          git rev-parse $CM_PULL_REQUEST_DEST
-          echo "Commit"
-          echo $CM_COMMIT
-          echo "Branches"
-          git branch
-          echo "Remote Branches"
-          git branch -r
-          echo "Diff"
-          git diff $CM_PULL_REQUEST_DEST
-      - name: Get Flutter packages
-        script: | 
-          echo "Get"
           flutter packages pub get
       - name: Get dependencies
         script: flutter pub get
