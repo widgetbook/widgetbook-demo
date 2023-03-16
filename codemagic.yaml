@@ -1,6 +1,7 @@
 workflows:
+  # Push a new build everytime the staging branch is updated
   widgetbook-base:
-    name: Widgetbook Workflow
+    name: Widgetbook Workflow Base
     working_directory: app_widgetbook
     triggering:
       events:
@@ -8,7 +9,6 @@ workflows:
       branch_patterns:
         - pattern: 'staging'
           include: true
-          source: true
     environment:
       # Used so the $WIDGETBOOK_API_KEY is accessible as it's part of the
       # "Widgetbook Credentials" group
@@ -35,22 +35,27 @@ workflows:
           widgetbook publish \
                 --api-key $WIDGETBOOK_API_KEY \
                 --branch $CM_BRANCH
+  # Create review information and push a build everytime the pull request is updated
   widgetbook-head:
-    name: Widgetbook Workflow
+    name: Widgetbook Workflow Head
     working_directory: app_widgetbook
     triggering:
       events:
         - pull_request
-      branch_patterns:
-        - pattern: '*'
-          include: true
-          source: true
     environment:
       # Used so the $WIDGETBOOK_API_KEY is accessible as it's part of the
       # "Widgetbook Credentials" group
       groups:
         - Widgetbook Credentials
+    
     scripts:
+      # Necessary to make the correct branch information available 
+      - name: Switch branch
+        script: |
+          git switch -c $CM_BRANCH
+          git branch -D $CM_PULL_REQUEST_DEST
+          git switch -c $CM_PULL_REQUEST_DEST source/$CM_PULL_REQUEST_DEST
+          git switch $CM_BRANCH
       - name: Get Flutter packages
         script: | 
           flutter packages pub get
