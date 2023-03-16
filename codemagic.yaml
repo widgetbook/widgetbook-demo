@@ -39,12 +39,14 @@ workflows:
     working_directory: app_widgetbook
     triggering:
       events:
-        - push
         - pull_request
       branch_patterns:
         - pattern: '*'
           include: true
           source: true
+        - pattern: 'staging'
+          include: false
+          source: false
     environment:
       # Used so the $WIDGETBOOK_API_KEY is accessible as it's part of the
       # "Widgetbook Credentials" group
