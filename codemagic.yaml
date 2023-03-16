@@ -51,7 +51,7 @@ workflows:
         script: |
           git switch -c $CM_BRANCH
           git branch -D $CM_PULL_REQUEST_DEST
-          git switch -c $CM_PULL_REQUEST_DEST
+          git switch -c source/$CM_PULL_REQUEST_DEST
           git switch $CM_BRANCH 
       - name: Get Flutter packages
         script: | 
