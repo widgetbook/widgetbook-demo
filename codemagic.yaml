@@ -53,6 +53,10 @@ workflows:
     scripts:
       - name: Get Flutter packages
         script: | 
+          echo "HEAD SHA"
+          git rev-parse HEAD
+          echo "Staging SHA"
+          git rev-parse $CM_PULL_REQUEST_DEST
           echo "Branches"
           git branch
           echo "Diff"
