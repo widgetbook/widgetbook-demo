@@ -59,6 +59,8 @@ workflows:
           echo $CM_COMMIT
           echo "Branches"
           git branch
+          echo "Remote Branches"
+          git branch -r
           echo "Diff"
           git diff $CM_PULL_REQUEST_DEST
       - name: Get Flutter packages
