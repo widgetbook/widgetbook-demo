@@ -8,7 +8,6 @@ workflows:
       branch_patterns:
         - pattern: 'staging'
           include: true
-          source: true
     environment:
       # Used so the $WIDGETBOOK_API_KEY is accessible as it's part of the
       # "Widgetbook Credentials" group
@@ -40,11 +39,12 @@ workflows:
     working_directory: app_widgetbook
     triggering:
       events:
+        - push
         - pull_request
       branch_patterns:
-        - pattern: 'staging'
+        - pattern: '*'
           include: true
-          source: false
+          source: true
     environment:
       # Used so the $WIDGETBOOK_API_KEY is accessible as it's part of the
       # "Widgetbook Credentials" group
