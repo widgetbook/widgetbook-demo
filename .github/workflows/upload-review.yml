@@ -31,7 +31,7 @@ jobs:
         run: flutter build web -t lib/app.widgetbook.dart
 
       - name: Install Widgetbook CLI
-        run: dart pub global activate widgetbook_cli 3.0.0-beta.21
+        run: dart pub global activate widgetbook_cli 3.0.0-beta.23
 
       - name: Upload Widgetbook
         run: |
@@ -41,8 +41,6 @@ jobs:
                 $GITHUB_REPOSITORY \
                 --actor \
                 $GITHUB_ACTOR \
-                --branch \
-                $GITHUB_HEAD_REF \
                 --base-branch \
                 $GITHUB_BASE_REF \
                 --pr ${{ github.event.number }} \
