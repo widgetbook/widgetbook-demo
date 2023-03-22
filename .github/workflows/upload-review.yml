@@ -19,7 +19,7 @@ jobs:
       - name: diff
         run: | 
           echo $GITHUB_BASE_REF
-          git branch
+          git branch -a
           git diff $GITHUB_BASE_REF
 
       - name: Setup flutter
