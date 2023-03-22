@@ -239,7 +239,7 @@ class HotReload extends StatelessWidget {
               name: 'AuthButtons',
               useCases: [
                 WidgetbookUseCase(
-                  name: 'Default',
+                  name: 'Default 2',
                   builder: (context) => authButtonsDefaultUseCase(context),
                 ),
               ],
