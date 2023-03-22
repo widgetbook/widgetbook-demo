@@ -16,6 +16,9 @@ jobs:
         with:
           fetch-depth: '0'
 
+      - name: Diff
+        run: git diff $GITHUB_BASE_REF
+
       - name: Setup flutter
         uses: subosito/flutter-action@v2
         with:
