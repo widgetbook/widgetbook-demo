@@ -59,6 +59,7 @@ workflows:
       - name: Show branches
         script: |
           git show-ref --heads
+          git diff refs/heads/staging
       - name: Get Flutter packages
         script: | 
           flutter packages pub get

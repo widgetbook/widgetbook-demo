@@ -20,6 +20,10 @@ jobs:
           echo $GITHUB_BASE_REF
           git diff origin/$GITHUB_BASE_REF
 
+      - name: diff 2
+        run: |
+          git diff refs/remotes/origin/staging
+
       - name: Setup flutter
         uses: subosito/flutter-action@v2
         with:
