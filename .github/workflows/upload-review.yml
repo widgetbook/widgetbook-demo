@@ -19,7 +19,7 @@ jobs:
       - name: diff
         run: | 
           echo $GITHUB_BASE_REF
-          git branch -a
+          git show-ref --heads
           git diff origin/$GITHUB_BASE_REF
 
       - name: Setup flutter
@@ -48,6 +48,6 @@ jobs:
                 --actor \
                 $GITHUB_ACTOR \
                 --base-branch \
-                origin/$GITHUB_BASE_REF \
+                $GITHUB_BASE_REF \
                 --pr ${{ github.event.number }} \
                 --github-token ${{ secrets.GITHUB_TOKEN }}
