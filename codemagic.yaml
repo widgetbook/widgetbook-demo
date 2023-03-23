@@ -56,6 +56,9 @@ workflows:
           git branch -D $CM_PULL_REQUEST_DEST
           git switch -c $CM_PULL_REQUEST_DEST source/$CM_PULL_REQUEST_DEST
           git switch $CM_BRANCH
+      - name: Git diff
+        script: |
+          git diff CM_PULL_REQUEST_DEST
       - name: Get Flutter packages
         script: | 
           flutter packages pub get
