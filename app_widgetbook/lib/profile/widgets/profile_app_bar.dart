@@ -1,4 +1,5 @@
 import 'package:app_widgetbook/dummy_data/dummy_users.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:profile/profile.dart';
 import 'package:widgetbook/widgetbook.dart' show Knobs, Option;
@@ -26,17 +27,12 @@ class _ProfileAppBarWrapperState extends State<ProfileAppBarWrapper> {
       slivers: [
         ProfileAppBar(
           scrollController: scrollController,
-          user: context.knobs.options(
+          user: context.knobs.options<User>(
             label: 'User',
+            labelBuilder: (user) => user.displayName,
             options: [
-              Option(
-                label: 'Widgetbook',
-                value: DummyUsers.widgetbook,
-              ),
-              Option(
-                label: 'Roaa',
-                value: DummyUsers.roaakdm,
-              ),
+              DummyUsers.widgetbook,
+              DummyUsers.roaakdm,
             ],
           ),
         ),
@@ -49,4 +45,3 @@ class _ProfileAppBarWrapperState extends State<ProfileAppBarWrapper> {
     );
   }
 }
-
