@@ -1,6 +1,5 @@
 import 'package:app_widgetbook/dummy_data/dummy_media.dart';
 import 'package:core/core.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart' show Knobs, Option;
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
@@ -23,11 +22,9 @@ Widget tweetMediaGalleryUseCase(BuildContext context) {
       label: 'Image Count',
       options: [
         for (int i = 4; i >= 2; i--)
-          Option(
-            label: '$i Images',
-            value: DummyMedia.fourPhotosMedia.take(i).toList(),
-          ),
+          DummyMedia.fourPhotosMedia.take(i).toList(),
       ],
+      labelBuilder: (value) => '${value.length} images',
     ),
     hasDecoration: context.knobs.boolean(
       label: 'Has Decoration',
@@ -38,25 +35,17 @@ Widget tweetMediaGalleryUseCase(BuildContext context) {
 
 @WidgetbookUseCase(name: 'GIF', type: TweetMedia)
 Widget tweetMediaGIFUseCase(BuildContext context) {
-  if (defaultTargetPlatform == TargetPlatform.macOS && !kIsWeb) {
-    return const Center(
-      child: Text(
-        'Video player is not supported on MacOS ☹️',
-      ),
-    );
-  } else {
-    return TweetMedia(
-      tweetMedia: DummyMedia.gifMedia,
-      autoPlay: context.knobs.boolean(
-        label: 'Auto Play',
-        description: 'Turning off Auto Play will'
-            ' show a Play button',
-        initialValue: true,
-      ),
-      hasDecoration: context.knobs.boolean(
-        label: 'Has Decoration',
-        initialValue: true,
-      ),
-    );
-  }
+  return TweetMedia(
+    tweetMedia: DummyMedia.gifMedia,
+    autoPlay: context.knobs.boolean(
+      label: 'Auto Play',
+      description: 'Turning off Auto Play will'
+          ' show a Play button',
+      initialValue: true,
+    ),
+    hasDecoration: context.knobs.boolean(
+      label: 'Has Decoration',
+      initialValue: true,
+    ),
+  );
 }

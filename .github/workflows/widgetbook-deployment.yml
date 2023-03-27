@@ -1,0 +1,40 @@
+on:
+  push:
+    branches:
+      - staging
+name: deploy-widgetbook
+jobs:
+  build-web:
+    defaults:
+      run:
+        working-directory: app_widgetbook
+    name: build web
+    runs-on: ubuntu-latest 
+    steps:
+    - uses: actions/checkout@v2
+    - uses: subosito/flutter-action@v2
+      with:
+        channel: stable
+
+    - name: Flutter version
+      run: flutter --version
+
+    - name: Enable melos
+      run: dart pub global activate melos
+
+    - name: Get packages 
+      run: melos bootstrap
+
+    - run: | 
+        flutter build web -t lib/app.widgetbook.dart
+    - name: Authenticate Service Account
+      uses: google-github-actions/auth@v1.0.0
+      with:
+        credentials_json: ${{ secrets.STORAGE_SERVICE_ACCOUNT }}
+
+    - name: Upload folder
+      uses: google-github-actions/upload-cloud-storage@v1.0.0
+      with:
+        path: app_widgetbook/build/web
+        destination: demo.widgetbook.io
+        parent: false

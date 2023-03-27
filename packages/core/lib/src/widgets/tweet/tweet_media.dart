@@ -1,4 +1,5 @@
 import 'package:core/core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 /// Tweet media widget
@@ -45,12 +46,28 @@ class TweetMedia extends StatelessWidget {
           mediaWidget = TweetImage(imageUrl: tweetMedia[0].url);
           break;
         case MediaType.gif:
+          if (defaultTargetPlatform == TargetPlatform.macOS && !kIsWeb) {
+            mediaWidget = const Center(
+              child: Text(
+                'Video player is not supported on MacOS ☹️',
+              ),
+            );
+            break;
+          }
           mediaWidget = TweetGif(
             gifUrl: tweetMedia[0].url,
             autoPlay: autoPlay,
           );
           break;
         case MediaType.video:
+          if (defaultTargetPlatform == TargetPlatform.macOS && !kIsWeb) {
+            mediaWidget = const Center(
+              child: Text(
+                'Video player is not supported on MacOS ☹️',
+              ),
+            );
+            break;
+          }
           mediaWidget = Container();
           break;
       }

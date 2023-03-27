@@ -1,8 +1,5 @@
-name: Build
+name: Upload build
 on:
-  pull_request:
-    branches:
-      - staging
   push:
     branches:
       - staging
@@ -17,6 +14,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: '0'
 
       - name: Setup flutter
         uses: subosito/flutter-action@v2
@@ -33,19 +32,15 @@ jobs:
         run: flutter build web -t lib/app.widgetbook.dart
 
       - name: Install Widgetbook CLI
-        run: dart pub global activate widgetbook_cli 3.0.0-beta.11
+        run: dart pub global activate widgetbook_cli 3.0.0-beta.23
 
       - name: Upload Widgetbook
         run: |
           widgetbook publish \
                 --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY }} \
+                --branch \
+                $GITHUB_REF \
                 --repository \
                 $GITHUB_REPOSITORY \
                 --actor \
-                $GITHUB_ACTOR \
-                --branch \
-                $GITHUB_HEAD_REF \
-                --base-branch \
-                $GITHUB_BASE_REF \
-                --pr ${{ github.event.number }} \
-                --github-token ${{ secrets.GITHUB_TOKEN }}
+                $GITHUB_ACTOR

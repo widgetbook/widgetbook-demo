@@ -46,18 +46,27 @@ class Avatar extends StatelessWidget {
     return SizedBox(
       width: size,
       height: size,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(size / 2),
-        child: imageUrl != null && imageUrl!.isNotEmpty
-            ? AppCachedNetworkImage(
-                imageUrl: imageUrl!,
-                fit: fit,
-              )
-            : Image.asset(
-                'assets/images/avatar-placeholder.png',
-                package: 'core',
-                fit: fit,
-              ),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(size / 2),
+          border: Border.all(
+            color: Theme.of(context).dividerColor,
+            width: 2,
+          ),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(size / 2),
+          child: imageUrl != null && imageUrl!.isNotEmpty
+              ? AppCachedNetworkImage(
+                  imageUrl: imageUrl!,
+                  fit: fit,
+                )
+              : Image.asset(
+                  'assets/images/avatar-placeholder.png',
+                  package: 'core',
+                  fit: fit,
+                ),
+        ),
       ),
     );
   }

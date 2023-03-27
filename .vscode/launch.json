@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "app_widgetbook",
+            "cwd": "app_widgetbook",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/app.widgetbook.dart"
+        },
+    ]
+}

@@ -1,4 +1,5 @@
 import 'package:core/core.dart';
+import 'package:core/src/l10n/app_localizations_extension.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -10,9 +11,6 @@ class DrawerPageWrapper extends StatefulWidget {
     required this.user,
     required this.body,
     required this.appBarTitle,
-    this.drawerWidth = DrawerUtils.width,
-    this.width,
-    this.height,
   });
 
   /// The logged in user
@@ -24,15 +22,6 @@ class DrawerPageWrapper extends StatefulWidget {
   /// The AppBar title of the page
   final Widget appBarTitle;
 
-  /// Optional width
-  final double? width;
-
-  /// Optional height
-  final double? height;
-
-  /// Width of the drawer
-  final double drawerWidth;
-
   @override
   State<DrawerPageWrapper> createState() => _DrawerPageWrapperState();
 }
@@ -40,7 +29,7 @@ class DrawerPageWrapper extends StatefulWidget {
 class _DrawerPageWrapperState extends State<DrawerPageWrapper>
     with SingleTickerProviderStateMixin {
   late final AnimationController animationController;
-  late final Animation<double> xOffsetAnimation;
+  late final Animation<double> progress;
   int currentIndex = 0;
 
   @override
@@ -50,31 +39,37 @@ class _DrawerPageWrapperState extends State<DrawerPageWrapper>
       duration: DrawerUtils.animationDuration,
     );
 
-    xOffsetAnimation = Tween<double>(
-      begin: -widget.drawerWidth,
+    progress = Tween<double>(
+      begin: -1,
       end: 0,
     ).animate(
       CurvedAnimation(
-          parent: animationController, curve: DrawerUtils.animationCurve),
+        parent: animationController,
+        curve: DrawerUtils.animationCurve,
+      ),
     );
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    final drawerWidth = DrawerUtils.getWidth(context);
     return InteractiveViewer(
       constrained: false,
       panEnabled: false,
       scaleEnabled: false,
       child: SizedBox(
-        width: widget.width ??
-            widget.drawerWidth + MediaQuery.of(context).size.width,
-        height: widget.height ?? MediaQuery.of(context).size.height,
+        width: drawerWidth + MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         child: AnimatedBuilder(
           animation: animationController,
           builder: (_, child) {
             return Transform.translate(
-              offset: Offset(xOffsetAnimation.value, 0),
+              offset: Offset(
+                (context.isRTL ? (-1 - progress.value) : progress.value) *
+                    drawerWidth,
+                0,
+              ),
               child: GestureDetector(
                 dragStartBehavior: DragStartBehavior.down,
                 behavior: HitTestBehavior.opaque,
@@ -84,7 +79,7 @@ class _DrawerPageWrapperState extends State<DrawerPageWrapper>
                 child: Row(
                   children: [
                     SizedBox(
-                      width: widget.drawerWidth,
+                      width: drawerWidth,
                       child: AppDrawer(user: widget.user),
                     ),
                     Expanded(

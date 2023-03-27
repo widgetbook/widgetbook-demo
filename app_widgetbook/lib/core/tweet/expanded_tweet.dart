@@ -6,7 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart' show Knobs, Option;
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@WidgetbookUseCase(name: 'Default', type: ExpandedTweet)
+@WidgetbookUseCase(
+  name: 'Default',
+  type: ExpandedTweet,
+  designLink:
+      'https://www.figma.com/file/taoQSMi6WeUgzEoZvZmHmI/Widgetbook-Demo-App?node-id=215%3A1153&t=HvlZdc2vGkHtmtHU-4',
+)
 Widget expandedTweetDefaultUseCase(BuildContext context) {
   return ExpandedTweet(
     tweet: Tweet(
@@ -16,14 +21,8 @@ Widget expandedTweetDefaultUseCase(BuildContext context) {
       ),
       source: context.knobs.options<TweetSource>(
         label: 'Tweet Source',
-        options: TweetSource.values
-            .map(
-              (source) => Option(
-                label: source.toText(),
-                value: source,
-              ),
-            )
-            .toList(),
+        options: TweetSource.values,
+        labelBuilder: (value) => value.toText(),
       ),
       inReplyToUser:
           context.knobs.boolean(label: 'Is Reply', initialValue: true)
@@ -65,7 +64,12 @@ Widget expandedTweetDefaultUseCase(BuildContext context) {
   );
 }
 
-@WidgetbookUseCase(name: 'Quote Tweet', type: ExpandedTweet)
+@WidgetbookUseCase(
+  name: 'Quote Tweet',
+  type: ExpandedTweet,
+  designLink:
+      'https://www.figma.com/file/taoQSMi6WeUgzEoZvZmHmI/Widgetbook-Demo-App?node-id=261%3A7189&t=HvlZdc2vGkHtmtHU-4',
+)
 Widget expandedTweetQuoteTweetUseCase(BuildContext context) {
   return ExpandedTweet(
     tweet: Tweet(
@@ -75,19 +79,13 @@ Widget expandedTweetQuoteTweetUseCase(BuildContext context) {
       ),
       source: context.knobs.options<TweetSource>(
         label: 'Tweet Source',
-        options: TweetSource.values
-            .map(
-              (source) => Option(
-            label: source.toText(),
-            value: source,
-          ),
-        )
-            .toList(),
+        options: TweetSource.values,
+        labelBuilder: (value) => value.toText(),
       ),
       inReplyToUser:
-      context.knobs.boolean(label: 'Is Reply', initialValue: true)
-          ? DummyUsers.roaakdm
-          : null,
+          context.knobs.boolean(label: 'Is Reply', initialValue: true)
+              ? DummyUsers.roaakdm
+              : null,
       author: DummyUsers.widgetbook,
       media: getMediaOptions(context),
       quotedTweet: DummyTweets.fourPhotosTweet.copyWith(
@@ -97,30 +95,30 @@ Widget expandedTweetQuoteTweetUseCase(BuildContext context) {
       publicMetrics: PublicMetrics(
         quoteTweets: context.knobs
             .slider(
-          label: 'Quote Tweets',
-          min: 0,
-          max: 2500,
-          initialValue: 0,
-          divisions: 2500 ~/ 50,
-        )
+              label: 'Quote Tweets',
+              min: 0,
+              max: 2500,
+              initialValue: 0,
+              divisions: 2500 ~/ 50,
+            )
             .toInt(),
         retweets: context.knobs
             .slider(
-          label: 'Retweets',
-          min: 0,
-          max: 2500,
-          initialValue: 15,
-          divisions: 2500 ~/ 50,
-        )
+              label: 'Retweets',
+              min: 0,
+              max: 2500,
+              initialValue: 15,
+              divisions: 2500 ~/ 50,
+            )
             .toInt(),
         likes: context.knobs
             .slider(
-          label: 'Likes',
-          min: 0,
-          max: 2500,
-          initialValue: 15,
-          divisions: 2500 ~/ 50,
-        )
+              label: 'Likes',
+              min: 0,
+              max: 2500,
+              initialValue: 15,
+              divisions: 2500 ~/ 50,
+            )
             .toInt(),
       ),
       createdAt: getTweetDateOption(context),

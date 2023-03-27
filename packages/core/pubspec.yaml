@@ -12,7 +12,6 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
-  widgetbook_annotation: ^2.1.0
   video_player: ^2.4.7
   timeago: ^3.3.0
   cached_network_image: ^3.2.2
@@ -27,8 +26,6 @@ dev_dependencies:
   mocktail: ^0.3.0
   test: ^1.19.2
   very_good_analysis: ^3.1.0
-  widgetbook: ^2.4.1
-  widgetbook_generator: ^2.4.1
   freezed: ^2.2.0
   json_serializable: ^6.5.4
 
