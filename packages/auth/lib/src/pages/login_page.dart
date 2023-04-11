@@ -25,7 +25,7 @@ class LoginPage extends StatelessWidget {
                           child: InkWell(
                             onTap: () {},
                             child: Padding(
-                              padding: const EdgeInsets.all(3),
+                              padding: const EdgeInsets.all(4),
                               child: Text(
                                 AppLocalizations.of(context)!.cancel,
                                 style: Theme.of(context)
