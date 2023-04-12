@@ -102,18 +102,21 @@ class _ProfileAppBarState extends State<ProfileAppBar> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                InkWell(
-                  child: Container(
-                    width: 32,
-                    height: 32,
-                    decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.3),
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Icon(
-                      TwitterIcons.back,
-                      size: 16,
-                      color: AppColors.white,
+                Padding(
+                  padding: const EdgeInsets.only(top: 15),
+                  child: InkWell(
+                    child: Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                        color: Colors.black.withOpacity(0.3),
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(
+                        TwitterIcons.back,
+                        size: 16,
+                        color: AppColors.white,
+                      ),
                     ),
                   ),
                 ),

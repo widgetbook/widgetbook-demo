@@ -38,4 +38,14 @@ class DummyUsers {
     location: 'Istanbul, Turkey',
     joinDate: DateTime(2019, 8),
   );
+
+  /// Tim's Twitter Account user
+  ///
+  /// https://twitter.com/timsneath
+  static const User timSneath = User(
+    id: '5633712',
+    username: 'timsneath',
+    displayName: 'Tim Sneath',
+    avatarUrl: 'https://pbs.twimg.com/profile_images/1425115522706776065/Gm719oBc_400x400.jpg',
+  );
 }
