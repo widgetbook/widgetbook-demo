@@ -95,8 +95,8 @@ class _DrawerPageWrapperState extends State<DrawerPageWrapper>
                                   opacity: animationController,
                                   child: ColoredBox(
                                     color: Theme.of(context).isDark
-                                        ? AppColors.white.withOpacity(0.3)
-                                        : AppColors.black.withOpacity(0.3),
+                                        ? AppColors.white.withOpacity(0.4)
+                                        : AppColors.black.withOpacity(0.4),
                                   ),
                                 ),
                               ),

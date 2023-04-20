@@ -14,6 +14,8 @@ Widget drawerPageWrapperDefaultUseCase(BuildContext context) {
         initialValue: 'Home',
       ),
     ),
-    body: Container(),
+    body: Container(
+      child: Text('Some text'),
+    ),
   );
 }
