@@ -33,8 +33,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text(AppLocalizations.of(context)!.widgetbook),
+      appBar: AppBar(),
+      body: AppElevatedButton.secondary(
+        label: 'Button',
+        icon: TwitterIcons.plus,
+        onPressed: () {},
       ),
     );
   }

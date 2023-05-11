@@ -87,19 +87,22 @@ Widget primaryAppElevatedButtonUseCase(BuildContext context) {
 /// Use case for a Secondary Button style
 @WidgetbookUseCase(name: 'Secondary Button', type: AppElevatedButton)
 Widget secondaryAppElevatedButtonUseCase(BuildContext context) {
-  return AppElevatedButton.secondary(
-    label: context.knobs.nullableText(
-      label: 'Label',
-      initialValue: 'Button',
+  return Scaffold(
+    appBar: AppBar(),
+    body: AppElevatedButton.secondary(
+      label: context.knobs.nullableText(
+        label: 'Label',
+        initialValue: 'Button',
+      ),
+      icon: context.knobs.boolean(label: 'Has Icon', initialValue: true)
+          ? context.knobs.options(
+              label: 'Icon',
+              options: buttonIconOptions,
+            )
+          : null,
+      height: context.knobs.boolean(label: 'Is Large') ? 56 : 40,
+      onPressed: () {},
     ),
-    icon: context.knobs.boolean(label: 'Has Icon', initialValue: true)
-        ? context.knobs.options(
-            label: 'Icon',
-            options: buttonIconOptions,
-          )
-        : null,
-    height: context.knobs.boolean(label: 'Is Large') ? 56 : 40,
-    onPressed: () {},
   );
 }
 

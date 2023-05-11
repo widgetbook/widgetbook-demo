@@ -358,10 +358,10 @@ packages:
     dependency: transitive
     description:
       name: go_router
-      sha256: "5a0b2e0bc88a006c09d2b419004ffabecf83a74520b8852ea148f22e82634c27"
+      sha256: "432409518740645ce7f28802171b78783197d01149fad44f9b8ae55f40277139"
       url: "https://pub.dev"
     source: hosted
-    version: "6.0.6"
+    version: "6.5.0"
   graphs:
     dependency: transitive
     description:
@@ -859,42 +859,42 @@ packages:
     dependency: "direct main"
     description:
       name: widgetbook
-      sha256: f2b1a604a3bde41bc1a10edddff4979323e01749a5ce892476d58954ef7d11dc
+      sha256: b39df2d2616299a1ce601273dc6ac9759779cc294a90b6eb41c0cd0160319731
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0-beta.8"
+    version: "3.0.0-beta.13"
   widgetbook_annotation:
     dependency: "direct main"
     description:
       name: widgetbook_annotation
-      sha256: "8441d82bd96902addb5aa7892fa0fd75af363a071f14950d2fe20a5e3f8fb96e"
+      sha256: "39fd647baa963b092423e0bdc976bc61192f2c715633cb0d226fbe663f06ebb4"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0-beta.4"
+    version: "3.0.0-beta.6"
   widgetbook_core:
     dependency: transitive
     description:
       name: widgetbook_core
-      sha256: "25fc720fdf848723275fa3f8683605b74531ca4210c9227394b517916cdee98a"
+      sha256: "3d1df1881f1ad86385efbc8beb339a6d2bfabf524938188b30b7277eee551cfb"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0-beta.5"
+    version: "3.0.0-beta.7"
   widgetbook_generator:
     dependency: "direct dev"
     description:
       name: widgetbook_generator
-      sha256: "7b02bdac9c3cf66af28a5bcd3f27d967a483b547d5786c7982bb78dbde4b1af6"
+      sha256: "66853c089cbeaaa13ae88e1ccd06503a01fa54a872e1ff105ec9810485406932"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0-beta.8"
+    version: "3.0.0-beta.10"
   widgetbook_models:
     dependency: transitive
     description:
       name: widgetbook_models
-      sha256: "8cd05feb1e66b81c3285a2c92e94e97ec9ef9306bd5712f88062ba0b80cd5911"
+      sha256: f3e146fe403c1620532deca01ece616fbdaa6a5ee623efd6196b761ba59b4ac9
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0-beta.2"
+    version: "3.0.0-beta.3"
   win32:
     dependency: transitive
     description:
@@ -921,4 +921,4 @@ packages:
     version: "3.1.1"
 sdks:
   dart: ">=2.19.0 <3.0.0"
-  flutter: ">=3.3.7"
+  flutter: ">=3.3.0"
