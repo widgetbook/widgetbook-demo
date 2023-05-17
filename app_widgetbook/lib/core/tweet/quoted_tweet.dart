@@ -5,7 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart' show Knobs, Option;
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@WidgetbookUseCase(name: 'Large Media', type: QuotedTweet)
+@WidgetbookUseCase(
+  name: 'Large Media',
+  type: QuotedTweet,
+  designLink:
+      'https://www.figma.com/file/taoQSMi6WeUgzEoZvZmHmI/Widgetbook-Demo-App?type=design&node-id=260-7146&t=aXDXkBsaFxCTxdac-4',
+)
 Widget quotedTweetLargeMediaUseCase(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.all(20),
@@ -28,7 +33,12 @@ Widget quotedTweetLargeMediaUseCase(BuildContext context) {
   );
 }
 
-@WidgetbookUseCase(name: 'Thumbnail Media', type: QuotedTweet)
+@WidgetbookUseCase(
+  name: 'Thumbnail Media',
+  type: QuotedTweet,
+  designLink:
+      'https://www.figma.com/file/taoQSMi6WeUgzEoZvZmHmI/Widgetbook-Demo-App?type=design&node-id=261-7252&t=aXDXkBsaFxCTxdac-4',
+)
 Widget quotedTweetThumbnailMediaUseCase(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.all(20),
