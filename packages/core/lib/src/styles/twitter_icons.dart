@@ -53,6 +53,7 @@ class TwitterIcons {
     0xe902,
     fontFamily: _kFontFam,
     fontPackage: _kFontPkg,
+    matchTextDirection: true,
   );
   static const IconData bell_fill = IconData(
     0xe903,

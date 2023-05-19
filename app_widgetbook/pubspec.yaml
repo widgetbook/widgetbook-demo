@@ -16,6 +16,8 @@ dependencies:
     sdk: flutter
   core:
     path: ../packages/core
+  profile:
+    path: ../packages/profile
   auth:
     path: ../packages/auth
   app:

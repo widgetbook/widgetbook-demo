@@ -7,6 +7,7 @@ class DisplayName extends StatelessWidget {
   const DisplayName({
     super.key,
     required this.user,
+    this.color,
   }) : isActive = false;
 
   /// Creates a new instance of [DisplayName] with active use case
@@ -16,6 +17,7 @@ class DisplayName extends StatelessWidget {
   const DisplayName.active({
     super.key,
     required this.user,
+    this.color,
   }) : isActive = true;
 
   /// Display name value
@@ -24,8 +26,14 @@ class DisplayName extends StatelessWidget {
   /// Whether the username can be clicked to navigate to user's profile
   final bool isActive;
 
+  /// Optional fixed color for the text
+  final Color? color;
+
   @override
   Widget build(BuildContext context) {
+    final textStyle = Theme.of(context).textTheme.bodyText1!.copyWith(
+          color: color,
+        );
     if (isActive) {
       return HoverDetector(
         childBuilder: (_, bool isHovered) => GestureDetector(
@@ -33,17 +41,16 @@ class DisplayName extends StatelessWidget {
             // Todo: navigate to user profile page
           },
           child: _buildTextWidget(
-            style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                  decoration: isHovered
-                      ? TextDecoration.underline
-                      : TextDecoration.none,
-                ),
+            style: textStyle.copyWith(
+              decoration:
+                  isHovered ? TextDecoration.underline : TextDecoration.none,
+            ),
           ),
         ),
       );
     } else {
       return _buildTextWidget(
-        style: Theme.of(context).textTheme.bodyText1!,
+        style: textStyle,
       );
     }
   }

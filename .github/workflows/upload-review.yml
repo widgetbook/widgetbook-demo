@@ -19,6 +19,7 @@ jobs:
       - name: Setup flutter
         uses: subosito/flutter-action@v2
         with:
+          flutter-version: '3.7.12'
           channel: stable 
 
       - name: Get dependencies
@@ -41,6 +42,8 @@ jobs:
                 $GITHUB_REPOSITORY \
                 --actor \
                 $GITHUB_ACTOR \
+                --branch \
+                $GITHUB_HEAD_REF \
                 --base-branch \
                 $GITHUB_BASE_REF \
                 --pr ${{ github.event.number }} \

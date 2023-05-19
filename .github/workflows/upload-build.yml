@@ -20,6 +20,7 @@ jobs:
       - name: Setup flutter
         uses: subosito/flutter-action@v2
         with:
+          flutter-version: '3.7.12'
           channel: stable
 
       - name: Get dependencies
@@ -39,7 +40,7 @@ jobs:
           widgetbook publish \
                 --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY }} \
                 --branch \
-                $GITHUB_REF \
+                $GITHUB_HEAD_REF \
                 --repository \
                 $GITHUB_REPOSITORY \
                 --actor \
