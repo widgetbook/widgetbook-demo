@@ -142,7 +142,7 @@ class _ProfileAppBarState extends State<ProfileAppBar> {
                               '${AppLocalizations.of(context)!.tweet}',
                               style: Theme.of(context)
                                   .textTheme
-                                  .caption!
+                                  .bodySmall!
                                   .copyWith(color: AppColors.white),
                             ),
                           ),
