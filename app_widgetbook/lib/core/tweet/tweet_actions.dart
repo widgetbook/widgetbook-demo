@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart' show Knobs, Option;
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@WidgetbookUseCase(name: 'Default', type: TweetActions)
+@WidgetbookUseCase(
+  name: 'Default',
+  type: TweetActions,
+  designLink:
+      'https://www.figma.com/file/taoQSMi6WeUgzEoZvZmHmI/Widgetbook-Demo-App?type=design&node-id=210-1162&t=CUcQdGSYqsHyX5r8-4',
+)
 Widget tweetActionsDefaultUseCase(BuildContext context) {
   return TweetActions(
     hideValues: context.knobs.boolean(label: 'Hide Values'),
