@@ -34,7 +34,7 @@ class QuotedTweet extends StatelessWidget {
         child: DecoratedBox(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: Theme.of(context).dividerColor, width: 1),
+            border: Border.all(color: Theme.of(context).dividerColor),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -105,7 +105,7 @@ class QuotedTweet extends StatelessWidget {
                                   AppLocalizations.of(context)!.showThisThread,
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2!
+                                      .bodyMedium!
                                       .copyWith(color: AppColors.primary),
                                 ),
                               ),
