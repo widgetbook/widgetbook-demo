@@ -38,7 +38,7 @@ jobs:
           widgetbook publish \
                 --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY }} \
                 --repository $GITHUB_REPOSITORY \
-                --branch $GITHUB_REF \
+                --branch $GITHUB_REF_NAME \
                 --actor $GITHUB_ACTOR \
                 --pr ${{ github.event.number }} \
                 --github-token ${{ secrets.GITHUB_TOKEN }}
