@@ -38,9 +38,5 @@ jobs:
         run: |
           widgetbook publish \
                 --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY }} \
-                --branch \
-                $GITHUB_REF \
-                --repository \
-                $GITHUB_REPOSITORY \
-                --actor \
-                $GITHUB_ACTOR
+                --repository $GITHUB_REPOSITORY \
+                --actor $GITHUB_ACTOR
