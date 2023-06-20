@@ -1,25 +1,25 @@
 import 'package:app_widgetbook/utils.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:widgetbook/widgetbook.dart' show Knobs, Option;
+import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 /// Use case for a Primary Button style
-@WidgetbookUseCase(name: 'Custom', type: AppElevatedButton)
+@UseCase(name: 'Custom', type: AppElevatedButton)
 Widget customAppElevatedButtonUseCase(BuildContext context) {
   return AppElevatedButton(
-    label: context.knobs.nullableText(
+    label: context.knobs.stringOrNull(
       label: 'Label',
       initialValue: 'Button',
     ),
     icon: context.knobs.boolean(label: 'Has Icon', initialValue: true)
-        ? context.knobs.options(
+        ? context.knobs.list(
             label: 'Icon',
             options: buttonIconOptions,
           )
         : null,
     onPressed: () {},
-    borderColor: context.knobs.options<Color?>(
+    borderColor: context.knobs.list<Color?>(
       label: 'Border Color',
       labelBuilder: (value) {
         if (value == null) return 'None';
@@ -33,7 +33,7 @@ Widget customAppElevatedButtonUseCase(BuildContext context) {
         AppColors.white,
       ],
     ),
-    backgroundColor: context.knobs.options<Color?>(
+    backgroundColor: context.knobs.list<Color?>(
       label: 'Background Color',
       labelBuilder: (value) {
         if (value == null) return 'null';
@@ -47,7 +47,7 @@ Widget customAppElevatedButtonUseCase(BuildContext context) {
         AppColors.white,
       ],
     ),
-    textColor: context.knobs.options<Color?>(
+    textColor: context.knobs.list<Color?>(
       label: 'Text Color',
       labelBuilder: (value) {
         if (value == null) return 'null';
@@ -66,15 +66,15 @@ Widget customAppElevatedButtonUseCase(BuildContext context) {
 }
 
 /// Use case for a Primary Button style
-@WidgetbookUseCase(name: 'Primary Button', type: AppElevatedButton)
+@UseCase(name: 'Primary Button', type: AppElevatedButton)
 Widget primaryAppElevatedButtonUseCase(BuildContext context) {
   return AppElevatedButton.primary(
-    label: context.knobs.nullableText(
+    label: context.knobs.stringOrNull(
       label: 'Label',
       initialValue: 'Button',
     ),
     icon: context.knobs.boolean(label: 'Has Icon', initialValue: true)
-        ? context.knobs.options(
+        ? context.knobs.list(
             label: 'Icon',
             options: buttonIconOptions,
           )
@@ -85,17 +85,17 @@ Widget primaryAppElevatedButtonUseCase(BuildContext context) {
 }
 
 /// Use case for a Secondary Button style
-@WidgetbookUseCase(name: 'Secondary Button', type: AppElevatedButton)
+@UseCase(name: 'Secondary Button', type: AppElevatedButton)
 Widget secondaryAppElevatedButtonUseCase(BuildContext context) {
   return Scaffold(
     appBar: AppBar(),
     body: AppElevatedButton.secondary(
-      label: context.knobs.nullableText(
+      label: context.knobs.stringOrNull(
         label: 'Label',
         initialValue: 'Button',
       ),
       icon: context.knobs.boolean(label: 'Has Icon', initialValue: true)
-          ? context.knobs.options(
+          ? context.knobs.list(
               label: 'Icon',
               options: buttonIconOptions,
             )
@@ -107,15 +107,15 @@ Widget secondaryAppElevatedButtonUseCase(BuildContext context) {
 }
 
 /// Use case for a Primary Outline Button style
-@WidgetbookUseCase(name: 'Primary Outline Button', type: AppElevatedButton)
+@UseCase(name: 'Primary Outline Button', type: AppElevatedButton)
 Widget primaryOutlineAppElevatedButtonUseCase(BuildContext context) {
   return AppElevatedButton.primaryOutline(
-    label: context.knobs.nullableText(
+    label: context.knobs.stringOrNull(
       label: 'Label',
       initialValue: 'Button',
     ),
     icon: context.knobs.boolean(label: 'Has Icon', initialValue: true)
-        ? context.knobs.options(
+        ? context.knobs.list(
             label: 'Icon',
             options: buttonIconOptions,
           )
@@ -126,15 +126,15 @@ Widget primaryOutlineAppElevatedButtonUseCase(BuildContext context) {
 }
 
 /// Use case for a Secondary Outline Button style
-@WidgetbookUseCase(name: 'Secondary Outline Button', type: AppElevatedButton)
+@UseCase(name: 'Secondary Outline Button', type: AppElevatedButton)
 Widget secondaryOutlineAppElevatedButtonUseCase(BuildContext context) {
   return AppElevatedButton.secondaryOutline(
-    label: context.knobs.nullableText(
+    label: context.knobs.stringOrNull(
       label: 'Label',
       initialValue: 'Button',
     ),
     icon: context.knobs.boolean(label: 'Has Icon', initialValue: true)
-        ? context.knobs.options(
+        ? context.knobs.list(
             label: 'Icon',
             options: buttonIconOptions,
           )

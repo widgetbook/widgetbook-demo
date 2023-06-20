@@ -20,7 +20,7 @@ DateTime getTweetDateOption(
   BuildContext context, {
   String label = 'Date',
 }) {
-  return context.knobs.options<DateTime>(
+  return context.knobs.list<DateTime>(
     label: label,
     description: "The date should be a timeago string if it's "
         'less than 24 hours ago, and it should '
@@ -47,7 +47,7 @@ List<Media> getMediaOptions(
   String label = 'Media',
   String? description,
 }) {
-  return context.knobs.options<List<Media>>(
+  return context.knobs.list<List<Media>>(
     label: label,
     description: description,
     labelBuilder: (value) => '${value.length} images',
@@ -66,7 +66,7 @@ List<Media> getMediaOptions(
 /// likes, retweets, quote tweets, and replies metrics
 PublicMetrics getPublicMetricsOptions(BuildContext context) {
   return PublicMetrics(
-    replies: context.knobs
+    replies: context.knobs.double
         .slider(
           label: 'Replies',
           min: 0,
@@ -75,7 +75,7 @@ PublicMetrics getPublicMetricsOptions(BuildContext context) {
           divisions: 25000 ~/ 50,
         )
         .toInt(),
-    retweets: context.knobs
+    retweets: context.knobs.double
         .slider(
           label: 'Retweets',
           min: 0,
@@ -84,7 +84,7 @@ PublicMetrics getPublicMetricsOptions(BuildContext context) {
           divisions: 25000 ~/ 50,
         )
         .toInt(),
-    likes: context.knobs
+    likes: context.knobs.double
         .slider(
           label: 'Likes',
           min: 0,

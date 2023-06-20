@@ -29,7 +29,7 @@ jobs:
         run: flutter pub run build_runner build --delete-conflicting-outputs
 
       - name: Build Website
-        run: flutter build web -t lib/app.widgetbook.dart
+        run: flutter build web -t lib/app.dart
 
       - name: Install Widgetbook CLI
         run: dart pub global activate widgetbook_cli 3.0.0-beta.23

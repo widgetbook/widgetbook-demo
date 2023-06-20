@@ -1,10 +1,10 @@
 import 'package:app_widgetbook/dummy_data/dummy_media.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:widgetbook/widgetbook.dart' show Knobs, Option;
+import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@WidgetbookUseCase(name: 'Image', type: TweetMedia)
+@UseCase(name: 'Image', type: TweetMedia)
 Widget tweetMediaImageUseCase(BuildContext context) {
   return TweetMedia(
     tweetMedia: DummyMedia.singlePhotoMedia,
@@ -15,10 +15,10 @@ Widget tweetMediaImageUseCase(BuildContext context) {
   );
 }
 
-@WidgetbookUseCase(name: 'Gallery', type: TweetMedia)
+@UseCase(name: 'Gallery', type: TweetMedia)
 Widget tweetMediaGalleryUseCase(BuildContext context) {
   return TweetMedia(
-    tweetMedia: context.knobs.options(
+    tweetMedia: context.knobs.list(
       label: 'Image Count',
       options: [
         for (int i = 4; i >= 2; i--)
@@ -33,7 +33,7 @@ Widget tweetMediaGalleryUseCase(BuildContext context) {
   );
 }
 
-@WidgetbookUseCase(name: 'GIF', type: TweetMedia)
+@UseCase(name: 'GIF', type: TweetMedia)
 Widget tweetMediaGIFUseCase(BuildContext context) {
   return TweetMedia(
     tweetMedia: DummyMedia.gifMedia,

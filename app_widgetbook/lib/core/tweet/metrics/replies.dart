@@ -1,13 +1,13 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:widgetbook/widgetbook.dart' show Knobs;
+import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@WidgetbookUseCase(name: 'Default', type: Replies)
+@UseCase(name: 'Default', type: Replies)
 Widget repliesDefaultUseCase(BuildContext context) {
   return Replies(
     onPressed: () {},
-    metricValue: context.knobs
+    metricValue: context.knobs.double
         .slider(
           label: 'Replies Count',
           description: 'Note: replies should be more than'

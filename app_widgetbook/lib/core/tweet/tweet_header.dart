@@ -1,18 +1,18 @@
 import 'package:app_widgetbook/utils.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:widgetbook/widgetbook.dart' show Knobs;
+import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@WidgetbookUseCase(name: 'Default', type: TweetHeader)
+@UseCase(name: 'Default', type: TweetHeader)
 Widget tweetHeaderDefaultUseCase(BuildContext context) {
   return TweetHeader(
     author: User(
-      displayName: context.knobs.text(
+      displayName: context.knobs.string(
         label: 'Display Name',
         initialValue: 'John Doe',
       ),
-      username: context.knobs.text(
+      username: context.knobs.string(
         label: 'Username',
         initialValue: 'johndoe',
       ),

@@ -3,10 +3,10 @@ import 'package:app_widgetbook/dummy_data/dummy_users.dart';
 import 'package:app_widgetbook/utils.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:widgetbook/widgetbook.dart' show Knobs, Option;
+import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@WidgetbookUseCase(
+@UseCase(
   name: 'Default',
   type: ExpandedTweet,
   designLink:
@@ -15,11 +15,11 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 Widget expandedTweetDefaultUseCase(BuildContext context) {
   return ExpandedTweet(
     tweet: Tweet(
-      rawText: context.knobs.text(
+      rawText: context.knobs.string(
         label: 'Tweet Text',
         initialValue: 'Lorem ipsum dolor sit amit #hashtag @mention',
       ),
-      source: context.knobs.options<TweetSource>(
+      source: context.knobs.list<TweetSource>(
         label: 'Tweet Source',
         options: TweetSource.values,
         labelBuilder: (value) => value.toText(),
@@ -31,7 +31,7 @@ Widget expandedTweetDefaultUseCase(BuildContext context) {
       author: DummyUsers.widgetbook,
       media: getMediaOptions(context),
       publicMetrics: PublicMetrics(
-        quoteTweets: context.knobs
+        quoteTweets: context.knobs.double
             .slider(
               label: 'Quote Tweets',
               min: 0,
@@ -40,7 +40,7 @@ Widget expandedTweetDefaultUseCase(BuildContext context) {
               divisions: 2500 ~/ 50,
             )
             .toInt(),
-        retweets: context.knobs
+        retweets: context.knobs.double
             .slider(
               label: 'Retweets',
               min: 0,
@@ -49,7 +49,7 @@ Widget expandedTweetDefaultUseCase(BuildContext context) {
               divisions: 2500 ~/ 50,
             )
             .toInt(),
-        likes: context.knobs
+        likes: context.knobs.double
             .slider(
               label: 'Likes',
               min: 0,
@@ -64,7 +64,7 @@ Widget expandedTweetDefaultUseCase(BuildContext context) {
   );
 }
 
-@WidgetbookUseCase(
+@UseCase(
   name: 'Quote Tweet',
   type: ExpandedTweet,
   designLink:
@@ -73,11 +73,11 @@ Widget expandedTweetDefaultUseCase(BuildContext context) {
 Widget expandedTweetQuoteTweetUseCase(BuildContext context) {
   return ExpandedTweet(
     tweet: Tweet(
-      rawText: context.knobs.text(
+      rawText: context.knobs.string(
         label: 'Tweet Text',
         initialValue: 'Lorem ipsum dolor sit amit #hashtag @mention',
       ),
-      source: context.knobs.options<TweetSource>(
+      source: context.knobs.list<TweetSource>(
         label: 'Tweet Source',
         options: TweetSource.values,
         labelBuilder: (value) => value.toText(),
@@ -93,7 +93,7 @@ Widget expandedTweetQuoteTweetUseCase(BuildContext context) {
         createdAt: getTweetDateOption(context, label: 'Quoted Tweet Date'),
       ),
       publicMetrics: PublicMetrics(
-        quoteTweets: context.knobs
+        quoteTweets: context.knobs.double
             .slider(
               label: 'Quote Tweets',
               min: 0,
@@ -102,7 +102,7 @@ Widget expandedTweetQuoteTweetUseCase(BuildContext context) {
               divisions: 2500 ~/ 50,
             )
             .toInt(),
-        retweets: context.knobs
+        retweets: context.knobs.double
             .slider(
               label: 'Retweets',
               min: 0,
@@ -111,7 +111,7 @@ Widget expandedTweetQuoteTweetUseCase(BuildContext context) {
               divisions: 2500 ~/ 50,
             )
             .toInt(),
-        likes: context.knobs
+        likes: context.knobs.double
             .slider(
               label: 'Likes',
               min: 0,
