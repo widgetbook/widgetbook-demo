@@ -28,7 +28,7 @@ workflows:
         script: flutter build web -t lib/app.dart
 
       - name: Install Widgetbook CLI
-        script: dart pub global activate widgetbook_cli 3.0.0-beta.23
+        script: dart pub global activate widgetbook_cli 3.0.0-rc.2
 
       - name: Upload Widgetbook
         script: |
@@ -72,7 +72,7 @@ workflows:
         script: flutter build web -t lib/app.dart
 
       - name: Install Widgetbook CLI
-        script: dart pub global activate widgetbook_cli 3.0.0-rc.2
+        script: dart pub global activate widgetbook_cli 3.0.0-rc.2 
 
       - name: Upload Widgetbook
         script: |
