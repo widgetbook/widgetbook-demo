@@ -1,12 +1,12 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:widgetbook/widgetbook.dart' show Knobs, Option;
+import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@WidgetbookUseCase(name: 'Default', type: MetricText)
+@UseCase(name: 'Default', type: MetricText)
 Widget metricTextDefaultUseCase(BuildContext context) {
   return MetricText(
-    value: context.knobs
+    value: context.knobs.double
         .slider(
           label: 'Value',
           min: 0,
@@ -18,7 +18,7 @@ Widget metricTextDefaultUseCase(BuildContext context) {
     isActive: context.knobs.boolean(
       label: 'Active',
     ),
-    activeColor: context.knobs.options(
+    activeColor: context.knobs.list(
       label: 'Active Color',
       labelBuilder: (value) => value.value.toRadixString(16),
       options: [

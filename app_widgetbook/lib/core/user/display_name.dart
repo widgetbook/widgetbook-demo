@@ -1,13 +1,13 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:widgetbook/widgetbook.dart' show Knobs, Option;
+import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@WidgetbookUseCase(name: 'Default', type: DisplayName)
+@UseCase(name: 'Default', type: DisplayName)
 Widget displayNameDefaultUseCase(BuildContext context) {
   return DisplayName(
     user: User(
-      displayName: context.knobs.text(
+      displayName: context.knobs.string(
         label: 'Value',
         description: 'Enter display name',
         initialValue: 'John Doe',
@@ -18,11 +18,11 @@ Widget displayNameDefaultUseCase(BuildContext context) {
   );
 }
 
-@WidgetbookUseCase(name: 'Active', type: DisplayName)
+@UseCase(name: 'Active', type: DisplayName)
 Widget displayNameActiveUseCase(BuildContext context) {
   return DisplayName.active(
     user: User(
-      displayName: context.knobs.text(
+      displayName: context.knobs.string(
         label: 'Value',
         description: 'Enter display name',
         initialValue: 'John Doe',

@@ -1,14 +1,14 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:widgetbook/widgetbook.dart' show Knobs, Option;
+import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@WidgetbookUseCase(name: 'Default', type: TweetActions)
+@UseCase(name: 'Default', type: TweetActions)
 Widget tweetActionsDefaultUseCase(BuildContext context) {
   return TweetActions(
     hideValues: context.knobs.boolean(label: 'Hide Values'),
     publicMetrics: PublicMetrics(
-      replies: context.knobs
+      replies: context.knobs.double
           .slider(
             label: 'Replies',
             min: 0,
@@ -17,7 +17,7 @@ Widget tweetActionsDefaultUseCase(BuildContext context) {
             divisions: 25000 ~/ 50,
           )
           .toInt(),
-      retweets: context.knobs
+      retweets: context.knobs.double
           .slider(
             label: 'Retweets',
             min: 0,
@@ -26,7 +26,7 @@ Widget tweetActionsDefaultUseCase(BuildContext context) {
             divisions: 25000 ~/ 50,
           )
           .toInt(),
-      likes: context.knobs
+      likes: context.knobs.double
           .slider(
             label: 'Likes',
             min: 0,

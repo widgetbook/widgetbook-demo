@@ -6,7 +6,7 @@
             "cwd": "app_widgetbook",
             "request": "launch",
             "type": "dart",
-            "program": "lib/app.widgetbook.dart"
+            "program": "lib/app.dart"
         },
     ]
 }

@@ -1,12 +1,12 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:widgetbook/widgetbook.dart' show Knobs, Option;
+import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@WidgetbookUseCase(name: 'Default', type: Likes)
+@UseCase(name: 'Default', type: Likes)
 Widget likesDefaultUseCase(BuildContext context) {
   return Likes(
-    metricValue: context.knobs
+    metricValue: context.knobs.double
         .slider(
           label: 'Likes Count',
           description: 'Note: likes should be more'

@@ -3,14 +3,14 @@ import 'package:app_widgetbook/dummy_data/dummy_users.dart';
 import 'package:app_widgetbook/utils.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:widgetbook/widgetbook.dart' show Knobs, Option;
+import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@WidgetbookUseCase(name: 'Default', type: CollapsedTweet)
+@UseCase(name: 'Default', type: CollapsedTweet)
 Widget collapsedTweetDefaultUseCase(BuildContext context) {
   return CollapsedTweet(
     tweet: Tweet(
-      rawText: context.knobs.text(
+      rawText: context.knobs.string(
         label: 'Tweet Text',
         initialValue: 'Lorem ipsum dolor sit amit #hashtag @mention',
       ),
@@ -22,7 +22,7 @@ Widget collapsedTweetDefaultUseCase(BuildContext context) {
       media: getMediaOptions(context),
       createdAt: getTweetDateOption(context),
       publicMetrics: getPublicMetricsOptions(context),
-      source: context.knobs.options<TweetSource>(
+      source: context.knobs.list<TweetSource>(
         label: 'Tweet Source',
         options: TweetSource.values,
         labelBuilder: (value) => value.toText(),
@@ -47,11 +47,11 @@ Widget collapsedTweetDefaultUseCase(BuildContext context) {
   );
 }
 
-@WidgetbookUseCase(name: 'Quote Tweet', type: CollapsedTweet)
+@UseCase(name: 'Quote Tweet', type: CollapsedTweet)
 Widget collapsedTweetQuoteTweetUseCase(BuildContext context) {
   return CollapsedTweet(
     tweet: Tweet(
-      rawText: context.knobs.text(
+      rawText: context.knobs.string(
         label: 'Tweet Text',
         initialValue: 'Lorem ipsum dolor sit amit #hashtag @mention',
       ),
@@ -68,7 +68,7 @@ Widget collapsedTweetQuoteTweetUseCase(BuildContext context) {
       ),
       createdAt: getTweetDateOption(context, label: 'Main Tweet Date'),
       publicMetrics: getPublicMetricsOptions(context),
-      source: context.knobs.options<TweetSource>(
+      source: context.knobs.list<TweetSource>(
         label: 'Tweet Source',
         options: TweetSource.values,
         labelBuilder: (value) => value.toText(),

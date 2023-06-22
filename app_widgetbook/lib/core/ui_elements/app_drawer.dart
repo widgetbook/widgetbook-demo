@@ -3,9 +3,9 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@WidgetbookUseCase(name: 'Default', type: AppDrawer)
+@UseCase(name: 'Default', type: AppDrawer)
 Widget appDrawerDefaultUseCase(BuildContext context) {
-  return AppDrawer(
+  return const AppDrawer(
     user: DummyUsers.widgetbook,
   );
 }

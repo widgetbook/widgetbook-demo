@@ -1,50 +1,65 @@
+import 'package:app_widgetbook/app.directories.g.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:widgetbook_annotation/widgetbook_annotation.dart';
+import 'package:widgetbook/widgetbook.dart';
+import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
 void main() {
-  TimeagoUtils.setMessages();
-  runApp(const App());
+  runApp(const WidgetbookApp());
 }
 
 /// Retrieves Light Theme
-@WidgetbookTheme(name: 'Light', isDefault: true)
 ThemeData getLightTheme() => AppThemes.getTheme();
 
 /// Retrieves Dark Theme
-@WidgetbookTheme(name: 'Dark', isDefault: true)
 ThemeData getDarkTheme() => AppThemes.getTheme(isDark: true);
 
 /// Supported locales
-@WidgetbookLocales()
 List<Locale> locales = const [
   Locale('en'),
   Locale('ar'),
 ];
 
 /// App Localization Delegates
-@WidgetbookLocalizationDelegates()
 List<LocalizationsDelegate<dynamic>> localizationsDelegates =
     AppLocalizations.localizationsDelegates;
 
 /// Entry point for the App's Widgetbook
-@WidgetbookApp.material(
-  name: 'App Widgetbook',
-  textScaleFactors: [1, 1.5, 2],
-  devices: [
-    Apple.iPhone12,
-    Apple.iPhone13,
-    Apple.iPadMini,
-    Desktop.desktop1080p,
-  ],
-)
-class App extends StatelessWidget {
-  /// Creates a new instance of [App]
-  const App({super.key});
+@widgetbook.App()
+class WidgetbookApp extends StatelessWidget {
+  /// Creates a new instance of [WidgetbookApp]
+  const WidgetbookApp({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp();
+    return Widgetbook.material(
+      directories: directories,
+      addons: [
+        TextScaleAddon(scales: [1, 1.5, 2]),
+        LocalizationAddon(
+          locales: locales,
+          localizationsDelegates: localizationsDelegates,
+        ),
+        DeviceFrameAddon(
+          devices: [
+            Devices.ios.iPad,
+            Devices.ios.iPhone13,
+          ],
+        ),
+        MaterialThemeAddon(
+          themes: [
+            WidgetbookTheme(
+              name: 'Light',
+              data: getLightTheme(),
+            ),
+            WidgetbookTheme(
+              name: 'Dark',
+              data: getDarkTheme(),
+            ),
+          ],
+        ),
+      ],
+    );
   }
 }

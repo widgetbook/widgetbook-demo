@@ -25,10 +25,10 @@ workflows:
         script: flutter pub run build_runner build --delete-conflicting-outputs
 
       - name: Build Website
-        script: flutter build web -t lib/app.widgetbook.dart
+        script: flutter build web -t lib/app.dart
 
       - name: Install Widgetbook CLI
-        script: dart pub global activate widgetbook_cli 3.0.0-beta.23
+        script: dart pub global activate widgetbook_cli 3.0.0-rc.2
 
       - name: Upload Widgetbook
         script: |
@@ -56,6 +56,9 @@ workflows:
           git branch -D $CM_PULL_REQUEST_DEST
           git switch -c $CM_PULL_REQUEST_DEST source/$CM_PULL_REQUEST_DEST
           git switch $CM_BRANCH
+      - name: Git diff
+        script: |
+          git diff $CM_PULL_REQUEST_DEST
       - name: Get Flutter packages
         script: | 
           flutter packages pub get
@@ -66,10 +69,10 @@ workflows:
         script: flutter pub run build_runner build --delete-conflicting-outputs
 
       - name: Build Website
-        script: flutter build web -t lib/app.widgetbook.dart
+        script: flutter build web -t lib/app.dart
 
       - name: Install Widgetbook CLI
-        script: dart pub global activate widgetbook_cli 3.0.0-beta.23
+        script: dart pub global activate widgetbook_cli 3.0.0-rc.2 
 
       - name: Upload Widgetbook
         script: |

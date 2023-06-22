@@ -1,38 +1,38 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:widgetbook/widgetbook.dart' show Knobs, Option;
+import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@WidgetbookUseCase(name: 'Default', type: ExpandedTweetMetrics)
+@UseCase(name: 'Default', type: ExpandedTweetMetrics)
 Widget ExpandedTweetMetricsDefaultUseCase(BuildContext context) {
   return ExpandedTweetMetrics(
     metrics: PublicMetrics(
-      retweets: context.knobs
+      retweets: context.knobs.double
           .slider(
-        label: 'Retweets',
-        min: 0,
-        max: 25000,
-        initialValue: 15,
-        divisions: 25000 ~/ 50,
-      )
+            label: 'Retweets',
+            min: 0,
+            max: 25000,
+            initialValue: 15,
+            divisions: 25000 ~/ 50,
+          )
           .toInt(),
-      quoteTweets: context.knobs
+      quoteTweets: context.knobs.double
           .slider(
-        label: 'Quote Tweets',
-        min: 0,
-        max: 25000,
-        initialValue: 15,
-        divisions: 25000 ~/ 50,
-      )
+            label: 'Quote Tweets',
+            min: 0,
+            max: 25000,
+            initialValue: 15,
+            divisions: 25000 ~/ 50,
+          )
           .toInt(),
-      likes: context.knobs
+      likes: context.knobs.double
           .slider(
-        label: 'Likes',
-        min: 0,
-        max: 25000,
-        initialValue: 15,
-        divisions: 25000 ~/ 50,
-      )
+            label: 'Likes',
+            min: 0,
+            max: 25000,
+            initialValue: 15,
+            divisions: 25000 ~/ 50,
+          )
           .toInt(),
     ),
   );
