@@ -63,7 +63,10 @@ Widget collapsedTweetQuoteTweetUseCase(BuildContext context) {
             ' media version of the quoted tweet',
       ),
       quotedTweet: DummyTweets.fourPhotosTweet.copyWith(
-        media: getMediaOptions(context, label: 'Quoted Tweet Media'),
+        media: getMediaOptions(
+          context,
+          label: 'Quoted Tweet Media',
+        ),
         createdAt: getTweetDateOption(context, label: 'Quoted Tweet Date'),
       ),
       createdAt: getTweetDateOption(context, label: 'Main Tweet Date'),
