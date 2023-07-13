@@ -4,7 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@UseCase(name: 'Image', type: TweetMedia)
+@UseCase(
+  name: 'Image',
+  type: TweetMedia,
+  designLink:
+      'https://www.figma.com/file/taoQSMi6WeUgzEoZvZmHmI/Widgetbook-Demo-App?type=design&node-id=204-1822&t=aXDXkBsaFxCTxdac-4',
+)
 Widget tweetMediaImageUseCase(BuildContext context) {
   return TweetMedia(
     tweetMedia: DummyMedia.singlePhotoMedia,
@@ -15,7 +20,12 @@ Widget tweetMediaImageUseCase(BuildContext context) {
   );
 }
 
-@UseCase(name: 'Gallery', type: TweetMedia)
+@UseCase(
+  name: 'Gallery',
+  type: TweetMedia,
+  designLink:
+      'https://www.figma.com/file/taoQSMi6WeUgzEoZvZmHmI/Widgetbook-Demo-App?type=design&node-id=207-1638&t=aXDXkBsaFxCTxdac-4',
+)
 Widget tweetMediaGalleryUseCase(BuildContext context) {
   return TweetMedia(
     tweetMedia: context.knobs.list(
@@ -33,7 +43,12 @@ Widget tweetMediaGalleryUseCase(BuildContext context) {
   );
 }
 
-@UseCase(name: 'GIF', type: TweetMedia)
+@UseCase(
+  name: 'GIF',
+  type: TweetMedia,
+  designLink:
+      'https://www.figma.com/file/taoQSMi6WeUgzEoZvZmHmI/Widgetbook-Demo-App?type=design&node-id=204-1844&t=aXDXkBsaFxCTxdac-4',
+)
 Widget tweetMediaGIFUseCase(BuildContext context) {
   return TweetMedia(
     tweetMedia: DummyMedia.gifMedia,

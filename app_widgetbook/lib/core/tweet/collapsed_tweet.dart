@@ -6,7 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@UseCase(name: 'Default', type: CollapsedTweet)
+@UseCase(
+  name: 'Default',
+  type: CollapsedTweet,
+  designLink:
+      'https://www.figma.com/file/taoQSMi6WeUgzEoZvZmHmI/Widgetbook-Demo-App?type=design&node-id=179-1054&t=aXDXkBsaFxCTxdac-4',
+)
 Widget collapsedTweetDefaultUseCase(BuildContext context) {
   return CollapsedTweet(
     tweet: Tweet(
