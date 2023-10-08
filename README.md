@@ -1,4 +1,6 @@
+[<img height=40 src="https://raw.githubusercontent.com/widgetbook/widgetbook/4130a18efa61a1b94185409a6f7a735e0494fb30/docs/assets/WidgetbookLogo.svg">](https://www.widgetbook.io/)
 ### Demo App for Widgetbook
+
 
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
 [![License: MIT][license_badge]][license_link]
