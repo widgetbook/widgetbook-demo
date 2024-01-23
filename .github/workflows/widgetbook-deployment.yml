@@ -28,7 +28,7 @@ jobs:
     - run: | 
         flutter build web -t lib/app.dart
     - name: Authenticate Service Account
-      uses: google-github-actions/auth@v1.0.0
+      uses: google-github-actions/auth@v1.1.1
       with:
         credentials_json: ${{ secrets.STORAGE_SERVICE_ACCOUNT }}
 
